@@ -1,0 +1,8 @@
+div.lab4 {
+	display: inline-block;
+	text-align: center;
+	margin: 5px;
+	padding: 5px;
+	border: 1px dotted orange;
+	border-radius: 5px;
+}

@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+@keyframes fadeInDown {
+        0%{
+            opacity: 0;
+            transform: translate(0,-100%);
+        }
+        100%{
+            opacity: 1;
+            transform: translate(0,0);
+        }
+    }
+    .container{
+        animation-name: fadeInDown;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
