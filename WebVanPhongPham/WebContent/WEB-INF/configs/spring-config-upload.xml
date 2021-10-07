@@ -14,11 +14,11 @@
 			http://www.springframework.org/schema/mvc 
 			http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	
-	<bean id="multipartResolver" 
+	<!-- <bean id="multipartResolver" 
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-	 	<!-- maxUploadSize=20MB -->
+	 	maxUploadSize=20MB
 	 	<property name="maxUploadSize" value="20971520"/>
-	</bean>
+	</bean> -->
 	
 </beans>
 

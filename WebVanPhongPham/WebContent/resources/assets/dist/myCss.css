@@ -6,3 +6,33 @@ div.lab4 {
 	border: 1px dotted orange;
 	border-radius: 5px;
 }
+
+.container-wrapper{
+	min-width: 1200px;
+}
+
+.navbar-home{
+    position: relative;
+    align-items: center;
+    padding-top: .5rem;
+    padding-bottom: .7rem;
+}
+.navbar-wrapper {
+    height: 2rem;
+    z-index: 400;
+    background: transparent;
+    position: relative;
+}
+.sizemenu{
+	font-size: smaller;
+}
+.img-poster-right{
+	padding: .25rem;
+	width: 400px;
+    height: 350px;
+}
+.img-poster-left{
+	padding: .25rem;
+	width: 900px;
+    height: 350px;
+}

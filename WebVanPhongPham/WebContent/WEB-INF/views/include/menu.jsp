@@ -1,40 +1,76 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="#">Navbar</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-			data-bs-target="#navbarsExampleDefault"
-			aria-controls="navbarsExampleDefault" aria-expanded="false"
-			aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+<base href="${pageContext.servletContext.contextPath}/">
+<div class="container-wrapper fixed-top navbar-dark bg-info bg-gradient ">
 
-		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav me-auto mb-2 mb-md-0">
-				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="#">Home</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-				<li class="nav-item"><a class="nav-link disabled" href="#"
-					tabindex="-1" aria-disabled="true">Disabled</a></li>
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" href="#" id="dropdown01"
-					data-bs-toggle="dropdown" aria-expanded="false">Bài học</a>
-					<ul class="dropdown-menu" aria-labelledby="dropdown01">
-						<li><a class="dropdown-item" href="#">###</a></li>
-						<li><a class="dropdown-item" href="#">###</a></li>
-						<li><a class="dropdown-item" href="#">###</a></li>
-						<li><a class="dropdown-item" href="student/index.htm">Lab
-								4: EL & JSTL</a></li>
-						<li><a class="dropdown-item" href="lab5/demo1.htm">Lab 5:
-								Bean và Dependency Injection</a></li>
-					</ul></li>
-			</ul>
-			<form class="d-flex">
-				<input class="form-control me-2" type="search" placeholder="Search"
-					aria-label="Search">
-				<button class="btn btn-outline-success" type="submit">Search</button>
-			</form>
-		</div>
+
+<div class="container-wrapper navbar-wrapper navbar-expand-lg ">
+	<div class="container">
+		<a class="navbar-brand mb-0 sizemenu" href="#"><i class="fas fa-phone"></i> 0382305835</a>
+		<a class="navbar-brand mb-0 sizemenu" href="#"><i class="far fa-paper-plane"></i> ministorehr@gmail.com</a>	
+		<ul class="navbar-nav pull-right">
+
+			<li class="nav-item active ">
+				<a class="nav-link text-white" href="#">Danh mục sản phẩm <span
+					class="sr-only">(current)</span>
+				</a>
+			</li>
+
+			<li class="nav-item active ">
+				<a class="nav-link text-white" href="#"><i class="fas fa-info-circle"></i> Thông tin store <span
+					class="sr-only">(current)</span>
+				</a>
+			</li>
+
+			<!-- Nav Item - User Information -->
+			<li class="nav-item dropdown">
+			<a  class="nav-link dropdown-toggle text-white" href="#"
+				id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+				aria-expanded="false"> 
+					<i class="fas fa-user-circle"></i>
+					<span class="mr-2 d-none d-lg-inline text-white small">Username</span> 
+					
+			</a> 
+			<!-- Dropdown - User Information -->
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
+					<li><a class="dropdown-item" href="#">Đơn hàng của tôi</a></li>
+					<li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+				</ul></li>
+
+		</ul>
+		
 	</div>
-</nav>
+</div>
+<div class="navbar-home navbar-expand-lg container-wrapper ">
+	<div class="container">
+	<div class="row">
+	    <div class="col">
+	     	<a class="navbar-brand mb-0 h1" href="#"><i class="fas fa-shopping-bag"></i> MiniStore</a>
+	    </div>
+	    <div class="col-8 ">
+	      <div class="text-center form-inline ">
+	<form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-lg-0 " style="width: 700px;">
+       <div class="input-group ">
+         <input class="form-control mr-sm-2" style="padding: inherit;" type="search" placeholder=" Search" aria-label="Search">
+         <div class="input-group-append">
+         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search fa-sm"></i></button>
+         </div>
+       </div>
+    </form>
+
+	</div>
+	    </div>
+	    <div class="col">
+	      <button type="button" class="btn position-relative border pull-right">
+					<i class="fas fa-shopping-cart"></i> <span
+						class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">7
+						<span class="visually-hidden">Sản phẩm</span>
+					</span>
+			</button>
+	    </div>
+	</div>
+</div>
+
+</div>
+</div>

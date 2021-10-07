@@ -17,16 +17,14 @@
 <base href="${pageContext.servletContext.contextPath}/">
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/5.0/examples/starter-template/">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Bootstrap core CSS -->
 <!-- <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">  -->
 <link href="<c:url value='resources/assets/dist/css/bootstrap.min.css'/>" rel="stylesheet">
 <script type="text/javascript" src="<c:url value='resources/ckeditor/ckeditor.js'/>"></script>
-<link href="<c:url value='resources/assets/dist/css/myCss.css'/>" rel="stylesheet">
+<link href="<c:url value='resources/assets/dist/myCss.css'/>" rel="stylesheet">
+<link href="<c:url value='resources/assets/dist/all.css'/>" rel="stylesheet">
 <style>
-body {
-	padding-top: 5rem;
-}
 .bd-placeholder-img {
 	font-size: 1.125rem;
 	text-anchor: middle;
