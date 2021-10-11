@@ -54,7 +54,7 @@
        <div class="input-group ">
          <input class="form-control mr-sm-2" style="padding: inherit;" type="search" placeholder=" Search" aria-label="Search">
          <div class="input-group-append">
-         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search fa-sm"></i></button>
+         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <i class="fas fa-search fa-sm"></i></button>
          </div>
        </div>
     </form>
@@ -62,12 +62,12 @@
 	</div>
 	    </div>
 	    <div class="col">
-	      <button type="button" class="btn position-relative border pull-right">
+	      <a role="button" class="btn position-relative border pull-right" href="home/cart.htm">
 					<i class="fas fa-shopping-cart"></i> <span
 						class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">7
 						<span class="visually-hidden">Sản phẩm</span>
 					</span>
-			</button>
+			</a>
 	    </div>
 	</div>
 </div>

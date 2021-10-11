@@ -36,3 +36,29 @@ div.lab4 {
 	width: 900px;
     height: 350px;
 }
+.mbg-price{
+	background-color: lightskyblue!important;
+}
+.mbg-azure{
+	background-color: azure!important;
+}
+.checkbox{
+    align-items: center;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: .25rem;
+}
+.border-ship{
+	border: 1px dashed;
+}
+.img-product{
+	padding: .25rem;
+	width: 400px;
+    height: 500px;
+}
+

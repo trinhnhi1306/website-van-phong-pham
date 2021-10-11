@@ -52,6 +52,8 @@
 	<!-- Danh sách sản phẩm -->
 	<div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                
+                <!-- Sau sẽ dùng JSTL để xuất -->
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
@@ -67,10 +69,13 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">View options</a></div>
                             </div>
                         </div>
                     </div>
+                <!--  -->
+                    
+                    
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
@@ -249,18 +254,25 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
 
 
 <div class="container">
-<div class="btn-toolbar pull-right" role="toolbar" aria-label="Toolbar with button groups">
-  <div class="btn-group me-2" role="group" aria-label="First group">
-    <button type="button" class="btn btn-outline-info">1</button>
-    <button type="button" class="btn btn-outline-info">2</button>
-    <button type="button" class="btn btn-outline-info">3</button>
-    <button type="button" class="btn btn-outline-info">4</button>
-  </div>
-  
+	<div class="btn-toolbar pull-right" role="toolbar" aria-label="Toolbar with button groups">
+	  <div class="btn-group me-2" role="group" aria-label="First group">
+	    <button type="button" class="btn btn-outline-info"><i class="fas fa-angle-double-left"></i></button>
+	    <button type="button" class="btn btn-outline-info"><i class="fas fa-angle-left"></i></button>
+	    <button type="button" class="btn btn-outline-info">1</button>
+	    <button type="button" class="btn btn-outline-info">2</button>
+	    <button type="button" class="btn btn-outline-info">...</button>
+	    <button type="button" class="btn btn-outline-info">6</button>
+	    <button type="button" class="btn btn-outline-info">7</button>
+	    <button type="button" class="btn btn-outline-info"><i class="fas fa-angle-right"></i></button>
+	    <button type="button" class="btn btn-outline-info"><i class="fas fa-angle-double-right"></i></button>
+	  </div>
+	  
+	</div>
 </div>
-</div>
+
 <%@include file="/WEB-INF/views/include/footer.jsp"%>	
