@@ -5,25 +5,28 @@
 
 
 <div class="container-wrapper navbar-wrapper navbar-expand-lg ">
-	<div class="container">
-		<a class="navbar-brand mb-0 sizemenu" href="#"><i class="fas fa-phone"></i> 0382305835</a>
-		<a class="navbar-brand mb-0 sizemenu" href="#"><i class="far fa-paper-plane"></i> ministorehr@gmail.com</a>	
-		<ul class="navbar-nav pull-right">
+	<div class="container ">
+	<div class="row">
+		<div class="col">
+			<a class="navbar-brand mb-0 sizemenu" href="#"><i class="fas fa-phone"></i> 0382305835</a>
+			<a class="navbar-brand mb-0 sizemenu" href="#"><i class="far fa-paper-plane"></i> ministorehr@gmail.com</a>
+		</div>
+		
+		<div class="col-auto text-end px-0">	
+			<a class="nav-link text-white" href="#">Danh mục sản phẩm <span class="sr-only">(current)</span></a>
+		</div>
+		
+		<div class="col-auto text-end px-0">	
+			<a class="nav-link text-white" href="#">
+				<i class="fas fa-info-circle"></i> Thông tin store 
+				<span class="sr-only">(current)</span>
+			</a>
+		</div>	
 
-			<li class="nav-item active ">
-				<a class="nav-link text-white" href="#">Danh mục sản phẩm <span
-					class="sr-only">(current)</span>
-				</a>
-			</li>
-
-			<li class="nav-item active ">
-				<a class="nav-link text-white" href="#"><i class="fas fa-info-circle"></i> Thông tin store <span
-					class="sr-only">(current)</span>
-				</a>
-			</li>
-
+		<div class="col-auto text-end px-0">	
 			<!-- Nav Item - User Information -->
-			<li class="nav-item dropdown">
+			<ul class="navbar-nav">
+			<li class="nav-item dropdown text-end">
 			<a  class="nav-link dropdown-toggle text-white" href="#"
 				id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
 				aria-expanded="false"> 
@@ -37,9 +40,9 @@
 					<li><a class="dropdown-item" href="#">Đơn hàng của tôi</a></li>
 					<li><a class="dropdown-item" href="#">Đăng xuất</a></li>
 				</ul></li>
-
-		</ul>
-		
+			</ul>
+		</div>
+	</div>
 	</div>
 </div>
 <div class="navbar-home navbar-expand-lg container-wrapper ">
@@ -61,7 +64,7 @@
 
 	</div>
 	    </div>
-	    <div class="col">
+	    <div class="col text-end">
 	      <a role="button" class="btn position-relative border pull-right" href="home/cart.htm">
 					<i class="fas fa-shopping-cart"></i> <span
 						class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">7
