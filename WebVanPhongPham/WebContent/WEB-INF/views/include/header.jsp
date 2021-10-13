@@ -18,16 +18,15 @@
 <base href="${pageContext.servletContext.contextPath}/">
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/5.0/examples/starter-template/">
-	
-<link rel="stylesheet" type="text/css" href="icon/css/fontawesome-all.css">
+
 <!-- Bootstrap core CSS -->
 <!-- <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">  -->
 <link href="<c:url value='resources/assets/dist/css/bootstrap.min.css'/>" rel="stylesheet">
-<script type="text/javascript" src="<c:url value='resources/ckeditor/ckeditor.js'/>"></script>
+<%-- <script type="text/javascript" src="<c:url value='resources/ckeditor/ckeditor.js'/>"></script> --%>
 <link href="<c:url value='resources/assets/dist/myCss.css'/>" rel="stylesheet">
+<link href="<c:url value='resources/assets/dist/ImageUpload.css'/>" rel="stylesheet">
 <!-- Font Awesome -->
-<!-- 
-<link href="<c:url value='resources/assets/dist/all.css'/>" rel="stylesheet"> -->
+<!-- <link href="<c:url value='resources/assets/dist/all.css'/>" rel="stylesheet"> -->
 <link href="<c:url value='resources/assets/dist/fontawesome.min.css'/>" rel="stylesheet"/> 
 <link rel="stylesheet" href="<c:url value='resources/assets/dist/all.min.css'/>" /> 
 

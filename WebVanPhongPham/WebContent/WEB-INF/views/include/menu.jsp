@@ -13,7 +13,7 @@
 		</div>
 		
 		<div class="col-auto text-end px-0">	
-			<a class="nav-link text-white" href="#">Danh mục sản phẩm <span class="sr-only">(current)</span></a>
+			<a class="nav-link text-white" href="home/category.htm">Danh mục sản phẩm <span class="sr-only">(current)</span></a>
 		</div>
 		
 		<div class="col-auto text-end px-0">	
@@ -36,8 +36,8 @@
 			</a> 
 			<!-- Dropdown - User Information -->
 				<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<li><a class="dropdown-item" href="#">Tài khoản của tôi</a></li>
-					<li><a class="dropdown-item" href="#">Đơn hàng của tôi</a></li>
+					<li><a class="dropdown-item" href="user/userProfile.htm">Tài khoản của tôi</a></li>
+					<li><a class="dropdown-item" href="user/order.htm">Đơn mua</a></li>
 					<li><a class="dropdown-item" href="#">Đăng xuất</a></li>
 				</ul></li>
 			</ul>

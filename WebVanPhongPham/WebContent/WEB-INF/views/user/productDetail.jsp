@@ -98,8 +98,8 @@ Sticker dán tường được dùng để trang trí, làm đẹp nhà cửa, p
 			</div>
 		</div>
 
-		<div class="mx-5 my-2 p-2">
-			<div class="btn-toolbar pull-right" role="toolbar" aria-label="Toolbar with button groups">
+		<div class="mx-5 my-2 p-2"> 
+			<div class=" text-end" role="toolbar" aria-label="Toolbar with button groups"> <!-- btn-toolbar pull-right -->
 				<div class="btn-group me-2" role="group" aria-label="First group">
 					<button type="button" class="btn btn-info"><i class="fas fa-angle-left"></i></button>
 					<button type="button" class="btn btn-info">1</button>

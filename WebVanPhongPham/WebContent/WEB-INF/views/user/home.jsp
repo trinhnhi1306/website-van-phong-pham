@@ -258,9 +258,9 @@
             </div>
 
 
-<div class="container ">
-	<div class="btn-toolbar m-auto" role="toolbar" aria-label="Toolbar with button groups">
-	  <div class="btn-group me-2 text-center" role="group" aria-label="First group">
+<div class="container">
+	<div class="text-end" role="toolbar" aria-label="Toolbar with button groups">
+	  <div class="btn-group me-2" role="group" aria-label="First group">
 	    <button type="button" class="btn btn-outline-info"><i class="fas fa-angle-double-left"></i></button>
 	    <button type="button" class="btn btn-outline-info"><i class="fas fa-angle-left"></i></button>
 	    <button type="button" class="btn btn-outline-info">1</button>

@@ -36,19 +36,4 @@ public class HomeController {
 	public String showCategory() {
 		return "user/category";
 	}
-	
-	@RequestMapping("userProfile")
-	public String showUserProfile() {
-		return "user/userProfile";
-	}
-	
-	@RequestMapping("order")
-	public String showOrder() {
-		return "user/order";
-	}
-	
-	@RequestMapping("orderDetail")
-	public String showOrderDetail() {
-		return "user/orderDetail";
-	}
 }

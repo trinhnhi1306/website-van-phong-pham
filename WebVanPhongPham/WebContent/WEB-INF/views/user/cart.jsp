@@ -57,7 +57,9 @@
 						</div>
 				    </td>
 				    <td class="py-3">40.000 đ</td>
-				    <td class="text-center py-3"><i class="fas fa-trash-alt"></i></td>
+				    <td class="text-center py-3">
+				    	<a class="link-dark" href="home/cart.htm" role="button"><i class="fas fa-trash-alt"></i></a>
+				    </td>
 			    </tr>
 			 <!-- /////////////// -->
 			    <tr>
@@ -88,7 +90,9 @@
 						</div>
 				    </td>
 				    <td class="py-3">80.000 đ</td>
-				    <td class="text-center py-3"><i class="fas fa-trash-alt"></i></td>
+				    <td class="text-center py-3">
+				    	<a class="link-dark" href="home/cart.htm" role="button"><i class="fas fa-trash-alt"></i></a>
+				    </td>
 			    </tr>
 			    <tr>
 				    <th scope="col" class="col-1">
@@ -118,7 +122,9 @@
 						</div>
 				    </td>
 				    <td class="py-3">40.000 đ</td>
-				    <td class="text-center py-3"><i class="fas fa-trash-alt"></i></td>
+				    <td class="text-center py-3">
+				    	<a class="link-dark" href="home/cart.htm" role="button"><i class="fas fa-trash-alt"></i></a>
+				    </td>
 			    </tr>
 			</tbody>
 			</table>

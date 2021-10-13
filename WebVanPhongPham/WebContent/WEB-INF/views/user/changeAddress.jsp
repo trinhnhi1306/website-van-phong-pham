@@ -4,23 +4,18 @@
 <%@include file="/WEB-INF/views/include/header.jsp"%>
 <%@include file="/WEB-INF/views/include/menu.jsp"%>
 	<br>
-	
 <div class="container">
-	<div class="h4 text-uppercase">Địa chỉ giao hàng</div>
-	
-	<div class="col-6 border-ship border-success px-3 pb-1 bg-light bg-gradient">
-		<div class="text-end text-success sizemenu">Mặc định</div>
-		<div class="h5 ps-3">Username</div>
-		<div class="text-secondary">Số điện thoại: 0382305835</div>
-		<div class="text-secondary fst-italic">Địa chỉ: 581/30A Trường Chinh, Tân Sơn Nhì, Tân Phú, Hồ Chí Minh</div>
+<div class="row">
+	<div class="col-3">
+		<%@include file="/WEB-INF/views/include/menuProfile.jsp"%>
 	</div>
-	
-	<div class="border my-3 p-2 bg-light bg-gradient">
-	<div class="h5 text-center">Địa chỉ mới</div>
-	<div class="col-6 mbg-azure py-2 px-4 mb-2 m-auto">
-		<form action="home/shipping.htm" method="post">
+		
+	<div class="col-8 mbg-azure p-3">
+		<div class="h4 text-uppercase">Chỉnh sửa địa chỉ</div>
+		<hr>
+		<form action="user/changeAddress.htm" method="post">
 			<div class="row my-3">
-	    		<label class="col-sm-4 col-form-label">Họ tên: </label>
+	    		<label class="col-sm-4 col-form-label text-end">Họ tên: </label>
 	    		<div class="col-sm-8">
 	      			<input type="text" class="form-control">
 	      			<!-- Fullname -->
@@ -29,14 +24,14 @@
   			</div>
 			
 			<div class="row mb-3">
-	    		<label class="col-sm-4 col-form-label">Điện thoại di động: </label>
+	    		<label class="col-sm-4 col-form-label text-end">Điện thoại di động: </label>
 	    		<div class="col-sm-8">
 	      			<input type="text" class="form-control">
 	    		</div>
   			</div>
   			
 			<div class="row mb-3">
-	    		<label class="col-sm-4 col-form-label">Tỉnh/Thành phố: </label>
+	    		<label class="col-sm-4 col-form-label text-end">Tỉnh/Thành phố: </label>
 	    		<div class="col-sm-8">
 	      			<select class="form-select" aria-label="Default select example">
 						<option selected>Open this select menu</option>
@@ -48,7 +43,7 @@
   			</div>
   			
   			<div class="row mb-3">
-	    		<label class="col-sm-4 col-form-label">Quận/Huyện: </label>
+	    		<label class="col-sm-4 col-form-label text-end">Quận/Huyện: </label>
 	    		<div class="col-sm-8">
 	      			<select class="form-select" aria-label="Default select example">
 						<option selected>Open this select menu</option>
@@ -60,7 +55,7 @@
   			</div>
   			
   			<div class="row mb-3">
-	    		<label class="col-sm-4 col-form-label">Phường/Xã: </label>
+	    		<label class="col-sm-4 col-form-label text-end">Phường/Xã: </label>
 	    		<div class="col-sm-8">
 	      			<select class="form-select" aria-label="Default select example">
 						<option selected>Open this select menu</option>
@@ -72,18 +67,19 @@
   			</div>
   			
   			<div class="row mb-3">
-	    		<label class="col-sm-4 col-form-label">Địa chỉ: </label>
+	    		<label class="col-sm-4 col-form-label text-end">Địa chỉ: </label>
 	    		<div class="col-sm-8">
 	    			<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 	    		</div>
   			</div>
 			
-			<div class="text-end">
-				<button type="submit" class="btn btn-info text-white">Hoàn Thành</button>
+			<div class="text-center">
+				<button type="submit" class="btn btn-info text-white">Cập nhật</button>
 			</div>
 		</form>
 	</div>
-	</div>
+		
+</div>
 </div>
 
 <%@include file="/WEB-INF/views/include/footer.jsp"%>
