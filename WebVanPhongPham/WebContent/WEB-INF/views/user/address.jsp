@@ -10,7 +10,7 @@
 		<%@include file="/WEB-INF/views/include/menuProfile.jsp"%>
 	</div>
 		
-	<div class="col-8 mbg-azure p-3">
+	<div class="col-9 mbg-azure p-3">
 		<div class="h4 text-uppercase">Địa chỉ của tôi</div>
 		<hr>
 		<div class="row my-3">

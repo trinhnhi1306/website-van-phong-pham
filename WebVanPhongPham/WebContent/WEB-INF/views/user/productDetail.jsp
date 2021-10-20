@@ -99,14 +99,14 @@ Sticker dán tường được dùng để trang trí, làm đẹp nhà cửa, p
 		</div>
 
 		<div class="mx-5 my-2 p-2"> 
-			<div class=" text-end" role="toolbar" aria-label="Toolbar with button groups"> <!-- btn-toolbar pull-right -->
-				<div class="btn-group me-2" role="group" aria-label="First group">
-					<button type="button" class="btn btn-info"><i class="fas fa-angle-left"></i></button>
-					<button type="button" class="btn btn-info">1</button>
-					<button type="button" class="btn btn-info">...</button>
-					<button type="button" class="btn btn-info">4</button>
-					<button type="button" class="btn btn-info"><i class="fas fa-angle-right"></i></button>	
-				</div>
+			<div class="text-end" aria-label="Page navigation example">
+				<ul class="pagination" style="display: -webkit-inline-box;">
+					<li class="page-item"><a class="page-link text-info border border-info" href="#"><i class="fas fa-angle-left fs-4"></i></a></li>
+					<li class="page-item"><a class="page-link text-info border border-info" href="#">1</a></li>
+					<li class="page-item"><a class="page-link text-info border border-info" href="#">2</a></li>
+					<li class="page-item"><a class="page-link text-info border border-info" href="#">3</a></li>
+					<li class="page-item"><a class="page-link text-info border border-info" href="#"><i class="fas fa-angle-right fs-4"></i></a></li>
+				</ul>
 			</div>
 		</div>
 		

@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/user")
-public class UserProfile {
+public class UserProfileController {
 
 	@RequestMapping("userProfile")
 	public String showUserProfile() {
@@ -35,5 +35,10 @@ public class UserProfile {
 	@RequestMapping("orderDetail")
 	public String showOrderDetail() {
 		return "user/orderDetail";
+	}
+	
+	@RequestMapping("feedback")
+	public String showFormFeedback() {
+		return "user/feedback";
 	}
 }

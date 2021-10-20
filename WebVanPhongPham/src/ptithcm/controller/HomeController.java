@@ -12,6 +12,16 @@ public class HomeController {
 		return "user/home";
 	}
 	
+	@RequestMapping("information")
+	public String showInform() {
+		return "user/information";
+	}
+	
+	@RequestMapping("search")
+	public String search() {
+		return "user/product";
+	}
+	
 	@RequestMapping("product")
 	public String showProduct() {
 		return "user/productDetail";
