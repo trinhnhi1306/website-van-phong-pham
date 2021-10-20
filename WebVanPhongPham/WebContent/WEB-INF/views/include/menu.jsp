@@ -13,11 +13,14 @@
 		</div>
 		
 		<div class="col-auto text-end px-0">	
-			<a class="nav-link text-white" href="home/category.htm">Danh mục sản phẩm <span class="sr-only">(current)</span></a>
+			<a class="nav-link text-white" href="home/category.htm">
+				<i class="fas fa-clipboard-list"></i> Danh mục sản phẩm 
+				<span class="sr-only">(current)</span>
+			</a>
 		</div>
 		
 		<div class="col-auto text-end px-0">	
-			<a class="nav-link text-white" href="#">
+			<a class="nav-link text-white" href="home/information.htm">
 				<i class="fas fa-info-circle"></i> Thông tin store 
 				<span class="sr-only">(current)</span>
 			</a>
@@ -53,9 +56,9 @@
 	    </div>
 	    <div class="col-8 ">
 	      <div class="text-center form-inline ">
-	<form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-lg-0 " style="width: 700px;">
+	<form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-lg-0 " style="width: 700px;" action="home/search.htm">
        <div class="input-group ">
-         <input class="form-control mr-sm-2" style="padding: inherit;" type="search" placeholder=" Search" aria-label="Search">
+         <input class="form-control mr-sm-2" style="padding: inherit;" type="search" placeholder=" Sản phẩm cần tìm" aria-label="Search">
          <div class="input-group-append">
          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <i class="fas fa-search fa-sm"></i></button>
          </div>

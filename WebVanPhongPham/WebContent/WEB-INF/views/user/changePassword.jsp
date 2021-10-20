@@ -10,20 +10,20 @@
 		<%@include file="/WEB-INF/views/include/menuProfile.jsp"%>
 	</div>
 		
-	<div class="col-8 mbg-azure p-3">
+	<div class="col-9 mbg-azure p-3">
 		<div class="h4 text-uppercase">Đổi mật khẩu</div>
 		<hr>
 		<form action="user/changePassword.htm" method="post">
 			<div class="row my-3">
 	    		<label class="col-sm-4 col-form-label text-end">Mật khẩu hiện tại: </label>
-	    		<div class="col-sm-8">
+	    		<div class="col-sm-8 pe-5">
 	      			<input type="text" class="form-control">
 	    		</div>
   			</div>
 			
 			<div class="row mb-3">
 	    		<label class="col-sm-4 col-form-label text-end">Mật khẩu mới: </label>
-	    		<div class="col-sm-8">
+	    		<div class="col-sm-8 pe-5">
 	      			<input type="text" class="form-control">
 	    		</div>
   			</div>
@@ -31,7 +31,7 @@
   			<!-- Cái này bắt chước shopee, nhưng nếu phức tạp thì bỏ cũng được :v -->
   			<div class="row mb-3">
 	    		<label class="col-sm-4 col-form-label text-end">Xác nhận mật khẩu: </label>
-	    		<div class="col-sm-8">
+	    		<div class="col-sm-8 pe-5">
 	      			<input type="text" class="form-control">
 	    		</div>
   			</div>

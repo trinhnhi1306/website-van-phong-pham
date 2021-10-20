@@ -13,18 +13,21 @@
 	<div class="col-9 mbg-azure p-3">
 		<div class="h4 text-uppercase">Đơn hàng</div>
 		<hr>
-		<table class="table">
+		<table class="table table-hover">
 			<thead>
 				<tr class="table-primary">
+					<th scope="col" class="col-2 text-center">Chi tiết</th>
 					<th scope="col" class="col-2">Ngày mua</th>
 					<th scope="col" class="col-4">Sản phẩm</th>
 					<th scope="col" class="col-2">Tổng tiền</th>
 					<th scope="col" class="col-2">Trạng thái</th>
-					<th scope="col" class="col-2 text-center">Đánh giá</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
+					<td class="text-center">
+						<a class="link-primary" href="user/orderDetail.htm" role="button"><i class="fas fa-info-circle"></i></a>
+					</td>
 					<td>11/02/2020</td>
 					<td>
 						<div>Hộp bút cute</div>
@@ -34,11 +37,11 @@
 					</td>
 					<td>80.000 đ</td>
 					<td>Đã giao</td>
-					<td class="text-center">
-						<a class="link-primary" href="user/order.htm" role="button"><i class="fas fa-comment-dots"></i></a>
-					</td>
 				</tr>
 				<tr>
+					<td class="text-center">
+						<a class="link-primary" href="user/orderDetail.htm" role="button"><i class="fas fa-info-circle"></i></a>
+					</td>
 					<td>11/02/2020</td>
 					<td>
 						<div>Hộp bút cute</div>
@@ -48,12 +51,6 @@
 					</td>
 					<td>80.000 đ</td>
 					<td>Đang giao</td>
-					<td class="text-center">
-						<!-- <a class="link-primary" href="user/order.htm" role="button"><i class="fas fa-comment-dots"></i></a> -->
-						<i class="fas fa-comment-dots text-secondary"></i>
-						<!-- Giải thích ý tưởng: chỉ có đơn hàng 'đã giao' mới được đánh giá sản phẩm nên icon sẽ có màu xanh
-						 				còn lại vì không được nên icon màu xám và không link đi đâu cả -->
-					</td>
 				</tr>
 			</tbody>
 		</table>

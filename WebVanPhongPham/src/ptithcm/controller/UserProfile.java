@@ -36,4 +36,9 @@ public class UserProfile {
 	public String showOrderDetail() {
 		return "user/orderDetail";
 	}
+	
+	@RequestMapping("feedback")
+	public String showFormFeedback() {
+		return "user/feedback";
+	}
 }

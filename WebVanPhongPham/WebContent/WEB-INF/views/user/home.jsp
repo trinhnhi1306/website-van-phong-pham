@@ -51,227 +51,153 @@
 	
 	<!-- Danh sách sản phẩm -->
 	<div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                
-                <!-- Sau sẽ dùng JSTL để xuất -->
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="...">
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
-                                    <!-- Product price-->
-                                    $40.00 - $80.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                <!--  -->
+		<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+		                
+			<!-- Sau sẽ dùng JSTL để xuất -->
+			<div class="col-3 mb-5">
+				<div class="card h-100">
+					<img class="card-img-top" src="resources/images/products/hopbuttim.png" style="height: 250px;">
+					<div class="card-body p-4">
+						<div class="text-center">
+							<h5 class="fw-bolder">Fancy Product</h5>
+							<div>$40.00 - $80.00</div>
+						</div>
+					</div>
+					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">Xem</a></div>
+					</div>
+				</div>
+			</div>
+			<!--  -->
                     
-                    
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="...">
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Special Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                    $18.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="...">
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Sale Item</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$50.00</span>
-                                    $25.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="...">
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Popular Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    $40.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="...">
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Sale Item</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$50.00</span>
-                                    $25.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="...">
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
-                                    <!-- Product price-->
-                                    $120.00 - $280.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="...">
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Special Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                    $18.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="...">
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Popular Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    $40.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
+            <!-- Xóa từ đây  -->        
+			<div class="col-3 mb-5">
+				<div class="card h-100">
+					<img class="card-img-top" src="resources/images/products/hopbuttim.png" style="height: 250px;">
+					<div class="card-body p-4">
+						<div class="text-center">
+							<h5 class="fw-bolder">Fancy Product</h5>
+							<div>$40.00 - $80.00</div>
+						</div>
+					</div>
+					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">Xem</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-3 mb-5">
+				<div class="card h-100">
+					<img class="card-img-top" src="resources/images/products/hopbuttim.png" style="height: 250px;">
+					<div class="card-body p-4">
+						<div class="text-center">
+							<h5 class="fw-bolder">Fancy Product</h5>
+							<div>$40.00 - $80.00</div>
+						</div>
+					</div>
+					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">Xem</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-3 mb-5">
+				<div class="card h-100">
+					<img class="card-img-top" src="resources/images/products/hopbuttim.png" style="height: 250px;">
+					<div class="card-body p-4">
+						<div class="text-center">
+							<h5 class="fw-bolder">Fancy Product</h5>
+							<div>$40.00 - $80.00</div>
+						</div>
+					</div>
+					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">Xem</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-3 mb-5">
+				<div class="card h-100">
+					<img class="card-img-top" src="resources/images/products/hopbuttim.png" style="height: 250px;">
+					<div class="card-body p-4">
+						<div class="text-center">
+							<h5 class="fw-bolder">Fancy Product</h5>
+							<div>$40.00 - $80.00</div>
+						</div>
+					</div>
+					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">Xem</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-3 mb-5">
+				<div class="card h-100">
+					<img class="card-img-top" src="resources/images/products/hopbuttim.png" style="height: 250px;">
+					<div class="card-body p-4">
+						<div class="text-center">
+							<h5 class="fw-bolder">Fancy Product</h5>
+							<div>$40.00 - $80.00</div>
+						</div>
+					</div>
+					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">Xem</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-3 mb-5">
+				<div class="card h-100">
+					<img class="card-img-top" src="resources/images/products/hopbuttim.png" style="height: 250px;">
+					<div class="card-body p-4">
+						<div class="text-center">
+							<h5 class="fw-bolder">Fancy Product</h5>
+							<div>$40.00 - $80.00</div>
+						</div>
+					</div>
+					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">Xem</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-3 mb-5">
+				<div class="card h-100">
+					<img class="card-img-top" src="resources/images/products/hopbuttim.png" style="height: 250px;">
+					<div class="card-body p-4">
+						<div class="text-center">
+							<h5 class="fw-bolder">Fancy Product</h5>
+							<div>$40.00 - $80.00</div>
+						</div>
+					</div>
+					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">Xem</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-3 mb-5">
+				<div class="card h-100">
+					<img class="card-img-top" src="resources/images/products/hopbuttim.png" style="height: 250px;">
+					<div class="card-body p-4">
+						<div class="text-center">
+							<h5 class="fw-bolder">Fancy Product</h5>
+							<div>$40.00 - $80.00</div>
+						</div>
+					</div>
+					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">Xem</a></div>
+					</div>
+				</div>
+			</div>
+			<!-- Đến đây  -->
+		</div>
+	</div>
 
 <div class="container">
-	<div class="text-end" role="toolbar" aria-label="Toolbar with button groups">
-	  <div class="btn-group me-2" role="group" aria-label="First group">
-	    <button type="button" class="btn btn-outline-info"><i class="fas fa-angle-double-left"></i></button>
-	    <button type="button" class="btn btn-outline-info"><i class="fas fa-angle-left"></i></button>
-	    <button type="button" class="btn btn-outline-info">1</button>
-	    <button type="button" class="btn btn-outline-info">2</button>
-	    <button type="button" class="btn btn-outline-info">...</button>
-	    <button type="button" class="btn btn-outline-info">6</button>
-	    <button type="button" class="btn btn-outline-info">7</button>
-	    <button type="button" class="btn btn-outline-info"><i class="fas fa-angle-right"></i></button>
-	    <button type="button" class="btn btn-outline-info"><i class="fas fa-angle-double-right"></i></button>
-	  </div>
-	  
+	<div class="text-end" aria-label="Page navigation example">
+		<ul class="pagination" style="display: -webkit-inline-box;">
+			<li class="page-item"><a class="page-link text-info border border-info" href="#"><i class="fas fa-angle-double-left fs-4"></i></a></li>
+			<li class="page-item"><a class="page-link text-info border border-info" href="#"><i class="fas fa-angle-left fs-4"></i></a></li>
+			<li class="page-item"><a class="page-link text-info border border-info" href="#">1</a></li>
+			<li class="page-item"><a class="page-link text-info border border-info" href="#">2</a></li>
+			<li class="page-item"><a class="page-link text-info border border-info" href="#">3</a></li>
+			<li class="page-item"><a class="page-link text-info border border-info" href="#"><i class="fas fa-angle-right fs-4"></i></a></li>
+			<li class="page-item"><a class="page-link text-info border border-info" href="#"><i class="fas fa-angle-double-right fs-4"></i></a></li>
+		</ul>
 	</div>
 </div>
 

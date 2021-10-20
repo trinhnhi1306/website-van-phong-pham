@@ -18,7 +18,7 @@
 				<div class="fw-bold py-2 my-auto">Máy tính</div>
 			</div>
 			<div class="py-2">
-				<a class="btn btn-outline-primary" href="#" role="button">Xem</a>
+				<a class="btn btn-outline-primary" href="home/search.htm" role="button">Xem</a>
 			</div>
 		</div>
 		<!-- /////////////////// -->
