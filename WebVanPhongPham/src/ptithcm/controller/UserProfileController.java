@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/user")
-public class UserProfile {
+public class UserProfileController {
 
 	@RequestMapping("userProfile")
 	public String showUserProfile() {
