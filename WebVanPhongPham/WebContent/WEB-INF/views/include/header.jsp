@@ -24,6 +24,7 @@
 <link href="<c:url value='resources/assets/dist/css/bootstrap.min.css'/>" rel="stylesheet">
 <%-- <script type="text/javascript" src="<c:url value='resources/ckeditor/ckeditor.js'/>"></script> --%>
 <link href="<c:url value='resources/assets/dist/myCss.css'/>" rel="stylesheet">
+<link href="<c:url value='resources/assets/dist/main.css'/>" rel="stylesheet">
 <link href="<c:url value='resources/assets/dist/ImageUpload.css'/>" rel="stylesheet">
 <!-- Font Awesome -->
 <!-- <link href="<c:url value='resources/assets/dist/all.css'/>" rel="stylesheet"> -->
