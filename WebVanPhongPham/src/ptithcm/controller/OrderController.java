@@ -7,4 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin")
 public class OrderController {
 
+	@RequestMapping("listOrder")
+	public String showListOrder() {
+		return "admin/order/listOrder";
+	}
+	
+	@RequestMapping("searchOrder")
+	public String searchOrder() {
+		return "admin/order/listOrder";
+	}
 }

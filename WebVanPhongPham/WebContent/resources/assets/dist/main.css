@@ -1,7 +1,15 @@
-
-
-
-
+.mbg-navy{
+	background-color: #000080!important;
+	color: white;
+}
+.sidebar {
+    width: 14rem;
+    min-height: 100vh;
+}
+.img-profile {
+    height: 2rem;
+    width: 2rem;
+}
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
@@ -30,22 +38,6 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
-
-* {
-	margin: 0px; 
-	padding: 0px; 
-	box-sizing: border-box;
-}
-
-/*---------------------------------------------*/
-a:focus {
-	outline: none !important;
-}
-
-a:hover {
-	text-decoration: none;
-  color: #fff;
-}
 
 /*---------------------------------------------*/
 textarea:focus, input:focus {

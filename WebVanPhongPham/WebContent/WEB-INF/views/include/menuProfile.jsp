@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <base href="${pageContext.servletContext.contextPath}/">
 
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-white text-dark">
+<div class="d-flex flex-column flex-shrink-0 p-3 ">
 	<div class="row px-4">
 		<div class="col-3">
 			<img src="resources/images/users/user1.png" class="rounded-circle" style="width: 50px; height: 50px;">
