@@ -1,6 +1,6 @@
 USE [WEBSITE_VANPHONGPHAM]
 GO
-/****** Object:  Table [dbo].[address]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[address]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,7 +15,7 @@ CREATE TABLE [dbo].[address](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[brand]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[brand]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -24,13 +24,13 @@ CREATE TABLE [dbo].[brand](
 	[brand_id] [int] IDENTITY(1,1) NOT NULL,
 	[name] [nvarchar](100) NOT NULL,
 	[description] [nvarchar](200) NULL,
- CONSTRAINT [PK_author] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_brand] PRIMARY KEY CLUSTERED 
 (
 	[brand_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[cart]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[cart]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -46,7 +46,7 @@ CREATE TABLE [dbo].[cart](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[category]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[category]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -56,13 +56,13 @@ CREATE TABLE [dbo].[category](
 	[name] [nvarchar](100) NOT NULL,
 	[image] [nvarchar](300) NULL,
 	[note] [nvarchar](300) NULL,
- CONSTRAINT [PK_genre] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_category] PRIMARY KEY CLUSTERED 
 (
 	[category_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[district]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[district]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -78,7 +78,7 @@ CREATE TABLE [dbo].[district](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[feedback]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[feedback]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -86,7 +86,7 @@ GO
 CREATE TABLE [dbo].[feedback](
 	[user_id] [int] NOT NULL,
 	[product_id] [int] NOT NULL,
-	[date] [datetime] NOT NULL,
+	[date] [date] NOT NULL,
 	[comment] [nvarchar](2000) NULL,
 	[vote] [int] NULL,
  CONSTRAINT [PK_feedback] PRIMARY KEY CLUSTERED 
@@ -96,14 +96,14 @@ CREATE TABLE [dbo].[feedback](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[order]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[order]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[order](
 	[order_id] [int] IDENTITY(1,1) NOT NULL,
-	[date] [datetime] NOT NULL,
+	[date] [date] NOT NULL,
 	[total_price] [numeric](18, 2) NOT NULL,
 	[status_id] [int] NOT NULL,
 	[user_id] [int] NOT NULL,
@@ -113,7 +113,7 @@ CREATE TABLE [dbo].[order](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[order_detail]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[order_detail]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -130,7 +130,7 @@ CREATE TABLE [dbo].[order_detail](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[order_status]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[order_status]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -144,7 +144,7 @@ CREATE TABLE [dbo].[order_status](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[permission]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[permission]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -158,7 +158,7 @@ CREATE TABLE [dbo].[permission](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[poster]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[poster]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -174,7 +174,7 @@ CREATE TABLE [dbo].[poster](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[product]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[product]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -193,13 +193,13 @@ CREATE TABLE [dbo].[product](
 	[category_id] [int] NOT NULL,
 	[brand_id] [int] NOT NULL,
 	[status] [bit] NOT NULL,
- CONSTRAINT [PK_book] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_product] PRIMARY KEY CLUSTERED 
 (
 	[product_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[province]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[province]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -214,7 +214,7 @@ CREATE TABLE [dbo].[province](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[users]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[users]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -229,7 +229,7 @@ CREATE TABLE [dbo].[users](
 	[address_id] [int] NOT NULL,
 	[email] [nvarchar](100) NULL,
 	[phone] [nvarchar](20) NOT NULL,
-	[created_at] [datetime] NOT NULL,
+	[created_at] [date] NOT NULL,
 	[permission_id] [int] NOT NULL,
 	[status] [bit] NOT NULL,
  CONSTRAINT [PK_user] PRIMARY KEY CLUSTERED 
@@ -238,7 +238,7 @@ CREATE TABLE [dbo].[users](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ward]    Script Date: 20/10/2021 20:55:22 ******/
+/****** Object:  Table [dbo].[ward]    Script Date: 21/10/2021 01:32:34 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -764,17 +764,21 @@ INSERT [dbo].[district] ([district_id], [district_name], [district_prefix], [pro
 GO
 INSERT [dbo].[district] ([district_id], [district_name], [district_prefix], [province_id]) VALUES (200, N'Phú Vang', N'Huyện', 15)
 GO
+INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (11, 2, CAST(N'2021-10-20' AS Date), N'Bút rất tốt', 5)
+GO
+INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (12, 3, CAST(N'2021-10-20' AS Date), N'Bút tạm được', 3)
+GO
 SET IDENTITY_INSERT [dbo].[order] ON 
 GO
-INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (2, CAST(N'2021-10-02T00:00:00.000' AS DateTime), CAST(6400.00 AS Numeric(18, 2)), 4, 11)
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (2, CAST(N'2021-10-02' AS Date), CAST(6400.00 AS Numeric(18, 2)), 4, 11)
 GO
-INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (3, CAST(N'2021-10-02T00:00:00.000' AS DateTime), CAST(9000.00 AS Numeric(18, 2)), 4, 13)
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (3, CAST(N'2021-10-02' AS Date), CAST(9000.00 AS Numeric(18, 2)), 4, 13)
 GO
 SET IDENTITY_INSERT [dbo].[order] OFF
 GO
 INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (2, 28, 1, CAST(6400.00 AS Numeric(18, 2)))
 GO
-INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (3, 17, 2, CAST(4500.00 AS Numeric(18, 2)))
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (3, 17, 2, CAST(9000.00 AS Numeric(18, 2)))
 GO
 SET IDENTITY_INSERT [dbo].[order_status] ON 
 GO
@@ -1001,13 +1005,13 @@ INSERT [dbo].[province] ([province_id], [province_name], [province_code]) VALUES
 GO
 SET IDENTITY_INSERT [dbo].[users] ON 
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (11, N'reintrinh', N'123456    ', N'Trinh', N'Nguyễn', NULL, 1, N'reintrinh@gmail.com', N'0396311734', CAST(N'2021-10-02T00:00:00.000' AS DateTime), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (11, N'reintrinh', N'123456    ', N'Trinh', N'Nguyễn', NULL, 1, N'reintrinh@gmail.com', N'0396311734', CAST(N'2021-10-02' AS Date), 1, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (12, N'hathimo', N'123456    ', N'Mơ', N'Hà', NULL, 2, N'hathimo@gmail.com', N'0123456789', CAST(N'2021-10-02T00:00:00.000' AS DateTime), 2, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (12, N'hathimo', N'123456    ', N'Mơ', N'Hà', NULL, 2, N'hathimo@gmail.com', N'0123456789', CAST(N'2021-10-02' AS Date), 2, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (13, N'nhunguyen', N'123456    ', N'Như', N'Nguyễn', NULL, 3, N'nhunguyen@gmail.com', N'0123456789', CAST(N'2021-10-02T00:00:00.000' AS DateTime), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (13, N'nhunguyen', N'123456    ', N'Như', N'Nguyễn', NULL, 3, N'nhunguyen@gmail.com', N'0123456789', CAST(N'2021-10-02' AS Date), 1, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (14, N'trinhnhi', N'123456    ', N'Trinh', N'Nhi', NULL, 1, N'trinhnguyen@gmail.com', N'0123456789', CAST(N'2021-10-20T00:00:00.000' AS DateTime), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (14, N'trinhnhi', N'123456    ', N'Trinh', N'Nhi', NULL, 1, N'trinhnguyen@gmail.com', N'0123456789', CAST(N'2021-10-20' AS Date), 1, 1)
 GO
 SET IDENTITY_INSERT [dbo].[users] OFF
 GO
