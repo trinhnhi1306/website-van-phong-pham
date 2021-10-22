@@ -14,15 +14,11 @@
 			http://www.springframework.org/schema/mvc 
 			http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<!-- <bean id="user" class="ptithcm.bean.User">
-		<property name="username" value="ptithcm" />
-		<property name="password" value="ptithcm2019" />
-	</bean>
 	<bean id="uploadfile" class="ptithcm.bean.UploadFile">
-		<property name="basePath" value="C:\Users\Apple Bee\Documents\Nam4\Lập trình web\PTITHCMS1L4\WebContent\resources\files" />
+		<property name="basePath" value="C:\Users\Apple Bee\Documents\Nam4\Lập trình web\website-van-phong-pham\WebVanPhongPham\WebContent\resources\files" />
 	</bean>
 	<bean id="attachfile" class="ptithcm.bean.UploadFile">
-		<property name="basePath" value="C:\Users\Apple Bee\Documents\Nam4\Lập trình web\PTITHCMS1L4\WebContent\resources\attachfiles" />
-	</bean> -->
+		<property name="basePath" value="C:\Users\Apple Bee\Documents\Nam4\Lập trình web\website-van-phong-pham\WebVanPhongPham\WebContent\resources\attachfiles" />
+	</bean>
 
 </beans>
