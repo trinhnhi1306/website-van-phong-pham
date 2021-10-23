@@ -26,11 +26,11 @@ public class CategoryDAO {
 		return list;
 	}
 	
-	public Category getCategory(String name) {
+	public Category getCategoryByID(int id) {
 		Session session = factory.getCurrentSession();
-		String hql = "from Category where name = :name";
+		String hql = "from Category where id = :id";
 		Query query = session.createQuery(hql);
-		query.setParameter("name", name);
+		query.setParameter("id", id);
 
 		Category list = (Category) query.list().get(0);
 		return list;
@@ -46,7 +46,7 @@ public class CategoryDAO {
 		return list;
 	}
 	
-	public Integer insertCategory(Category category) {
+	public int insertCategory(Category category) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 
@@ -62,7 +62,7 @@ public class CategoryDAO {
 		return 1;
 	}
 	
-	public Integer updateCategory(Category category) {
+	public int updateCategory(Category category) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 
@@ -78,7 +78,7 @@ public class CategoryDAO {
 		return 1;
 	}
 	
-	public Integer deleteCategory(Category category) {
+	public int deleteCategory(Category category) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 
@@ -86,6 +86,7 @@ public class CategoryDAO {
 			session.delete(category);
 			t.commit();
 		} catch (Exception e) {
+			e.printStackTrace();
 			t.rollback();
 			return 0;
 		} finally {

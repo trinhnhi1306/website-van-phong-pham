@@ -10,12 +10,12 @@ public class LoginController {
 
 	@RequestMapping(value="/login")
 	public String getLoginView() {
-		return "user/login";
+		return "account/login";
 	}
 	
 	@RequestMapping(value="/register", method = RequestMethod.GET)
 	public String getRegisterView(Model model) {
 		
-		return "user/register";
+		return "account/register";
 	}
 }

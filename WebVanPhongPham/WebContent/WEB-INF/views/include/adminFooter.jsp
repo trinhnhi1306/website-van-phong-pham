@@ -3,16 +3,21 @@
 <!-- <script src="../assets/dist/js/bootstrap.bundle.min.js"></script> -->
 <!-- <script src="./assets/dist/js/bootstrap.bundle.min.js"></script> -->
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+		$(".rem").click(rem);
+		function rem() {
+			$(this).parent().remove();
+		}			
+
+</script>
+
 <script
 	src="<c:url value='resources/assets/dist/js/bootstrap.bundle.min.js'/>"></script>
 
-<script>
-	var editor = CKEDITOR.replace('messageBody');
-	/* CKFinder.setupCKEditor(ckeditor, '${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js'); */
-</script>
 </body>
 </html>
-<footer class="sticky-footer p-3 mb-2 bg-info text-white mt-5">
+<footer class="sticky-footer p-3 mb-2 mbg-navy mt-5">
 	<div class="container my-auto">
 		<div class="copyright text-center my-auto">
 			<span>

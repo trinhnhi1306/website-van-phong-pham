@@ -42,7 +42,7 @@
 	</div>
 	
 	<div class="card border border-info mx-5 my-3" style="width: 65rem;">
-		<div class="m-1 p-2 mbg-azure h5">MÔ TẢ SẢN PHẨM</div>
+		<div class="m-1 p-2 mbg-azure h5">MÔ TẢ SẢN PHẨM</div> <!-- Mấy cái chưa có show ở trên như brand, category... nhét vô đây hết nha  -->
 		<div class="m-1 p-2 ">
 		🌟 FREE SHIP: Vào giỏ hàng, xem ở ô "Mã giảm giá." Khi nhấn vào ô đó, bạn sẽ tìm thấy mã Miễn phí vận chuyển. Chọn mã Miễn phí vận chuyển và tiến hành đặt hàng để được hỗ trợ từ 20k tiền ship cho đơn hàng 50k.
 -----------------------

@@ -4,6 +4,7 @@
 <%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> --%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="f"%>
+<%@ taglib prefix="tg" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +25,7 @@
 <link href="<c:url value='resources/assets/dist/css/bootstrap.min.css'/>" rel="stylesheet">
 <%-- <script type="text/javascript" src="<c:url value='resources/ckeditor/ckeditor.js'/>"></script> --%>
 <link href="<c:url value='resources/assets/dist/myCss.css'/>" rel="stylesheet">
+<link href="<c:url value='resources/assets/dist/main.css'/>" rel="stylesheet">
 <link href="<c:url value='resources/assets/dist/ImageUpload.css'/>" rel="stylesheet">
 <!-- Font Awesome -->
 <!-- <link href="<c:url value='resources/assets/dist/all.css'/>" rel="stylesheet"> -->
@@ -31,6 +33,16 @@
 <link rel="stylesheet" href="<c:url value='resources/assets/dist/all.min.css'/>" /> 
 
 <style>
+.alert {
+    margin-left: 16rem;
+}
+.rem {
+	position: absolute;
+    right: 5px;
+    font-size: 2rem;
+    top: 0px;
+    opacity: 0.6;
+}
 .bd-placeholder-img {
 	font-size: 1.125rem;
 	text-anchor: middle;
