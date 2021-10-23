@@ -15,7 +15,8 @@ import javax.persistence.Table;
 public class Category {
 	@Id
 	@GeneratedValue
-	private Integer category_id;
+	@Column(name = "category_id")
+	private Integer id;
 
 	@Column(name = "name")
 	private String name;
@@ -29,12 +30,12 @@ public class Category {
 	@OneToMany(mappedBy = "categories", fetch = FetchType.EAGER)
 	private Collection<Product> products;
 
-	public Integer getCategory_id() {
-		return category_id;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setCategory_id(Integer category_id) {
-		this.category_id = category_id;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {

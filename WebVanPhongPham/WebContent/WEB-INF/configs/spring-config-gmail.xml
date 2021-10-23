@@ -15,7 +15,7 @@
 			http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<!-- Spring Mail Sender -->
-<!-- <bean id="mailSender" 
+<bean id="mailSender" 
 	class="org.springframework.mail.javamail.JavaMailSenderImpl">
 	<property name="host" value="smtp.gmail.com" />
 	<property name="port" value="465" />	
@@ -31,6 +31,6 @@
        	      <prop key="mail.debug">true</prop>
        </props>
 	</property>	
-</bean> -->
+</bean>
 
 </beans>

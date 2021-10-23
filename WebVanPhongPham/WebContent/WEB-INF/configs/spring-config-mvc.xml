@@ -25,9 +25,7 @@
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
    	
    	<!-- Cấu hình package chứa các controller -->
-	<context:component-scan base-package="ptithcm.controller"/>
-	<context:component-scan base-package="ptithcm.service"/>
-	<context:component-scan base-package="ptithcm.dao"/>
+	<context:component-scan base-package="ptithcm.controller, ptithcm.service, ptithcm.dao"/>
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 
 </beans>

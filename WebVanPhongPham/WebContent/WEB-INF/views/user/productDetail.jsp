@@ -8,18 +8,18 @@
 <div class="container">
 	<div class="row">
   		<div class="col-6 text-center">
-			<img class="img-product rounded card-img-top mb-5 mb-md-0 border border-info" src="resources/images/products/hopbuttim.png" alt="...">
+			<img class="img-product rounded card-img-top mb-5 mb-md-0 border border-info" src="resources/images/products/${product.image }" alt="...">
 		</div>
 		
   		<div class="col-6">
 	  		<div class="mt-5">
-	  			<h3 class="fw-bolder">Hộp bút Miracle Nikki</h3>
+	  			<h3 class="fw-bolder">${product.name }</h3>
 	  			
-	  			<div class="text-muted my-2">Đã bán: 234 </div>
+	  			<div class="text-muted my-2">Đã bán: ${product.sold_quantity } </div>
 	  			
 	  			<div class="fs-5 mb-4 mt-4 p-2 mbg-price">
-	            	<span class="text-decoration-line-through fs-6 text-muted">$45.00</span>
-	            	<span class="fs-3">$40.00</span>
+	            	<span class="text-decoration-line-through fs-6 text-muted"><f:formatNumber value="${product.price }" type="currency" /></span>
+	            	<span class="fs-3"><f:formatNumber value="${product.price - (product.price * product.discount / 100) }" type="currency" /></span>
 	            </div>
             
 				<hr>            
@@ -32,7 +32,7 @@
   					<button type="button" class="btn btn-outline-secondary"><i class="fas fa-plus"></i></button>
 				</div>
 				
-				<span class="text-muted px-3 my-2 fs-6">520 sản phẩm có sẵn </span>
+				<span class="text-muted px-3 my-2 fs-6">${product.quantity - product.sold_quantity } sản phẩm có sẵn </span>
 				
 				<div class="my-4">
 					<button type="button" class="btn btn-outline-info"><i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button>
@@ -44,7 +44,12 @@
 	<div class="card border border-info mx-5 my-3" style="width: 65rem;">
 		<div class="m-1 p-2 mbg-azure h5">MÔ TẢ SẢN PHẨM</div> <!-- Mấy cái chưa có show ở trên như brand, category... nhét vô đây hết nha  -->
 		<div class="m-1 p-2 ">
-		🌟 FREE SHIP: Vào giỏ hàng, xem ở ô "Mã giảm giá." Khi nhấn vào ô đó, bạn sẽ tìm thấy mã Miễn phí vận chuyển. Chọn mã Miễn phí vận chuyển và tiến hành đặt hàng để được hỗ trợ từ 20k tiền ship cho đơn hàng 50k.
+		<p>Nhãn hàng: ${product.brands.name }</p>
+		<p>Thể loại: ${product.categories.name }</p>
+		<p>Quy cách: ${product.specification }</p>
+		<p>Đơn vị tính: ${product.calculation_unit }</p>
+		<p>Mô tả: ${product.description }</p>
+		<!-- 🌟 FREE SHIP: Vào giỏ hàng, xem ở ô "Mã giảm giá." Khi nhấn vào ô đó, bạn sẽ tìm thấy mã Miễn phí vận chuyển. Chọn mã Miễn phí vận chuyển và tiến hành đặt hàng để được hỗ trợ từ 20k tiền ship cho đơn hàng 50k.
 -----------------------
 🍀 Set Tranh Ảnh Decor Vintage 💖 POSTCARD DREAM TRAVERLER Trang Trí Phòng Bàn Học Treo Tường Phụ Kiện Chụp Ảnh Hàn Quốc
 
@@ -62,28 +67,50 @@ Sticker dán tường được dùng để trang trí, làm đẹp nhà cửa, p
 
 📦 Toàn bộ các món trong shop của Thỏ Bảy Màu là hàng có sẵn - Giao hàng từ 2-3 ngày
 💌Các bạn ơy, đừng quên nhấn vào "Xem Shop“ và ”Theo dõi" để khám phá thêm nhiều bé trang trí sổ planner xinh xinh, cực vi diệu, giá cả phải chăng từ Thỏ Bảy Màu nhé.💌
-		</div>
+		 -->
+		 </div>
 	</div>
 	
 	<div class="card border border-info mx-5 my-3" style="width: 65rem;">
 		<div class="m-1 p-2 mbg-azure h5">ĐÁNH GIÁ SẢN PHẨM</div>
 		
 		<!-- Sau dùng JSTL để xuất -->
-		<div class="mx-5 my-2 p-2 border-bottom">
-			<div class="row">
-				<div class="col-auto">
-					<img src="resources/images/users/user1.png" class="rounded-circle" style="width: 50px; height: 50px;">
-				</div>
-				
-				<div class="col">
-					<div class="h6">Username</div>
-					<div>//Chỗ để rating nhưng chưa biết làm :v</div>
-					<div>Sản phẩm cute phô mai que *tym*</div>
+		<c:forEach var="s" items="${product.feedback}">
+			<div class="mx-5 my-2 p-2 border-bottom">
+				<div class="row">
+					<div class="col-auto">
+						<img src="resources/images/users/user1.png" class="rounded-circle" style="width: 50px; height: 50px;">
+					</div>
+					
+					<div class="col">
+						<div class="h6">${s.user.firstName } ${s.user.lastName }</div>
+						<div>${s.date }</div>
+						<div>
+							<c:choose>
+								<c:when test="${s.vote == 1}">
+									<i class="fas fa-star"></i>
+								</c:when>
+								<c:when test="${s.vote == 2}">
+									<i class="fas fa-star"></i><i class="fas fa-star"></i>
+								</c:when>
+								<c:when test="${s.vote == 3}">
+									<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+								</c:when>
+								<c:when test="${s.vote == 4}">
+									<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+								</c:when>
+								<c:when test="${s.vote == 5}">
+									<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+								</c:when>
+							</c:choose>
+						</div>
+						<div>${s.comment }</div>						
+					</div>
 				</div>
 			</div>
-		</div>
+		</c:forEach>
 		<!--  -->
-		
+		<!-- 
 		<div class="mx-5 my-2 p-2 border-bottom">
 			<div class="row">
 				<div class="col-auto">
@@ -108,7 +135,7 @@ Sticker dán tường được dùng để trang trí, làm đẹp nhà cửa, p
 					<li class="page-item"><a class="page-link text-info border border-info" href="#"><i class="fas fa-angle-right fs-4"></i></a></li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 		
 	</div>
 </div>
