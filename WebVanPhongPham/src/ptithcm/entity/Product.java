@@ -17,7 +17,8 @@ import javax.persistence.Table;
 public class Product {
 	@Id
 	@GeneratedValue
-	private Integer product_id;
+	@Column(name = "product_id")
+	private Integer id;
 
 	@Column(name = "name")
 	private String name;
@@ -66,12 +67,12 @@ public class Product {
 	@OneToMany(mappedBy = "products", fetch = FetchType.EAGER)
 	private Collection<OrderDetail> orderDetails;
 	
-	public Integer getProduct_id() {
-		return product_id;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setProduct_id(Integer product_id) {
-		this.product_id = product_id;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
