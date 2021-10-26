@@ -1,19 +1,11 @@
 package ptithcm.service;
 
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 
-import org.hibernate.Query;
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.support.PagedListHolder;
@@ -31,9 +23,6 @@ public class CategoryService {
 
 	@Autowired
 	CategoryDAO categoryDAO;
-	
-	@Autowired
-	ServletContext context;
 	
 	public PagedListHolder paging(List<Category> list, HttpServletRequest request) {
 		// bỏ dữ liệu vào pagedListHolder rồi sau đó trả về cho model
@@ -61,27 +50,46 @@ public class CategoryService {
 	}
 	
 	@Autowired
-	ImageService imageService;
+	@Qualifier("uploadfile")
+	UploadFile uploadFile;
 	
-	public int addCategory(HttpServletRequest request, Category category, MultipartFile file) {
+	public int addCategory(Category category, MultipartFile file) {
 		
 		if(file.isEmpty())
 			category.setImage("defaul.png");
-		else {
-			String uploadPath = request.getServletContext().getRealPath("resources/images/categories");
-			String imageName = imageService.uploadFile(uploadPath, file);
-			category.setImage(imageName);
+		else {			
+			try {	
+				String fileName = file.getOriginalFilename();
+				
+	            String filePath = uploadFile.getBasePath() + File.separator + fileName;
+	            System.out.println(filePath);
+	            file.transferTo(new File(filePath));
+	            
+				category.setImage(fileName);
+			} catch (Exception e) {
+				e.printStackTrace();
+				return 2;		
+			}
 		}
 		
 		return categoryDAO.insertCategory(category);
 	}
 	
-	public int editCategory(HttpServletRequest request, Category category, MultipartFile file) {
+	public int editCategory(Category category, MultipartFile file) {
 		
 		if(!file.isEmpty()) {			
-			String uploadPath = request.getServletContext().getRealPath("resources/images/categories");
-			String imageName = imageService.uploadFile(uploadPath, file);
-			category.setImage(imageName);
+			try {	
+				String fileName = file.getOriginalFilename();
+				
+	            String filePath = uploadFile.getBasePath() + File.separator + fileName;
+	            System.out.println(filePath);
+	            file.transferTo(new File(filePath));
+	            
+				category.setImage(fileName);
+			} catch (Exception e) {
+				e.printStackTrace();
+				return 2;		
+			}
 		}
 		else
 			category.setImage(category.getImage());

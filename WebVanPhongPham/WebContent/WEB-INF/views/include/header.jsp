@@ -50,7 +50,11 @@
 	-moz-user-select: none;
 	user-select: none;
 }
-
+form img {
+	margin: 2rem;
+	width: 200px;
+	height: 200px;
+}
 @media ( min-width : 768px) {
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
