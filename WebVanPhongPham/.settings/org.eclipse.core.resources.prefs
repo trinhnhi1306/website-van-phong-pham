@@ -5,5 +5,6 @@ eclipse.preferences.version=1
 encoding//src/ptithcm/controller/CategoryController.java=UTF-8
 encoding//src/ptithcm/controller/ForgotPasswordController.java=UTF-8
 encoding//src/ptithcm/controller/HomeController.java=UTF-8
+encoding//src/ptithcm/controller/ProductController.java=UTF-8
 encoding//src/ptithcm/service/CategoryService.java=UTF-8
 encoding//src/ptithcm/service/ProductService.java=UTF-8

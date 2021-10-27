@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:p="http://www.springframework.org/schema/p" 
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
@@ -13,12 +14,8 @@
 			http://www.springframework.org/schema/tx/spring-tx.xsd
 			http://www.springframework.org/schema/mvc 
 			http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-
-	<!-- <bean id="uploadfile" class="ptithcm.bean.UploadFile">
-		<property name="basePath" value="C:\Users\Apple Bee\Documents\Nam4\Lập trình web\website-van-phong-pham\WebVanPhongPham\WebContent\resources\images\categories" />
+	
+	<bean id="uploadfile" class="ptithcm.bean.UploadFile">
+		<property name="basePath" value="E:\\Nam4\\LapTrinhWeb\\website-van-phong-pham\\WebVanPhongPham\\WebContent\\resources\\images\\products\"></property>
 	</bean>
-	<bean id="attachfile" class="ptithcm.bean.UploadFile">
-		<property name="basePath" value="C:\Users\Apple Bee\Documents\Nam4\Lập trình web\website-van-phong-pham\WebVanPhongPham\WebContent\resources\attachfiles" />
-	</bean> -->
-
 </beans>
