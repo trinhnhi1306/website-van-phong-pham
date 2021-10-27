@@ -62,6 +62,15 @@ form img {
 }
 </style>
 
+<script>
+	function ConfirmDelete() {
+     	if (confirm("Are you sure you want to delete?")) {
+    	  	return true;
+      	} else {
+    	  	return false;
+      	}
+    }
+</script>
 
 <!-- Custom styles for this template -->
 <!-- <link href="./assets/dist/starter-template.css" rel="stylesheet">  -->
