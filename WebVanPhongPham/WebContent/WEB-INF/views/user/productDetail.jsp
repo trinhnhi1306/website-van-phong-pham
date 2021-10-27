@@ -79,7 +79,7 @@ Sticker dán tường được dùng để trang trí, làm đẹp nhà cửa, p
 			<div class="mx-5 my-2 p-2 border-bottom">
 				<div class="row">
 					<div class="col-auto">
-						<img src="resources/images/users/user1.png" class="rounded-circle" style="width: 50px; height: 50px;">
+						<img src="resources/images/users/${s.image }" class="rounded-circle" style="width: 50px; height: 50px;">
 					</div>
 					
 					<div class="col">

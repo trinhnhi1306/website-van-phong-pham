@@ -50,7 +50,7 @@ public class CategoryService {
 	}
 	
 	@Autowired
-	@Qualifier("uploadfile")
+	@Qualifier("uploadfileTrinh")
 	UploadFile uploadFile;
 	
 	public int addCategory(Category category, MultipartFile file) {
@@ -61,7 +61,7 @@ public class CategoryService {
 			try {	
 				String fileName = file.getOriginalFilename();
 				
-	            String filePath = uploadFile.getBasePath() + File.separator + fileName;
+	            String filePath = uploadFile.getBasePath() + "/categories" + File.separator + fileName;
 	            System.out.println(filePath);
 	            file.transferTo(new File(filePath));
 	            
@@ -81,7 +81,7 @@ public class CategoryService {
 			try {	
 				String fileName = file.getOriginalFilename();
 				
-	            String filePath = uploadFile.getBasePath() + File.separator + fileName;
+	            String filePath = uploadFile.getBasePath() + "/categories" + File.separator + fileName;
 	            System.out.println(filePath);
 	            file.transferTo(new File(filePath));
 	            
