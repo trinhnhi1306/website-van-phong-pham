@@ -41,25 +41,25 @@ public class CategoryController {
 	}
 	
 	@RequestMapping(value = "newCategory", method = RequestMethod.POST)
-	public String addCategory(HttpServletRequest request, ModelMap model, @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file) {
+	public String addCategory(ModelMap model, @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file) {
 		
-		int result = categoryService.addCategory(request, category, file);
+		int result = categoryService.addCategory(category, file);
 		model.addAttribute("message", result);
 		
 		return "admin/category/newCategory";
 	}
 	
 	@RequestMapping(value = "editCategory", method = RequestMethod.GET)
-	public String editCategory(HttpServletRequest request, ModelMap model, @RequestParam("id") Integer id) {
+	public String editCategory(ModelMap model, @RequestParam("id") Integer id) {
 		
 		model.addAttribute("category", categoryService.getCategoryByID(id));
 		return "admin/category/editCategory";
 	}
 	
 	@RequestMapping(value = "editCategory", method = RequestMethod.POST)
-	public String saveEdit(HttpServletRequest request, ModelMap model, @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file) {
+	public String saveEdit(ModelMap model, @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file) {
 		
-		int result = categoryService.editCategory(request, category, file);
+		int result = categoryService.editCategory(category, file);
 		model.addAttribute("message", result);
 		
 		return "admin/category/editCategory";

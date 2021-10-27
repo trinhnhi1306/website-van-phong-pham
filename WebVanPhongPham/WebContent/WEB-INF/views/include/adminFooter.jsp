@@ -5,15 +5,21 @@
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
+
+		/* Phần này là xử lý đóng thông báo */
 		$(".rem").click(rem);
 		function rem() {
 			$(this).parent().remove();
-		}			
+		}	
+		
+		/* Hàm này để preview ảnh trước khi load lên server */
+		function preview() {
+		    img.src=URL.createObjectURL(event.target.files[0]);
+		}
 
 </script>
 
-<script
-	src="<c:url value='resources/assets/dist/js/bootstrap.bundle.min.js'/>"></script>
+<script src="<c:url value='resources/assets/dist/js/bootstrap.bundle.min.js'/>"></script>
 
 </body>
 </html>

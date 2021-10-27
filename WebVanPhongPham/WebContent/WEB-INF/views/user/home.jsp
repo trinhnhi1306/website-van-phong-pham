@@ -20,17 +20,15 @@
 				</div>
 				<div class="carousel-inner" role="listbox">
 					<div class="carousel-item active">
-						<img src="resources/images/poster/loi-nguyen.jpg"
+						<img src="resources/images/poster/${leftposters[0].name }"
 							class="d-block img-poster-left" alt="Responsive image">
 					</div>
-					<div class="carousel-item">
-						<img src="resources/images/poster/poster2.jpg"
-							class="d-block img-poster-left" alt="Responsive image">
-					</div>
-					<div class="carousel-item">
-						<img src="resources/images/poster/poster3.jpg"
-							class="d-block img-poster-left" alt="Responsive image">
-					</div>
+					<c:forEach var="p" begin="1" items="${leftposters}">
+						<div class="carousel-item">
+							<img src="resources/images/poster/${p.name }"
+								class="d-block img-poster-left" alt="Responsive image">
+						</div>
+					</c:forEach>
 				</div>
 				<button class="carousel-control-prev" type="button"
 					data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -45,7 +43,7 @@
 			</div>
 		</div>
 		<div class="col-sm-4">
-			<img src="resources/images/poster/poster4.jpg" alt="..." class="img-poster-right">
+			<img src="resources/images/poster/${rightposters[0].name }" alt="..." class="img-poster-right">
 		</div>
 	</div>
 	

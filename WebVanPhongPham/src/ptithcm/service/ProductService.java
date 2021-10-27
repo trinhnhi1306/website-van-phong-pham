@@ -52,6 +52,8 @@ public class ProductService {
 			product.setImage(fileName);
 		} else if (fileName == "0") {
 			return 2;
+		} else {
+			product.setImage("default.png");
 		}
 		return productDAO.insertProduct(product);
 	}
@@ -62,6 +64,8 @@ public class ProductService {
 			product.setImage(fileName);
 		} else if (fileName == "0") {
 			return 2;
+		} else {
+			product.setImage("default.png");
 		}
 		return productDAO.updateProduct(product);
 	}
