@@ -1,15 +1,13 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
->>>>>>>=3ac841a41ce5fac1f54af58064a3dd0069b588e2
+>>>>>>>=fa3adb37c900c7bee4e6efb595aa0aef8573e78e
 eclipse.preferences.version=1
 encoding//src/ptithcm/controller/CategoryController.java=UTF-8
 encoding//src/ptithcm/controller/ForgotPasswordController.java=UTF-8
 encoding//src/ptithcm/controller/HomeController.java=UTF-8
-<<<<<<< HEAD
-encoding//src/ptithcm/controller/UserController.java=UTF-8
-=======
+encoding//src/ptithcm/controller/LoginController.java=UTF-8
 encoding//src/ptithcm/controller/ProductController.java=UTF-8
->>>>>>> fa3adb37c900c7bee4e6efb595aa0aef8573e78e
+encoding//src/ptithcm/controller/UserController.java=UTF-8
 encoding//src/ptithcm/service/CategoryService.java=UTF-8
 encoding//src/ptithcm/service/ProductService.java=UTF-8
 encoding//src/ptithcm/service/UserService.java=UTF-8

@@ -45,6 +45,11 @@ public class UserService {
 		return userDAO.getUserByID(id);
 	}
 	
+	public User getUserByUsername(String username, String password) {
+		
+		return userDAO.getUserByUsername(username, password);
+	}
+	
 	public List<User> searchUsers(String name) {
 		
 		return userDAO.searchUsers(name);

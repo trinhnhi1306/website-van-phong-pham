@@ -33,6 +33,10 @@
 <link rel="stylesheet" href="<c:url value='resources/assets/dist/all.min.css'/>" /> 
 
 <style>
+
+.mbg-azure {
+	min-height: 500px;
+}
 .alert {
     margin-left: 16rem;
 }

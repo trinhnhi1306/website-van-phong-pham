@@ -10,13 +10,13 @@
 	   
 	    <div class="col-auto text-end px-0 pt-2">	
 			<a class="nav-link text-white pt-3" href="admin/myProfile.htm">
-				<span class="mr-2 d-none d-lg-inline pt-1">Hello Admin</span> 
-				<img class="img-profile rounded-circle" src="resources/images/users/user1.png">
+				<span class="mr-2 d-none d-lg-inline pt-1">Hello ${sessionScope.user.username }</span> 
+				<img class="img-profile rounded-circle" src="resources/images/users/${sessionScope.user.image }">
 			</a>
 		</div>
 		
 		<div class="col-auto text-end px-0 pt-3" >	
-			<a class="nav-link text-white" href="login.htm" >
+			<a class="nav-link text-white" href="logout.htm" >
 				<i class="fas fa-sign-out-alt fs-4" ></i>
 			</a>
 		</div>	

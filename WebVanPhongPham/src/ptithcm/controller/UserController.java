@@ -3,6 +3,7 @@ package ptithcm.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
@@ -95,6 +96,8 @@ public class UserController {
 	@RequestMapping(value = "editUser", method = RequestMethod.GET)
 	public String editUser(ModelMap model, @RequestParam("id") Integer id) {
 		
+		model.addAttribute("edition", 1);
+		
 		User user = userService.getUserByID(id);
 		model.addAttribute("user", user);
 		
@@ -104,6 +107,8 @@ public class UserController {
 	@RequestMapping(value = "editUser", method = RequestMethod.POST)
 	public String saveEdit(ModelMap model, @ModelAttribute("user") User user, @RequestParam("file") MultipartFile file) {
 		
+		model.addAttribute("edition", 1);
+		
 		int result = userService.editUser(user, file);
 		model.addAttribute("message", result);
 		
@@ -111,7 +116,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "deleteUser", method = RequestMethod.GET)
-	public String saveEdit(HttpServletRequest request, ModelMap model, @RequestParam("id") Integer id) {
+	public String deleteUser(HttpServletRequest request, ModelMap model, @RequestParam("id") Integer id) {
 		
 		int result = userService.deleteUser(userService.getUserByID(id));
 		model.addAttribute("message", result);
@@ -128,6 +133,41 @@ public class UserController {
 	@RequestMapping("myProfile")
 	public String showMyProfile() {
 		return "admin/user/myProfile";
+	}
+	
+	@RequestMapping("editProfile")
+	public String editMyProfile(HttpSession session, ModelMap model) {
+		
+		model.addAttribute("edition", 2);
+		
+		User user = (User) session.getAttribute("user");
+		model.addAttribute("user", user);
+		
+		Address address = addressService.getAddressById(user.getAddress().getId());
+		System.out.println(address.getId());
+		model.addAttribute("address", address);
+		
+		return "admin/user/editUser";
+	}
+	
+	@RequestMapping(value = "editProfile", method = RequestMethod.POST)
+	public String saveMyProfile(ModelMap model, @ModelAttribute("user") User user, @ModelAttribute("address") Address address, @RequestParam("file") MultipartFile file) {
+		
+		model.addAttribute("edition", 2);
+		
+		address.setId(user.getAddress().getId());
+		System.out.println(address.getId());
+		
+		int resultAddress = addressService.editAddress(address);
+		if(resultAddress == 0) {
+			model.addAttribute("message1", "Sửa địa chỉ thất bại");
+			return "admin/user/editUser";
+		}
+		
+		int result = userService.editUser(user, file);
+		model.addAttribute("message", result);
+		
+		return "admin/user/editUser";
 	}
 	
 	@RequestMapping("myProfile/changePassword")

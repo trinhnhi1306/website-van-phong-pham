@@ -17,14 +17,13 @@
 	<!-- Cấu hình interceptor --> 
 	<mvc:interceptors>  
 		<!-- Lọc tất cả các URL -->
-		<bean class="ptithcm.interceptor.LoggerInterceptor" />
+		<!-- <bean class="ptithcm.interceptor.LoggerInterceptor" /> -->
 		
 		<!-- Chỉ lọc các URL theo path -->
-		<!-- <mvc:interceptor>
-			<mvc:mapping path="/lab6/**"/>
-			<mvc:exclude-mapping path="/Lesson7/index.htm"/>
-			<bean class="ptithcm.interceptor.LoggernInterceptor" />
-		</mvc:interceptor> -->
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/**"/>
+			<bean class="ptithcm.interceptor.LoggerInterceptor" />
+		</mvc:interceptor>
 		 
 		 <!-- <mvc:interceptor>
 			<mvc:mapping path="/user/**"/>

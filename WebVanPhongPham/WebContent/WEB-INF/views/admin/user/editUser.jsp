@@ -12,6 +12,7 @@
 		
 	<div class="col-9 mbg-azure pt-2">
 		<div class="h4 text-uppercase text-center">Sửa thông tin cá nhân</div>
+		${message1 }
 		<c:if test="${not empty message}">			
 		  	<c:choose>
 				<c:when test="${message == 0}">
@@ -92,55 +93,105 @@
 	    			<form:input path="image" type="hidden" class="form-control"/>	
 	    		</div>
   			</div>
-  			
-			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Tỉnh/Thành phố: </label>
-	    		<div class="col-sm-8">
-	      			<form:input path="address.ward.district.province.name" type="text" class="form-control" readonly="true"/>
-	    		</div>
-  			</div>
-  			
-			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Quận/Huyện: </label>
-	    		<div class="col-sm-8">
-	      			<form:input path="address.ward.district.name" type="text" class="form-control" readonly="true"/>
-	    		</div>
-  			</div>
-  		
-  			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Phường/Xã: </label>
-	    		<div class="col-sm-8">
-	      			<form:input path="address.ward.name" type="text" class="form-control" readonly="true"/>
-	    		</div>
-  			</div>
   			 
-  			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Địa chỉ: </label>
-	    		<div class="col-sm-8">
-	    			<form:textarea readonly="true" path="address.specificAddress" class="form-control" id="exampleFormControlTextarea1" rows="3"/>
-	    		</div>
-  			</div>
-  			 
-  			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Tình trạng: </label>
-	    		<div class="col-sm-8 pt-2">	    			
-	    			<div class="form-check form-check-inline">
-						<form:radiobutton path="status" class="form-check-input" value="1" label="Hoạt động"/>
-					</div>
-					<div class="form-check form-check-inline">
-						<form:radiobutton path="status" class="form-check-input" value="0" label="Ngưng hoạt động"/>
-					</div>
-	    		</div>
-  			</div>  			
+  			<c:if test="${edition == 1}">
+  				<div class="row mb-3">
+		    		<label class="col-sm-3 col-form-label text-end">Tỉnh/Thành phố: </label>
+		    		<div class="col-sm-8">
+		      			<form:input path="address.ward.district.province.name" type="text" class="form-control" readonly="true"/>
+		    		</div>
+	  			</div>
+	  			
+				<div class="row mb-3">
+		    		<label class="col-sm-3 col-form-label text-end">Quận/Huyện: </label>
+		    		<div class="col-sm-8">
+		      			<form:input path="address.ward.district.name" type="text" class="form-control" readonly="true"/>
+		    		</div>
+	  			</div>
+	  		
+	  			<div class="row mb-3">
+		    		<label class="col-sm-3 col-form-label text-end">Phường/Xã: </label>
+		    		<div class="col-sm-8">
+		      			<form:input path="address.ward.name" type="text" class="form-control" readonly="true"/>
+		    		</div>
+	  			</div>
+	  			 
+	  			<div class="row mb-3">
+		    		<label class="col-sm-3 col-form-label text-end">Địa chỉ: </label>
+		    		<div class="col-sm-8">
+		    			<form:textarea readonly="true" path="address.specificAddress" class="form-control" id="exampleFormControlTextarea1" rows="3"/>
+		    		</div>
+	  			</div>
+  				
+	  			<div class="row mb-3">
+		    		<label class="col-sm-3 col-form-label text-end">Tình trạng: </label>
+		    		<div class="col-sm-8 pt-2">	    			
+		    			<div class="form-check form-check-inline">
+							<form:radiobutton path="status" class="form-check-input" value="1" label="Hoạt động"/>
+						</div>
+						<div class="form-check form-check-inline">
+							<form:radiobutton path="status" class="form-check-input" value="0" label="Ngưng hoạt động"/>
+						</div>
+		    		</div>
+	  			</div>  			
+  			</c:if>
   			
   			<form:input path="password" type="hidden" class="form-control"/>
   			<form:input path="permission.id" type="hidden" class="form-control"/>
-  			<form:input path="address.id" type="hidden" class="form-control"/>
-  			
-  			<div class="text-center mb-3">
-	    		<button type="submit" class="btn btn-primary bg-gradient text-white">Cập nhật</button>
-  			</div>
+  			<form:input path="address.id" type="hidden" class="form-control"/>  			
 			
+			<c:if test="${edition == 2 }">
+				<form:input path="status" type="hidden" class="form-control"/>  
+				<form:form method="post" modelAttribute="address">
+					 
+					<div class="row mb-3">
+			    		<label class="col-sm-3 col-form-label text-end">Tỉnh/Thành phố: </label>
+			    		<div class="col-sm-8">
+			      			<form:select path="ward.district.province.id" class="form-select" aria-label="Default select example">
+								<%-- <form:option value="Open this select menu"/> --%>
+								<form:options items="${provinces }" itemValue="id" itemLabel="name"/>
+							</form:select>
+			    		</div>
+		  			</div>
+		  			
+					<div class="row mb-3">
+			    		<label class="col-sm-3 col-form-label text-end">Quận/Huyện: </label>
+			    		<div class="col-sm-8">
+			      			<form:select path="ward.district.id" class="form-select" aria-label="Default select example">
+								<%-- <form:option value="Open this select menu"/> --%>
+								<form:options items="${districts }" itemValue="id" itemLabel="name"/>
+							</form:select>
+			    		</div>
+		  			</div>
+		  		
+		  			<div class="row mb-3">
+			    		<label class="col-sm-3 col-form-label text-end">Phường/Xã: </label>
+			    		<div class="col-sm-8">
+			      			<form:select path="ward.id" class="form-select" aria-label="Default select example">
+								<%-- <form:option value="Open this select menu"/> --%>
+								<form:options items="${wards }" itemValue="id" itemLabel="name"/>
+							</form:select>
+			    		</div>
+		  			</div>
+		  			
+		  			<div class="row mb-3">
+			    		<label class="col-sm-3 col-form-label text-end">Địa chỉ: </label>
+			    		<div class="col-sm-8">
+			    			<form:input path="specificAddress" type="text" class="form-control" required="true"/>
+			    		</div>
+		  			</div>
+		  			
+		  			<div class="text-center mb-3">
+			    		<button type="submit" class="btn btn-primary bg-gradient text-white">Cập nhật</button>
+		  			</div>
+				</form:form>
+			</c:if>
+			
+			<c:if test="${edition == 1 }">
+				<div class="text-center mb-3">
+				    		<button type="submit" class="btn btn-primary bg-gradient text-white">Cập nhật</button>
+	  			</div>
+  			</c:if>
 		</form:form>
 		
 	</div>

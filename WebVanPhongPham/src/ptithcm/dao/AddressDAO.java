@@ -92,6 +92,7 @@ public class AddressDAO {
 			session.update(address);
 			t.commit();
 		} catch (Exception e) {
+			e.printStackTrace();
 			t.rollback();
 			return 0;
 		} finally {
