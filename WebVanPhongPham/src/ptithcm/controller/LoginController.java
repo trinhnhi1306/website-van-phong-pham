@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,21 +25,26 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public String login(@ModelAttribute("user") User user, HttpSession session) {
+	public String login(ModelMap model, @ModelAttribute("user") User user, HttpSession session) {
 		
 		User userLogin;
 		try {
 			userLogin = userService.getUserByUsername(user.getUsername(), user.getPassword());
 			System.out.println("Dang nhap thành công!");
-			session.setAttribute("user", userLogin);
-			if(userLogin.getPermission().getId() == 2)
+			
+			if(userLogin.getPermission().getId() == 2) {
+				session.setAttribute("admin", userLogin);
 				return "redirect:/admin.htm";
-			else
+			}
+			else {
+				session.setAttribute("user", userLogin);
 				return "redirect:/home.htm";	
+			}
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Dang nhap that bai!");
+			System.out.println("Tai khoan khong ton tai!");
+			model.addAttribute("message", "Tài khoản không tồn tại!");
 			return "account/login";
 		}	
 					
@@ -47,8 +53,7 @@ public class LoginController {
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		
-		User user = (User) session.getAttribute("user");
-		System.out.println(user.getUsername());
+		session.removeAttribute("admin");
 		session.removeAttribute("user");
 		
 		return "redirect:/login.htm";	

@@ -17,38 +17,38 @@
 			<div class="col-8 ps-3">
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Tên tài khoản: </label>
-					<div class="col-sm-8">${sessionScope.user.username }</div>
+					<div class="col-sm-8">${sessionScope.admin.username }</div>
 				</div>
 				
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Họ và tên: </label>
-					<div class="col-sm-8">${sessionScope.user.lastName } ${sessionScope.user.firstName }</div>
+					<div class="col-sm-8">${sessionScope.admin.lastName } ${sessionScope.admin.firstName }</div>
 				</div>
 				
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Số điện thoại: </label>
-					<div class="col-sm-8">${sessionScope.user.phone }</div>
+					<div class="col-sm-8">${sessionScope.admin.phone }</div>
 				</div>
 				
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Email: </label>
-					<div class="col-sm-8">${sessionScope.user.email }</div>
+					<div class="col-sm-8">${sessionScope.admin.email }</div>
 				</div>
 				
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Địa chỉ: </label>
-					<div class="col-sm-8">${sessionScope.user.address.specificAddress }, ${sessionScope.user.address.ward.prefix} ${sessionScope.user.address.ward.name}, ${sessionScope.user.address.ward.district.prefix} ${sessionScope.user.address.ward.district.name}, ${sessionScope.user.address.ward.district.province.name}</div>
+					<div class="col-sm-8">${sessionScope.admin.address.specificAddress }, ${sessionScope.admin.address.ward.prefix} ${sessionScope.admin.address.ward.name}, ${sessionScope.admin.address.ward.district.prefix} ${sessionScope.admin.address.ward.district.name}, ${sessionScope.admin.address.ward.district.province.name}</div>
 				</div>
 				
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Ngày tạo tài khoản: </label>
-					<div class="col-sm-8">${sessionScope.user.registrationDate }</div>
+					<div class="col-sm-8">${sessionScope.admin.registrationDate }</div>
 				</div>
 				
 			</div>
 			<div class="col-4 border-start text-center">
 				<div class="avatar-preview">
-	        		<img src="resources/images/users/${sessionScope.user.image }" id="imagePreview" class="rounded-circle" style="width: 180px; height: 180px;">
+	        		<img src="resources/images/users/${sessionScope.admin.image }" id="imagePreview" class="rounded-circle" style="width: 180px; height: 180px;">
 	            </div>
 			</div>
 		</div>

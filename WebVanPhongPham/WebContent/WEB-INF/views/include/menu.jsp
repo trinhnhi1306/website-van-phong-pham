@@ -34,7 +34,7 @@
 				id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
 				aria-expanded="false"> 
 					<i class="fas fa-user-circle"></i>
-					<span class="mr-2 d-none d-lg-inline text-white small">Username</span> 
+					<span class="mr-2 d-none d-lg-inline text-white small">${sessionScope.user.username }</span> 
 					
 			</a> 
 			<!-- Dropdown - User Information -->

@@ -10,8 +10,8 @@
 	   
 	    <div class="col-auto text-end px-0 pt-2">	
 			<a class="nav-link text-white pt-3" href="admin/myProfile.htm">
-				<span class="mr-2 d-none d-lg-inline pt-1">Hello ${sessionScope.user.username }</span> 
-				<img class="img-profile rounded-circle" src="resources/images/users/${sessionScope.user.image }">
+				<span class="mr-2 d-none d-lg-inline pt-1">Hello ${sessionScope.admin.username }</span> 
+				<img class="img-profile rounded-circle" src="resources/images/users/${sessionScope.admin.image }">
 			</a>
 		</div>
 		

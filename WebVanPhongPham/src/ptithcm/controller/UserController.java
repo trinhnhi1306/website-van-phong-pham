@@ -140,10 +140,10 @@ public class UserController {
 		
 		model.addAttribute("edition", 2);
 		
-		User user = (User) session.getAttribute("user");
-		model.addAttribute("user", user);
+		User admin = (User) session.getAttribute("admin");
+		model.addAttribute("user", admin);
 		
-		Address address = addressService.getAddressById(user.getAddress().getId());
+		Address address = addressService.getAddressById(admin.getAddress().getId());
 		System.out.println(address.getId());
 		model.addAttribute("address", address);
 		

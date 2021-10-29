@@ -177,7 +177,7 @@
 		  			<div class="row mb-3">
 			    		<label class="col-sm-3 col-form-label text-end">Địa chỉ: </label>
 			    		<div class="col-sm-8">
-			    			<form:input path="specificAddress" type="text" class="form-control" required="true"/>
+			    			<form:textarea path="specificAddress" type="text" class="form-control" rows="3" required="true"/>
 			    		</div>
 		  			</div>
 		  			
