@@ -42,6 +42,11 @@ public class AddressService {
 		return addressDAO.getDistricts(provinceId);
 	}
 	
+	public List<Ward> getWards(int districtId) {
+		
+		return addressDAO.getWards(districtId);
+	}
+	
 	public Address getAddressById(int id) {
 		return addressDAO.getAddressById(id);
 	}

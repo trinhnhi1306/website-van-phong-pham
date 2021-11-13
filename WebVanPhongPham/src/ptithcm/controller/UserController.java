@@ -151,7 +151,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "editProfile", method = RequestMethod.POST)
-	public String saveMyProfile(ModelMap model, @ModelAttribute("user") User user, @ModelAttribute("address") Address address, @RequestParam("file") MultipartFile file) {
+	public String saveMyProfile(HttpSession session, ModelMap model, @ModelAttribute("user") User user, @ModelAttribute("address") Address address, @RequestParam("file") MultipartFile file) {
 		
 		model.addAttribute("edition", 2);
 		
@@ -167,6 +167,7 @@ public class UserController {
 		int result = userService.editUser(user, file);
 		model.addAttribute("message", result);
 		
+		session.setAttribute("admin", user);
 		return "admin/user/editUser";
 	}
 	

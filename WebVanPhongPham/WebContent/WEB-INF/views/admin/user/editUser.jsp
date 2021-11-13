@@ -147,7 +147,7 @@
 					<div class="row mb-3">
 			    		<label class="col-sm-3 col-form-label text-end">Tỉnh/Thành phố: </label>
 			    		<div class="col-sm-8">
-			      			<form:select path="ward.district.province.id" class="form-select" aria-label="Default select example">
+			      			<form:select id="province" path="ward.district.province.id" class="form-select" aria-label="Default select example">
 								<%-- <form:option value="Open this select menu"/> --%>
 								<form:options items="${provinces }" itemValue="id" itemLabel="name"/>
 							</form:select>
@@ -157,7 +157,7 @@
 					<div class="row mb-3">
 			    		<label class="col-sm-3 col-form-label text-end">Quận/Huyện: </label>
 			    		<div class="col-sm-8">
-			      			<form:select path="ward.district.id" class="form-select" aria-label="Default select example">
+			      			<form:select id="district" path="ward.district.id" class="form-select" aria-label="Default select example">
 								<%-- <form:option value="Open this select menu"/> --%>
 								<form:options items="${districts }" itemValue="id" itemLabel="name"/>
 							</form:select>
@@ -167,7 +167,7 @@
 		  			<div class="row mb-3">
 			    		<label class="col-sm-3 col-form-label text-end">Phường/Xã: </label>
 			    		<div class="col-sm-8">
-			      			<form:select path="ward.id" class="form-select" aria-label="Default select example">
+			      			<form:select id="ward" path="ward.id" class="form-select" aria-label="Default select example">
 								<%-- <form:option value="Open this select menu"/> --%>
 								<form:options items="${wards }" itemValue="id" itemLabel="name"/>
 							</form:select>

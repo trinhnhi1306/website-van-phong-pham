@@ -3,6 +3,7 @@ package ptithcm.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
@@ -12,8 +13,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ptithcm.entity.Cart;
 import ptithcm.entity.Poster;
 import ptithcm.entity.Product;
+import ptithcm.entity.User;
+import ptithcm.service.CartService;
 import ptithcm.service.PosterService;
 import ptithcm.service.ProductService;
 
@@ -26,6 +30,9 @@ public class HomeController {
 	
 	@Autowired
 	PosterService posterService;
+	
+	@Autowired
+	CartService cartService;
 	
 	@ModelAttribute("leftposters")
 	public List<Poster> getActivedLeftPosters() {
@@ -61,16 +68,17 @@ public class HomeController {
 	}
 	
 	@RequestMapping("product")
-	public String showProduct(HttpServletRequest request, ModelMap model, @RequestParam("id") Integer id) {
-		
+	public String showProduct(HttpSession session, HttpServletRequest request, ModelMap model, @RequestParam("id") Integer id) {
+		User user = (User) session.getAttribute("user");
+		if(user != null)
+		{
+			Cart cart = cartService.getCartByProduct(user.getId(), id);
+			if(cart != null)
+				model.addAttribute("message", "Đã thêm vào giỏ hàng");			
+		}		
 		model.addAttribute("product", productService.getProductByID(id));
 		
 		return "user/productDetail";
-	}
-	
-	@RequestMapping("cart")
-	public String showCart() {
-		return "user/cart";
 	}
 	
 	@RequestMapping("checkout")

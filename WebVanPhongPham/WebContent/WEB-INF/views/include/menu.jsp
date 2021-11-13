@@ -41,7 +41,7 @@
 				<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<li><a class="dropdown-item" href="user/userProfile.htm">Tài khoản của tôi</a></li>
 					<li><a class="dropdown-item" href="user/order.htm">Đơn mua</a></li>
-					<li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+					<li><a class="dropdown-item" href="logout.htm">Đăng xuất</a></li>
 				</ul></li>
 			</ul>
 		</div>
@@ -68,7 +68,7 @@
 	</div>
 	    </div>
 	    <div class="col text-end">
-	      <a role="button" class="btn position-relative border pull-right" href="home/cart.htm">
+	      <a role="button" class="btn position-relative border pull-right" href="user/cart.htm">
 					<i class="fas fa-shopping-cart"></i> <span
 						class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">7
 						<span class="visually-hidden">Sản phẩm</span>

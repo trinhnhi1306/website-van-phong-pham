@@ -34,9 +34,6 @@
 
 <style>
 
-.mbg-azure {
-	min-height: 500px;
-}
 .alert {
     margin-left: 16rem;
 }

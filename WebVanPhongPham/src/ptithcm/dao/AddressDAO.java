@@ -57,6 +57,16 @@ public class AddressDAO {
 		return list;
 	}
 	
+	public List<Ward> getWards(int districtId) {
+		Session session = factory.getCurrentSession();
+		String hql = "from Ward where district.id = :id";
+		Query query = session.createQuery(hql);
+		query.setParameter("id", districtId);
+
+		List<Ward> list = query.list();
+		return list;
+	}
+	
 	public Address getAddressById(int id) {
 		Session session = factory.getCurrentSession();
 		String hql = "from Address where id = :id";

@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import ptithcm.entity.Address;
+import ptithcm.entity.Cart;
 import ptithcm.entity.District;
 import ptithcm.entity.Province;
 import ptithcm.entity.User;
 import ptithcm.entity.Ward;
 import ptithcm.service.AddressService;
+import ptithcm.service.CartService;
 import ptithcm.service.UserService;
 
 @Controller
@@ -30,6 +32,9 @@ public class UserProfileController {
 	
 	@Autowired
 	AddressService addressService;
+	
+	@Autowired
+	CartService cartService;
 	
 	@ModelAttribute("provinces")
 	public List<Province> getProvinces() {
@@ -86,6 +91,25 @@ public class UserProfileController {
 		int result = addressService.editAddress(address);
 		model.addAttribute("message", result);
 		return "user/changeAddress";
+	}
+	
+	@RequestMapping("addCart")
+	public String addCart(HttpSession session, @RequestParam("id") Integer id) {
+		User user = (User) session.getAttribute("user");
+		
+		cartService.addCart(user.getId(), id);
+		
+		return "redirect:/home/product.htm?id=" + id;
+	}
+	
+	@RequestMapping("cart")
+	public String showCart(ModelMap model, HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		
+		model.addAttribute("cart", cartService.getCartByUserId(user.getId()));
+		model.addAttribute("total", cartService.getTotalMoney(user.getId()));
+		
+		return "user/cart";
 	}
 	
 	@RequestMapping("order")

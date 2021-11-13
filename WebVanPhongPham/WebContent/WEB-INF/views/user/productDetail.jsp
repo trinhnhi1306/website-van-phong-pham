@@ -26,16 +26,23 @@
             
             	<div class="my-2 fs-5">Số lượng: </div>
             	
-            	<div class="btn-group" role="group" aria-label="Basic outlined example">
+            	<!-- <div class="btn-group" role="group" aria-label="Basic outlined example">
   					<button type="button" class="btn btn-outline-secondary"><i class="fas fa-minus"></i></button>
   					<button type="button" class="btn btn-outline-secondary px-4">1</button>
   					<button type="button" class="btn btn-outline-secondary"><i class="fas fa-plus"></i></button>
-				</div>
+				</div> -->
 				
 				<span class="text-muted px-3 my-2 fs-6">${product.quantity - product.sold_quantity } sản phẩm có sẵn </span>
 				
 				<div class="my-4">
-					<button type="button" class="btn btn-outline-info"><i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+				<c:choose>
+					<c:when test="${not empty message }">
+						<button type="button" class="btn btn-info"><i class="fas fa-cart-plus"></i> Đã thêm vào giỏ hàng</button>
+					</c:when>
+					<c:otherwise>
+						<a href="user/addCart.htm?id=${product.id }"><button type="button" class="btn btn-outline-info"><i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button></a>
+					</c:otherwise>
+				</c:choose>
 				</div>
             </div>
   		</div>
