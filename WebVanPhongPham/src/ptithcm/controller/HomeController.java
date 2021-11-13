@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ptithcm.entity.Cart;
+import ptithcm.entity.Category;
 import ptithcm.entity.Poster;
 import ptithcm.entity.Product;
 import ptithcm.entity.User;
 import ptithcm.service.CartService;
+import ptithcm.service.CategoryService;
 import ptithcm.service.PosterService;
 import ptithcm.service.ProductService;
 
@@ -27,6 +29,9 @@ public class HomeController {
 
 	@Autowired
 	ProductService productService;
+	
+	@Autowired
+	CategoryService categoryService;
 	
 	@Autowired
 	PosterService posterService;
@@ -92,7 +97,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping("category")
-	public String showCategory() {
+	public String showCategory(ModelMap model) {
+		List<Category> list = categoryService.getAllCategories();
+		model.addAttribute("categories", list);
 		return "user/category";
 	}
 }

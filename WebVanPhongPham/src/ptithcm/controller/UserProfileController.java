@@ -102,6 +102,15 @@ public class UserProfileController {
 		return "redirect:/home/product.htm?id=" + id;
 	}
 	
+	@RequestMapping("deleteCart")
+	public String deleteCart(HttpSession session, @RequestParam("id") Integer id) {
+		User user = (User) session.getAttribute("user");
+		
+		cartService.deleteCart(cartService.getCartByProduct(user.getId(), id));
+		
+		return "redirect:/user/cart.htm";
+	}
+	
 	@RequestMapping("cart")
 	public String showCart(ModelMap model, HttpSession session) {
 		User user = (User) session.getAttribute("user");
