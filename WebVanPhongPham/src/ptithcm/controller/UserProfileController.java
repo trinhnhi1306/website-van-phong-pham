@@ -96,8 +96,10 @@ public class UserProfileController {
 	@RequestMapping("addCart")
 	public String addCart(HttpSession session, @RequestParam("id") Integer id) {
 		User user = (User) session.getAttribute("user");
+		long totalItem = (long) session.getAttribute("totalItem");
 		
 		cartService.addCart(user.getId(), id);
+		session.setAttribute("totalItem", totalItem + 1);
 		
 		return "redirect:/home/product.htm?id=" + id;
 	}
@@ -105,9 +107,10 @@ public class UserProfileController {
 	@RequestMapping("deleteCart")
 	public String deleteCart(HttpSession session, @RequestParam("id") Integer id) {
 		User user = (User) session.getAttribute("user");
+		long totalItem = (long) session.getAttribute("totalItem");
 		
 		cartService.deleteCart(cartService.getCartByProduct(user.getId(), id));
-		
+		session.setAttribute("totalItem", totalItem - 1);
 		return "redirect:/user/cart.htm";
 	}
 	

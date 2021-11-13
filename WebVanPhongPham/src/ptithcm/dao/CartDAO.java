@@ -48,6 +48,17 @@ public class CartDAO {
 		
 		return list;
 	}
+	
+	public long getTotalItem(int userId) {
+		Session session = factory.getCurrentSession();
+		String hql = "select sum(quantity) from Cart where users.id = :id";
+		Query query = session.createQuery(hql);
+		System.out.println(userId);
+		query.setParameter("id", userId);
+		long list = (long) query.list().get(0);
+		System.out.println(list);
+		return list;
+	}
 
 	public int insertCart(Cart cart) {
 		Session session = factory.openSession();

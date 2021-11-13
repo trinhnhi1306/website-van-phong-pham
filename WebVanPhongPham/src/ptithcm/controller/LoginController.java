@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ptithcm.entity.User;
+import ptithcm.service.CartService;
 import ptithcm.service.UserService;
 
 @Controller
@@ -19,6 +20,9 @@ public class LoginController {
 	@Autowired
 	UserService userService;
 
+	@Autowired
+	CartService cartService;
+	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String getLoginView(@ModelAttribute("user") User user) {
 		return "account/login";
@@ -37,6 +41,7 @@ public class LoginController {
 				return "redirect:/admin.htm";
 			}
 			else {
+				session.setAttribute("totalItem", cartService.getTotalItem(userLogin.getId()));
 				session.setAttribute("user", userLogin);
 				return "redirect:/home.htm";	
 			}

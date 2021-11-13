@@ -70,7 +70,7 @@
 	    <div class="col text-end">
 	      <a role="button" class="btn position-relative border pull-right" href="user/cart.htm">
 					<i class="fas fa-shopping-cart"></i> <span
-						class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">7
+						class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">${sessionScope.totalItem }
 						<span class="visually-hidden">Sản phẩm</span>
 					</span>
 			</a>

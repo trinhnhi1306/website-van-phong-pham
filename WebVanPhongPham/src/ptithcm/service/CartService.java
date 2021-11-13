@@ -43,6 +43,20 @@ public class CartService {
 		return result;
 	}
 	
+	public long getTotalItem(int userId)
+	{
+		long result;
+		try
+		{
+			result = cartDAO.getTotalItem(userId);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			result = 0;
+		}
+		return result;
+	}
+	
 	public int addCart(int userId, int productId)
 	{
 		Cart cart = new Cart();
