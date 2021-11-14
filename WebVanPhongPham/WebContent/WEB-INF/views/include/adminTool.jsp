@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <base href="${pageContext.servletContext.contextPath}/">
 
-<div class="d-flex flex-column flex-shrink-0 p-3 mbg-navy">
+<div class="position-fixed d-flex flex-column flex-shrink-0 p-3 mbg-navy">
 	<div class="py-2 text-center">
 		<i class="fab fa-phoenix-framework" style="font-size: 75px;"></i>
 	</div>

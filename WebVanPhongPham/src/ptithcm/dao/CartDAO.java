@@ -9,60 +9,63 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import ptithcm.entity.User;
+import ptithcm.entity.Cart;
 
 @Repository
-public class UserDAO {
+public class CartDAO {
 
 	@Autowired
 	SessionFactory factory;
-	
-	public List<User> getAllUsers() {
+
+	public List<Cart> getCart(int userId) {
 		Session session = factory.getCurrentSession();
-		String hql = "from User";
+		String hql = "from Cart where users.id = :id";
 		Query query = session.createQuery(hql);
 
-		List<User> list = query.list();
+		query.setParameter("id", userId);
+		List<Cart> list = query.list();
 		return list;
 	}
 	
-	public User getUserByID(int id) {
+	public Cart getCartByProduct(int userId, int productId) {
 		Session session = factory.getCurrentSession();
-		String hql = "from User where id = :id";
+		String hql = "from Cart where users.id = :userId and products.id = :productId";
 		Query query = session.createQuery(hql);
-		query.setParameter("id", id);
 
-		User list = (User) query.list().get(0);
+		query.setParameter("userId", userId);
+		query.setParameter("productId", productId);
+		Cart list = (Cart) query.list().get(0);
+		return list;
+	}
+
+	public Double getTotalMoney(int userId) {
+		Session session = factory.getCurrentSession();
+		String hql = "select sum(quantity*(products.price - products.price*products.discount/100)) from Cart where users.id = :id";
+		Query query = session.createQuery(hql);
+
+		query.setParameter("id", userId);
+		Double list = (Double) query.list().get(0);
+		
 		return list;
 	}
 	
-	public User getUserByUsername(String username, String password) {
+	public long getTotalItem(int userId) {
 		Session session = factory.getCurrentSession();
-		String hql = "from User where username = :username and password = :password";
+		String hql = "select sum(quantity) from Cart where users.id = :id";
 		Query query = session.createQuery(hql);
-		query.setParameter("username", username);
-		query.setParameter("password", password);
-
-		User list = (User) query.list().get(0);
+		System.out.println(userId);
+		query.setParameter("id", userId);
+		long list = (long) query.list().get(0);
+		System.out.println(list);
 		return list;
 	}
-	
-	public List<User> searchUsers(String firstName) {
-		Session session = factory.getCurrentSession();
-		String hql = "from User where firstName like :firstName";
-		Query query = session.createQuery(hql);
-		query.setParameter("firstName", "%" + firstName + "%");
 
-		List<User> list = query.list();
-		return list;
-	}
-	
-	public int insertUser(User user) {
+	public int insertCart(Cart cart) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 
 		try {
-			session.save(user);
+			session.save(cart);
 			t.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -73,13 +76,13 @@ public class UserDAO {
 		}
 		return 1;
 	}
-	
-	public int updateUser(User user) {
+
+	public int updateCart(Cart cart) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 
 		try {
-			session.update(user);
+			session.update(cart);
 			t.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -90,13 +93,13 @@ public class UserDAO {
 		}
 		return 1;
 	}
-	
-	public int deleteUser(User user) {
+
+	public int deleteCart(Cart cart) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 
 		try {
-			session.delete(user);
+			session.delete(cart);
 			t.commit();
 		} catch (Exception e) {
 			e.printStackTrace();

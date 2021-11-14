@@ -16,19 +16,19 @@
 		<div class="row my-3">
 			<label class="col-sm-3 text-end">Họ và tên: </label>
 			<div class="col-sm-9">
-				Nguyễn Ngọc Lâm Như	      			
+				${sessionScope.user.lastName } ${sessionScope.user.firstName }			
 			</div>
 		</div>
 		  			
 		<div class="row my-3">
 			<label class="col-sm-3 text-end">Số điện thoại: </label>
-			<div class="col-sm-9">0382305835</div>
+			<div class="col-sm-9">${sessionScope.user.phone }</div>
 		</div>
 		
 		<div class="row my-3">
 			<label class="col-sm-3 text-end">Địa chỉ: </label>
 			<div class="col-sm-9">
-				581/30A Trường Chinh, Tân Sơn Nhì, Tân Phú, Hồ Chí Minh
+				${sessionScope.user.address.specificAddress }, ${sessionScope.user.address.ward.prefix} ${sessionScope.user.address.ward.name}, ${sessionScope.user.address.ward.district.prefix} ${sessionScope.user.address.ward.district.name}, ${sessionScope.user.address.ward.district.province.name}
 			</div>
 		</div>
 		

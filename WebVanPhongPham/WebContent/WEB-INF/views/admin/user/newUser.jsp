@@ -12,54 +12,78 @@
 		
 	<div class="col-9 mbg-azure pt-2">
 		<div class="h4 text-uppercase text-center">Thêm người dùng</div>
-		
-		<form action="admin/newUser.htm" method="post">
+		<p>${ message1 }</p>
+		<c:if test="${not empty message}">			
+		  	<c:choose>
+				<c:when test="${message == 0}">
+					<div class="col-sm-8 alert alert-danger" role="alert">
+					Thêm người dùng thất bại!
+					<button type="button" class="rem" data-dismiss="alert" aria-label="Close">&times;</button>
+					</div>
+				</c:when>
+				<c:when test="${message == 1}">
+					<div class="col-sm-8 alert alert-success alert-dismissible" role="alert">
+					Thêm người dùng thành công!
+					<button type="button" class="rem" data-dismiss="alert" aria-label="Close">&times;</button>
+					</div>
+				</c:when>
+				<c:when test="${message == 2}">
+					<div class="col-sm-8 alert alert-danger alert-dismissible" role="alert">
+					Lưu hình ảnh thất bại!
+					<button type="button" class="rem" data-dismiss="alert" aria-label="Close">&times;</button>
+					</div>
+				</c:when>
+			</c:choose>		  	
+		</c:if>
+		<form:form action="admin/newUser.htm" method="post" modelAttribute="user" enctype="multipart/form-data">
 			<div class="row my-3">
 	    		<label class="col-sm-3 col-form-label text-end">Tên đăng nhập: </label>
 	    		<div class="col-sm-8">
-	      			<input type="text" class="form-control">
+	      			<form:input path="username" type="text" class="form-control" required="true"/>
 	    		</div>
   			</div>
   			
   			<div class="row my-3">
 	    		<label class="col-sm-3 col-form-label text-end">Mật khẩu: </label>
 	    		<div class="col-sm-8">
-	      			<input type="password" class="form-control">
+	      			<form:input path="password" type="password" class="form-control" required="true"/>
 	    		</div>
   			</div>
   			
   			<div class="row my-3">
 	    		<label class="col-sm-3 col-form-label text-end">Họ: </label>
 	    		<div class="col-sm-8">
-	      			<input type="text" class="form-control">
+	      			<form:input path="lastName" type="text" class="form-control" required="true"/>
 	    		</div>
   			</div>
   			
   			<div class="row my-3">
 	    		<label class="col-sm-3 col-form-label text-end">Tên: </label>
 	    		<div class="col-sm-8">
-	      			<input type="text" class="form-control">
+	      			<form:input path="firstName" type="text" class="form-control" required="true"/>
 	    		</div>
   			</div>
   			
   			<div class="row my-3">
 	    		<label class="col-sm-3 col-form-label text-end">Số điện thoại: </label>
 	    		<div class="col-sm-8">
-	      			<input type="text" class="form-control">
+	      			<form:input path="phone" type="text" class="form-control" required="true"/>
 	    		</div>
   			</div>
   			
   			<div class="row my-3">
 	    		<label class="col-sm-3 col-form-label text-end">Email: </label>
 	    		<div class="col-sm-8">
-	      			<input type="text" class="form-control">
+	      			<form:input path="email" type="email" class="form-control" required="true"/>
 	    		</div>
   			</div>
   			
   			<div class="row mb-3">
 	    		<label class="col-sm-3 form-label text-end">Ảnh đại diện:</label>
 	    		<div class="col-sm-8">
-	    			<input class="form-control" id="formFileSm" type="file">
+	    			<input name="file" class="form-control" id="formFileSm" type="file" accept="image/*" onchange="preview()">
+	    			<img id="img" class="rounded" src="resources/images/users/userDefaul.png"/>
+	    			<form:input path="image" type="hidden" class="form-control"/>
 	    		</div>
   			</div>
   			
@@ -67,64 +91,58 @@
 	    		<label class="col-sm-3 col-form-label text-end">Quyền hạn: </label>
 	    		<div class="col-sm-8 pt-2">
 	    			<div class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+						<form:radiobutton path="permission.id" value="1"  class="form-check-input" required="true"/>
 						<label class="form-check-label" for="flexRadioDefault1">User</label>
 					</div>
 					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+						<form:radiobutton path="permission.id" value="2" class="form-check-input" required="true"/>
 						<label class="form-check-label" for="flexRadioDefault2">Admin</label>
 					</div>
 	    		</div>
   			</div>
-			
-			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Tỉnh/Thành phố: </label>
-	    		<div class="col-sm-8">
-	      			<select class="form-select" aria-label="Default select example">
-						<option selected>Open this select menu</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
-					</select>
-	    		</div>
-  			</div>
-  			
-			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Quận/Huyện: </label>
-	    		<div class="col-sm-8">
-	      			<select class="form-select" aria-label="Default select example">
-						<option selected>Open this select menu</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
-					</select>
-	    		</div>
-  			</div>
-  		
-  			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Phường/Xã: </label>
-	    		<div class="col-sm-8">
-	      			<select class="form-select" aria-label="Default select example">
-						<option selected>Open this select menu</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
-					</select>
-	    		</div>
-  			</div>
-  			
-  			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Địa chỉ: </label>
-	    		<div class="col-sm-8">
-	    			<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-	    		</div>
-  			</div>
-  			
-  			<div class="text-center mb-3">
-	    		<button type="submit" class="btn btn-primary bg-gradient text-white">Lưu</button>
-  			</div>
-			
-		</form>
+			<form:form method="post" modelAttribute="address">
+				<div class="row mb-3">
+		    		<label class="col-sm-3 col-form-label text-end">Tỉnh/Thành phố: </label>
+		    		<div class="col-sm-8">
+		      			<form:select id="province" path="ward.district.province.id" class="form-select" aria-label="Default select example">
+							<%-- <form:option value="Open this select menu"/> --%>
+							<form:options items="${provinces }" itemValue="id" itemLabel="name"/>
+						</form:select>
+		    		</div>
+	  			</div>
+	  			
+				<div class="row mb-3">
+		    		<label class="col-sm-3 col-form-label text-end">Quận/Huyện: </label>
+		    		<div class="col-sm-8">
+		      			<form:select id="district" path="ward.district.id" class="form-select" aria-label="Default select example">
+							<%-- <form:option value="Open this select menu"/> --%>
+							<form:options items="${districts }" itemValue="id" itemLabel="name"/>
+						</form:select>
+		    		</div>
+	  			</div>
+	  		
+	  			<div class="row mb-3">
+		    		<label class="col-sm-3 col-form-label text-end">Phường/Xã: </label>
+		    		<div class="col-sm-8">
+		      			<form:select id="ward" path="ward.id" class="form-select" aria-label="Default select example">
+							<%-- <form:option value="Open this select menu"/> --%>
+							<form:options items="${wards }" itemValue="id" itemLabel="name"/>
+						</form:select>
+		    		</div>
+	  			</div>
+	  			
+	  			<div class="row mb-3">
+		    		<label class="col-sm-3 col-form-label text-end">Địa chỉ: </label>
+		    		<div class="col-sm-8">
+		    			<form:input path="specificAddress" type="text" class="form-control" required="true"/>
+		    		</div>
+	  			</div>
+	  			
+	  			<div class="text-center mb-3">
+		    		<button type="submit" class="btn btn-primary bg-gradient text-white">Lưu</button>
+	  			</div>
+			</form:form>
+		</form:form>
 		
 	</div>
 		

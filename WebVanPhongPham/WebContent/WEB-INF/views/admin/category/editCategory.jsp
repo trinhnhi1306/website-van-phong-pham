@@ -46,15 +46,15 @@
 			<div class="row my-3">
 	    		<label class="col-sm-3 col-form-label text-end">Tên loại sản phẩm: </label>
 	    		<div class="col-sm-8">
-	      			<form:input path="name" type="text" class="form-control"/>
+	      			<form:input path="name" type="text" class="form-control" required="true"/>
 	    		</div>
   			</div>
   			
   			<div class="row mb-3">
 	    		<label class="col-sm-3 form-label text-end">Hình ảnh:</label>
 	    		<div class="col-sm-8">
-	    			<input name="file" class="form-control" id="formFileSm" type="file" accept="image/*">
-	    			<img class="rounded" src="resources/images/categories/${category.image }" style="width: 70px; height: 70px;">
+	    			<input name="file" class="form-control" id="formFileSm" type="file" accept="image/*" onchange="preview()">
+	    			<img id="img" class="rounded" src="resources/images/categories/${category.image }"/>
 	    		</div>
   			</div>
 			

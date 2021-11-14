@@ -33,6 +33,7 @@
 <link rel="stylesheet" href="<c:url value='resources/assets/dist/all.min.css'/>" /> 
 
 <style>
+
 .alert {
     margin-left: 16rem;
 }
@@ -50,7 +51,11 @@
 	-moz-user-select: none;
 	user-select: none;
 }
-
+form img {
+	margin: 2rem;
+	width: 200px;
+	height: 200px;
+}
 @media ( min-width : 768px) {
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
@@ -58,6 +63,15 @@
 }
 </style>
 
+<script>
+	function ConfirmDelete() {
+     	if (confirm("Are you sure you want to delete?")) {
+    	  	return true;
+      	} else {
+    	  	return false;
+      	}
+    }
+</script>
 
 <!-- Custom styles for this template -->
 <!-- <link href="./assets/dist/starter-template.css" rel="stylesheet">  -->

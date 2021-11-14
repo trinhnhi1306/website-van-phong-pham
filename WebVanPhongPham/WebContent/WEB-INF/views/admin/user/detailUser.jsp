@@ -17,49 +17,54 @@
 			<div class="col-8 ps-3">
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Tên tài khoản: </label>
-					<div class="col-sm-8">Hello Kitty</div>
+					<div class="col-sm-8">${user.username }</div>
 				</div>
 				
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Họ và tên: </label>
-					<div class="col-sm-8">Nguyễn Ngọc Lâm Như</div>
+					<div class="col-sm-8">${user.lastName} ${user.firstName}</div>
 				</div>
 				
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Số điện thoại: </label>
-					<div class="col-sm-8">0382305835</div>
+					<div class="col-sm-8">${user.phone }</div>
 				</div>
 				
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Email: </label>
-					<div class="col-sm-8">lamnhunguyen4@gmail.com</div>
+					<div class="col-sm-8">${user.email }</div>
 				</div>
 				
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Địa chỉ: </label>
-					<div class="col-sm-8">581/30A Trường Chinh, Tân Sơn Nhì, Tân Phú, Tp. Hồ Chí Minh</div>
+					<div class="col-sm-8">${user.address.specificAddress }, ${user.address.ward.prefix} ${user.address.ward.name}, ${user.address.ward.district.prefix} ${user.address.ward.district.name}, ${user.address.ward.district.province.name}</div>
 				</div>
 				
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Ngày tạo tài khoản: </label>
-					<div class="col-sm-8">12/12/2121</div>
+					<div class="col-sm-8">${user.registrationDate }</div>
 				</div>
 				
 				<div class="row my-3">
 					<label class="col-sm-4 fw-bold">Quyền hạn: </label>
-					<div class="col-sm-8">User</div>
+					<div class="col-sm-8">${user.permission.name }</div>
+				</div>
+				
+				<div class="row my-3">
+					<label class="col-sm-4 fw-bold">Trình trạng: </label>
+					<div class="col-sm-8">${user.status == true ? 'Hoạt động' : 'Ngưng hoạt động' }</div>
 				</div>
 				
 			</div>
 			<div class="col-4 border-start text-center">
 				<div class="avatar-preview">
-	        		<img src="resources/images/users/userDefaul.png" id="imagePreview" class="rounded-circle" style="width: 180px; height: 180px;">
+	        		<img src="resources/images/users/${user.image }" id="imagePreview" class="rounded-circle" style="width: 180px; height: 180px;">
 	            </div>
 			</div>
 		</div>
 	
 		<div class="my-3 me-5 text-center">
-			<a class="btn btn-outline-danger" href="admin/editProduct.htm" role="button">Xóa</a>
+			<a class="btn btn-outline-danger" href="admin/editUser.htm?id=${user.id }" role="button">Cập nhật</a>
 		</div>
 	</div>
 		

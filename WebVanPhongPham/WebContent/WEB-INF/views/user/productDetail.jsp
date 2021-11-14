@@ -26,16 +26,23 @@
             
             	<div class="my-2 fs-5">Số lượng: </div>
             	
-            	<div class="btn-group" role="group" aria-label="Basic outlined example">
+            	<!-- <div class="btn-group" role="group" aria-label="Basic outlined example">
   					<button type="button" class="btn btn-outline-secondary"><i class="fas fa-minus"></i></button>
   					<button type="button" class="btn btn-outline-secondary px-4">1</button>
   					<button type="button" class="btn btn-outline-secondary"><i class="fas fa-plus"></i></button>
-				</div>
+				</div> -->
 				
 				<span class="text-muted px-3 my-2 fs-6">${product.quantity - product.sold_quantity } sản phẩm có sẵn </span>
 				
 				<div class="my-4">
-					<button type="button" class="btn btn-outline-info"><i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+				<c:choose>
+					<c:when test="${not empty message }">
+						<button type="button" class="btn btn-info"><i class="fas fa-cart-plus"></i> Đã thêm vào giỏ hàng</button>
+					</c:when>
+					<c:otherwise>
+						<a href="user/addCart.htm?id=${product.id }"><button type="button" class="btn btn-outline-info"><i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button></a>
+					</c:otherwise>
+				</c:choose>
 				</div>
             </div>
   		</div>
@@ -79,7 +86,7 @@ Sticker dán tường được dùng để trang trí, làm đẹp nhà cửa, p
 			<div class="mx-5 my-2 p-2 border-bottom">
 				<div class="row">
 					<div class="col-auto">
-						<img src="resources/images/users/user1.png" class="rounded-circle" style="width: 50px; height: 50px;">
+						<img src="resources/images/users/${s.image }" class="rounded-circle" style="width: 50px; height: 50px;">
 					</div>
 					
 					<div class="col">

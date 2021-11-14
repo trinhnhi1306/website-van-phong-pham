@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,6 +17,7 @@ import javax.persistence.Table;
 public class Address {
 
 	@Id
+	@GeneratedValue
 	@Column(name="address_id")
 	private Integer id;
 	
@@ -41,7 +43,7 @@ public class Address {
 		return specificAddress;
 	}
 
-	public void setSpecific_address(String specificAddress) {
+	public void setSpecificAddress(String specificAddress) {
 		this.specificAddress = specificAddress;
 	}
 
