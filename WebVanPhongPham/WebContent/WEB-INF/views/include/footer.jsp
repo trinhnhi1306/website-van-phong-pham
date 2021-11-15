@@ -8,13 +8,18 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 	
+	function cartEmpty() {
+		alert("Giỏ hàng đang trống!");
+		return false;
+	}
+	
 	/* Chỉnh sửa số lượng của item trong giỏ hàng*/
-	$(".edit").click(editQuantityCart);
+	$(".edit-cart").click(editQuantityCart);
 	function editQuantityCart() {
 		
 		var id = $(this).attr('id');
 		var quantity = $("#quantity-cart-" + id).val();
-		alert(quantity);
+		window.location = "user/editCart.htm?id=" + id + "&quantity="+ quantity;
 	}
 
 	/* Phần này là xử lý đóng thông báo */

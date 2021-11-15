@@ -6,8 +6,7 @@
 <div class="limiter">
 	<div class="container-login100">
 		<div class="wrap-login100">
-			<form:form action="login.htm" method="post" modelAttribute="user"
-				class="login100-form validate-form">
+			<form:form action="login.htm" method="post" modelAttribute="user" class="login100-form validate-form">
 				<span class="login100-form-logo"> <i
 					class="fas fa-shopping-bag" style="color: #7579ff;"></i>
 				</span>
@@ -37,8 +36,9 @@
 				</div>
 
 				<div class="text-center pt-5">
-					<a class="txt1 pe-1" href="forgotPassword.htm">Quên mật khẩu?</a> <a
-						class="txt1 ps-1" href="register.htm">Đăng kí</a>
+					<a class="txt1 pe-1" href="home.htm">Trang chủ</a>
+					<a class="txt1 pe-1" href="forgotPassword.htm">Quên mật khẩu?</a>
+					<a class="txt1 ps-1" href="register.htm">Đăng kí</a>
 				</div>
 			</form:form>
 		</div>

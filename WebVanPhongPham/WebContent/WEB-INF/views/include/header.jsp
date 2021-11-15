@@ -33,6 +33,11 @@
 <link rel="stylesheet" href="<c:url value='resources/assets/dist/all.min.css'/>" /> 
 <style>
 
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
 .alert {
     margin-left: 16rem;
 }

@@ -24,7 +24,7 @@ public class Permission {
 
 	@OneToMany(mappedBy = "permission", fetch = FetchType.EAGER)
 	private Collection<User> users;
-	
+
 	public Integer getId() {
 		return id;
 	}

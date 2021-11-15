@@ -110,6 +110,18 @@ public class UserProfileController {
 		return "redirect:/home/product.htm?id=" + id;
 	}
 	
+	@RequestMapping("editCart")
+	public String editCart(HttpSession session, @RequestParam("id") Integer id, @RequestParam("quantity") Integer quantity) {
+		User user = (User) session.getAttribute("user");
+		
+		cartService.editCart(cartService.getCartByProduct(user.getId(), id), quantity);
+		
+		session.setAttribute("cart", cartService.getCartByUserId(user.getId()));
+		session.setAttribute("totalItem", cartService.getTotalItem(user.getId()));
+		session.setAttribute("totalMoney", cartService.getTotalMoney(user.getId()));
+		return "redirect:/user/cart.htm";
+	}
+	
 	@RequestMapping("deleteCart")
 	public String deleteCart(HttpSession session, @RequestParam("id") Integer id) {
 		User user = (User) session.getAttribute("user");

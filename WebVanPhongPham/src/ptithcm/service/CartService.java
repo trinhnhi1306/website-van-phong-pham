@@ -47,6 +47,7 @@ public class CartService {
 			result = cartDAO.getTotalMoney(userId);
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			result = 0.0;
 		}
 		return result;
@@ -60,7 +61,8 @@ public class CartService {
 			result = cartDAO.getTotalItem(userId);
 		}
 		catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Gio hang khong co san pham");
+			//e.printStackTrace();
 			result = 0;
 		}
 		return result;

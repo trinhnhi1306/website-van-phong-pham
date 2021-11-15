@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.support.PagedListHolder;
@@ -45,9 +46,9 @@ public class UserService {
 		return userDAO.getUserByID(id);
 	}
 	
-	public User getUserByUsername(String username, String password) {
+	public User getUserByUsername(String username) {
 		
-		return userDAO.getUserByUsername(username, password);
+		return userDAO.getUserByUsername(username);
 	}
 	
 	public List<User> searchUsers(String name) {
@@ -61,6 +62,7 @@ public class UserService {
 	
 	public int addUser(User user, Address address, MultipartFile file) {
 		
+		user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt(12))); // mã hóa password
 		user.setAddress(address);
 		user.setStatus(true);
 		user.setRegistrationDate(new java.util.Date());

@@ -36,12 +36,11 @@ public class UserDAO {
 		return list;
 	}
 	
-	public User getUserByUsername(String username, String password) {
+	public User getUserByUsername(String username) {
 		Session session = factory.getCurrentSession();
-		String hql = "from User where username = :username and password = :password";
+		String hql = "from User where username = :username";
 		Query query = session.createQuery(hql);
 		query.setParameter("username", username);
-		query.setParameter("password", password);
 
 		User list = (User) query.list().get(0);
 		return list;
