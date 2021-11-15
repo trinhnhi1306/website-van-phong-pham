@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <base href="${pageContext.servletContext.contextPath}/">
 <div class="container-wrapper fixed-top navbar-dark bg-info bg-gradient ">
 
@@ -69,10 +70,12 @@
 	    </div>
 	    <div class="col text-end">
 	      <a role="button" class="btn position-relative border pull-right" href="user/cart.htm">
-					<i class="fas fa-shopping-cart"></i> <span
-						class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">${sessionScope.totalItem }
+			<i class="fas fa-shopping-cart"></i>
+				<c:if test="${not empty sessionScope.totalItem }">
+					<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">${sessionScope.totalItem }
 						<span class="visually-hidden">Sản phẩm</span>
 					</span>
+				</c:if>
 			</a>
 	    </div>
 	</div>

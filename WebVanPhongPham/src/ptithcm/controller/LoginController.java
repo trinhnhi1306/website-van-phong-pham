@@ -40,9 +40,11 @@ public class LoginController {
 				session.setAttribute("admin", userLogin);
 				return "redirect:/admin.htm";
 			}
-			else {
-				session.setAttribute("totalItem", cartService.getTotalItem(userLogin.getId()));
+			else {				
 				session.setAttribute("user", userLogin);
+				session.setAttribute("cart", cartService.getCartByUserId(userLogin.getId()));
+				session.setAttribute("totalItem", cartService.getTotalItem(userLogin.getId()));
+				session.setAttribute("totalMoney", cartService.getTotalMoney(userLogin.getId()));
 				return "redirect:/home.htm";	
 			}
 		}
@@ -58,9 +60,15 @@ public class LoginController {
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		
-		session.removeAttribute("admin");
-		session.removeAttribute("user");
-		
+		if(session.getAttribute("admin") != null)
+			session.removeAttribute("admin");
+		else
+		{
+			session.removeAttribute("user");
+			session.removeAttribute("cart");
+			session.removeAttribute("totalItem");
+			session.removeAttribute("totalMoney");
+		}
 		return "redirect:/login.htm";	
 	}
 	

@@ -1,6 +1,10 @@
+USE [master]
+GO
+/****** Object:  Database [WEBSITE_VANPHONGPHAM]    Script Date: 15/11/2021 07:57:19 ******/
+CREATE DATABASE [WEBSITE_VANPHONGPHAM]
 USE [WEBSITE_VANPHONGPHAM]
 GO
-/****** Object:  Table [dbo].[address]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[address]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,7 +19,7 @@ CREATE TABLE [dbo].[address](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[brand]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[brand]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -30,7 +34,7 @@ CREATE TABLE [dbo].[brand](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[cart]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[cart]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -46,7 +50,7 @@ CREATE TABLE [dbo].[cart](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[category]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[category]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -62,7 +66,7 @@ CREATE TABLE [dbo].[category](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[district]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[district]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -78,7 +82,7 @@ CREATE TABLE [dbo].[district](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[feedback]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[feedback]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -96,7 +100,7 @@ CREATE TABLE [dbo].[feedback](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[order]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[order]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -113,7 +117,7 @@ CREATE TABLE [dbo].[order](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[order_detail]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[order_detail]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -130,7 +134,7 @@ CREATE TABLE [dbo].[order_detail](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[order_status]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[order_status]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -144,7 +148,7 @@ CREATE TABLE [dbo].[order_status](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[permission]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[permission]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -158,7 +162,7 @@ CREATE TABLE [dbo].[permission](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[poster]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[poster]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -174,7 +178,7 @@ CREATE TABLE [dbo].[poster](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[product]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[product]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -199,7 +203,7 @@ CREATE TABLE [dbo].[product](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[province]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[province]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -214,7 +218,7 @@ CREATE TABLE [dbo].[province](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[users]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[users]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -238,7 +242,7 @@ CREATE TABLE [dbo].[users](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ward]    Script Date: 21/10/2021 01:32:34 ******/
+/****** Object:  Table [dbo].[ward]    Script Date: 15/11/2021 07:57:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -256,11 +260,23 @@ CREATE TABLE [dbo].[ward](
 GO
 SET IDENTITY_INSERT [dbo].[address] ON 
 GO
-INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (1, 173, N'1/15C')
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (1, 173, N'1/15C kp3 tổ 38')
 GO
 INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (2, 173, N'1/10D')
 GO
-INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (3, 173, N'2/6E')
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (3, 4, N'2/2B')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (4, 94, N'123')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (5, 1, N'123')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (6, 1, NULL)
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (7, 1, NULL)
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (8, 94, N'1/1D')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (9, 143, N'2/3C')
 GO
 SET IDENTITY_INSERT [dbo].[address] OFF
 GO
@@ -310,57 +326,61 @@ INSERT [dbo].[brand] ([brand_id], [name], [description]) VALUES (21, N'Logitech'
 GO
 SET IDENTITY_INSERT [dbo].[brand] OFF
 GO
-INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (3, 13, 5)
+INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (14, 13, 1)
 GO
-INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (14, 11, 1)
-GO
-INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (21, 11, 1)
-GO
-INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (23, 13, 1)
+INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (21, 13, 1)
 GO
 SET IDENTITY_INSERT [dbo].[category] ON 
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (1, N'Bút viết', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (1, N'Bút viết', N'butViet.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (2, N'Giấy văn phòng', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (2, N'Giấy văn phòng', N'giayVP.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (3, N'Dụng cụ văn phòng', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (3, N'Dụng cụ văn phòng', N'dungCuVP.jpg', N'')
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (4, N'File bìa hồ sơ', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (4, N'File bìa hồ sơ', N'fileBiaHoSo.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (5, N'Dụng cụ học tập', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (5, N'Dụng cụ học tập', N'dungCuHocTap.png', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (6, N'Băng keo - Dao kéo - Hồ dán', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (6, N'Băng keo - Dao kéo - Hồ dán', N'bangKeoHoDan.png', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (7, N'Sổ - Bì thư', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (7, N'Sổ - Bì thư', N'soBiathu.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (8, N'Máy tính', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (8, N'Máy tính', N'mayTinh.png', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (9, N'Bảng văn phòng', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (9, N'Bảng văn phòng', N'bangVP.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (10, N'Bảo hộ lao động', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (10, N'Bảo hộ lao động', N'baoHoLD.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (11, N'Pin các loại', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (11, N'Pin các loại', N'pin.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (12, N'Giấy in ảnh - in màu chất lượng cao', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (12, N'Giấy in ảnh - in màu chất lượng cao', N'giayInAnh.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (13, N'Phụ kiện điện thoại', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (13, N'Phụ kiện điện thoại', N'PKdienThoai.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (14, N'Thiết bị văn phòng', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (14, N'Thiết bị văn phòng', N'thietBiVP.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (15, N'Thiết bị điện tử', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (15, N'Thiết bị điện tử', N'thietBiDienTu.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (16, N'Mỹ thuật', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (16, N'Mỹ thuật', N'myThuat.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (17, N'Mực in - Bơm mực', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (17, N'Mực in - Bơm mực', N'mucIn.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (18, N'Kệ - Rổ', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (18, N'Kệ - Rổ', N'keRo.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (19, N'Dụng cụ vệ sinh văn phòng', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (19, N'Dụng cụ vệ sinh văn phòng', N'DungCuVSVP.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (20, N'Dụng cụ đóng dấu', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (20, N'Dụng cụ đóng dấu', N'dungCuDongDau.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (21, N'Ăn vặt văn phòng', NULL, NULL)
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (21, N'Ăn vặt văn phòng', N'anVat.jpg', NULL)
+GO
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (22, N'Bút cao cấp', N'defaul.png', N'Bút viết chất lượng cao, giá cả mắc')
+GO
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (23, N'Máy tính cao cấp', N'defaul.png', N'Máy tính nước ngoài chất lượng bền bỉ, nhiều tính năng')
+GO
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (24, N'Gôm tẩy các loại', N'defaul.png', N'Gôm tẩy chất lượng tốt, giá cả vừa phải')
+GO
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (33, N'Dụng cụ văn phòng phong cách cổ trang', N'agenda.png', N'Các sản phẩm mô phỏng theo phong cách cổ xưa')
 GO
 SET IDENTITY_INSERT [dbo].[category] OFF
 GO
@@ -766,6 +786,8 @@ INSERT [dbo].[district] ([district_id], [district_name], [district_prefix], [pro
 GO
 INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (11, 2, CAST(N'2021-10-20' AS Date), N'Bút rất tốt', 5)
 GO
+INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (12, 2, CAST(N'2021-10-03' AS Date), N'Bút khá cute *tym*', 5)
+GO
 INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (12, 3, CAST(N'2021-10-20' AS Date), N'Bút tạm được', 3)
 GO
 SET IDENTITY_INSERT [dbo].[order] ON 
@@ -871,7 +893,7 @@ INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (34, N'Chổi vệ sinh bàn phím', N'Chổi quét máy tính', N'choi-quet-may-tinh.jpg                                                                                                                                                                                                                                                                                      ', CAST(96720.00 AS Numeric(18, 2)), NULL, N'cây', 11, 0, 40, 3, 9, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (35, N'Hộp bút vải có khóa mật mã 20x6x8cm', N'Hộp bút vải có khóa mật mã 20x6x8cm', N'20201003090837-8.png                                                                                                                                                                                                                                                                                        ', CAST(265980.00 AS Numeric(18, 2)), NULL, N'hộp', 17, 0, 30, 5, 17, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (35, N'Hộp bút vải có khóa mật mã 20x6x8cm', N'Hộp bút vải có khóa mật mã 20x6x8cm', N'hopbuttim.png', CAST(265980.00 AS Numeric(18, 2)), NULL, N'hộp', 17, 0, 30, 5, 17, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (36, N'Túi đựng bút vải đính huy hiệu Maimaibaby', N'Dừng ở đây một chút rùi mình ngắm TÚI BÚT!!! Ui chùi túi bút xinh nung ninh như này hông chỉ là ngắm thui đâu mà còn phải hốt lẹ lun nhé! Đi học hay đi làm đem túi bút là tiện nhất rùi. Đựng đồ dùng học tập hay đồ mỹ phẩm be bé xinh xinh vừa như in lun ạ!', N'5_800x800.jpg                                                                                                                                                                                                                                                                                               ', CAST(86000.00 AS Numeric(18, 2)), NULL, N'túi', 0, 10, 50, 5, 17, 1)
 GO
@@ -1005,13 +1027,15 @@ INSERT [dbo].[province] ([province_id], [province_name], [province_code]) VALUES
 GO
 SET IDENTITY_INSERT [dbo].[users] ON 
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (11, N'reintrinh', N'123456    ', N'Trinh', N'Nguyễn', NULL, 1, N'reintrinh@gmail.com', N'0396311734', CAST(N'2021-10-02' AS Date), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (11, N'reintrinh1306', N'123456    ', N'Trinh', N'Nguyễn Ngọc Phương', N'trinh.jpg', 1, N'reintrinh@gmail.com', N'0396311734', CAST(N'2021-10-02' AS Date), 2, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (12, N'hathimo', N'123456    ', N'Mơ', N'Hà', NULL, 2, N'hathimo@gmail.com', N'0123456789', CAST(N'2021-10-02' AS Date), 2, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (12, N'hathimo', N'123456    ', N'Mơ', N'Hà', N'userDefaul.png', 2, N'hathimo@gmail.com', N'0123456789', CAST(N'2021-10-02' AS Date), 2, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (13, N'nhunguyen', N'123456    ', N'Như', N'Nguyễn', NULL, 3, N'nhunguyen@gmail.com', N'0123456789', CAST(N'2021-10-02' AS Date), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (13, N'nhunguyen', N'123456    ', N'Như', N'Nguyễn Ngọc Lâm', N'aduio.png', 3, N'nhunguyen123@gmail.com', N'0123456789', CAST(N'2021-10-02' AS Date), 1, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (14, N'trinhnhi', N'123456    ', N'Trinh', N'Nhi', NULL, 1, N'trinhnguyen@gmail.com', N'0123456789', CAST(N'2021-10-20' AS Date), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (14, N'trinhnguyen', N'123456    ', N'Trinh', N'Nguyễn', N'star.png', 1, N'trinhnguyen@gmail.com', N'0123456789', CAST(N'2021-10-20' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (19, N'admin', N'admin', N'Admin', N'Nguyễn', N'userDefaul.png', 9, N'otakuvocaloid79@gmail.com', N'0000000000', CAST(N'2021-10-28' AS Date), 2, 1)
 GO
 SET IDENTITY_INSERT [dbo].[users] OFF
 GO

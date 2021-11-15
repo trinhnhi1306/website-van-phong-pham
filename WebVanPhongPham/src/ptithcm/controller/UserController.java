@@ -167,7 +167,7 @@ public class UserController {
 		int result = userService.editUser(user, file);
 		model.addAttribute("message", result);
 		
-		session.setAttribute("admin", user);
+		session.setAttribute("admin", userService.getUserByID(user.getId()));
 		return "admin/user/editUser";
 	}
 	

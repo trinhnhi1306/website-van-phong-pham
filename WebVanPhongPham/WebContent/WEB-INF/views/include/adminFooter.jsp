@@ -70,9 +70,11 @@
         
     		document.addEventListener("DOMContentLoaded",function () {  
     		   province.addEventListener("change",function () {
+    			   alert("change province");
     		       getDistrict(this.value); 
     		   });
     		   district.addEventListener("change",function () {
+    			   alert("change district");
     			   getWard(this.value);
     		   });
     		  

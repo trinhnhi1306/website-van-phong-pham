@@ -27,7 +27,16 @@ public class CartService {
 	
 	public List<Cart> getCartByUserId(int userId)
 	{
-		return cartDAO.getCart(userId);
+		List<Cart> list;
+		try
+		{
+			list = cartDAO.getCart(userId);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			list = null;
+		}
+		return list;
 	}
 	
 	public Double getTotalMoney(int userId)

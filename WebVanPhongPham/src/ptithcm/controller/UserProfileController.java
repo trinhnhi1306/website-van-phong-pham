@@ -59,12 +59,13 @@ public class UserProfileController {
 	}
 	
 	@RequestMapping(value = "userProfile", method = RequestMethod.POST)
-	public String saveUserProfile(ModelMap model, @ModelAttribute("user") User user, @RequestParam("file") MultipartFile file) {
+	public String saveUserProfile(HttpSession session, ModelMap model, @ModelAttribute("user") User user, @RequestParam("file") MultipartFile file) {
 		
 		int result = userService.editUser(user, file);
 		
 		model.addAttribute("message", result);
 		
+		session.setAttribute("user", userService.getUserByID(user.getId()));
 		return "user/userProfile";
 	}
 	
@@ -87,19 +88,24 @@ public class UserProfileController {
 	}
 	
 	@RequestMapping(value = "changeAddress", method = RequestMethod.POST)
-	public String saveAddress(ModelMap model, @ModelAttribute("address") Address address) {
+	public String saveAddress(HttpSession session, ModelMap model, @ModelAttribute("address") Address address) {
 		int result = addressService.editAddress(address);
 		model.addAttribute("message", result);
+		
+		User user = (User) session.getAttribute("user");
+		session.setAttribute("user", userService.getUserByID(user.getId()));
 		return "user/changeAddress";
 	}
 	
 	@RequestMapping("addCart")
 	public String addCart(HttpSession session, @RequestParam("id") Integer id) {
 		User user = (User) session.getAttribute("user");
-		long totalItem = (long) session.getAttribute("totalItem");
 		
 		cartService.addCart(user.getId(), id);
-		session.setAttribute("totalItem", totalItem + 1);
+
+		session.setAttribute("cart", cartService.getCartByUserId(user.getId()));
+		session.setAttribute("totalItem", cartService.getTotalItem(user.getId()));
+		session.setAttribute("totalMoney", cartService.getTotalMoney(user.getId()));
 		
 		return "redirect:/home/product.htm?id=" + id;
 	}
@@ -107,20 +113,17 @@ public class UserProfileController {
 	@RequestMapping("deleteCart")
 	public String deleteCart(HttpSession session, @RequestParam("id") Integer id) {
 		User user = (User) session.getAttribute("user");
-		long totalItem = (long) session.getAttribute("totalItem");
 		
 		cartService.deleteCart(cartService.getCartByProduct(user.getId(), id));
-		session.setAttribute("totalItem", totalItem - 1);
+		
+		session.setAttribute("cart", cartService.getCartByUserId(user.getId()));
+		session.setAttribute("totalItem", cartService.getTotalItem(user.getId()));
+		session.setAttribute("totalMoney", cartService.getTotalMoney(user.getId()));
 		return "redirect:/user/cart.htm";
 	}
 	
 	@RequestMapping("cart")
-	public String showCart(ModelMap model, HttpSession session) {
-		User user = (User) session.getAttribute("user");
-		
-		model.addAttribute("cart", cartService.getCartByUserId(user.getId()));
-		model.addAttribute("total", cartService.getTotalMoney(user.getId()));
-		
+	public String showCart() {
 		return "user/cart";
 	}
 	

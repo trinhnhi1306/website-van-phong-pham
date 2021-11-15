@@ -5,8 +5,29 @@
 
 <script
 	src="<c:url value='resources/assets/dist/js/bootstrap.bundle.min.js'/>"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
+
+	/* Chỉnh sửa số lượng của item trong giỏ hàng*/
+	function editQuantityCart() {
+		
+		//alert($('input[name=idProductNeedTake]').val());
+		//alert($('input[type=hidden]').val());
+		//alert($(':hidden#idProductNeedTake').val());
+		//alert($('input:hidden[name=idProductNeedTake]').val());
+		var btn = $(this),
+        row = btn.parents('td').first();
+        itemId = row.find('.idProductNeedTake').val(),
+        
+      
+        console.log(itemId);
+		
+		var id2 =  $(this).closest('tr').find('input[type="hidden"]').val();
+		console.log(id2);
+		//var quantity = $("#quantity-cart-" + id).val();
+		//alert(id);
+	}
 
 	/* Phần này là xử lý đóng thông báo */
 	$(".rem").click(rem);
@@ -19,7 +40,7 @@
 	    img.src=URL.createObjectURL(event.target.files[0]);
 	}
 	
-	var editor = CKEDITOR.replace('messageBody');
+	/*var editor = CKEDITOR.replace('messageBody'); */
 	/* CKFinder.setupCKEditor(ckeditor, '${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js'); */
 </script>
 </body>
