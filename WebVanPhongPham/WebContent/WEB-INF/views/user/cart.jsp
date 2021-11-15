@@ -58,9 +58,7 @@
 					</td>
 				    <td class="py-3"><f:formatNumber value="${(c.products.price - (c.products.price * c.products.discount / 100)) * c.quantity}" type="currency" /></td>
 				    <td class="text-center py-3 edit-product">
-				    	<input type="hidden" id="idProductNeedTake" class="idProductNeedTake"  name="idProductNeedTake" value="${c.products.id}" >
-				    	<button value="${c.products.id}" type="hidden" class="link-dark" onclick="editQuantityCart()" role="button"><i class="fas fa-edit"></i></button>
-				    	
+				    	<button id="${c.products.id}" class="edit link-dark" role="button"><i class="fas fa-edit"></i></button>
 				    </td>
 				    <td class="text-center py-3">
 				    	<a class="link-dark" href="user/deleteCart.htm?id=${c.products.id }" role="button"><i class="fas fa-trash-alt"></i></a>

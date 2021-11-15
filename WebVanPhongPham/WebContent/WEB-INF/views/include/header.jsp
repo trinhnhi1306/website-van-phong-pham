@@ -31,7 +31,6 @@
 <!-- <link href="<c:url value='resources/assets/dist/all.css'/>" rel="stylesheet"> -->
 <link href="<c:url value='resources/assets/dist/fontawesome.min.css'/>" rel="stylesheet"/> 
 <link rel="stylesheet" href="<c:url value='resources/assets/dist/all.min.css'/>" /> 
-
 <style>
 
 .alert {
