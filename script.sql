@@ -230,7 +230,7 @@ CREATE TABLE [dbo].[users](
 	[first_name] [nvarchar](50) NOT NULL,
 	[last_name] [nvarchar](100) NOT NULL,
 	[image] [nvarchar](300) NULL,
-	[address_id] [int] NOT NULL,
+	[address_id] [int] NULL,
 	[email] [nvarchar](100) NULL,
 	[phone] [nvarchar](20) NOT NULL,
 	[created_at] [date] NOT NULL,
