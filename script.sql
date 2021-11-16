@@ -228,7 +228,7 @@ CREATE TABLE [dbo].[users](
 	[last_name] [nvarchar](100) NOT NULL,
 	[image] [nvarchar](300) NULL,
 	[address_id] [int] NULL,
-	[email] [nvarchar](100) NULL,
+	[email] [nvarchar](100) NOT NULL,
 	[phone] [nvarchar](20) NOT NULL,
 	[created_at] [date] NOT NULL,
 	[permission_id] [int] NOT NULL,
@@ -1036,9 +1036,9 @@ INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_nam
 GO
 INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (19, N'admin', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Admin', N'Nguyễn', N'userDefaul.png', 9, N'otakuvocaloid79@gmail.com', N'0000000000', CAST(N'2021-10-28' AS Date), 2, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (20, N'abc', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Harry', N'Potter', N'userDefaul.png', NULL, N'', N'1234567890', CAST(N'2021-11-15' AS Date), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (20, N'abc', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Harry', N'Potter', N'userDefaul.png', NULL, N'abc@gmail.com', N'1234567890', CAST(N'2021-11-15' AS Date), 1, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (21, N'test', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'test', N'test', N'userDefaul.png', NULL, N'', N'0', CAST(N'2021-11-15' AS Date), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (21, N'test', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'test', N'test', N'userDefaul.png', NULL, N'test@gmail.com', N'0', CAST(N'2021-11-15' AS Date), 1, 1)
 GO
 SET IDENTITY_INSERT [dbo].[users] OFF
 GO
