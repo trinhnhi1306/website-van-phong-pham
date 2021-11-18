@@ -1,5 +1,6 @@
 package ptithcm.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -71,18 +72,18 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
-	public String logout(HttpSession session) {
+	public String logout(HttpSession session, HttpServletRequest request) {
 		
-		if(session.getAttribute("admin") != null)
+		if(session.getAttribute("admin") != null) {
 			session.removeAttribute("admin");
-		else
-		{
+		}
+		else {
 			session.removeAttribute("user");
 			session.removeAttribute("cart");
 			session.removeAttribute("totalItem");
 			session.removeAttribute("totalMoney");
 		}
-		return "redirect:/login.htm";	
+		return "redirect:" + request.getHeader("Referer");
 	}
 	
 	@RequestMapping(value="/admin", method = RequestMethod.GET)

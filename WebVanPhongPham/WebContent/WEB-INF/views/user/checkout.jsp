@@ -17,9 +17,9 @@
 				<a class="btn btn-outline-primary btn-sm" href="home/shipping.htm" role="button">Thay đổi</a>
 			</div>
 		</div>
-		<div class="h5 ps-3">Username</div>
-		<div class="text-secondary">Số điện thoại: 0382305835</div>
-		<div class="text-secondary fst-italic">Địa chỉ: 581/30A Trường Chinh, Tân Sơn Nhì, Tân Phú, Hồ Chí Minh</div>
+		<div class="h5 ps-3">${sessionScope.user.lastName } ${sessionScope.user.firstName }</div>
+		<div class="text-secondary">Số điện thoại: ${sessionScope.user.phone }</div>
+		<div class="text-secondary fst-italic">Địa chỉ: ${sessionScope.user.address.specificAddress }, ${sessionScope.user.address.ward.prefix} ${sessionScope.user.address.ward.name}, ${sessionScope.user.address.ward.district.prefix} ${sessionScope.user.address.ward.district.name}, ${sessionScope.user.address.ward.district.province.name}</div>
 	</div>
 	
 	<div class="mbg-azure py-2 px-4 mb-2">
@@ -34,56 +34,25 @@
 		</thead>
 		<tbody>
 			<!-- Sau ghép JSTL vào -->
-			<tr>
-				<td class="py-1">
-					<div class="row">
-						<div class="col-auto">
-							<img src="resources/images/products/hopbuttim.png" style="width: 50px; height: 70px;">
+			<c:forEach var="c" items="${cart }">
+				<tr>
+					<td class="py-1">
+						<div class="row">
+							<div class="col-auto">
+								<img src="resources/images/products/${c.products.image }" style="width: 50px; height: 70px;">
+							</div>
+					
+							<div class="col py-2">
+								<div>${c.products.name }</div>
+							</div>
 						</div>
-				
-						<div class="col py-2">
-							<div>Hộp bút cute</div>
-						</div>
-					</div>
-				</td>
-				<td class="py-3">40.000 đ</td>
-				<td class="py-3">1</td>
-				<td class="py-3">40.000 đ</td>
-			</tr>
+					</td>
+					<td class="py-3"><f:formatNumber value="${c.products.price - (c.products.price * c.products.discount / 100) }" type="currency" /></td>
+					<td class="py-3">${c.quantity }</td>
+					<td class="py-3"><f:formatNumber value="${(c.products.price - (c.products.price * c.products.discount / 100)) * c.quantity}" type="currency" /></td>
+				</tr>
+			</c:forEach>
 			<!-- ////////////////////////////////////////// -->
-			<tr>
-				<td class="py-1">
-					<div class="row">
-						<div class="col-auto">
-							<img src="resources/images/products/hopbuttim.png" style="width: 50px; height: 70px;">
-						</div>
-				
-						<div class="col py-2">
-							<div>Hộp bút cute</div>
-						</div>
-					</div>
-				</td>
-				<td class="py-3">40.000 đ</td>
-				<td class="py-3">2</td>
-				<td class="py-3">80.000 đ</td>
-			</tr>
-			
-			<tr>
-				<td class="py-1">
-					<div class="row">
-						<div class="col-auto">
-							<img src="resources/images/products/hopbuttim.png" style="width: 50px; height: 70px;">
-						</div>
-				
-						<div class="col py-2">
-							<div>Hộp bút cute</div>
-						</div>
-					</div>
-				</td>
-				<td class="py-3">40.000 đ</td>
-				<td class="py-3">1</td>
-				<td class="py-3">40.000 đ</td>
-			</tr>
 		</tbody>
 		</table>
 	</div>
@@ -92,19 +61,29 @@
 		<div class="col-6 ">
 			<div class="mbg-azure py-2 px-4 mb-2">
 				<div class="fw-bold">Giảm phí vận chuyển:</div> <!-- Ví dụ như nếu mua trên 150k thì giảm 20k, không thì ghi không có :v -->
-				<div class="fst-italic">Không có</div>	<!-- Ví dụ không giảm -->
-			<!--	<div class="fst-italic">Giảm: -20.000 đ</div>  Ví dụ có giảm -->
+				<div class="fst-italic">
+					<c:choose>
+						<!-- Có giảm -->
+						<c:when test="${totalMoney > 150000}">
+							<f:formatNumber value="20000" type="currency" />
+						</c:when>
+						<!-- Không giảm -->
+						<c:otherwise>
+							Không có
+						</c:otherwise>				
+					</c:choose>
+				</div>
 			</div>
 			<div class="alert alert-warning" role="alert"> <!-- Thêm chơi để dằn mặt mấy thím thích boom hàng :v -->
 				Nhấn vào đặt hàng đồng nghĩa với việc bạn đồng ý với các điều khoản của MiniStore và có trách nhiệm với đơn hàng của mình.
 			</div> <!-- Copy của Shopee >.o -->
 		</div>
-			
+		
 		<div class="col-6">
 			<div class="mbg-azure py-2 px-4 mb-2">
 				<div class="row">
 					<div class="col">Tổng tiền hàng:</div>
-					<div class="col text-end">144.000 đ</div>
+					<div class="col text-end">${totalMoney }</div>
 				</div>
 				<div class="row">
 					<div class="col">Phí vận chuyển:</div>
@@ -113,12 +92,12 @@
 				<hr>
 				<div class="row fw-bolder">
 					<div class="col">Tổng cộng:</div>
-					<div class="col text-end">164.000 đ</div>
+					<div class="col text-end">${totalMoney + 20000}</div>
 				</div>
 			</div>
 			
 			<div class="p-2 d-grid"> <!-- Button -->
-				<a class="btn btn-danger bg-gradient" href="#" role="button">Đặt hàng</a>
+				<a type="submit" class="btn btn-danger bg-gradient" >Đặt hàng</a>
 			</div>
 		</div>
 	</div>

@@ -86,11 +86,6 @@ public class HomeController {
 		return "user/productDetail";
 	}
 	
-	@RequestMapping("checkout")
-	public String checkOut() {
-		return "user/checkout";
-	}
-	
 	@RequestMapping("shipping")
 	public String shipping() {
 		return "user/shipping";

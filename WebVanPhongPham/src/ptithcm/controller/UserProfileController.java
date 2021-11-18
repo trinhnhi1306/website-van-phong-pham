@@ -139,6 +139,11 @@ public class UserProfileController {
 		return "user/cart";
 	}
 	
+	@RequestMapping("checkout")
+	public String checkOut() {
+		return "user/checkout";
+	}
+	
 	@RequestMapping("order")
 	public String showOrder() {
 		return "user/order";
