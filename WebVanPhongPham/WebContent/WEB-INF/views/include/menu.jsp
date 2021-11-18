@@ -30,20 +30,29 @@
 		<div class="col-auto text-end px-0">	
 			<!-- Nav Item - User Information -->
 			<ul class="navbar-nav">
-			<li class="nav-item dropdown text-end">
-			<a  class="nav-link dropdown-toggle text-white" href="#"
-				id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-				aria-expanded="false"> 
-					<i class="fas fa-user-circle"></i>
-					<span class="mr-2 d-none d-lg-inline text-white small">${sessionScope.user.username }</span> 
-					
-			</a> 
-			<!-- Dropdown - User Information -->
-				<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<li><a class="dropdown-item" href="user/userProfile.htm">Tài khoản của tôi</a></li>
-					<li><a class="dropdown-item" href="user/order.htm">Đơn mua</a></li>
-					<li><a class="dropdown-item" href="logout.htm">Đăng xuất</a></li>
-				</ul></li>
+				<li class="nav-item dropdown text-end">
+					<a  class="nav-link dropdown-toggle text-white" href="#"
+						id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false"> 
+							<i class="fas fa-user-circle"></i>
+							<span class="mr-2 d-none d-lg-inline text-white small">${sessionScope.user.username }</span> 
+							
+					</a> 
+					<!-- Dropdown - User Information -->
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<c:choose>
+							<c:when test="${sessionScope.user != null}">
+								<li><a class="dropdown-item" href="user/userProfile.htm">Tài khoản của tôi</a></li>
+								<li><a class="dropdown-item" href="user/order.htm">Đơn mua</a></li>
+								<li><a class="dropdown-item" href="logout.htm">Đăng xuất</a></li>
+							</c:when>
+							<c:otherwise>
+								<li><a class="dropdown-item" href="login.htm">Đăng nhập</a></li>
+								<li><a class="dropdown-item" href="register.htm">Đăng ký</a></li>
+							</c:otherwise>
+						</c:choose>
+					</ul>
+				</li>
 			</ul>
 		</div>
 	</div>

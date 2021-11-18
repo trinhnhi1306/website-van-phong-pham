@@ -22,13 +22,16 @@
 		<!-- Chỉ lọc các URL theo path -->
 		<mvc:interceptor>
 			<mvc:mapping path="/admin/**"/>
-			<bean class="ptithcm.interceptor.AdminInterceptor" />
+			<mvc:mapping path="/user/**"/>
+			<mvc:exclude-mapping path="/user/cart.htm"/>
+			<bean class="ptithcm.interceptor.SecurityInterceptor" />
 		</mvc:interceptor>
 		
-		<mvc:interceptor>
+		<!-- <mvc:interceptor>
 			<mvc:mapping path="/user/**"/>
+			<mvc:exclude-mapping path="/user/cart.htm"/>
 			<bean class="ptithcm.interceptor.CustomerInterceptor" />
-		</mvc:interceptor>
+		</mvc:interceptor> -->
 		 
 		 <!-- <mvc:interceptor>
 			<mvc:mapping path="/user/**"/>

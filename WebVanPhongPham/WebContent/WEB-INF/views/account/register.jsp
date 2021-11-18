@@ -35,7 +35,7 @@
 			</div>
 			
 			<div class="wrap-input100 validate-input" data-validate="Enter password">
-				<form:input path="email" class="input100" type="email" name="pass" placeholder="Email"/>
+				<form:input path="email" class="input100" type="email" name="pass" placeholder="Email (*)" required="true"/>
 			</div>
 			
 			<div class="container-login100-form-btn">
