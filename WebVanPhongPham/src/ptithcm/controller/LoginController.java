@@ -63,7 +63,7 @@ public class LoginController {
 			}
 		}
 		catch (Exception e) {
-			//e.printStackTrace();
+			e.printStackTrace();
 			System.out.println("Tai khoan khong ton tai!");
 			model.addAttribute("message", "Tài khoản không tồn tại!");
 			return "account/login";

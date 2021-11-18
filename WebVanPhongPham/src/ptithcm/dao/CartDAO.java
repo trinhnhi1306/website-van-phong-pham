@@ -38,15 +38,16 @@ public class CartDAO {
 		return list;
 	}
 
-	public Double getTotalMoney(int userId) {
+	public double getTotalMoney(int userId) {
 		Session session = factory.getCurrentSession();
 		String hql = "select sum(quantity*(products.price - products.price*products.discount/100)) from Cart where users.id = :id";
 		Query query = session.createQuery(hql);
 
 		query.setParameter("id", userId);
-		Double list = (Double) query.list().get(0);
+		if(query.list().get(0) != null)
+			return (double) query.list().get(0);
 		
-		return list;
+		return 0.0;
 	}
 	
 	public long getTotalItem(int userId) {
@@ -55,9 +56,10 @@ public class CartDAO {
 		Query query = session.createQuery(hql);
 		System.out.println(userId);
 		query.setParameter("id", userId);
-		long list = (long) query.list().get(0);
-		System.out.println(list);
-		return list;
+		if(query.list().get(0) != null)
+			return (long) query.list().get(0);
+		
+		return 0;
 	}
 
 	public int insertCart(Cart cart) {

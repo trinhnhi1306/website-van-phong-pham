@@ -27,45 +27,17 @@ public class CartService {
 	
 	public List<Cart> getCartByUserId(int userId)
 	{
-		List<Cart> list;
-		try
-		{
-			list = cartDAO.getCart(userId);
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			list = null;
-		}
-		return list;
+		return cartDAO.getCart(userId);
 	}
 	
-	public Double getTotalMoney(int userId)
+	public double getTotalMoney(int userId)
 	{
-		Double result;
-		try
-		{
-			result = cartDAO.getTotalMoney(userId);
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			result = 0.0;
-		}
-		return result;
+		return cartDAO.getTotalMoney(userId);
 	}
 	
 	public long getTotalItem(int userId)
 	{
-		long result;
-		try
-		{
-			result = cartDAO.getTotalItem(userId);
-		}
-		catch (Exception e) {
-			System.out.println("Gio hang khong co san pham");
-			//e.printStackTrace();
-			result = 0;
-		}
-		return result;
+		return cartDAO.getTotalItem(userId);
 	}
 	
 	public int addCart(int userId, int productId)
@@ -94,9 +66,9 @@ public class CartService {
 		}
 		return cart;
 	}
+	
 	public int deleteCart(Cart cart)
-	{
-		
+	{		
 		return cartDAO.deleteCart(cart);
 	}
 }
