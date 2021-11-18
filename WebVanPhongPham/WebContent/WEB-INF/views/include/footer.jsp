@@ -3,8 +3,7 @@
 <!-- <script src="../assets/dist/js/bootstrap.bundle.min.js"></script> -->
 <!-- <script src="./assets/dist/js/bootstrap.bundle.min.js"></script> -->
 
-<script
-	src="<c:url value='resources/assets/dist/js/bootstrap.bundle.min.js'/>"></script>
+<script src="<c:url value='resources/assets/dist/js/bootstrap.bundle.min.js'/>"></script>
 <script type="text/javascript" src="<c:url value='https://code.jquery.com/jquery-3.5.1.min.js'/>"></script>
 <script src="<c:url value='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'/>"></script>
 <script type="text/javascript">

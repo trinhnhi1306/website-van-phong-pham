@@ -2,9 +2,11 @@ package ptithcm.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,12 +17,19 @@ import org.springframework.web.multipart.MultipartFile;
 
 import ptithcm.entity.Address;
 import ptithcm.entity.Cart;
+import ptithcm.entity.Category;
 import ptithcm.entity.District;
+import ptithcm.entity.Order;
+import ptithcm.entity.Product;
 import ptithcm.entity.Province;
 import ptithcm.entity.User;
 import ptithcm.entity.Ward;
+import ptithcm.entity.Feedback;
 import ptithcm.service.AddressService;
 import ptithcm.service.CartService;
+import ptithcm.service.FeedbackService;
+import ptithcm.service.OrderService;
+import ptithcm.service.ProductService;
 import ptithcm.service.UserService;
 
 @Controller
@@ -35,6 +44,15 @@ public class UserProfileController {
 	
 	@Autowired
 	CartService cartService;
+	
+	@Autowired
+	OrderService orderService;
+	
+	@Autowired
+	ProductService productService;
+	
+	@Autowired
+	FeedbackService feedbackService;
 	
 	@ModelAttribute("provinces")
 	public List<Province> getProvinces() {
@@ -98,7 +116,7 @@ public class UserProfileController {
 	}
 	
 	@RequestMapping("addCart")
-	public String addCart(HttpSession session, @RequestParam("id") Integer id) {
+	public String addCart(HttpServletRequest request, HttpSession session, @RequestParam("id") Integer id) {
 		User user = (User) session.getAttribute("user");
 		
 		cartService.addCart(user.getId(), id);
@@ -107,7 +125,7 @@ public class UserProfileController {
 		session.setAttribute("totalItem", cartService.getTotalItem(user.getId()));
 		session.setAttribute("totalMoney", cartService.getTotalMoney(user.getId()));
 		
-		return "redirect:/home/product.htm?id=" + id;
+		return "redirect:" + request.getHeader("Referer");
 	}
 	
 	@RequestMapping("editCart")
@@ -139,23 +157,102 @@ public class UserProfileController {
 		return "user/cart";
 	}
 	
-	@RequestMapping("checkout")
-	public String checkOut() {
+	@RequestMapping(value = "checkout", method = RequestMethod.GET)
+	public String checkOut(@ModelAttribute("order") Order order, HttpSession session) {
 		return "user/checkout";
+	}	
+	
+	@RequestMapping(value = "checkout", method = RequestMethod.POST)
+	public String saveCheckOut(@ModelAttribute("order") Order order, HttpSession session) {
+		int result = orderService.addOrder(order);
+		if (result == 1) {
+			List<Cart> cart = (List<Cart>) session.getAttribute("cart");
+			orderService.addOrderDetail(order, cart);
+			cartService.deleteAllCart(cart);
+		}
+		session.setAttribute("cart", null);
+		session.setAttribute("totalItem", 0);
+		session.setAttribute("totalMoney", 0.0);
+		return "redirect:/user/order.htm";
+	}	
+	
+
+	@RequestMapping(value = "shipping", method = RequestMethod.GET)
+	public String shipping(ModelMap model, HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		Address address = addressService.getAddressById(user.getAddress().getId());
+		model.addAttribute("phone", user.getPhone());
+		model.addAttribute("address", address);
+		return "user/shipping";
+	}
+	
+	@RequestMapping(value = "shipping", method = RequestMethod.POST)
+	public String shipping(HttpSession session, ModelMap model, @ModelAttribute("address") Address address, @RequestParam("phone") String phone, @RequestParam("file") MultipartFile file) {
+		int result1 = addressService.editAddress(address);
+		model.addAttribute("message1", result1);
+		
+		User user = (User) session.getAttribute("user");
+		user.setPhone(phone);
+		int result2 = userService.editUser(user, file);
+		model.addAttribute("message2", result2);
+		session.setAttribute("user", userService.getUserByID(user.getId()));
+		return "redirect:/user/checkout.htm";
 	}
 	
 	@RequestMapping("order")
-	public String showOrder() {
+	public String showOrder(ModelMap model, HttpServletRequest request, HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		List<Order> list = orderService.getOrderByUser(user.getId());
+		
+		// bỏ dữ liệu vào pagedListHolder rồi sau đó trả về cho model
+		PagedListHolder pagedListHolder = orderService.paging(list, request);
+	
+		model.addAttribute("pagedListHolder", pagedListHolder);
+		
 		return "user/order";
 	}
 	
 	@RequestMapping("orderDetail")
-	public String showOrderDetail() {
+	public String showOrderDetail(ModelMap model, @RequestParam("id") Integer id) {
+		model.addAttribute("order", orderService.getOrderById(id));
+		model.addAttribute("orderDetail", orderService.getOrderDetail(id));
 		return "user/orderDetail";
 	}
 	
-	@RequestMapping("feedback")
-	public String showFormFeedback() {
+	@RequestMapping(value = "feedback", method = RequestMethod.GET)
+	public String showFormFeedback(HttpSession session, ModelMap model, @RequestParam("productId") Integer productId) {
+		User user = (User) session.getAttribute("user");
+		Feedback feedback = feedbackService.getFeedbackById(user.getId(), productId);
+		if(feedback != null)
+		{
+			model.addAttribute("message", 1);
+		}
+		else
+		{
+			feedback = new Feedback();
+			feedback.setUser(user);
+			feedback.setProduct(productService.getProductByID(productId));
+			model.addAttribute("message", 2);
+		}
+		model.addAttribute("feedback", feedback);
 		return "user/feedback";
+	}
+	
+	@RequestMapping(value = "feedback", method = RequestMethod.POST, params = "btnAdd")
+	public String addFeedback(HttpServletRequest request, ModelMap model, @ModelAttribute("feedback") Feedback feedback) {
+		int result = feedbackService.addFeedback(feedback);
+		return "redirect:" + request.getHeader("Referer");
+	}
+	
+	@RequestMapping(value = "feedback", method = RequestMethod.POST, params = "btnEdit")
+	public String editFeedback(HttpServletRequest request, ModelMap model, @ModelAttribute("feedback") Feedback feedback) {
+		int result = feedbackService.editFeedback(feedback);
+		return "redirect:" + request.getHeader("Referer");
+	}
+	
+	@RequestMapping(value = "feedback", method = RequestMethod.POST, params = "btnDelete")
+	public String deleteFeedback(HttpServletRequest request, ModelMap model, @ModelAttribute("feedback") Feedback feedback) {
+		int result = feedbackService.deleteFeedback(feedback);
+		return "redirect:" + request.getHeader("Referer");
 	}
 }

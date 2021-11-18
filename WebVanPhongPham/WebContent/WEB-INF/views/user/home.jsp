@@ -70,29 +70,16 @@
 						</div>
 						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 							<div class="text-center">
-								<button data-toggle="modal" data-target="#myModal" class="btn btn-outline-dark mt-auto">Xem nhanh</button>
-								<div class="modal fade" id="myModal" role="dialog">
-						            <div class="modal-dialog">
-						                <div class="modal-content">
-						                    <div class="modal-header">
-						                        <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
-						                     	<h4 class="modal-title">Thông tin sản phẩm</h4>
-						                    </div>
-											
-						                    <div class="modal-body">
-						                       
-												<div class="thank-you-pop">
-													<img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
-													<h1>Thank You!</h1>
-													<p>Your submission is received and we will contact you soon</p>
-													<h3 class="cupon-pop">Your Id: <span>12345</span></h3>
-													
-						 						</div>		                         
-						                    </div>							
-						                </div>
-						            </div>
-						        </div>
-								<a class="btn btn-outline-success mt-auto" href="home/product.htm?id=${s.id }">Chi tiết</a>
+								<!-- <a class="btn btn-outline-info mt-auto" data-toggle="modal" href="#ignismyModal">Xem chi tiết</a> -->
+								<a class="btn btn-outline-dark mt-auto" href="home/product.htm?id=${s.id }">Xem chi tiết</a>
+								<c:choose>
+									<c:when test="${s.quantity > s.sold_quantity }">
+										<a class="btn btn-outline-success mt-auto" href="user/addCart.htm?id=${s.id }"><i class="fas fa-cart-plus"></i></a>
+									</c:when>
+									<c:otherwise>
+										<a class="btn btn-danger"><i class="fas fa-cart-plus"></i></a>
+									</c:otherwise>
+								</c:choose>
 							</div>
 						</div>
 					</div>

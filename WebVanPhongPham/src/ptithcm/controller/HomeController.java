@@ -86,11 +86,6 @@ public class HomeController {
 		return "user/productDetail";
 	}
 	
-	@RequestMapping("shipping")
-	public String shipping() {
-		return "user/shipping";
-	}
-	
 	@RequestMapping("category")
 	public String showCategory(ModelMap model) {
 		List<Category> list = categoryService.getAllCategories();

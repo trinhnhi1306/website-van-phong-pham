@@ -40,7 +40,14 @@
 						<button type="button" class="btn btn-info"><i class="fas fa-cart-plus"></i> Đã thêm vào giỏ hàng</button>
 					</c:when>
 					<c:otherwise>
-						<a href="user/addCart.htm?id=${product.id }"><button type="button" class="btn btn-outline-info"><i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button></a>
+						<c:choose>
+							<c:when test="${product.quantity > product.sold_quantity }">
+								<a href="user/addCart.htm?id=${product.id }"><button type="button" class="btn btn-outline-info"><i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button></a>
+							</c:when>
+							<c:otherwise>
+								<button type="button" class="btn btn-danger"><i class="fas fa-cart-plus"></i> Hết hàng</button>
+							</c:otherwise>
+						</c:choose>
 					</c:otherwise>
 				</c:choose>
 				</div>

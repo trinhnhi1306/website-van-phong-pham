@@ -42,11 +42,20 @@ public class CartService {
 	
 	public int addCart(int userId, int productId)
 	{
-		Cart cart = new Cart();
-		cart.setProducts(productDAO.getProductByID(productId));
-		cart.setUsers(userDAO.getUserByID(userId));
-		cart.setQuantity(1);
-		return cartDAO.insertCart(cart);
+		Cart cart = getCartByProduct(userId, productId);
+		if(cart == null)
+		{
+			cart = new Cart();
+			cart.setProducts(productDAO.getProductByID(productId));
+			cart.setUsers(userDAO.getUserByID(userId));
+			cart.setQuantity(1);
+			return cartDAO.insertCart(cart);
+		}
+		else
+		{
+			cart.setQuantity(cart.getQuantity() + 1);
+			return cartDAO.updateCart(cart);
+		}		
 	}
 	
 	public int editCart(Cart cart, int quantity)
@@ -70,5 +79,12 @@ public class CartService {
 	public int deleteCart(Cart cart)
 	{		
 		return cartDAO.deleteCart(cart);
+	}
+	
+	public void deleteAllCart(List<Cart> cart)
+	{		
+		for (Cart c : cart) {
+			cartDAO.deleteCart(c);
+		}
 	}
 }

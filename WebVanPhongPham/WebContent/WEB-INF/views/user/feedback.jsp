@@ -13,19 +13,36 @@
 	<div class="col-9 mbg-azure p-3">
 		<div class="h4 text-uppercase">Đánh giá sản phẩm</div>
 		<hr>
-		<form action="user/feedback.htm" method="post">
+		<form:form action="user/feedback.htm" method="post" modelAttribute="feedback">
+		<h1>${result }</h1>
 			<div class="row">
 				<div class="col-auto">
-					<img src="resources/images/products/hopbuttim.png" class="rounded" style="width: 70px; height: 90px;">
+					<img src="resources/images/products/${feedback.product.image }" class="rounded" style="width: 70px; height: 90px;">
 				</div>
-				
+				<form:input path="date" type="hidden"/>
+				<form:input path="product.id" type="hidden"/>
+				<form:input path="user.id" type="hidden"/>
+				<form:input path="vote" type="hidden"/>
 				<div class="col">
-					<div class="h5">Hộp bút cute</div>
-					<div>//Chỗ để rating nhưng chưa biết làm :v</div>
-					<textarea class="form-control my-2" rows="5"></textarea>
+					<div class="h5">${feedback.product.name }</div>
+					<!-- <div>//Chỗ để rating nhưng chưa biết làm :v</div> -->
+					<form:textarea path="comment" class="form-control my-2" rows="5" required="true"></form:textarea>
 				</div>
 			</div>
-		</form>
+			<c:choose>
+				<c:when test="${message == 1 }">
+					<div class="text-end">
+						<button name="btnEdit" class="btn btn-info text-white">Chỉnh sửa</button>
+						<button name="btnDelete" class="btn btn-danger text-white">Xóa</button>
+					</div>
+				</c:when>				
+				<c:otherwise>
+					<div class="text-end">
+						<button name="btnAdd" class="btn btn-success text-white">Thêm</button>
+					</div>
+				</c:otherwise>
+			</c:choose>			
+		</form:form>
 		
 	</div>
 		

@@ -14,7 +14,7 @@
 			</div>
 			
 			<div class="col text-end">
-				<a class="btn btn-outline-primary btn-sm" href="home/shipping.htm" role="button">Thay đổi</a>
+				<a class="btn btn-outline-primary btn-sm" href="user/shipping.htm" role="button">Thay đổi</a>
 			</div>
 		</div>
 		<div class="h5 ps-3">${sessionScope.user.lastName } ${sessionScope.user.firstName }</div>
@@ -56,52 +56,53 @@
 		</tbody>
 		</table>
 	</div>
-	
-	<div class="row">
-		<div class="col-6 ">
-			<div class="mbg-azure py-2 px-4 mb-2">
-				<div class="fw-bold">Giảm phí vận chuyển:</div> <!-- Ví dụ như nếu mua trên 150k thì giảm 20k, không thì ghi không có :v -->
-				<div class="fst-italic">
-					<c:choose>
-						<!-- Có giảm -->
-						<c:when test="${totalMoney > 150000}">
-							<f:formatNumber value="20000" type="currency" />
-						</c:when>
-						<!-- Không giảm -->
-						<c:otherwise>
-							Không có
-						</c:otherwise>				
-					</c:choose>
+	<form:form modelAttribute="order">
+		<div class="row">
+			<div class="col-6 ">
+				<div class="mbg-azure py-2 px-4 mb-2">
+					<div class="fw-bold">Giảm phí vận chuyển:</div> <!-- Ví dụ như nếu mua trên 150k thì giảm 20k, không thì ghi không có :v -->
+					<div class="fst-italic">
+						<%-- <c:choose>
+							<c:when test="${totalMoney > 150000}">
+								<f:formatNumber value="20000" type="currency" />
+							</c:when>
+							<c:otherwise> --%>
+								Không có
+							<%-- </c:otherwise>				
+						</c:choose> --%>
+					</div>
 				</div>
-			</div>
-			<div class="alert alert-warning" role="alert"> <!-- Thêm chơi để dằn mặt mấy thím thích boom hàng :v -->
-				Nhấn vào đặt hàng đồng nghĩa với việc bạn đồng ý với các điều khoản của MiniStore và có trách nhiệm với đơn hàng của mình.
-			</div> <!-- Copy của Shopee >.o -->
-		</div>
-		
-		<div class="col-6">
-			<div class="mbg-azure py-2 px-4 mb-2">
-				<div class="row">
-					<div class="col">Tổng tiền hàng:</div>
-					<div class="col text-end">${totalMoney }</div>
-				</div>
-				<div class="row">
-					<div class="col">Phí vận chuyển:</div>
-					<div class="col text-end">+20.000 đ</div>
-				</div>
-				<hr>
-				<div class="row fw-bolder">
-					<div class="col">Tổng cộng:</div>
-					<div class="col text-end">${totalMoney + 20000}</div>
-				</div>
+				<div class="alert alert-warning" role="alert"> <!-- Thêm chơi để dằn mặt mấy thím thích boom hàng :v -->
+					Nhấn vào đặt hàng đồng nghĩa với việc bạn đồng ý với các điều khoản của MiniStore và có trách nhiệm với đơn hàng của mình.
+				</div> <!-- Copy của Shopee >.o -->
 			</div>
 			
-			<div class="p-2 d-grid"> <!-- Button -->
-				<a type="submit" class="btn btn-danger bg-gradient" >Đặt hàng</a>
+			<div class="col-6">
+				<div class="mbg-azure py-2 px-4 mb-2">
+					<div class="row">
+						<div class="col">Tổng tiền hàng:</div>
+						<div class="col text-end"><f:formatNumber value="${totalMoney }" type="currency" /></div>
+					</div>
+					<div class="row">
+						<div class="col">Phí vận chuyển:</div>
+						<div class="col text-end">+<f:formatNumber value="0" type="currency" /></div>
+					</div>
+					<hr>
+					<div class="row fw-bolder">
+						<div class="col">Tổng cộng:</div>
+						<div class="col text-end"><f:formatNumber value="${totalMoney}" type="currency" /></div>
+					</div>
+				</div>
+				<form:input path="id" type="hidden" class="form-control"/>
+				<form:input path="status.id" value="1" type="hidden" class="form-control"/> 
+				<form:input path="user.id" value="${user.id }" type="hidden" class="form-control"/> 
+				<form:input path="totalPrice" value="${totalMoney}" type="hidden" class="form-control"/> 
+				<div class="p-2 d-grid"> <!-- Button -->
+					<button type="submit" class="btn btn-danger bg-gradient" >Đặt hàng</button>
+				</div>
 			</div>
 		</div>
-	</div>
-
+	</form:form>
 </div>
 
 <%@include file="/WEB-INF/views/include/footer.jsp"%>
