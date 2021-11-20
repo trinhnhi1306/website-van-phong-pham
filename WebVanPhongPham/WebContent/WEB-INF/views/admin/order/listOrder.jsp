@@ -29,6 +29,62 @@
 			</div>
 				
 			<div class="col-6">
+			<ul class="nav nav-pills mb-5 mx-3" id="pills-tab" role="tablist">
+			<li class="nav-item mx-4" role="presentation">
+				<button class="nav-link active" id="pills-waiting-tab"
+					data-bs-toggle="pill" data-bs-target="#pills-waiting" type="button"
+					role="tab" aria-controls="pills-waiting" aria-selected="true">Chờ xác nhận</button>
+			</li>
+			<li class="nav-item mx-4" role="presentation">
+				<button class="nav-link" id="pills-accept-tab"
+					data-bs-toggle="pill" data-bs-target="#pills-accept" type="button"
+					role="tab" aria-controls="pills-accept" aria-selected="false">Chờ lấy hàng</button>
+			</li>
+			<li class="nav-item mx-4" role="presentation">
+				<button class="nav-link" id="pills-shipping-tab"
+					data-bs-toggle="pill" data-bs-target="#pills-shipping" type="button"
+					role="tab" aria-controls="pills-shipping" aria-selected="false">Đang giao</button>
+			</li>
+			<li class="nav-item mx-4" role="presentation">
+				<button class="nav-link" id="pills-completed-tab"
+					data-bs-toggle="pill" data-bs-target="#pills-completed" type="button"
+					role="tab" aria-controls="pills-completed" aria-selected="false">Đã giao</button>
+			</li>
+			<li class="nav-item mx-4" role="presentation">
+				<button class="nav-link" id="pills-canceled-tab"
+					data-bs-toggle="pill" data-bs-target="#pills-canceled" type="button"
+					role="tab" aria-controls="pills-canceled" aria-selected="false">Đã hủy</button>
+			</li>
+		</ul>
+		<div class="tab-content" id="pills-tabContent">
+			<div class="tab-pane fade show active" id="pills-waiting"
+				role="tabpanel" aria-labelledby="pills-waiting-tab">Chờ xác nhận
+				
+			</div>
+				
+			<div class="tab-pane fade" id="pills-accept" role="tabpanel"
+				aria-labelledby="pills-accept-tab">Chờ lấy hàng
+			</div>
+				
+				
+			<div class="tab-pane fade" id="pills-shipping" role="tabpanel"
+				aria-labelledby="pills-shipping-tab">Đang giao
+				
+			</div>
+			
+			<div class="tab-pane fade" id="pills-completed" role="tabpanel"
+				aria-labelledby="pills-completed-tab">Đã giao
+				
+			</div>
+			
+			<div class="tab-pane fade" id="pills-canceled" role="tabpanel"
+				aria-labelledby="pills-canceled-tab">Đang hủy
+				
+			</div>
+		</div>
+
+
+			
 				<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
 						action="admin/searchOrder.htm">
 					<div>Trạng thái của đơn hàng: </div>

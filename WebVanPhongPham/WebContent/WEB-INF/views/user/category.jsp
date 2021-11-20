@@ -19,11 +19,10 @@
 					<div class="fw-bold py-2 my-auto">${c.name }</div>
 				</div>
 				<div class="py-2">
-					<a class="btn btn-outline-primary" href="home/search.htm?id=${c.id }" role="button">Xem</a>
+					<a class="btn btn-outline-primary" href="home/category/product.htm?id=${c.id }" role="button">Xem</a>
 				</div>
 			</div>
-		</c:forEach>
-		<!-- /////////////////// -->		
+		</c:forEach>	
 		
 	</div>	
 	</div>

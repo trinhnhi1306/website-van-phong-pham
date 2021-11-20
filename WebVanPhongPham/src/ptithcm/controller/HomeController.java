@@ -68,7 +68,24 @@ public class HomeController {
 	}
 	
 	@RequestMapping("search")
-	public String search() {
+	public String searchProduct(HttpServletRequest request, ModelMap model, @RequestParam("keyword") String keyword) {
+		List<Product> list = productService.searchProducts(keyword);
+		
+		// bỏ dữ liệu vào pagedListHolder rồi sau đó trả về cho model
+		PagedListHolder pagedListHolder = productService.paging(list, request);
+	
+		model.addAttribute("pagedListHolder", pagedListHolder);
+		return "user/product";
+	}
+	
+	@RequestMapping("category/product")
+	public String searchCategory(HttpServletRequest request, ModelMap model, @RequestParam("id") Integer id) {
+		List<Product> list = productService.getProductsByCategory(id);
+		
+		// bỏ dữ liệu vào pagedListHolder rồi sau đó trả về cho model
+		PagedListHolder pagedListHolder = productService.paging(list, request);
+	
+		model.addAttribute("pagedListHolder", pagedListHolder);
 		return "user/product";
 	}
 	

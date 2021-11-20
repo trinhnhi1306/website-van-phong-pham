@@ -24,6 +24,17 @@ public class OrderStatus {
 	@OneToMany(mappedBy = "status", fetch = FetchType.EAGER)
 	private Collection<Order> orders;
 	
+	public OrderStatus() {
+		super();
+	}
+
+	public OrderStatus(Integer id, String description, Collection<Order> orders) {
+		super();
+		this.id = id;
+		this.description = description;
+		this.orders = orders;
+	}
+
 	public Integer getId() {
 		return id;
 	}

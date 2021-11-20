@@ -17,6 +17,7 @@
 			</div>
 			<div class="col text-end">
 				<!-- Trạng thái của đơn hàng -->
+				<h1>${result }</h1>
 				<div class="text-success text-uppercase">${order.status.description}</div>
 			</div>
 		</div>
@@ -35,10 +36,10 @@
 					<!-- Ví dụ: "Đang giao" thì show nút "Nhận hàng", "Đang duyệt" và "Chuẩn bị" thì "Hủy"-->
 					<c:choose>
 						<c:when test="${order.status.id == 3 }">
-							<a class="btn btn-info text-white m-2" href="#" role="button">Nhận được hàng</a>
+							<a class="btn btn-info text-white m-2" href="user/orderDetail/receive.htm?id=${order.id }" role="button">Nhận được hàng</a>
 						</c:when>
-						<c:when test="${order.status.id == 1 ||  order.status.id == 2}">
-							<a class="btn text-info border border-info m-2" href="#" role="button">Hủy đơn hàng</a>
+						<c:when test="${order.status.id == 1 }">
+							<a class="btn btn-danger text-white m-2" href="user/orderDetail/cancelRequest.htm?id=${order.id }" role="button">Yêu cầu hủy đơn</a>
 						</c:when>
 					</c:choose>
 				</div>
@@ -61,7 +62,9 @@
 					<td class="py-1">
 						<div class="row">
 							<div class="col-auto">
-								<img src="resources/images/products/${o.products.image }" style="width: 50px; height: 70px;">
+								<a target="_blank" href="home/product.htm?id=${o.products.id }">
+									<img src="resources/images/products/${o.products.image }" style="width: 50px; height: 70px;">
+								</a>
 							</div>
 					
 							<div class="col py-2">

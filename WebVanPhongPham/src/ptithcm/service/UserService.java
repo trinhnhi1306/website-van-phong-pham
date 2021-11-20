@@ -71,7 +71,7 @@ public class UserService {
 			user.setImage("userDefaul.png");
 		else {			
 			try {	
-				String fileName = file.getOriginalFilename();
+				String fileName = uploadFile.setFileName(file);
 				
 	            String filePath = uploadFile.getBasePath() + "/users" + File.separator + fileName;
 	            System.out.println(filePath);
@@ -91,7 +91,7 @@ public class UserService {
 		
 		if(!file.isEmpty()) {			
 			try {	
-				String fileName = file.getOriginalFilename();
+				String fileName = uploadFile.setFileName(file);
 				
 	            String filePath = uploadFile.getBasePath() + "/users" + File.separator + fileName;
 	            System.out.println(filePath);
@@ -103,8 +103,6 @@ public class UserService {
 				return 2;		
 			}
 		}
-		else
-			user.setImage(user.getImage());
 		
 		return userDAO.updateUser(user);
 	}

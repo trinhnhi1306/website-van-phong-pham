@@ -24,6 +24,7 @@ public class FeedbackService {
 			feedback = feedbackDAO.getFeedbackById(userId, productId);
 		}
 		catch (Exception e) {
+			System.out.println("Khach hang nay chua feedback san pham nay");
 			e.printStackTrace();
 			feedback = null;
 		}

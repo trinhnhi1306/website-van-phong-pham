@@ -5,6 +5,12 @@
 
 <div class="limiter">
 	<div class="container-login100">
+		<c:if test="${not empty authen}">
+			<div class="col-sm-8 alert alert-danger alert-dismissible" role="alert">
+				Bạn cần đăng nhập để thực hiện chức năng này!
+				<button type="button" class="rem" data-dismiss="alert" aria-label="Close">&times;</button>
+			</div>
+		</c:if>
 		<div class="wrap-login100">
 			<form:form action="login.htm" method="post" modelAttribute="user" class="login100-form validate-form">
 				<span class="login100-form-logo"> <i

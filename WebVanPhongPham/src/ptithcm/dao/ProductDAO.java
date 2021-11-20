@@ -25,6 +25,15 @@ public class ProductDAO {
 		return list;
 	}
 	
+	public List<Product> getProductsByCategory(int categoryId) {
+		Session session = factory.getCurrentSession();
+		String hql = "FROM Product WHERE categories.id = :categoryId";
+		Query query = session.createQuery(hql);
+		query.setParameter("categoryId", categoryId);
+		List<Product> list = query.list();
+		return list;
+	}
+	
 	public Product getProductByID(int id) {
 		Session session = factory.getCurrentSession();
 		String hql = "FROM Product WHERE id = :id";

@@ -170,7 +170,8 @@ public class UserProfileController {
 			orderService.addOrderDetail(order, cart);
 			cartService.deleteAllCart(cart);
 		}
-		session.setAttribute("cart", null);
+		User user = (User) session.getAttribute("user");
+		session.setAttribute("cart", cartService.getCartByUserId(user.getId()));
 		session.setAttribute("totalItem", 0);
 		session.setAttribute("totalMoney", 0.0);
 		return "redirect:/user/order.htm";
@@ -217,6 +218,18 @@ public class UserProfileController {
 		model.addAttribute("order", orderService.getOrderById(id));
 		model.addAttribute("orderDetail", orderService.getOrderDetail(id));
 		return "user/orderDetail";
+	}
+	
+	@RequestMapping("orderDetail/cancelRequest")
+	public String requestCancelOrder(HttpServletRequest request, ModelMap model, @RequestParam("id") Integer id) {
+		int result = orderService.requestCancelOrder(orderService.getOrderById(id));
+		return "redirect:" + request.getHeader("Referer");
+	}
+	
+	@RequestMapping("orderDetail/receive")
+	public String receiveOrder(HttpServletRequest request, ModelMap model, @RequestParam("id") Integer id) {
+		int result = orderService.receiveOrder(orderService.getOrderById(id));
+		return "redirect:" + request.getHeader("Referer");
 	}
 	
 	@RequestMapping(value = "feedback", method = RequestMethod.GET)

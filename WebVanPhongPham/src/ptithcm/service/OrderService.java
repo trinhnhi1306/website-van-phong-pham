@@ -14,6 +14,7 @@ import ptithcm.dao.OrderDAO;
 import ptithcm.entity.Cart;
 import ptithcm.entity.Order;
 import ptithcm.entity.OrderDetail;
+import ptithcm.entity.OrderStatus;
 
 @Service
 @Transactional
@@ -65,5 +66,17 @@ public class OrderService {
 			orderDetail.setItem_price(price);
 			orderDAO.insertOrderDetail(orderDetail);
 		}
+	}
+	
+	public int requestCancelOrder(Order order)
+	{
+		order.setStatus(new OrderStatus(2, "Yêu cầu hủy", null));
+		return orderDAO.updateOrder(order);
+	}
+	
+	public int receiveOrder(Order order)
+	{
+		order.setStatus(new OrderStatus(4, "Đã giao", null));
+		return orderDAO.updateOrder(order);
 	}
 }

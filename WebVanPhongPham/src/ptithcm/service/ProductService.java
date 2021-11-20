@@ -41,6 +41,10 @@ public class ProductService {
 	public List<Product> getAllProducts() {
 		return productDAO.getAllProducts();
 	}
+	
+	public List<Product> getProductsByCategory(int categoryId) {
+		return productDAO.getProductsByCategory(categoryId);
+	}
 
 	public Product getProductByID(int id) {
 		return productDAO.getProductByID(id);

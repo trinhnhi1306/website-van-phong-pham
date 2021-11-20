@@ -101,7 +101,7 @@
 				<a class="btn btn-warning bg-gradient" href="home.htm" role="button">Tiếp tục mua sắm</a>
 			</div>
 			<div class="p-2 d-grid"> <!-- Button -->
-				<a class="btn btn-danger bg-gradient ${cart.size() == 0 ? 'disabled' : ''}" href="user/checkout.htm" onclick=";" role="button">Mua hàng</a>
+				<a class="btn btn-danger bg-gradient ${cart.size() == 0 ? 'disabled' : ''}" href="user/checkout.htm" role="button">Mua hàng</a>
 			</div>
 		</div>
 	</div>

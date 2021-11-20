@@ -59,7 +59,7 @@ public class CategoryService {
 			category.setImage("defaul.png");
 		else {			
 			try {	
-				String fileName = file.getOriginalFilename();
+				String fileName = uploadFile.setFileName(file);
 				
 	            String filePath = uploadFile.getBasePath() + "/categories" + File.separator + fileName;
 	            System.out.println(filePath);
@@ -79,7 +79,7 @@ public class CategoryService {
 		
 		if(!file.isEmpty()) {			
 			try {	
-				String fileName = file.getOriginalFilename();
+				String fileName = uploadFile.setFileName(file);
 				
 	            String filePath = uploadFile.getBasePath() + "/categories" + File.separator + fileName;
 	            System.out.println(filePath);

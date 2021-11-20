@@ -18,6 +18,8 @@
 	<!-- Spring MVC Annotation -->
 	<context:annotation-config />
 	<mvc:annotation-driven/>
+	<tx:annotation-driven/>
+	
 	
 	<!-- Cấu hình view -->
 	<bean id="viewResolver" 

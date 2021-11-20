@@ -33,13 +33,13 @@
 				<c:forEach var="order" items="${pagedListHolder.pageList }">
 					<tr>
 						<td class="text-center">
-							<a class="link-primary" target="_blank" href="user/orderDetail.htm?id=${order.id }" role="button"><i class="fas fa-info-circle"></i></a>
+							<a class="link-primary" href="user/orderDetail.htm?id=${order.id }" role="button"><i class="fas fa-info-circle"></i></a>
 						</td>
 						<td>${order.date }</td>
 						<td>
 							<ul>
 								<c:forEach var="orderDetail" items="${order.orderDetails }">
-									<li><a target="_blank" href="home/product.htm?id=${orderDetail.products.id }">${orderDetail.products.name }</a></li>
+									<li>${orderDetail.products.name }</li>
 								</c:forEach>
 							</ul>
 						</td>

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import ptithcm.entity.Order;
 import ptithcm.entity.OrderDetail;
+import ptithcm.entity.OrderStatus;
 
 @Repository
 public class OrderDAO {
@@ -25,6 +26,16 @@ public class OrderDAO {
 		Query query = session.createQuery(hql);
 		query.setParameter("userId", userId);
 		List<Order> list = query.list();
+		return list;
+	}
+	
+	public OrderStatus getOrderStatusById(int id)
+	{
+		Session session = factory.getCurrentSession();
+		String hql = "FROM OrderStatus WHERE id = :id";
+		Query query = session.createQuery(hql);
+		query.setParameter("id", id);
+		OrderStatus list = (OrderStatus) query.list().get(0);
 		return list;
 	}
 	
@@ -71,6 +82,23 @@ public class OrderDAO {
 
 		try {
 			session.save(orderDetail);
+			t.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			t.rollback();
+			return 0;
+		} finally {
+			session.close();
+		}
+		return 1;
+	}
+	
+	public int updateOrder(Order order) {
+		Session session = factory.openSession();
+		Transaction t = session.beginTransaction();
+
+		try {
+			session.update(order);
 			t.commit();
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,6 +31,12 @@ public class LoginController {
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String getLoginView(@ModelAttribute("user") User user) {
+		return "account/login";
+	}
+	
+	@RequestMapping(value="/login/{authen}", method = RequestMethod.GET)
+	public String authen(ModelMap model, @ModelAttribute("user") User user, @PathVariable("authen") String authen) {
+		model.addAttribute("authen", authen);
 		return "account/login";
 	}
 	
@@ -64,7 +71,7 @@ public class LoginController {
 			}
 		}
 		catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			System.out.println("Tai khoan khong ton tai!");
 			model.addAttribute("message", "Tài khoản không tồn tại!");
 			return "account/login";

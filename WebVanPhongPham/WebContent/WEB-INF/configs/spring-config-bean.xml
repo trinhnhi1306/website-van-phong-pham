@@ -16,7 +16,7 @@
 			http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<bean id="uploadfileTrinh" class="ptithcm.bean.UploadFile">
-		<property name="basePath" value="C:\Users\Apple Bee\Documents\Nam4\Lập trình web\website-van-phong-pham\WebVanPhongPham\WebContent\resources\images" />
+		<property name="basePath" value="C:\Users\TRINH\Documents\Nam4\Lập trình web\website-van-phong-pham\WebVanPhongPham\WebContent\resources\images" />
 	</bean>
 	
 	<bean id="uploadfile" class="ptithcm.bean.UploadFile">

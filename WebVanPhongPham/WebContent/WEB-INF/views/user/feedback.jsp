@@ -17,7 +17,9 @@
 		<h1>${result }</h1>
 			<div class="row">
 				<div class="col-auto">
-					<img src="resources/images/products/${feedback.product.image }" class="rounded" style="width: 70px; height: 90px;">
+					<a target="_blank" href="home/product.htm?id=${feedback.product.id }">
+						<img src="resources/images/products/${feedback.product.image }" class="rounded" style="width: 70px; height: 90px;">
+					</a>
 				</div>
 				<form:input path="date" type="hidden"/>
 				<form:input path="product.id" type="hidden"/>

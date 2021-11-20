@@ -98,7 +98,7 @@
 				<form:input path="user.id" value="${user.id }" type="hidden" class="form-control"/> 
 				<form:input path="totalPrice" value="${totalMoney}" type="hidden" class="form-control"/> 
 				<div class="p-2 d-grid"> <!-- Button -->
-					<button type="submit" class="btn btn-danger bg-gradient" >Đặt hàng</button>
+					<button type="submit" onclick="alert('Cám ơn bạn đã đặt hàng! Shop sẽ xử lý đơn hàng của bạn trong thời gian nhanh nhất có thể!')" class="btn btn-danger bg-gradient" >Đặt hàng</button>
 				</div>
 			</div>
 		</div>

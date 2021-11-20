@@ -68,7 +68,7 @@
 	      <div class="text-center form-inline ">
 	<form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-lg-0 " style="width: 700px;" action="home/search.htm">
        <div class="input-group ">
-         <input class="form-control mr-sm-2" style="padding: inherit;" type="search" placeholder=" Sản phẩm cần tìm" aria-label="Search">
+         <input name="keyword" class="form-control mr-sm-2" style="padding: inherit;" type="search" placeholder=" Sản phẩm cần tìm" aria-label="Search">
          <div class="input-group-append">
          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <i class="fas fa-search fa-sm"></i></button>
          </div>

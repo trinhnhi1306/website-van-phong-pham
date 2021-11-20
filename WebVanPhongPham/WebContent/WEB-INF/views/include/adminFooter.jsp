@@ -23,7 +23,7 @@
     	const ward = document.getElementById("ward");
     	function getProvince() {
     		$.ajax({ type : 'GET',
-				url : '/api/address/province.htm',
+				url : 'WebVanPhongPham/api/address/province.htm',
 				success : function(data) {
 					province.innerHTML = "";
 			         data.forEach(item => {
@@ -38,7 +38,7 @@
     		}
     		function getDistrict(provinceId) {
     			$.ajax({ type : 'GET',
-       				url : '/api/address/district/'+provinceId+'.htm',
+       				url : '/WebVanPhongPham/api/address/district/'+provinceId+'.htm',
        				success : function(data) {1
        					 district.innerHTML = "";
        			            data.forEach(item => {
@@ -48,13 +48,13 @@
        			                district.appendChild(e);
        			            })
        			       getWard(data[0].id);     
-       				}
+       				} 
        			})
     		}
     		
     		function getWard(districtId) {
     			$.ajax({ type : 'GET',
-       				url : '/api/address/ward/'+districtId+'.htm',
+       				url : '/WebVanPhongPham/api/address/ward/'+districtId+'.htm',
        				success : function(data) {1
        					ward.innerHTML = "";
        			            data.forEach(item => {

@@ -7,19 +7,19 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-public class SecurityInterceptor extends HandlerInterceptorAdapter{
+public class AdminInterceptor extends HandlerInterceptorAdapter{
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		System.out.println("Kiem tra nguoi dung da dang nhap chua");
+		System.out.println("Kiem tra admin da dang nhap chua");
 		HttpSession session = request.getSession();
-		if(session.getAttribute("admin") == null && session.getAttribute("user") == null) {
-			System.out.println("Nguoi dung chua dang nhap");
-			response.sendRedirect(request.getContextPath() + "/login.htm");
+		if(session.getAttribute("admin") == null) {
+			System.out.println("admin chua dang nhap");
+			response.sendRedirect(request.getContextPath() + "/login/authen.htm");
 			return false;
 		} 
-		System.out.println("Nguoi dung da dang nhap");
+		System.out.println("Admin da dang nhap");
 		return true;
 	}
 	
