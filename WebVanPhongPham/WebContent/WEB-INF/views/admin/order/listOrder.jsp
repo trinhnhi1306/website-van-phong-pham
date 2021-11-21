@@ -28,29 +28,29 @@
 				</form>
 			</div>
 				
-			<div class="col-6">
+			<div class="col-9">
 				<ul class="nav nav-pills mb-5 mx-3" id="pills-tab" role="tablist">
-					<li class="nav-item mx-4" role="presentation">
+					<li class="nav-item mx-2" role="presentation">
 						<button class="nav-link ${type == 1 ? 'active' : ''}" id="pills-waiting-tab"
 							data-bs-toggle="pill" data-bs-target="#pills-waiting" type="button"
 							role="tab" aria-controls="pills-waiting" aria-selected="${type == 1 ? 'true' : 'false'}">Chờ xác nhận</button>
 					</li>
-					<li class="nav-item mx-4" role="presentation">
+					<li class="nav-item mx-2" role="presentation">
 						<button class="nav-link ${type == 2 ? 'active' : ''}" id="pills-accept-tab"
 							data-bs-toggle="pill" data-bs-target="#pills-accept" type="button"
 							role="tab" aria-controls="pills-accept" aria-selected="${type == 2 ? 'true' : 'false'}">Yêu cầu hủy</button>
 					</li>
-					<li class="nav-item mx-4" role="presentation">
+					<li class="nav-item mx-2" role="presentation">
 						<button class="nav-link ${type == 3 ? 'active' : ''}" id="pills-shipping-tab"
 							data-bs-toggle="pill" data-bs-target="#pills-shipping" type="button"
 							role="tab" aria-controls="pills-shipping" aria-selected="${type == 3 ? 'true' : 'false'}">Đang giao</button>
 					</li>
-					<li class="nav-item mx-4" role="presentation">
+					<li class="nav-item mx-2" role="presentation">
 						<button class="nav-link ${type == 4 ? 'active' : ''}" id="pills-completed-tab"
 							data-bs-toggle="pill" data-bs-target="#pills-completed" type="button"
 							role="tab" aria-controls="pills-completed" aria-selected="${type == 4 ? 'true' : 'false'}">Đã giao</button>
 					</li>
-					<li class="nav-item mx-4" role="presentation">
+					<li class="nav-item mx-2" role="presentation">
 						<button class="nav-link ${type == 5 ? 'active' : ''}" id="pills-canceled-tab"
 							data-bs-toggle="pill" data-bs-target="#pills-canceled" type="button"
 							role="tab" aria-controls="pills-canceled" aria-selected="${type == 5 ? 'true' : 'false'}">Đã hủy</button>

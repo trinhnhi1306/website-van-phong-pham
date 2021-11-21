@@ -57,7 +57,7 @@ public class UserService {
 	}
 	
 	@Autowired
-	@Qualifier("uploadfileTrinh")
+	@Qualifier("uploadfile")
 	UploadFile uploadFile;
 	
 	public int addUser(User user, Address address, MultipartFile file) {

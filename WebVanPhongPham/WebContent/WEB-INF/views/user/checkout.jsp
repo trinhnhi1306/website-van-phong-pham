@@ -72,7 +72,8 @@
 						</c:choose> --%>
 					</div>
 				</div>
-				<div class="alert alert-warning" role="alert"> <!-- Thêm chơi để dằn mặt mấy thím thích boom hàng :v -->
+				<div class="alert-warning border border-warning rounded m-1 p-2" role="alert"> 
+				<!-- Thêm chơi để dằn mặt mấy thím thích boom hàng :v -->
 					Nhấn vào đặt hàng đồng nghĩa với việc bạn đồng ý với các điều khoản của MiniStore và có trách nhiệm với đơn hàng của mình.
 				</div> <!-- Copy của Shopee >.o -->
 			</div>
