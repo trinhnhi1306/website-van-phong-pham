@@ -10,7 +10,7 @@
 			<i class="fas fa-shopping-bag" style="color: #7579ff;"></i>
 			</span>
 			
-			<span class="login100-form-title py-4">Hoàn tất việc khôi phục mật khẩu</span>
+			<span class="login100-form-title py-4">Mật khẩu mới đã được gửi về email của bạn!</span>
 			
 			<div class="text-center pt-5">
 				<label class="text-white">Quay lại trang </label>

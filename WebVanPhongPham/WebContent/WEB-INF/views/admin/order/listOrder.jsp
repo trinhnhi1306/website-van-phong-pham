@@ -84,8 +84,8 @@
 							<td class="text-start">${p1.user.lastName } ${p1.user.firstName }</td>
 							<td class=""><f:formatNumber value="${p1.totalPrice }" type="currency" /></td>
 							<td class="">
-								<a class="btn btn-outline-success mt-auto" href="admin/acceptOrder.htm?id=${p1.id }">Chấp nhận</a>
-								<a class="btn btn-outline-danger mt-auto" href="admin/denyOrder.htm?id=${p1.id }">Từ chối</a>
+								<a class="btn btn-outline-success mt-auto" href="admin/acceptOrder.htm?id=${p1.id }"><i class="fas fa-check-circle"></i></a>
+								<a class="btn btn-outline-danger mt-auto" href="admin/denyOrder.htm?id=${p1.id }"><i class="fas fa-times-circle"></i></a>
 							</td>
 						</tr>	
 					</c:forEach>						
@@ -116,8 +116,8 @@
 							<td class="text-start">${p2.user.lastName } ${p2.user.firstName }</td>
 							<td class=""><f:formatNumber value="${p2.totalPrice }" type="currency" /></td>
 							<td class="">
-								<a class="btn btn-outline-success mt-auto" href="admin/acceptCancel.htm?id=${p2.id }">Chấp nhận</a>
-								<a class="btn btn-outline-danger mt-auto" href="admin/denyCancel.htm?id=${p2.id }">Từ chối</a>
+								<a class="btn btn-outline-success mt-auto" href="admin/acceptCancel.htm?id=${p2.id }"><i class="fas fa-check-circle"></i></a>
+								<a class="btn btn-outline-danger mt-auto" href="admin/denyCancel.htm?id=${p2.id }"><i class="fas fa-times-circle"></i></a>
 							</td>
 						</tr>	
 					</c:forEach>						

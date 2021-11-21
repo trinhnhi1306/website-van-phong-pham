@@ -46,6 +46,17 @@ public class UserDAO {
 		return list;
 	}
 	
+	public User getUserByUsernameAndEmail(String username, String email) {
+		Session session = factory.getCurrentSession();
+		String hql = "from User where username = :username and email = :email";
+		Query query = session.createQuery(hql);
+		query.setParameter("username", username);
+		query.setParameter("email", email);
+
+		User list = (User) query.list().get(0);
+		return list;
+	}
+	
 	public List<User> searchUsers(String firstName) {
 		Session session = factory.getCurrentSession();
 		String hql = "from User where firstName like :firstName";
