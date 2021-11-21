@@ -1,7 +1,8 @@
 CREATE DATABASE [WEBSITE_VANPHONGPHAM]
+GO
 USE [WEBSITE_VANPHONGPHAM]
 GO
-/****** Object:  Table [dbo].[address]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[address]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -16,7 +17,7 @@ CREATE TABLE [dbo].[address](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[brand]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[brand]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -31,7 +32,7 @@ CREATE TABLE [dbo].[brand](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[cart]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[cart]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -47,7 +48,7 @@ CREATE TABLE [dbo].[cart](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[category]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[category]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -63,7 +64,7 @@ CREATE TABLE [dbo].[category](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[district]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[district]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -79,7 +80,7 @@ CREATE TABLE [dbo].[district](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[feedback]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[feedback]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -97,7 +98,7 @@ CREATE TABLE [dbo].[feedback](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[order]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[order]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -114,7 +115,7 @@ CREATE TABLE [dbo].[order](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[order_detail]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[order_detail]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -131,7 +132,7 @@ CREATE TABLE [dbo].[order_detail](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[order_status]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[order_status]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -145,7 +146,7 @@ CREATE TABLE [dbo].[order_status](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[permission]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[permission]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -159,7 +160,7 @@ CREATE TABLE [dbo].[permission](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[poster]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[poster]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -175,7 +176,7 @@ CREATE TABLE [dbo].[poster](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[product]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[product]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -200,7 +201,7 @@ CREATE TABLE [dbo].[product](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[province]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[province]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -215,7 +216,7 @@ CREATE TABLE [dbo].[province](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[users]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[users]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -239,7 +240,7 @@ CREATE TABLE [dbo].[users](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ward]    Script Date: 16/11/2021 00:30:10 ******/
+/****** Object:  Table [dbo].[ward]    Script Date: 11/21/2021 9:35:14 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -261,7 +262,7 @@ INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (1, 
 GO
 INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (2, 173, N'1/10D')
 GO
-INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (3, 4, N'2/2B')
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (3, 191, N'1/15CF')
 GO
 INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (4, 94, N'123')
 GO
@@ -323,12 +324,6 @@ INSERT [dbo].[brand] ([brand_id], [name], [description]) VALUES (21, N'Logitech'
 GO
 SET IDENTITY_INSERT [dbo].[brand] OFF
 GO
-INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (14, 13, 2)
-GO
-INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (19, 13, 2)
-GO
-INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (21, 13, 1)
-GO
 SET IDENTITY_INSERT [dbo].[category] ON 
 GO
 INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (1, N'Bút viết', N'butViet.jpg', NULL)
@@ -373,11 +368,11 @@ INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (20, N'D
 GO
 INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (21, N'Ăn vặt văn phòng', N'anVat.jpg', NULL)
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (22, N'Bút cao cấp', N'defaul.png', N'Bút viết chất lượng cao, giá cả mắc')
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (22, N'Bút cao cấp', N'211118231826tải xuống.jpg', N'Bút viết chất lượng cao, giá cả mắc')
 GO
 INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (23, N'Máy tính cao cấp', N'defaul.png', N'Máy tính nước ngoài chất lượng bền bỉ, nhiều tính năng')
 GO
-INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (24, N'Gôm tẩy các loại', N'defaul.png', N'Gôm tẩy chất lượng tốt, giá cả vừa phải')
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (24, N'Gôm tẩy chất lượng tốt', N'defaul.png', N'Gôm tẩy chất lượng tốt, giá cả vừa phải')
 GO
 INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (33, N'Dụng cụ văn phòng phong cách cổ trang', N'agenda.png', N'Các sản phẩm mô phỏng theo phong cách cổ xưa')
 GO
@@ -783,17 +778,43 @@ INSERT [dbo].[district] ([district_id], [district_name], [district_prefix], [pro
 GO
 INSERT [dbo].[district] ([district_id], [district_name], [district_prefix], [province_id]) VALUES (200, N'Phú Vang', N'Huyện', 15)
 GO
-INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (11, 2, CAST(N'2021-10-20' AS Date), N'Bút rất tốt', 5)
-GO
 INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (12, 2, CAST(N'2021-10-03' AS Date), N'Bút khá cute *tym*', 5)
 GO
 INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (12, 3, CAST(N'2021-10-20' AS Date), N'Bút tạm được', 3)
 GO
+INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (13, 5, CAST(N'2021-11-20' AS Date), N'Bút gì mà dỏm quá :<', NULL)
+GO
+INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (13, 7, CAST(N'2021-11-18' AS Date), N'Giấy tốt', NULL)
+GO
 SET IDENTITY_INSERT [dbo].[order] ON 
 GO
-INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (2, CAST(N'2021-10-02' AS Date), CAST(6400.00 AS Numeric(18, 2)), 4, 11)
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (2, CAST(N'2021-10-02' AS Date), CAST(6400.00 AS Numeric(18, 2)), 4, 14)
 GO
 INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (3, CAST(N'2021-10-02' AS Date), CAST(9000.00 AS Numeric(18, 2)), 4, 13)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (4, CAST(N'2021-11-18' AS Date), CAST(727431.00 AS Numeric(18, 2)), 5, 13)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (5, CAST(N'2021-11-18' AS Date), CAST(32920.00 AS Numeric(18, 2)), 3, 14)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (6, CAST(N'2021-11-18' AS Date), CAST(160920.00 AS Numeric(18, 2)), 3, 13)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (11, CAST(N'2021-11-18' AS Date), CAST(228991.00 AS Numeric(18, 2)), 5, 13)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (12, CAST(N'2021-11-20' AS Date), CAST(115421.00 AS Numeric(18, 2)), 5, 13)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (13, CAST(N'2021-11-20' AS Date), CAST(126580.80 AS Numeric(18, 2)), 3, 13)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (14, CAST(N'2021-11-20' AS Date), CAST(7092941.00 AS Numeric(18, 2)), 4, 13)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (15, CAST(N'2021-11-21' AS Date), CAST(83391.00 AS Numeric(18, 2)), 3, 13)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (16, CAST(N'2021-11-21' AS Date), CAST(138600.00 AS Numeric(18, 2)), 3, 13)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (17, CAST(N'2021-11-21' AS Date), CAST(45000.00 AS Numeric(18, 2)), 3, 14)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (18, CAST(N'2021-11-21' AS Date), CAST(742500.00 AS Numeric(18, 2)), 5, 14)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (19, CAST(N'2021-11-21' AS Date), CAST(75500.00 AS Numeric(18, 2)), 1, 13)
 GO
 SET IDENTITY_INSERT [dbo].[order] OFF
 GO
@@ -801,17 +822,65 @@ INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price])
 GO
 INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (3, 17, 2, CAST(9000.00 AS Numeric(18, 2)))
 GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (4, 7, 1, CAST(83391.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (4, 19, 2, CAST(4500.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (4, 30, 2, CAST(317520.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (5, 2, 1, CAST(8300.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (5, 4, 1, CAST(10620.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (5, 5, 2, CAST(7000.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (6, 12, 2, CAST(78210.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (6, 19, 1, CAST(4500.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (11, 5, 1, CAST(7000.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (11, 7, 1, CAST(83391.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (11, 9, 1, CAST(138600.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (12, 4, 4, CAST(10620.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (12, 8, 1, CAST(72941.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (13, 6, 1, CAST(40500.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (13, 34, 1, CAST(86080.80 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (14, 8, 1, CAST(72941.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (14, 23, 10, CAST(702000.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (15, 7, 2, CAST(83391.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (16, 9, 1, CAST(138600.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (17, 14, 1, CAST(45000.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (18, 6, 1, CAST(40500.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (18, 23, 1, CAST(702000.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (19, 5, 5, CAST(7000.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (19, 6, 1, CAST(40500.00 AS Numeric(18, 2)))
+GO
 SET IDENTITY_INSERT [dbo].[order_status] ON 
 GO
 INSERT [dbo].[order_status] ([status_id], [description]) VALUES (1, N'Chờ xử lý')
 GO
-INSERT [dbo].[order_status] ([status_id], [description]) VALUES (2, N'Nhận đơn')
+INSERT [dbo].[order_status] ([status_id], [description]) VALUES (2, N'Yêu cầu hủy')
 GO
 INSERT [dbo].[order_status] ([status_id], [description]) VALUES (3, N'Đang giao')
 GO
 INSERT [dbo].[order_status] ([status_id], [description]) VALUES (4, N'Đã giao')
 GO
-INSERT [dbo].[order_status] ([status_id], [description]) VALUES (5, N'Hủy đơn')
+INSERT [dbo].[order_status] ([status_id], [description]) VALUES (5, N'Đã hủy')
 GO
 SET IDENTITY_INSERT [dbo].[order_status] OFF
 GO
@@ -840,41 +909,41 @@ GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (2, N'Bút gel 2 viên bi Thiên Long Flexoffice FO-GEL18/VN - Mực nước, đậm, tươi', N'Nét viết trơn, êm, mực ra đều và liên tục.
 
 Không độc hại, tiện dụng khi sử dụng.
- Mực hệ nước, hệ màu dye.', N'fo-gel18_vn_tim_71669d93f8d04bf498bbf73b7ab162e5_1024x1024.jpg                                                                                                                                                                                                                                              ', CAST(8300.00 AS Numeric(18, 2)), N'1 bút/ kiện.', N'cây', 0, 0, 30, 1, 16, 1)
+ Mực hệ nước, hệ màu dye.', N'fo-gel18_vn_tim_71669d93f8d04bf498bbf73b7ab162e5_1024x1024.jpg                                                                                                                                                                                                                                              ', CAST(8300.00 AS Numeric(18, 2)), N'1 bút/ kiện.', N'cây', 0, 1, 30, 1, 16, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (3, N'Bút bi Thiên Long Flexoffice FO-039 PLUS/VN 4MC - Mực đạt tiêu chuẩn châu Âu', N'Để nơi thoáng mát, tránh nguồn nhiệt. Không thích hợp cho trẻ dưới 3 tuổi.', N'fo-039_plus_vn_4mc_4_ae40e120115b48d4ae2a85e09a47d53a_1024x1024.jpg                                                                                                                                                                                                                                         ', CAST(4600.00 AS Numeric(18, 2)), N'1 bút/ kiện.', N'cây', 0, 0, 30, 1, 16, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (4, N'Bút gel xóa được Thiên Long Điểm 10 TP-GELE002', N'Dạng bút có nắp đậy. Bút dạng mực nước, viết trơn êm, mực ra đều, liên tục. Mực chất lượng cao không độc hại với người sử dụng. Bút có 2 gôm/tẩy trên cán và nắp bút thuận tiện sử dụng khi xóa mực.', N'220536693_2758032537653829_5778804089958025826_n_1__ac9f66a0e2ec4ff0a57d832ca9e12ff5_1024x1024.jpg                                                                                                                                                                                                          ', CAST(11800.00 AS Numeric(18, 2)), N'5 cây / 1 kiện', N'cây', 10, 0, 40, 1, 17, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (4, N'Bút gel xóa được Thiên Long Điểm 10 TP-GELE002', N'Dạng bút có nắp đậy. Bút dạng mực nước, viết trơn êm, mực ra đều, liên tục. Mực chất lượng cao không độc hại với người sử dụng. Bút có 2 gôm/tẩy trên cán và nắp bút thuận tiện sử dụng khi xóa mực.', N'220536693_2758032537653829_5778804089958025826_n_1__ac9f66a0e2ec4ff0a57d832ca9e12ff5_1024x1024.jpg                                                                                                                                                                                                          ', CAST(11800.00 AS Numeric(18, 2)), N'5 cây / 1 kiện', N'cây', 10, 1, 40, 1, 17, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (5, N'Bút Gel Thiên Long GEL-012 Đỏ (FS)', N'Bút có thiết kế đơn giản nhưng khoa học, thân tròn, nhỏ rất phù hợp với tay cầm của học sinh tiểu học. Thân và nắp bút bằng nhựa trắng đục, in nhũ kim loại. Mực màu đậm và tươi sáng, viết êm trơn, ra đều và liên tục.', N'but_gel_thien_long_gel-012__14__grande.jpg                                                                                                                                                                                                                                                                  ', CAST(7000.00 AS Numeric(18, 2)), N'1 bút/ kiện.', N'cây', 0, 0, 35, 1, 1, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (5, N'Bút Gel Thiên Long GEL-012 Đỏ (FS)', N'Bút có thiết kế đơn giản nhưng khoa học, thân tròn, nhỏ rất phù hợp với tay cầm của học sinh tiểu học. Thân và nắp bút bằng nhựa trắng đục, in nhũ kim loại. Mực màu đậm và tươi sáng, viết êm trơn, ra đều và liên tục.', N'but_gel_thien_long_gel-012__14__grande.jpg                                                                                                                                                                                                                                                                  ', CAST(7000.00 AS Numeric(18, 2)), N'1 bút/ kiện.', N'cây', 0, 2, 35, 1, 1, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (6, N'Bút Gel Papermate OS UPC Ink Joy 0.5 mm', NULL, N'ppmate_os_upc_0.5_2_5b8dbcaf15eb47dba2b5b6596fc146cd_1024x1024.jpg                                                                                                                                                                                                                                          ', CAST(45000.00 AS Numeric(18, 2)), N'5 cây / hộp', N'hộp', 10, 0, 40, 1, 8, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (6, N'Bút Gel Papermate OS UPC Ink Joy 0.5 mm', NULL, N'ppmate_os_upc_0.5_2_5b8dbcaf15eb47dba2b5b6596fc146cd_1024x1024.jpg                                                                                                                                                                                                                                          ', CAST(45000.00 AS Numeric(18, 2)), N'5 cây / hộp', N'hộp', 10, 1, 40, 1, 8, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (7, N'Ream giấy A4 80 gsm IK Copy (500 tờ) - Hàng nhập khẩu Indonesia', N'Giấy đều màu. Không gợn sóng, không xơ xước và không tách lớp. Giấy láng, không bị đốm khác màu hay tạp chất xơ cứng. Chữ in không bị nhòe, không lem kể cả in 2 mặt giấy.', N'ik_copy_a480_ton_kho2_dac0ed5096a9416fa0b5fb1cfb6b00ad_1024x1024.jpg                                                                                                                                                                                                                                        ', CAST(87780.00 AS Numeric(18, 2)), N'	500 tờ / ream', N'ream', 5, 0, 50, 2, 4, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (7, N'Ream giấy A4 80 gsm IK Copy (500 tờ) - Hàng nhập khẩu Indonesia', N'Giấy đều màu. Không gợn sóng, không xơ xước và không tách lớp. Giấy láng, không bị đốm khác màu hay tạp chất xơ cứng. Chữ in không bị nhòe, không lem kể cả in 2 mặt giấy.', N'ik_copy_a480_ton_kho2_dac0ed5096a9416fa0b5fb1cfb6b00ad_1024x1024.jpg                                                                                                                                                                                                                                        ', CAST(87780.00 AS Numeric(18, 2)), N'	500 tờ / ream', N'ream', 5, 2, 50, 2, 4, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (8, N'Ream giấy A4 70 gsm IK Copy (500 tờ) - Hàng nhập khẩu Indonesia', N'Giấy đều màu. Không gợn sóng, không xơ xước và không tách lớp. Giấy láng, không bị đốm khác màu hay tạp chất xơ cứng. Chữ in không bị nhòe, không lem kể cả in 2 mặt giấy.', N'ik_copy_a470_ton_kho2_5772a8166e324ee8b8eb76723a68e169_1024x1024.jpg                                                                                                                                                                                                                                        ', CAST(76780.00 AS Numeric(18, 2)), N'	500 tờ / ream', N'ream', 5, 0, 50, 2, 4, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (8, N'Ream giấy A4 70 gsm IK Copy (500 tờ) - Hàng nhập khẩu Indonesia', N'Giấy đều màu. Không gợn sóng, không xơ xước và không tách lớp. Giấy láng, không bị đốm khác màu hay tạp chất xơ cứng. Chữ in không bị nhòe, không lem kể cả in 2 mặt giấy.', N'ik_copy_a470_ton_kho2_5772a8166e324ee8b8eb76723a68e169_1024x1024.jpg                                                                                                                                                                                                                                        ', CAST(76780.00 AS Numeric(18, 2)), N'	500 tờ / ream', N'ream', 5, 1, 50, 2, 4, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (9, N'Giấy dán nhãn Tomy A4 đủ số', N'Dùng in tem, nhãn sản phẩm bằng máy laser thông thường. Có nhiều kích cỡ khác nhau, phù hợp mọi nhu cầu sử dụng. Chất giấy đẹp, mịn, láng.', N'giay_dan_nhan_tomy_a4_du_so_9635a65db4fd4e8e99b0b2ce25838e1d_1024x1024.jpg                                                                                                                                                                                                                                  ', CAST(154000.00 AS Numeric(18, 2)), N'	100 tờ/ hộp/ kiện', N'kiện', 10, 0, 40, 2, 18, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (9, N'Giấy dán nhãn Tomy A4 đủ số', N'Dùng in tem, nhãn sản phẩm bằng máy laser thông thường. Có nhiều kích cỡ khác nhau, phù hợp mọi nhu cầu sử dụng. Chất giấy đẹp, mịn, láng.', N'giay_dan_nhan_tomy_a4_du_so_9635a65db4fd4e8e99b0b2ce25838e1d_1024x1024.jpg                                                                                                                                                                                                                                  ', CAST(154000.00 AS Numeric(18, 2)), N'	100 tờ/ hộp/ kiện', N'kiện', 10, 1, 40, 2, 18, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (11, N'Giấy dán nhãn Tomy A5 đủ số', N'Dùng in tem, nhãn sản phẩm bằng máy laser thông thường. Có nhiều kích cỡ khác nhau, phù hợp mọi nhu cầu sử dụng. Chất giấy đẹp, mịn, láng.', N'giay_dan_nhan_tomy_a5_du_so_2_eee2b9a4d2024fa0970cf14b5177e781_1024x1024.jpg                                                                                                                                                                                                                                ', CAST(10000.00 AS Numeric(18, 2)), N'10 tờ/ xấp/ kiện', N'kiện', 10, 0, 60, 2, 18, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (12, N'Giấy photo A4 70 Thiên Long PP-001', N'Giấy in văn phòng chất lượng cao , bề mặt nhẵn tuyệt vời , mau khô mực , thích hợp cho các loại máy in phun , máy in laser , máy fax laser , máy photocopy… Giấy không bị bụi giúp kéo dài tuổi thọ các thiết bị in , photocopy . Giấy in Thiên Long được sản xuất và đóng gói theo tiêu chuẩn, dây chuyền thiết bị hiện đại, chuyên dung trong các văn phòng, công ty , trường học. Với khả năng đáp ứng in ấn , photocopy tốt. Thùng giấy được làm từ chất liệu tốt , tiện lợi cho việc vận chuyển và tái sử dụng vào việc lưu trữ tài liệu văn phòng.', N'mo_ta_giay_fa-13_675bf3a33cfd486099a82e383d103d67_grande.jpg                                                                                                                                                                                                                                                ', CAST(86900.00 AS Numeric(18, 2)), N'500 tờ / ream', N'ream', 10, 0, 30, 2, 1, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (12, N'Giấy photo A4 70 Thiên Long PP-001', N'Giấy in văn phòng chất lượng cao , bề mặt nhẵn tuyệt vời , mau khô mực , thích hợp cho các loại máy in phun , máy in laser , máy fax laser , máy photocopy… Giấy không bị bụi giúp kéo dài tuổi thọ các thiết bị in , photocopy . Giấy in Thiên Long được sản xuất và đóng gói theo tiêu chuẩn, dây chuyền thiết bị hiện đại, chuyên dung trong các văn phòng, công ty , trường học. Với khả năng đáp ứng in ấn , photocopy tốt. Thùng giấy được làm từ chất liệu tốt , tiện lợi cho việc vận chuyển và tái sử dụng vào việc lưu trữ tài liệu văn phòng.', N'mo_ta_giay_fa-13_675bf3a33cfd486099a82e383d103d67_grande.jpg                                                                                                                                                                                                                                                ', CAST(86900.00 AS Numeric(18, 2)), N'500 tờ / ream', N'ream', 10, 2, 30, 2, 1, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (13, N'Giấy bìa màu A4/180 BC-C01', N'Bìa giấy màu trơn, không hoa văn, không mùi, dùng đóng bìa hồ sơ, tài liệu theo khổ A4 với nhiều màu lựa chọn. Màu sắc trung thực và sống động. Công nghệ mới làm giấy trông mỏng nhưng thực tế giấy đã được nén chặt hơn, làm bề mặt của giấy nhẵn, đều hơn. Chất lượng: Đẹp, trắng, mịn, láng.', N'giay_bia_mau_a4-180_bc-c01__4__grande.jpg                                                                                                                                                                                                                                                                   ', CAST(43000.00 AS Numeric(18, 2)), N'100 tờ/xấp', N'xấp', 0, 0, 50, 2, 10, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (14, N'Giấy note Xukiva177 N-X02', N'Giúp các bạn quản lý tổ chức kế hoạch trong thời gian dài hạn. Tiện lợi cho việc mang theo mọi lúc mọi nơi. Ngay cả trong những lúc bận rộn nhất bạn cũng có thể ghi chú 1 cách dễ dàng. Gồm nhiều tờ trong 1 xấp. Chất lượng : Đẹp, mịn, láng. ', N'abl_4183_grande.jpg                                                                                                                                                                                                                                                                                         ', CAST(45000.00 AS Numeric(18, 2)), N'12 xấp/lốc', N'lốc', 0, 0, 40, 2, 7, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (14, N'Giấy note Xukiva177 N-X02', N'Giúp các bạn quản lý tổ chức kế hoạch trong thời gian dài hạn. Tiện lợi cho việc mang theo mọi lúc mọi nơi. Ngay cả trong những lúc bận rộn nhất bạn cũng có thể ghi chú 1 cách dễ dàng. Gồm nhiều tờ trong 1 xấp. Chất lượng : Đẹp, mịn, láng. ', N'abl_4183_grande.jpg                                                                                                                                                                                                                                                                                         ', CAST(45000.00 AS Numeric(18, 2)), N'12 xấp/lốc', N'lốc', 0, 1, 40, 2, 7, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (16, N'Giấy than G-Star 21x33 CP-G01 XANH', N'Giấy cảm nhiệt, mặt không nhiệt được quấn bên trong, mặt nhiệt được quấn ra ngoài. Đường kính trong lõi 27 mm, gói giấy bạc cách nhiệt, dán tem hai đầu, có màng co.', N'abl_5400_grande.jpg                                                                                                                                                                                                                                                                                         ', CAST(73000.00 AS Numeric(18, 2)), N'100 tờ/hộp', N'hộp', 0, 0, 40, 2, 5, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (17, N'Kẹp giấy Flexoffice FO-PAC01', N'Kẹp giấy Thiên Long FO-PAC01 (25mm) có đầu tam giác, đầu tròn. Sản xuất từ kim loại có chất lượng cao, được phủ lớp niken chống gỉ. Có thể giữ được 10 tờ giấy A4', N'617__1__grande.jpg                                                                                                                                                                                                                                                                                          ', CAST(5000.00 AS Numeric(18, 2)), N'	10 hộp/hộp lớn', N'chiếc', 10, 0, 40, 3, 16, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (17, N'Kẹp giấy Flexoffice FO-PAC01', N'Kẹp giấy Thiên Long FO-PAC01 (25mm) có đầu tam giác, đầu tròn. Sản xuất từ kim loại có chất lượng cao, được phủ lớp niken chống gỉ. Có thể giữ được 10 tờ giấy A4', N'617__1__grande.jpg                                                                                                                                                                                                                                                                                          ', CAST(5000.00 AS Numeric(18, 2)), N'	10 hộp/hộp lớn', N'chiếc', 10, 2, 40, 3, 16, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (18, N'Kim bấm số 3 Flexoffice FO-STS01', N'Kim bấm giấy là sản phẩm được làm từ thép cao cấp, giúp liên kết các tài liệu văn bản lại với nhau. Kim bấm có độ cứng cao, sáng bóng và không bị gỉ sét theo thời gian. Dễ dàng sử dụng và thân thiên với người dùng', N'651__5__grande.jpg                                                                                                                                                                                                                                                                                          ', CAST(5000.00 AS Numeric(18, 2)), N'20 hộp/hộp lớn', N'hộp', 0, 0, 30, 3, 16, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (19, N'Bìa nút trong suốt nhiều màu F4 Thiên Long Flexoffice FO-CBF08', N'Bìa bằng nhựa PP chịu lực cao. Đường hàn chắc chắn, nút bền hơn.', N'fo-cbf08_xk3_97ef69dd7dc84a91be7151a4a3991f5e_1024x1024.jpg                                                                                                                                                                                                                                                 ', CAST(5000.00 AS Numeric(18, 2)), N'1 bìa / kiện', N'cái', 10, 0, 30, 4, 16, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (19, N'Bìa nút trong suốt nhiều màu F4 Thiên Long Flexoffice FO-CBF08', N'Bìa bằng nhựa PP chịu lực cao. Đường hàn chắc chắn, nút bền hơn.', N'fo-cbf08_xk3_97ef69dd7dc84a91be7151a4a3991f5e_1024x1024.jpg                                                                                                                                                                                                                                                 ', CAST(5000.00 AS Numeric(18, 2)), N'1 bìa / kiện', N'cái', 10, 1, 30, 4, 16, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (21, N'Bìa đựng hồ sơ 60 lá sức chứa 300 tờ A4 80 gsm Thiên Long Flexoffice FO-DB009', N'Để lưu trữ và bảo quản các loại hồ sơ, tài liệu, tranh ảnh... Bìa 60 lá thích hợp cho gia đình, văn phòng: lưu trữ các loại giấy tờ nhà đất, giấy bảo hiểm, hóa đơn, giấy bảo hành… Sản phẩm được sản xuất từ nhựa PP chất lượng cao, an toàn với người sử dụng, sản phẩm có thể được tái chế hoàn toàn. Bề mặt trơn láng, hạn chế trầy xước và bám bẩn. Các lá được hàn trên công nghệ hàn siêu âm, có khả năng chịu ứng suất kéo cao.', N'fo-db009_2_af0b93f66f03446f98c05ef449beb913_1024x1024.jpg                                                                                                                                                                                                                                                   ', CAST(59200.00 AS Numeric(18, 2)), NULL, N'cái', 10, 0, 30, 4, 16, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (23, N'Máy tính Casio FX-570ES Plus', N'Không phải ngẫu nhiên mà máy tính CASIO FX 570ES PLUS được rất nhiều học sinh, sinh viên ưa thích đến vậy. Máy sở hữu kiểu dáng hiện đại, màu sắc trang nhã tinh tế cùng với danh sách các tính năng hữu ích, hỗ trợ tối đa trong quá trình học tập cũng như làm việc. Chiếc máy CASIO FX 570 ES PLUS là sản phẩm phù hợp với các bạn học sinh trung học.', N'casio.png                                                                                                                                                                                                                                                                                                   ', CAST(702000.00 AS Numeric(18, 2)), NULL, N'chiếc', 0, 0, 30, 8, 19, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (23, N'Máy tính Casio FX-570ES Plus', N'Không phải ngẫu nhiên mà máy tính CASIO FX 570ES PLUS được rất nhiều học sinh, sinh viên ưa thích đến vậy. Máy sở hữu kiểu dáng hiện đại, màu sắc trang nhã tinh tế cùng với danh sách các tính năng hữu ích, hỗ trợ tối đa trong quá trình học tập cũng như làm việc. Chiếc máy CASIO FX 570 ES PLUS là sản phẩm phù hợp với các bạn học sinh trung học.', N'casio.png                                                                                                                                                                                                                                                                                                   ', CAST(702000.00 AS Numeric(18, 2)), NULL, N'chiếc', 0, 10, 30, 8, 19, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (25, N'MÁY TÍNH VINACAL 570ES PLUS - HỒNG', NULL, N'vinacal-570ex-plus-hong.jpg                                                                                                                                                                                                                                                                                 ', CAST(1008000.00 AS Numeric(18, 2)), NULL, N'chiếc', 3, 0, 30, 8, 20, 1)
 GO
@@ -883,14 +952,14 @@ GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (27, N'Kéo lớn 25cm - K20', N' Lưỡi kéo được làm bằng kim loại cao cấp, sắc bén, cho đường cắt dứt khoát và đẹp mắt. Tay cầm kéo được bọc nhựa êm ái, tránh làm đau tay khi thao tác nhiều.', N'20210220153305-4.jpg                                                                                                                                                                                                                                                                                        ', CAST(34200.00 AS Numeric(18, 2)), NULL, N'cây', 0, 0, 30, 6, 17, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (28, N'Gôm Pentel Nhỏ 03 - Loại 1', N'Gôm Pentel H.03. Đặc điểm: Gôm/tẩy sử dụng cho việc bôi xóa trên giấy và màng film. Gôm/tẩy được bọc giấy bảo vệ bên ngoài nên hạn chế dơ khi sử dụng chưa hết.
-', N'unnamed.jpg                                                                                                                                                                                                                                                                                                 ', CAST(6400.00 AS Numeric(18, 2)), NULL, N'cục', 0, 0, 30, 3, 1, 1)
+', N'unnamed.jpg                                                                                                                                                                                                                                                                                                 ', CAST(6400.00 AS Numeric(18, 2)), NULL, N'cục', 0, 1, 30, 3, 1, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (30, N'Chuột máy tính không dây Logitech B175', N'Mang phong cách năng động, thể thao với những đường bo tròn mềm mại. Bề mặt độ cong vừa phải ôm sát lòng bàn tay để người dùng có thể thao tác thoải mái trong thời gian dài.
 Giúp bạn lướt chuột nhanh và nhẹ nhàng hơn. Đồng thời, bi lăn và nút bấm nhạy cho các thao tác như rê, kéo có được độ chính xác cao.', N'unnamed (1).jpg                                                                                                                                                                                                                                                                                             ', CAST(352800.00 AS Numeric(18, 2)), NULL, N'cái', 10, 0, 50, 14, 21, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (32, N'Đế Tản Nhiệt 4 Quạt', N'Đế Tản Nhiệt 4 Quạt', N'32036chuột-Đế Tản Nhiệt 4 Quạt 265000.jpg                                                                                                                                                                                                                                                                   ', CAST(381600.00 AS Numeric(18, 2)), NULL, N'miếng', 0, 0, 20, 14, 21, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (34, N'Chổi vệ sinh bàn phím', N'Chổi quét máy tính', N'choi-quet-may-tinh.jpg                                                                                                                                                                                                                                                                                      ', CAST(96720.00 AS Numeric(18, 2)), NULL, N'cây', 11, 0, 40, 3, 9, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (34, N'Chổi vệ sinh bàn phím', N'Chổi quét máy tính', N'choi-quet-may-tinh.jpg                                                                                                                                                                                                                                                                                      ', CAST(96720.00 AS Numeric(18, 2)), NULL, N'cây', 11, 1, 40, 3, 9, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (35, N'Hộp bút vải có khóa mật mã 20x6x8cm', N'Hộp bút vải có khóa mật mã 20x6x8cm', N'hopbuttim.png', CAST(265980.00 AS Numeric(18, 2)), NULL, N'hộp', 17, 0, 30, 5, 17, 1)
 GO
@@ -1026,11 +1095,11 @@ INSERT [dbo].[province] ([province_id], [province_name], [province_code]) VALUES
 GO
 SET IDENTITY_INSERT [dbo].[users] ON 
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (11, N'reintrinh1306', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Trinh', N'Nguyễn Ngọc Phương', N'trinh.jpg', 1, N'reintrinh@gmail.com', N'0396311734', CAST(N'2021-10-02' AS Date), 2, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (11, N'reintrinh1306', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Trinh', N'Nguyễn Ngọc Phương', N'211118221150avatar.jpg', 1, N'reintrinh@gmail.com', N'0396311734', CAST(N'2021-10-02' AS Date), 2, 1)
 GO
 INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (12, N'hathimo', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Mơ', N'Hà', N'userDefaul.png', 2, N'hathimo@gmail.com', N'0123456789', CAST(N'2021-10-02' AS Date), 2, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (13, N'nhunguyen', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Như', N'Nguyễn Ngọc Lâm', N'aduio.png', 3, N'nhunguyen123@gmail.com', N'0123456789', CAST(N'2021-10-02' AS Date), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (13, N'nhunguyen', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Như', N'Nguyễn Ngọc Lâm', N'aduio.png', 3, N'nhunguyen123@gmail.com', N'1234567890', CAST(N'2021-10-02' AS Date), 1, 1)
 GO
 INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (14, N'trinhnguyen', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Trinh', N'Nguyễn', N'star.png', 1, N'trinhnguyen@gmail.com', N'0123456789', CAST(N'2021-10-20' AS Date), 1, 1)
 GO
