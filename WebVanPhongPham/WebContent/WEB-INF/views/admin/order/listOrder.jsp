@@ -14,7 +14,7 @@
 		<div class="h4 text-uppercase text-center">Danh sách đơn hàng</div>
 	
 		<div class="row">
-			<div class="col-6">
+			<div class="col-3">
 				<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
 						action="admin/searchOrder.htm">
 					<div class="input-group">
@@ -29,147 +29,193 @@
 			</div>
 				
 			<div class="col-6">
-			<ul class="nav nav-pills mb-5 mx-3" id="pills-tab" role="tablist">
-			<li class="nav-item mx-4" role="presentation">
-				<button class="nav-link active" id="pills-waiting-tab"
-					data-bs-toggle="pill" data-bs-target="#pills-waiting" type="button"
-					role="tab" aria-controls="pills-waiting" aria-selected="true">Chờ xác nhận</button>
-			</li>
-			<li class="nav-item mx-4" role="presentation">
-				<button class="nav-link" id="pills-accept-tab"
-					data-bs-toggle="pill" data-bs-target="#pills-accept" type="button"
-					role="tab" aria-controls="pills-accept" aria-selected="false">Chờ lấy hàng</button>
-			</li>
-			<li class="nav-item mx-4" role="presentation">
-				<button class="nav-link" id="pills-shipping-tab"
-					data-bs-toggle="pill" data-bs-target="#pills-shipping" type="button"
-					role="tab" aria-controls="pills-shipping" aria-selected="false">Đang giao</button>
-			</li>
-			<li class="nav-item mx-4" role="presentation">
-				<button class="nav-link" id="pills-completed-tab"
-					data-bs-toggle="pill" data-bs-target="#pills-completed" type="button"
-					role="tab" aria-controls="pills-completed" aria-selected="false">Đã giao</button>
-			</li>
-			<li class="nav-item mx-4" role="presentation">
-				<button class="nav-link" id="pills-canceled-tab"
-					data-bs-toggle="pill" data-bs-target="#pills-canceled" type="button"
-					role="tab" aria-controls="pills-canceled" aria-selected="false">Đã hủy</button>
-			</li>
-		</ul>
+				<ul class="nav nav-pills mb-5 mx-3" id="pills-tab" role="tablist">
+					<li class="nav-item mx-4" role="presentation">
+						<button class="nav-link ${type == 1 ? 'active' : ''}" id="pills-waiting-tab"
+							data-bs-toggle="pill" data-bs-target="#pills-waiting" type="button"
+							role="tab" aria-controls="pills-waiting" aria-selected="${type == 1 ? 'true' : 'false'}">Chờ xác nhận</button>
+					</li>
+					<li class="nav-item mx-4" role="presentation">
+						<button class="nav-link ${type == 2 ? 'active' : ''}" id="pills-accept-tab"
+							data-bs-toggle="pill" data-bs-target="#pills-accept" type="button"
+							role="tab" aria-controls="pills-accept" aria-selected="${type == 2 ? 'true' : 'false'}">Yêu cầu hủy</button>
+					</li>
+					<li class="nav-item mx-4" role="presentation">
+						<button class="nav-link ${type == 3 ? 'active' : ''}" id="pills-shipping-tab"
+							data-bs-toggle="pill" data-bs-target="#pills-shipping" type="button"
+							role="tab" aria-controls="pills-shipping" aria-selected="${type == 3 ? 'true' : 'false'}">Đang giao</button>
+					</li>
+					<li class="nav-item mx-4" role="presentation">
+						<button class="nav-link ${type == 4 ? 'active' : ''}" id="pills-completed-tab"
+							data-bs-toggle="pill" data-bs-target="#pills-completed" type="button"
+							role="tab" aria-controls="pills-completed" aria-selected="${type == 4 ? 'true' : 'false'}">Đã giao</button>
+					</li>
+					<li class="nav-item mx-4" role="presentation">
+						<button class="nav-link ${type == 5 ? 'active' : ''}" id="pills-canceled-tab"
+							data-bs-toggle="pill" data-bs-target="#pills-canceled" type="button"
+							role="tab" aria-controls="pills-canceled" aria-selected="${type == 5 ? 'true' : 'false'}">Đã hủy</button>
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+		
 		<div class="tab-content" id="pills-tabContent">
-			<div class="tab-pane fade show active" id="pills-waiting"
-				role="tabpanel" aria-labelledby="pills-waiting-tab">Chờ xác nhận
-				
+			<div class="tab-pane ${type == 1 ? 'show active' : ''}" id="pills-waiting"	role="tabpanel" aria-labelledby="pills-waiting-tab">Chờ xác nhận
+				<!-- Khai báo pagedListHolder1 với param p1 -->
+				<jsp:useBean id="pagedListHolder1" scope="request"
+					type="org.springframework.beans.support.PagedListHolder" />
+				<c:url value="admin/listOrder/1.htm" var="pagedLink">
+					<c:param name="p1" value="~" />
+				</c:url>
+				<table class="table table-hover mt-3">
+					<tr class="table-primary text-center">
+						<th class="col-1">Chi tiết</th>
+						<th class="col-2 text-start">Ngày đặt</th>
+						<th class="col-3 text-start">Khách hàng</th>
+						<th class="col-2">Tổng tiền</th>
+						<th class="col-2">Xử lý</th>
+					</tr>
+					<!-- add JSTL -->
+					<c:forEach var="p1" items="${pagedListHolder1.pageList}">
+						<tr class="table-light text-center">
+							<td class=""><a href="admin/orderDetail.htm?orderId=${p1.id }"><i class="fas fa-info-circle"></i></a></td>
+							<td class="text-start">${p1.date }</td>
+							<td class="text-start">${p1.user.lastName } ${p1.user.firstName }</td>
+							<td class=""><f:formatNumber value="${p1.totalPrice }" type="currency" /></td>
+							<td class="">
+								<a class="btn btn-outline-success mt-auto" href="admin/acceptOrder.htm?id=${p1.id }">Chấp nhận</a>
+								<a class="btn btn-outline-danger mt-auto" href="admin/denyOrder.htm?id=${p1.id }">Từ chối</a>
+							</td>
+						</tr>	
+					</c:forEach>						
+				</table>
+				<tg:paging pagedListHolder="${pagedListHolder1}" pagedLink="${pagedLink}" />
 			</div>
 				
-			<div class="tab-pane fade" id="pills-accept" role="tabpanel"
-				aria-labelledby="pills-accept-tab">Chờ lấy hàng
+			<div class="tab-pane ${type == 2 ? 'show active' : ''}" id="pills-accept" role="tabpanel" aria-labelledby="pills-accept-tab">Yêu cầu hủy
+				<!-- Khai báo pagedListHolder2 với param p2 -->
+				<jsp:useBean id="pagedListHolder2" scope="request"
+					type="org.springframework.beans.support.PagedListHolder" />
+				<c:url value="admin/listOrder/2.htm" var="pagedLink">
+					<c:param name="p2" value="~" />
+				</c:url>
+				<table class="table table-hover mt-3">
+					<tr class="table-primary text-center">
+						<th class="col-1">Chi tiết</th>
+						<th class="col-2 text-start">Ngày đặt</th>
+						<th class="col-3 text-start">Khách hàng</th>
+						<th class="col-2">Tổng tiền</th>
+						<th class="col-2">Xử lý</th>
+					</tr>
+					<!-- add JSTL -->
+					<c:forEach var="p2" items="${pagedListHolder2.pageList}">
+						<tr class="table-light text-center">
+							<td class=""><a href="admin/orderDetail.htm?orderId=${p2.id }"><i class="fas fa-info-circle"></i></a></td>
+							<td class="text-start">${p2.date }</td>
+							<td class="text-start">${p2.user.lastName } ${p2.user.firstName }</td>
+							<td class=""><f:formatNumber value="${p2.totalPrice }" type="currency" /></td>
+							<td class="">
+								<a class="btn btn-outline-success mt-auto" href="admin/acceptCancel.htm?id=${p2.id }">Chấp nhận</a>
+								<a class="btn btn-outline-danger mt-auto" href="admin/denyCancel.htm?id=${p2.id }">Từ chối</a>
+							</td>
+						</tr>	
+					</c:forEach>						
+				</table>
+				<tg:paging pagedListHolder="${pagedListHolder2}" pagedLink="${pagedLink}" />
 			</div>
 				
 				
-			<div class="tab-pane fade" id="pills-shipping" role="tabpanel"
-				aria-labelledby="pills-shipping-tab">Đang giao
-				
+			<div class="tab-pane ${type == 3 ? 'show active' : ''}" id="pills-shipping" role="tabpanel" aria-labelledby="pills-shipping-tab">Đang giao
+				<!-- Khai báo pagedListHolder3 với param p3 -->
+				<jsp:useBean id="pagedListHolder3" scope="request"
+					type="org.springframework.beans.support.PagedListHolder" />
+				<c:url value="admin/listOrder/3.htm" var="pagedLink">
+					<c:param name="p3" value="~" />
+				</c:url>
+				<table class="table table-hover mt-3">
+					<tr class="table-primary text-center">
+						<th class="col-1">Chi tiết</th>
+						<th class="col-2 text-start">Ngày đặt</th>
+						<th class="col-3 text-start">Khách hàng</th>
+						<th class="col-2">Tổng tiền</th>
+						<th class="col-2">Trạng thái</th>
+					</tr>
+					<!-- add JSTL -->
+					<c:forEach var="p3" items="${pagedListHolder3.pageList}">
+						<tr class="table-light text-center">
+							<td class=""><a href="admin/orderDetail.htm?orderId=${p3.id }"><i class="fas fa-info-circle"></i></a></td>
+							<td class="text-start">${p3.date }</td>
+							<td class="text-start">${p3.user.lastName } ${p3.user.firstName }</td>
+							<td class=""><f:formatNumber value="${p3.totalPrice }" type="currency" /></td>
+							<td class="">${p3.status.description }</td>
+						</tr>	
+					</c:forEach>						
+				</table>
+				<tg:paging pagedListHolder="${pagedListHolder3}" pagedLink="${pagedLink}" />
 			</div>
 			
-			<div class="tab-pane fade" id="pills-completed" role="tabpanel"
-				aria-labelledby="pills-completed-tab">Đã giao
-				
+			<div class="tab-pane ${type == 4 ? 'show active' : ''}" id="pills-completed" role="tabpanel" aria-labelledby="pills-completed-tab">Đã giao
+				<!-- Khai báo pagedListHolder4 với param p4 -->
+				<jsp:useBean id="pagedListHolder4" scope="request"
+					type="org.springframework.beans.support.PagedListHolder" />
+				<c:url value="admin/listOrder/4.htm" var="pagedLink">
+					<c:param name="p4" value="~" />
+				</c:url>
+				<table class="table table-hover mt-3">
+					<tr class="table-primary text-center">
+						<th class="col-1">Chi tiết</th>
+						<th class="col-2 text-start">Ngày đặt</th>
+						<th class="col-3 text-start">Khách hàng</th>
+						<th class="col-2">Tổng tiền</th>
+						<th class="col-2">Trạng thái</th>
+					</tr>
+					<!-- add JSTL -->
+					<c:forEach var="p4" items="${pagedListHolder4.pageList}">
+						<tr class="table-light text-center">
+							<td class=""><a href="admin/orderDetail.htm?orderId=${p4.id }"><i class="fas fa-info-circle"></i></a></td>
+							<td class="text-start">${p4.date }</td>
+							<td class="text-start">${p4.user.lastName } ${p4.user.firstName }</td>
+							<td class=""><f:formatNumber value="${p4.totalPrice }" type="currency" /></td>
+							<td class="">${p4.status.description }</td>
+						</tr>	
+					</c:forEach>						
+				</table>
+				<tg:paging pagedListHolder="${pagedListHolder4}" pagedLink="${pagedLink}" />
 			</div>
 			
-			<div class="tab-pane fade" id="pills-canceled" role="tabpanel"
-				aria-labelledby="pills-canceled-tab">Đang hủy
-				
+			<div class="tab-pane ${type == 5 ? 'show active' : ''}" id="pills-canceled" role="tabpanel" aria-labelledby="pills-canceled-tab">Đã hủy
+				<!-- Khai báo pagedListHolder5 với param p5 -->
+				<jsp:useBean id="pagedListHolder5" scope="request"
+					type="org.springframework.beans.support.PagedListHolder" />
+				<c:url value="admin/listOrder/5.htm" var="pagedLink">
+					<c:param name="p5" value="~" />
+				</c:url>
+				<table class="table table-hover mt-3">
+					<tr class="table-primary text-center">
+						<th class="col-1">Chi tiết</th>
+						<th class="col-2 text-start">Ngày đặt</th>
+						<th class="col-3 text-start">Khách hàng</th>
+						<th class="col-2">Tổng tiền</th>
+						<th class="col-2">Trạng thái</th>
+					</tr>
+					<!-- add JSTL -->
+					<c:forEach var="p5" items="${pagedListHolder5.pageList}">
+						<tr class="table-light text-center">
+							<td class=""><a href="admin/orderDetail.htm?orderId=${p5.id }"><i class="fas fa-info-circle"></i></a></td>
+							<td class="text-start">${p5.date }</td>
+							<td class="text-start">${p5.user.lastName } ${p5.user.firstName }</td>
+							<td class=""><f:formatNumber value="${p5.totalPrice }" type="currency" /></td>
+							<td class="">${p5.status.description }</td>
+						</tr>	
+					</c:forEach>						
+				</table>
+				<tg:paging pagedListHolder="${pagedListHolder5}" pagedLink="${pagedLink}" />
 			</div>
 		</div>
-
-
-			
-				<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
-						action="admin/searchOrder.htm">
-					<div>Trạng thái của đơn hàng: </div>
-					<div class="row">
-					<div class="col-4 form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-						<label class="form-check-label" for="flexRadioDefault1">Tất cả</label>
-					</div>
-					<div class="col-4 form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-						<label class="form-check-label" for="flexRadioDefault2">Chờ xử lý</label>
-					</div>
-					<div class="col-4 form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-						<label class="form-check-label" for="flexRadioDefault2">Nhận đơn</label>
-					</div>
-					<div class="col-4 form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-						<label class="form-check-label" for="flexRadioDefault2">Đang giao</label>
-					</div>
-					<div class="col-4 form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-						<label class="form-check-label" for="flexRadioDefault2">Đã giao</label>
-					</div>
-					<div class="col-4 form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-						<label class="form-check-label" for="flexRadioDefault2">Hủy đơn</label>
-					</div>
-					</div>
-				</form>
-			</div>
-		</div>
 		
-		
-		<table class="table table-hover mt-3">
-		<tr class="table-primary text-center">
-			<th class="col-1">Chi tiết</th>
-			<th class="col-2 text-start">Ngày đặt</th>
-			<th class="col-3 text-start">Khách hàng</th>
-			<th class="col-2">Đơn giá</th>
-			<th class="col-2">Trạng thái</th>
-		</tr>
-		<!-- add JSTL -->
-		<tr class="table-light text-center">
-			<td class=""><a href="admin/orderDetail.htm"><i class="fas fa-info-circle"></i></a></td>
-			<td class="text-start">11/02/2021</td>
-			<td class="text-start">Nguyễn Ngọc Lâm Như</td>
-			<td class="">140.000 đ</td>
-			<td class="">Chờ xử lý</td>
-		</tr>
-		<!-- end -->
-		
-		<!-- xóa từ đây -->
-		<tr class="table-light text-center">
-			<td class=""><a href="admin/orderDetail.htm"><i class="fas fa-info-circle"></i></a></td>
-			<td class="text-start">11/02/2021</td>
-			<td class="text-start">Nguyễn Ngọc Lâm Như</td>
-			<td class="">140.000 đ</td>
-			<td class="">Đã hủy</td>
-		</tr>
-		<tr class="table-light text-center">
-			<td class=""><a href="admin/orderDetail.htm"><i class="fas fa-info-circle"></i></a></td>
-			<td class="text-start">11/02/2021</td>
-			<td class="text-start">Nguyễn Ngọc Lâm Như</td>
-			<td class="">140.000 đ</td>
-			<td class="">Đang giao</td>
-		</tr>
-		<tr class="table-light text-center">
-			<td class=""><a href="admin/orderDetail.htm"><i class="fas fa-info-circle"></i></a></td>
-			<td class="text-start">11/02/2021</td>
-			<td class="text-start">Nguyễn Ngọc Lâm Như</td>
-			<td class="">140.000 đ</td>
-			<td class="">Chờ xử lý</td>
-		</tr>
-		<tr class="table-light text-center">
-			<td class=""><a href="admin/orderDetail.htm"><i class="fas fa-info-circle"></i></a></td>
-			<td class="text-start">11/02/2021</td>
-			<td class="text-start">Nguyễn Ngọc Lâm Như</td>
-			<td class="">140.000 đ</td>
-			<td class="">Nhận đơn</td>
-		</tr>
-		<!-- tới đây :v -->
-		</table>
 	
-		<div class="text-end" aria-label="Page navigation example">
+		<!-- <div class="text-end" aria-label="Page navigation example">
 			<ul class="pagination" style="display: -webkit-inline-box;">
 				<li class="page-item"><a class="page-link text-primary border border-primary" href="#"><i class="fas fa-angle-double-left fs-4"></i></a></li>
 				<li class="page-item"><a class="page-link text-primary border border-primary" href="#"><i class="fas fa-angle-left fs-4"></i></a></li>
@@ -179,7 +225,7 @@
 				<li class="page-item"><a class="page-link text-primary border border-primary" href="#"><i class="fas fa-angle-right fs-4"></i></a></li>
 				<li class="page-item"><a class="page-link text-primary border border-primary" href="#"><i class="fas fa-angle-double-right fs-4"></i></a></li>
 			</ul>
-		</div>
+		</div> -->
 	</div>	
 </div>
 </div>

@@ -3,15 +3,13 @@
 <base href="${pageContext.servletContext.contextPath}/">
 <%@include file="/WEB-INF/views/include/header.jsp"%>
 <%@include file="/WEB-INF/views/include/adminMenu.jsp"%>
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-3">
 			<%@include file="/WEB-INF/views/include/adminTool.jsp"%>
 		</div>
-
+		
 		<div class="col-9 mbg-azure pt-2">
-
 			<div class="card-group">
 				<div class="card">
 					<img class="card-img-top" src="resources/images/users/user1.png" width="250" height="260" alt="Card image cap">
@@ -44,5 +42,4 @@
 		</div>
 	</div>
 </div>
-
 <%@include file="/WEB-INF/views/include/adminFooter.jsp"%>

@@ -1,5 +1,6 @@
 package ptithcm.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,7 @@ import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.ServletRequestUtils;
 
+import ptithcm.bean.MyItem;
 import ptithcm.dao.OrderDAO;
 import ptithcm.entity.Cart;
 import ptithcm.entity.Order;
@@ -33,9 +35,46 @@ public class OrderService {
 		return pagedListHolder;
 	}
 	
+	public PagedListHolder pagingManage(List<Order> list, HttpServletRequest request, String p) {
+		// bỏ dữ liệu vào pagedListHolder rồi sau đó trả về cho model
+		PagedListHolder pagedListHolder = new PagedListHolder(list);
+		int page = ServletRequestUtils.getIntParameter(request, p, 0);
+		pagedListHolder.setPage(page);
+		pagedListHolder.setMaxLinkedPages(5);
+		pagedListHolder.setPageSize(8);
+		return pagedListHolder;
+	}
+	
+	public List<MyItem> reportOrder()
+	{
+		List<MyItem> list = new ArrayList<>();
+        for (int i = 1; i <= 5; i++) {
+            MyItem myItem = new MyItem();
+            myItem.setName("abc");
+            //System.out.println(orderDAO.countOrderByStatus(i));
+            myItem.setValue(orderDAO.countOrderByStatus(i));
+            list.add(myItem);
+        }
+        return list;
+	}
+	
 	public List<Order> getOrderByUser(int userId)
 	{
 		return orderDAO.getOrderByUser(userId);
+	}
+	
+	public List<Order> getOrderByStatus(int statusId)
+	{
+		List<Order> orders;
+		try
+		{
+			orders = orderDAO.getOrderByStatus(statusId);
+		}
+		catch (Exception e) {
+			orders = null;
+		}
+		
+		return orders;
 	}
 	
 	public Order getOrderById(int id)
@@ -74,9 +113,27 @@ public class OrderService {
 		return orderDAO.updateOrder(order);
 	}
 	
+	public int cancelRequest(Order order)
+	{
+		order.setStatus(new OrderStatus(1, "Chờ xử lý", null));
+		return orderDAO.updateOrder(order);
+	}
+	
 	public int receiveOrder(Order order)
 	{
 		order.setStatus(new OrderStatus(4, "Đã giao", null));
+		return orderDAO.updateOrder(order);
+	}
+	
+	public int acceptOrder(Order order)
+	{
+		order.setStatus(new OrderStatus(3, "Đang giao", null));
+		return orderDAO.updateOrder(order);
+	}
+	
+	public int denyOrder(Order order)
+	{
+		order.setStatus(new OrderStatus(5, "Đã hủy", null));
 		return orderDAO.updateOrder(order);
 	}
 }

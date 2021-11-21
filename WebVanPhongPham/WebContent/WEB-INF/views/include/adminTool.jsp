@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <base href="${pageContext.servletContext.contextPath}/">
 
-<div class="position-fixed d-flex flex-column flex-shrink-0 p-3 mbg-navy">
+<div class="d-flex flex-column flex-shrink-0 p-3 mbg-navy">
 	<div class="py-2 text-center">
 		<i class="fab fa-phoenix-framework" style="font-size: 75px;"></i>
 	</div>
@@ -26,7 +26,7 @@
 		</li>
 		
 		<li class="nav-item border-top pt-2">
-			<a class="nav-link collapsed text-light" href="admin/listOrder.htm">
+			<a class="nav-link collapsed text-light" href="admin/listOrder/1.htm">
 				<i class="fas fa-box-open"></i> Danh sách đơn hàng
 			</a>	
 		</li>
@@ -40,6 +40,11 @@
 		<li class="nav-item border-top pt-2">
 			<a class="nav-link collapsed text-light" href="admin/listUser.htm">
 				<i class="fas fa-user-friends"></i> Danh sách người dùng
+			</a>	
+		</li>
+		<li class="nav-item border-top pt-2">
+			<a class="nav-link collapsed text-light" href="admin/listMember.htm">
+				<i class="fas fa-user-friends"></i> Danh sách thành viên
 			</a>	
 		</li>
 		

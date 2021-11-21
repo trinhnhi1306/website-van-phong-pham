@@ -62,6 +62,11 @@ public class HomeController {
 		return "user/home";
 	}
 	
+	@RequestMapping("handle-error")
+	public String handleError() {
+		return "index";
+	}
+	
 	@RequestMapping("information")
 	public String showInform() {
 		return "user/information";

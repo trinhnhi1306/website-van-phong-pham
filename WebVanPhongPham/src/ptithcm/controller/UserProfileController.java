@@ -221,6 +221,12 @@ public class UserProfileController {
 	}
 	
 	@RequestMapping("orderDetail/cancelRequest")
+	public String cancelRequestCancelOrder(HttpServletRequest request, ModelMap model, @RequestParam("id") Integer id) {
+		int result = orderService.cancelRequest(orderService.getOrderById(id));
+		return "redirect:" + request.getHeader("Referer");
+	}
+	
+	@RequestMapping("orderDetail/requestCancel")
 	public String requestCancelOrder(HttpServletRequest request, ModelMap model, @RequestParam("id") Integer id) {
 		int result = orderService.requestCancelOrder(orderService.getOrderById(id));
 		return "redirect:" + request.getHeader("Referer");

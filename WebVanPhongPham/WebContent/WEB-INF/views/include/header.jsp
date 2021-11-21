@@ -32,6 +32,7 @@
 <!-- <link href="<c:url value='resources/assets/dist/all.css'/>" rel="stylesheet"> -->
 <link href="<c:url value='resources/assets/dist/fontawesome.min.css'/>" rel="stylesheet"/> 
 <link rel="stylesheet" href="<c:url value='resources/assets/dist/all.min.css'/>" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <style>
 
 a.disabled {

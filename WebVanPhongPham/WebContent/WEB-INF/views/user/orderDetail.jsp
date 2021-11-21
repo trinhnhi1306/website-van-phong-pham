@@ -38,8 +38,11 @@
 						<c:when test="${order.status.id == 3 }">
 							<a class="btn btn-info text-white m-2" href="user/orderDetail/receive.htm?id=${order.id }" role="button">Nhận được hàng</a>
 						</c:when>
+						<c:when test="${order.status.id == 2 }">
+							<a class="btn btn-warning text-white m-2" href="user/orderDetail/cancelRequest.htm?id=${order.id }" role="button">Hủy yêu cầu</a>
+						</c:when>
 						<c:when test="${order.status.id == 1 }">
-							<a class="btn btn-danger text-white m-2" href="user/orderDetail/cancelRequest.htm?id=${order.id }" role="button">Yêu cầu hủy đơn</a>
+							<a class="btn btn-danger text-white m-2" href="user/orderDetail/requestCancel.htm?id=${order.id }" role="button">Yêu cầu hủy đơn</a>
 						</c:when>
 					</c:choose>
 				</div>

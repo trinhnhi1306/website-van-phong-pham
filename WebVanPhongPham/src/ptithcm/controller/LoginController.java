@@ -1,5 +1,7 @@
 package ptithcm.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -15,9 +17,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import ptithcm.bean.MyItem;
 import ptithcm.entity.Permission;
 import ptithcm.entity.User;
 import ptithcm.service.CartService;
+import ptithcm.service.OrderService;
 import ptithcm.service.UserService;
 
 @Controller
@@ -28,6 +32,15 @@ public class LoginController {
 
 	@Autowired
 	CartService cartService;
+	
+	@Autowired
+	OrderService orderService;
+	
+	@ModelAttribute("orderStatistics")
+	public List<MyItem> getOrderStatistics()
+	{
+		return orderService.reportOrder();
+	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String getLoginView(@ModelAttribute("user") User user) {
@@ -53,7 +66,7 @@ public class LoginController {
 				if(userLogin.getPermission().getId() == 2) {
 					System.out.println("Vai tro admin!");
 					session.setAttribute("admin", userLogin);
-					return "redirect:/admin.htm";
+					return "redirect:/admin/statistics.htm";
 				}
 				else {				
 					System.out.println("Vai tro khach hang!");
@@ -93,9 +106,14 @@ public class LoginController {
 		return "redirect:" + request.getHeader("Referer");
 	}
 	
-	@RequestMapping(value="/admin", method = RequestMethod.GET)
+	@RequestMapping(value="/admin/statistics", method = RequestMethod.GET)
 	public String admin() {
-		return "admin/index";
+		return "admin/statistics";
+	}
+	
+	@RequestMapping(value="/admin/listMember", method = RequestMethod.GET)
+	public String member() {
+		return "admin/listMember";
 	}
 	
 	@RequestMapping(value="/register", method = RequestMethod.GET)
