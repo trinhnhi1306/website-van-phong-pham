@@ -63,7 +63,12 @@ form img {
 	height: 200px;
 }
 .errors{
-     color:red;
+     color: red;
+     font-style: italic;
+}
+
+.errorss{
+     color: orange;
      font-style: italic;
 }
 @media ( min-width : 768px) {
