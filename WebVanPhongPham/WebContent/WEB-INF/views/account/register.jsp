@@ -13,7 +13,7 @@
 			</span>
 			
 			<span class="login100-form-title py-4">Đăng kí</span>
-			
+			${message1 }
 			<div class="wrap-input100 validate-input" data-validate="Enter username">
 				<form:input path="username" class="input100" type="text" name="username" placeholder="Tên đăng nhập (*)" required="true"/>
 				<label class="mb-1">

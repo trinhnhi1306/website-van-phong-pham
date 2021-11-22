@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import ptithcm.entity.Province;
+import ptithcm.bean.ChangedPassword;
 import ptithcm.entity.Address;
 import ptithcm.entity.District;
 import ptithcm.entity.Ward;
@@ -118,7 +120,9 @@ public class UserController {
 			return "admin/user/newUser";
 		else
 		{
+			System.out.println(address.getId());
 			int resultAddress = addressService.addAddress(address);
+			System.out.println(address.getId());
 			if(resultAddress == 0) {
 				model.addAttribute("message1", "Thêm địa chỉ thất bại");
 				return "admin/user/newUser";
@@ -298,7 +302,30 @@ public class UserController {
 	}
 	
 	@RequestMapping("myProfile/changePassword")
-	public String changePassword() {
+	public String changePassword(@ModelAttribute("password") ChangedPassword password) {
+		return "admin/user/changePassword";
+	}
+	
+	@RequestMapping(value = "myProfile/changePassword", method = RequestMethod.POST)
+	public String savePassword(ModelMap model, @ModelAttribute("password") ChangedPassword password, BindingResult errors, HttpSession session) {
+		User oldUser = (User) session.getAttribute("admin");
+		if (!BCrypt.checkpw(password.getOldPass(), oldUser.getPassword())) {
+			errors.rejectValue("oldPass", "password", "Mật khẩu hiện tại không đúng!");
+		}
+		if (!password.getConfirmPass().equalsIgnoreCase(password.getNewPass())) {
+			errors.rejectValue("confirmPass", "password", "Mật khẩu xác nhận không đúng!");
+		}
+		
+		if(errors.hasErrors())
+			return "admin/user/changePassword";
+		else
+		{
+			oldUser.setPassword(BCrypt.hashpw(password.getNewPass(), BCrypt.gensalt(12)));
+			int result = userService.updateUser(oldUser);
+			if(result == 1)
+				session.setAttribute("admin", userService.getUserByID(oldUser.getId()));
+			model.addAttribute("message", result);
+		}
 		return "admin/user/changePassword";
 	}
 	
