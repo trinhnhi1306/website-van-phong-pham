@@ -29,7 +29,19 @@
 						</div>
 					</div>
 					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">Xem</a></div>
+						<!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="home/product.htm">Xem</a></div> -->
+						<div class="text-center">
+							<!-- <a class="btn btn-outline-info mt-auto" data-toggle="modal" href="#ignismyModal">Xem chi tiết</a> -->
+							<a class="btn btn-outline-dark mt-auto" href="home/product.htm?id=${s.id }">Xem chi tiết</a>
+							<c:choose>
+								<c:when test="${s.quantity > s.sold_quantity }">
+									<a class="btn btn-outline-success mt-auto" href="user/addCart.htm?id=${s.id }"><i class="fas fa-cart-plus fs-4"></i></a>
+								</c:when>
+								<c:otherwise>
+									<a class="btn btn-danger"><i class="fas fa-cart-plus fs-4"></i></a>
+								</c:otherwise>
+							</c:choose>
+						</div>
 					</div>
 				</div>
 			</div>

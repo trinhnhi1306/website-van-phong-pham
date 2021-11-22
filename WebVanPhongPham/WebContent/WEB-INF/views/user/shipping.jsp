@@ -20,7 +20,7 @@
 	<h2>${message2 }</h2>
 	<div class="h5 text-center">Địa chỉ mới</div>
 	<div class="col-6 mbg-azure py-2 px-4 mb-2 m-auto">
-		<form:form action="user/shipping.htm" method="post" modelAttribute="address" enctype="multipart/form-data">
+		<form:form action="user/shipping.htm" method="post" modelAttribute="address" >
 			<div class="row mb-3">
 	    		<label class="col-sm-4 col-form-label">Điện thoại di động: </label>
 	    		<div class="col-sm-8">
@@ -61,7 +61,7 @@
 	    			<form:textarea path="specificAddress" class="form-control" id="exampleFormControlTextarea1" rows="3"></form:textarea>
 	    		</div>
   			</div>
-			<input name="file" type="file" class="visually-hidden">
+			
 			<form:input path="id" type="hidden" class="form-control"/> 
 			<div class="text-end">
 				<button type="submit" class="btn btn-info text-white">Hoàn Thành</button>

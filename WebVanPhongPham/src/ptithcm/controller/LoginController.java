@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import ptithcm.bean.MyItem;
 import ptithcm.entity.User;
+import ptithcm.service.AddressService;
 import ptithcm.service.CartService;
 import ptithcm.service.ReportService;
 import ptithcm.service.UserService;
@@ -29,6 +30,9 @@ public class LoginController {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	AddressService addressService;
 
 	@Autowired
 	CartService cartService;
@@ -176,7 +180,7 @@ public class LoginController {
 			return "account/register";
 		else
 		{
-			int result = userService.addUser(user, null, file);
+			int result = userService.addUser(user, addressService.getAddressById(1), file);
 			
 			session.setAttribute("user", userService.getUserByID(user.getId()));
 			session.setAttribute("cart", cartService.getCartByUserId(user.getId()));

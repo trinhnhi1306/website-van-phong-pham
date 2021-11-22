@@ -202,7 +202,7 @@ public class UserProfileController {
 	}
 	
 	@RequestMapping(value = "checkout", method = RequestMethod.GET)
-	public String checkOut(@ModelAttribute("order") Order order, HttpSession session) {
+	public String checkOut(@ModelAttribute("order") Order order) {
 		return "user/checkout";
 	}	
 	
@@ -215,10 +215,11 @@ public class UserProfileController {
 			cartService.deleteAllCart(cart);
 		}
 		User user = (User) session.getAttribute("user");
+		
 		session.setAttribute("cart", cartService.getCartByUserId(user.getId()));
 		session.setAttribute("totalItem", 0);
 		session.setAttribute("totalMoney", 0.0);
-		return "redirect:/user/order.htm";
+		return "user/success";
 	}	
 	
 
@@ -232,13 +233,13 @@ public class UserProfileController {
 	}
 	
 	@RequestMapping(value = "shipping", method = RequestMethod.POST)
-	public String shipping(HttpSession session, ModelMap model, @ModelAttribute("address") Address address, @RequestParam("phone") String phone, @RequestParam("file") MultipartFile file) {
+	public String shipping(HttpSession session, ModelMap model, @ModelAttribute("address") Address address, @RequestParam("phone") String phone) {
 		int result1 = addressService.editAddress(address);
 		model.addAttribute("message1", result1);
 		
 		User user = (User) session.getAttribute("user");
 		user.setPhone(phone);
-		int result2 = userService.editUser(user, file);
+		int result2 = userService.updateUser(user);
 		model.addAttribute("message2", result2);
 		session.setAttribute("user", userService.getUserByID(user.getId()));
 		return "redirect:/user/checkout.htm";
