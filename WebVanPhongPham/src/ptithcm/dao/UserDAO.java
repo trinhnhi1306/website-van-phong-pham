@@ -46,6 +46,26 @@ public class UserDAO {
 		return list;
 	}
 	
+	public User getUserByEmail(String email) {
+		Session session = factory.getCurrentSession();
+		String hql = "from User where email = :email";
+		Query query = session.createQuery(hql);
+		query.setParameter("email", email);
+
+		User list = (User) query.list().get(0);
+		return list;
+	}
+	
+	public User getUserByPhone(String phone) {
+		Session session = factory.getCurrentSession();
+		String hql = "from User where phone = :phone";
+		Query query = session.createQuery(hql);
+		query.setParameter("phone", phone);
+
+		User list = (User) query.list().get(0);
+		return list;
+	}
+	
 	public User getUserByUsernameAndEmail(String username, String email) {
 		Session session = factory.getCurrentSession();
 		String hql = "from User where username = :username and email = :email";

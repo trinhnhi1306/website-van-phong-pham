@@ -44,6 +44,18 @@ public class CategoryService {
 		return categoryDAO.getCategoryByID(id);
 	}
 	
+	public Category getCategoryByName(String name) {
+		Category category;
+		try
+		{
+			category = categoryDAO.getCategoryByName(name);
+		}
+		catch (Exception e) {
+			category = null;
+		}
+		return category;
+	}
+	
 	public List<Category> searchCategories(String name) {
 		
 		return categoryDAO.searchCategories(name);

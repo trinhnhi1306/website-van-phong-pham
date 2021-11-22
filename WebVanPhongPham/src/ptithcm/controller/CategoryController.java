@@ -43,12 +43,24 @@ public class CategoryController {
 	}
 	
 	@RequestMapping(value = "newCategory", method = RequestMethod.POST)
-	public String addCategory(ModelMap model, @Validated @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file, BindingResult errors) {
+	public String addCategory(ModelMap model, @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file, BindingResult errors) {
+		if (categoryService.getCategoryByName(category.getName()) != null) {
+			errors.rejectValue("name", "category", "Tên loại đã được sử dụng!");
+		}
+		if (category.getName().length() > 100) {
+			errors.rejectValue("name", "category", "Tên loại không được dài quá 100 ký tự!");
+		}
+		if (category.getNote().length() > 300) {
+			errors.rejectValue("note", "category", "Ghi chú không được dài quá 300 ký tự!");
+		}
+		
 		if(errors.hasErrors())
 			return "admin/category/newCategory";
-		
-		int result = categoryService.addCategory(category, file);
-		model.addAttribute("message", result);
+		else
+		{
+			int result = categoryService.addCategory(category, file);
+			model.addAttribute("message", result);
+		}	
 		
 		return "admin/category/newCategory";
 	}
@@ -61,10 +73,25 @@ public class CategoryController {
 	}
 	
 	@RequestMapping(value = "editCategory", method = RequestMethod.POST)
-	public String saveEdit(ModelMap model, @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file) {
+	public String saveEdit(ModelMap model, @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file, BindingResult errors) {
+		Category oldCategory = categoryService.getCategoryByID(category.getId());
+		if (categoryService.getCategoryByName(category.getName()) != null && !category.getName().equalsIgnoreCase(oldCategory.getName())) {
+			errors.rejectValue("name", "category", "Tên loại đã được sử dụng!");
+		}
+		if (category.getName().length() > 100) {
+			errors.rejectValue("name", "category", "Tên loại không được dài quá 100 ký tự!");
+		}
+		if (category.getNote().length() > 300) {
+			errors.rejectValue("note", "category", "Ghi chú không được dài quá 300 ký tự!");
+		}
 		
-		int result = categoryService.editCategory(category, file);
-		model.addAttribute("message", result);
+		if(errors.hasErrors())
+			return "admin/category/editCategory";
+		else
+		{
+			int result = categoryService.editCategory(category, file);
+			model.addAttribute("message", result);
+		}
 		
 		return "admin/category/editCategory";
 	}

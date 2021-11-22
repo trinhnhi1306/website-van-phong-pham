@@ -9,9 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "category")
@@ -21,14 +18,12 @@ public class Category {
 	@Column(name = "category_id")
 	private Integer id;
 
-	@NotNull(message = "Vui lòng nhập tên loại sản phẩm")
 	@Column(name = "name")
 	private String name;
 
 	@Column(name = "image")
 	private String image;
 
-	@Length(max = 300)
 	@Column(name = "note")
 	private String note;
 

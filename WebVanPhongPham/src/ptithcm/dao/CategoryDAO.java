@@ -36,6 +36,16 @@ public class CategoryDAO {
 		return list;
 	}
 	
+	public Category getCategoryByName(String name) {
+		Session session = factory.getCurrentSession();
+		String hql = "from Category where name = :name";
+		Query query = session.createQuery(hql);
+		query.setParameter("name", name);
+
+		Category list = (Category) query.list().get(0);
+		return list;
+	}
+	
 	public List<Category> searchCategories(String name) {
 		Session session = factory.getCurrentSession();
 		String hql = "from Category where name like :name";

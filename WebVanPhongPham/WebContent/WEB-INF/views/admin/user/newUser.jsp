@@ -40,6 +40,9 @@
 	    		<label class="col-sm-3 col-form-label text-end">Tên đăng nhập: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="username" type="text" class="form-control" required="true"/>
+	      			<label class="mb-1">
+						<form:errors path="username" cssClass="errors" />
+					</label>
 	    		</div>
   			</div>
   			
@@ -47,6 +50,9 @@
 	    		<label class="col-sm-3 col-form-label text-end">Mật khẩu: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="password" type="password" class="form-control" required="true"/>
+	      			<label class="mb-1">
+						<form:errors path="password" cssClass="errors" />
+					</label>
 	    		</div>
   			</div>
   			
@@ -54,6 +60,9 @@
 	    		<label class="col-sm-3 col-form-label text-end">Họ: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="lastName" type="text" class="form-control" required="true"/>
+	      			<label class="mb-1">
+						<form:errors path="lastName" cssClass="errors" />
+					</label>
 	    		</div>
   			</div>
   			
@@ -61,6 +70,9 @@
 	    		<label class="col-sm-3 col-form-label text-end">Tên: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="firstName" type="text" class="form-control" required="true"/>
+	      			<label class="mb-1">
+						<form:errors path="firstName" cssClass="errors" />
+					</label>
 	    		</div>
   			</div>
   			
@@ -68,6 +80,9 @@
 	    		<label class="col-sm-3 col-form-label text-end">Số điện thoại: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="phone" type="text" class="form-control" required="true"/>
+	      			<label class="mb-1">
+						<form:errors path="phone" cssClass="errors" />
+					</label>
 	    		</div>
   			</div>
   			
@@ -75,6 +90,9 @@
 	    		<label class="col-sm-3 col-form-label text-end">Email: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="email" type="email" class="form-control" required="true"/>
+	      			<label class="mb-1">
+						<form:errors path="email" cssClass="errors" />
+					</label>
 	    		</div>
   			</div>
   			
@@ -134,7 +152,7 @@
 	  			<div class="row mb-3">
 		    		<label class="col-sm-3 col-form-label text-end">Địa chỉ: </label>
 		    		<div class="col-sm-8">
-		    			<form:input path="specificAddress" type="text" class="form-control" required="true"/>
+		    			<form:input path="specificAddress" type="text" class="form-control" />
 		    		</div>
 	  			</div>
 	  			
