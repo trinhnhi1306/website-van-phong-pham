@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,7 +43,9 @@ public class CategoryController {
 	}
 	
 	@RequestMapping(value = "newCategory", method = RequestMethod.POST)
-	public String addCategory(ModelMap model, @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file) {
+	public String addCategory(ModelMap model, @Validated @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file, BindingResult errors) {
+		if(errors.hasErrors())
+			return "admin/category/newCategory";
 		
 		int result = categoryService.addCategory(category, file);
 		model.addAttribute("message", result);

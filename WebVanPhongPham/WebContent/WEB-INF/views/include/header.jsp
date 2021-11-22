@@ -62,6 +62,10 @@ form img {
 	width: 200px;
 	height: 200px;
 }
+.errors{
+     color:red;
+     font-style: italic;
+}
 @media ( min-width : 768px) {
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
