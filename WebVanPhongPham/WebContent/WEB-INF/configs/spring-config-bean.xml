@@ -15,13 +15,17 @@
 			http://www.springframework.org/schema/mvc 
 			http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<bean id="uploadfileTrinh" class="ptithcm.bean.UploadFile">
+	<!-- <bean id="uploadfileTrinh" class="ptithcm.bean.UploadFile">
 		<property name="basePath" value="C:\Users\TRINH\Documents\Nam4\Lập trình web\website-van-phong-pham\WebVanPhongPham\WebContent\resources\images" />
-	</bean>
+	</bean> -->
 	
 	<bean id="uploadfile" class="ptithcm.bean.UploadFile">
-		<property name="basePath" value="E:\\Nam4\\LapTrinhWeb\\website-van-phong-pham\\WebVanPhongPham\\WebContent\\resources\\images\\products\"></property>
+		<property name="basePath" value="E:\website-van-phong-pham\WebVanPhongPham\WebContent\resources\images" />
 	</bean>
+	
+	<!-- <bean id="uploadfile" class="ptithcm.bean.UploadFile">
+		<property name="basePath" value="E:\\Nam4\\LapTrinhWeb\\website-van-phong-pham\\WebVanPhongPham\\WebContent\\resources\\images\\products\"></property>
+	</bean> -->
 
 	<bean id="attachfile" class="ptithcm.bean.UploadFile">
 		<property name="basePath" value="C:\Users\TRINH\Documents\Nam4\Lập trình web\website-van-phong-pham\WebVanPhongPham\WebContent\resources\attachfiles" />

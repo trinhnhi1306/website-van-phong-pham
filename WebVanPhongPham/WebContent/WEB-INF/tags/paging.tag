@@ -13,24 +13,24 @@
 <c:if test="${pagedListHolder.pageCount > 1}">
 	<ul class="pagination justify-content-end">
 		<c:if test="${!pagedListHolder.firstPage}">
-			<li class="page-item"><a class="page-link"
-				href="<%=StringUtils.replace(pagedLink, "~", String.valueOf(pagedListHolder.getPage() - 1))%>">Previous</a></li>
+			<li class="page-item"><a class="page-link border border-info"
+				href="<%=StringUtils.replace(pagedLink, "~", String.valueOf(pagedListHolder.getPage() - 1))%>"><i class="fas fa-angle-left fs-4"></i></a></li>
 		</c:if>
 		<c:if test="${pagedListHolder.firstLinkedPage > 0}">
-			<li class="page-item"><a class="page-link" href="<%=StringUtils.replace(pagedLink, "~", "0")%>">1</a></li>
+			<li class="page-item"><a class="page-link border border-info" href="<%=StringUtils.replace(pagedLink, "~", "0")%>">1</a></li>
 		</c:if>
 		<c:if test="${pagedListHolder.firstLinkedPage > 1}">
-			<li class="page-item"><span class="pagingDots">...</span>
+			<li class="page-item"><span class="pagingDots border border-info">...</span>
 			<li>
 		</c:if>
 		<c:forEach begin="${pagedListHolder.firstLinkedPage}"
 			end="${pagedListHolder.lastLinkedPage}" var="i">
 			<c:choose>
 				<c:when test="${pagedListHolder.page == i}">
-					<li class="page-item active"><a class="page-link" href="#">${i+1}</a></li>
+					<li class="page-item active"><a class="page-link border border-info" href="#">${i+1}</a></li>
 				</c:when>
 				<c:otherwise>
-					<li><a class="page-link"
+					<li><a class="page-link border border-info"
 						href="<%=StringUtils.replace(pagedLink, "~", String.valueOf(jspContext.getAttribute("i")))%>">${i+1}</a>
 					</li>
 				</c:otherwise>
@@ -38,16 +38,16 @@
 		</c:forEach>
 		<c:if
 			test="${pagedListHolder.lastLinkedPage < pagedListHolder.pageCount - 2}">
-			<li class="page-item"><span class="pagingDots">...</span></li>
+			<li class="page-item"><span class="pagingDots border border-info">...</span></li>
 		</c:if>
 		<c:if
 			test="${pagedListHolder.lastLinkedPage < pagedListHolder.pageCount - 1}">
-			<li class="page-item"><a class="page-link"
+			<li class="page-item"><a class="page-link border border-info"
 				href="<%=StringUtils.replace(pagedLink, "~", String.valueOf(pagedListHolder.getPageCount() - 1))%>">${pagedListHolder.pageCount}</a></li>
 		</c:if>
 		<c:if test="${!pagedListHolder.lastPage}">
-			<li class="page-item"><a class="page-link"
-				href="<%=StringUtils.replace(pagedLink, "~", String.valueOf(pagedListHolder.getPage() + 1))%>">Next</a></li>
+			<li class="page-item"><a class="page-link border border-info"
+				href="<%=StringUtils.replace(pagedLink, "~", String.valueOf(pagedListHolder.getPage() + 1))%>"><i class="fas fa-angle-right fs-4"></i></a></li>
 		</c:if>
 	</ul>
 </c:if>

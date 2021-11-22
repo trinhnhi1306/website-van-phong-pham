@@ -52,7 +52,7 @@
 				</div>
 
 				<div class="col-6 text-end">
-					<a class="btn btn-primary bg-gradient text-uppercase" href="admin/newProduct.htm"> <i class="fas fa-plus"></i>Thêm sản phẩm</a>
+					<a class="btn btn-primary bg-gradient text-uppercase" href="admin/newProduct.htm"> <i class="fas fa-plus"></i> Thêm sản phẩm</a>
 				</div>
 
 				<div>

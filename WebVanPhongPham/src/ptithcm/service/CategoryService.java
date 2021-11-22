@@ -62,7 +62,7 @@ public class CategoryService {
 	}
 	
 	@Autowired
-	@Qualifier("uploadfileTrinh")
+	@Qualifier("uploadfile")
 	UploadFile uploadFile;
 	
 	public int addCategory(Category category, MultipartFile file) {

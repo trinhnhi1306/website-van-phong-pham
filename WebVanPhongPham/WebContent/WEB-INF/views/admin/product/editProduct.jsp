@@ -48,6 +48,7 @@
 	    		<label class="col-sm-3 col-form-label text-end">Tên sản phẩm: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="name" type="text" class="form-control"/>
+	      			<form:errors path="name" class="fst-italic text-danger"/>
 	    		</div>
   			</div>
 			
@@ -72,6 +73,7 @@
 	    				<form:input path="price" type="text" class="form-control"/>
 	      				<span class="input-group-text">đ</span>
 	    			</div>
+	    			<form:errors path="price" class="fst-italic text-danger"/>
 	    		</div>
   			</div>
   			
@@ -79,6 +81,7 @@
 	    		<label class="col-sm-3 col-form-label text-end">Quy cách: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="specification" type="text" class="form-control"/>
+	      			<form:errors path="specification" class="fst-italic text-danger"/>
 	    		</div>
   			</div>
   			
@@ -86,7 +89,8 @@
 	    		<label class="col-sm-3 col-form-label text-end">Số lượng thêm vào: </label>
 	    		<div class="col-sm-8">
 	    			<%-- <form:input path="quantity" type="hidden" class="form-control"/> --%>
-	      			<input name="add" type="number" class="form-control" value="0">
+	      			<input name="add" type="number" class="form-control" value="0" min="0"
+	      				   oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
 	    		</div>
   			</div>
   			
@@ -113,6 +117,7 @@
 	    		<label class="col-sm-3 col-form-label text-end">Mô tả: </label>
 	    		<div class="col-sm-8">
 	    			<form:textarea path="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></form:textarea>
+	    			<form:errors path="description" class="fst-italic text-danger"/>
 	    		</div>
   			</div>
   			

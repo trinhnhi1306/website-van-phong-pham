@@ -65,7 +65,7 @@
 						<div class="card-body p-4">
 							<div class="text-center">
 								<h5 class="fw-bolder">${s.name }</h5>
-								<div><f:formatNumber value="${s.price }" type="currency" /></div>
+								<div> <f:setLocale value="vi_VN"/><f:formatNumber value="${s.price }" type="currency" /></div>
 							</div>
 						</div>
 						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -74,10 +74,10 @@
 								<a class="btn btn-outline-dark mt-auto" href="home/product.htm?id=${s.id }">Xem chi tiết</a>
 								<c:choose>
 									<c:when test="${s.quantity > s.sold_quantity }">
-										<a class="btn btn-outline-success mt-auto" href="user/addCart.htm?id=${s.id }"><i class="fas fa-cart-plus"></i></a>
+										<a class="btn btn-outline-success mt-auto" href="user/addCart.htm?id=${s.id }"><i class="fas fa-cart-plus fs-4"></i></a>
 									</c:when>
 									<c:otherwise>
-										<a class="btn btn-danger"><i class="fas fa-cart-plus"></i></a>
+										<a class="btn btn-danger"><i class="fas fa-cart-plus fs-4"></i></a>
 									</c:otherwise>
 								</c:choose>
 							</div>

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -68,9 +69,39 @@ public class ProductController {
 	
 	@RequestMapping(value = "newProduct", method = RequestMethod.POST)
 	public String newProduct(ModelMap model, @ModelAttribute("product") Product product,
-			@RequestParam("file") MultipartFile file) {
+			@RequestParam("file") MultipartFile file, BindingResult errors) {
 		product.setSold_quantity(0);;
 		product.setStatus(true);
+		
+		if(product.getName().trim().length() == 0) {
+			errors.rejectValue("name", "product", "Vui lòng nhập tên sản phẩm !");
+		}
+		if(product.getPrice() == null) {
+			errors.rejectValue("price", "product", "Vui lòng nhập đơn giá !");
+		}
+		else if(product.getPrice() <= 0) {
+			errors.rejectValue("price", "product", "Đơn giá phải lớn hơn 0 !");
+		}
+		if(product.getSpecification().trim().length() == 0) {
+			errors.rejectValue("specification", "product", "Vui lòng nhập quy cách !");
+		}
+		if(product.getCalculation_unit().trim().length() == 0) {
+			errors.rejectValue("calculation_unit", "product", "Vui lòng nhập đơn vị !");
+		}
+		if(product.getQuantity() == null) {
+			errors.rejectValue("quantity", "product", "Vui lòng nhập số lượng !");
+		}
+		else if(product.getQuantity() <= 0) {
+			errors.rejectValue("quantity", "product", "Số lượng phải nhiều hơn 0 !");
+		}
+		if(product.getDescription().trim().length() == 0) {
+			errors.rejectValue("description", "product", "Vui lòng nhập mô tả !");
+		}
+		
+		if(errors.hasErrors()){
+			model.addAttribute("message", -1);
+			return "admin/product/newProduct";
+		}
 		
 		int result = productService.newProduct(product, file);
 		model.addAttribute("message", result);
@@ -85,8 +116,31 @@ public class ProductController {
 
 	@RequestMapping(value = "editProduct", method = RequestMethod.POST)
 	public String editProduct(HttpServletRequest request, ModelMap model, @ModelAttribute("product") Product product,
-			@RequestParam("file") MultipartFile file) {
+			@RequestParam("file") MultipartFile file, BindingResult errors) {
 		int add = Integer.parseInt(request.getParameter("add"));
+		
+		if(product.getName().trim().length() == 0) {
+			errors.rejectValue("name", "product", "Vui lòng nhập tên sản phẩm !");
+		}
+		if(product.getPrice() == null) {
+			errors.rejectValue("price", "product", "Vui lòng nhập đơn giá !");
+		}
+		else if(product.getPrice() <= 0) {
+			errors.rejectValue("price", "product", "Đơn giá phải lớn hơn 0 !");
+		}
+		if(product.getSpecification().trim().length() == 0) {
+			errors.rejectValue("specification", "product", "Vui lòng nhập quy cách !");
+		}
+//		if(add < 0) {
+//			errors.rejectValue("add", "Số lượng thêm phải nhiều hơn 0 !");
+//		}
+		if(product.getDescription().trim().length() == 0) {
+			errors.rejectValue("description", "product", "Vui lòng nhập mô tả !");
+		}
+		if(errors.hasErrors()){
+			model.addAttribute("message", 0);
+			return "admin/product/editProduct";
+		}
 		
 		Product p = productService.getProductByID(product.getId());
 		product.setQuantity(p.getQuantity() + add);

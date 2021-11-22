@@ -15,6 +15,12 @@
 		
 		<c:if test="${not empty message}">			
 		  	<c:choose>
+		  		<c:when test="${message == -1}">
+					<div class="col-sm-8 alert alert-danger" role="alert">
+					Các trường còn trống hoặc chưa chính xác!
+					<button type="button" class="rem" data-dismiss="alert" aria-label="Close">&times;</button>
+					</div>
+				</c:when>
 				<c:when test="${message == 0}">
 					<div class="col-sm-8 alert alert-danger" role="alert">
 					Thêm thất bại!
@@ -41,6 +47,7 @@
 	    		<label class="col-sm-3 col-form-label text-end">Tên sản phẩm: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="name" type="text" class="form-control"/>
+	      			<form:errors path="name" class="fst-italic text-danger"/>
 	    		</div>
   			</div>
 			
@@ -65,6 +72,7 @@
 	    				<form:input path="price" type="text" class="form-control"/>
 	      				<span class="input-group-text">đ</span>
 	    			</div>
+	    			<form:errors path="price" class="fst-italic text-danger"/>
 	    		</div>
   			</div>
   			
@@ -72,6 +80,7 @@
 	    		<label class="col-sm-3 col-form-label text-end">Quy cách: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="specification" type="text" class="form-control"/>
+	      			<form:errors path="specification" class="fst-italic text-danger"/>
 	    		</div>
   			</div>
   			
@@ -79,6 +88,7 @@
 	    		<label class="col-sm-3 col-form-label text-end">Đơn vị: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="calculation_unit" type="text" class="form-control"/>
+	      			<form:errors path="calculation_unit" class="fst-italic text-danger"/>
 	    		</div>
   			</div>
   			
@@ -86,6 +96,7 @@
 	    		<label class="col-sm-3 col-form-label text-end">Số lượng: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="quantity" type="text" class="form-control"/>
+	      			<form:errors path="quantity" class="fst-italic text-danger"/>
 	    		</div>
   			</div>
   			
@@ -111,6 +122,7 @@
 	    		<label class="col-sm-3 col-form-label text-end">Mô tả: </label>
 	    		<div class="col-sm-8">
 	    			<form:textarea path="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></form:textarea>
+	    			<form:errors path="description" class="fst-italic text-danger"/>
 	    		</div>
   			</div>
   			
