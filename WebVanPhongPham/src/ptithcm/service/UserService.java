@@ -51,6 +51,18 @@ public class UserService {
 		return userDAO.getUserByUsername(username);
 	}
 	
+	public User getUserByUsernameAndEmail(String username, String email) {
+		User user;
+		try
+		{
+			user = userDAO.getUserByUsernameAndEmail(username, email);
+		}
+		catch (Exception e) {
+			user = null;
+		}
+		return user;
+	}
+	
 	public List<User> searchUsers(String name) {
 		
 		return userDAO.searchUsers(name);
@@ -104,6 +116,10 @@ public class UserService {
 			}
 		}
 		
+		return userDAO.updateUser(user);
+	}
+	
+	public int updateUser(User user) {
 		return userDAO.updateUser(user);
 	}
 	

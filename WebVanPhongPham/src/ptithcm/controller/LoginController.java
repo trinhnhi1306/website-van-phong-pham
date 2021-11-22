@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,14 +17,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import ptithcm.bean.MyItem;
-import ptithcm.entity.Permission;
 import ptithcm.entity.User;
 import ptithcm.service.CartService;
 import ptithcm.service.OrderService;
 import ptithcm.service.UserService;
 
 @Controller
-public class LoginController {
+public class LoginController {	
 	
 	@Autowired
 	UserService userService;

@@ -6,29 +6,27 @@
 <div class="limiter">
 	<div class="container-login100">
 		<div class="wrap-login100">
-		<form class="login100-form validate-form" action="resetPassword.htm">
+		<form:form class="login100-form validate-form" action="forgotPassword.htm" modelAttribute="user">
 			<span class="login100-form-logo">
 			<i class="fas fa-shopping-bag" style="color: #7579ff;"></i>
 			</span>
 			
 			<span class="login100-form-title py-4">Quên mật khẩu</span>
 			
-			<div class="wrap-input100 validate-input" data-validate="Enter username">
-				<input class="input100" type="text" name="username" placeholder="Tên đăng nhập">
-			</div>
+			<div class="col-sm-10 alert-danger" role="alert">${error }</div>
 			
 			<div class="wrap-input100 validate-input" data-validate="Enter password">
-				<input class="input100" type="password" name="pass" placeholder="Email">
-			</div>
+				<form:input class="input100" type="text" path="username" placeholder="Username"/>
+			</div>			
 			
 			<div class="wrap-input100 validate-input" data-validate="Enter password">
-				<input class="input100" type="password" name="pass" placeholder="Điện thoại">
+				<form:input class="input100" type="email" path="email" placeholder="Email"/>
 			</div>
 			
 			<div class="container-login100-form-btn">
 				<button class="login100-form-btn">Khôi phục</button>
 			</div>
-		</form>
+		</form:form>
 		</div>
 	</div>
 </div>
