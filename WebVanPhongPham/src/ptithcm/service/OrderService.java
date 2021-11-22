@@ -1,6 +1,5 @@
 package ptithcm.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +10,6 @@ import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.ServletRequestUtils;
 
-import ptithcm.bean.MyItem;
 import ptithcm.dao.OrderDAO;
 import ptithcm.entity.Cart;
 import ptithcm.entity.Order;
@@ -43,19 +41,6 @@ public class OrderService {
 		pagedListHolder.setMaxLinkedPages(5);
 		pagedListHolder.setPageSize(8);
 		return pagedListHolder;
-	}
-	
-	public List<MyItem> reportOrder()
-	{
-		List<MyItem> list = new ArrayList<>();
-        for (int i = 1; i <= 5; i++) {
-            MyItem myItem = new MyItem();
-            myItem.setName("abc");
-            //System.out.println(orderDAO.countOrderByStatus(i));
-            myItem.setValue(orderDAO.countOrderByStatus(i));
-            list.add(myItem);
-        }
-        return list;
 	}
 	
 	public List<Order> getOrderByUser(int userId)

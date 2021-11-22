@@ -50,6 +50,9 @@
 			    		<label class="col-sm-3 col-form-label text-end">Tên người dùng: </label>
 			    		<div class="col-sm-9">
 			      			<form:input path="username" type="text" class="form-control" required="true"/>
+			      			<label class="mb-1">
+								<form:errors path="username" cssClass="errors" />
+							</label>
 			    		</div>
 		  			</div>
 				
@@ -57,6 +60,9 @@
 			    		<label class="col-sm-3 col-form-label text-end">Họ: </label>
 			    		<div class="col-sm-9">
 			      			<form:input path="lastName" type="text" class="form-control" required="true"/>
+			      			<label class="mb-1">
+								<form:errors path="lastName" cssClass="errors" />
+							</label>
 			    		</div>
 		  			</div>
 		  			
@@ -64,6 +70,9 @@
 			    		<label class="col-sm-3 col-form-label text-end">Tên: </label>
 			    		<div class="col-sm-9">
 			      			<form:input path="firstName" type="text" class="form-control" required="true"/>
+			      			<label class="mb-1">
+								<form:errors path="firstName" cssClass="errors" />
+							</label>
 			    		</div>
 		  			</div>
 			
@@ -71,6 +80,9 @@
 			    		<label class="col-sm-3 col-form-label text-end">Điện thoại: </label>
 			    		<div class="col-sm-9">
 			      			<form:input path="phone" type="text" class="form-control" required="true"/>
+			      			<label class="mb-1">
+								<form:errors path="phone" cssClass="errors" />
+							</label>
 			    		</div>
 		  			</div>
 	  			
@@ -78,6 +90,9 @@
 			    		<label class="col-sm-3 col-form-label text-end">Email: </label>
 			    		<div class="col-sm-9">
 			      			<form:input path="email" type="text" class="form-control" required="true"/>
+			      			<label class="mb-1">
+								<form:errors path="email" cssClass="errors" />
+							</label>
 			    		</div>
 		  			</div>
 					

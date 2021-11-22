@@ -2,11 +2,18 @@
 	pageEncoding="UTF-8"%>
 <base href="${pageContext.servletContext.contextPath}/">
 
-<div class="d-flex flex-column flex-shrink-0 p-3 mbg-navy">
+<div class="position-fixed d-flex flex-column flex-shrink-0 p-3 mbg-navy">
 	<div class="py-2 text-center">
 		<i class="fab fa-phoenix-framework" style="font-size: 75px;"></i>
 	</div>
 	<ul class="nav nav-pills flex-column mb-auto">
+	
+		<li class="nav-item border-top pt-2">
+			<a class="nav-link collapsed text-light" href="admin/statistics.htm">
+				<i class="fas fa-chart-line"></i> Thống kê số liệu
+			</a>	
+		</li>
+		
 		<li class="nav-item border-top pt-2">
 			<a class="nav-link collapsed text-light" href="admin/listProduct.htm">
 				<i class="fas fa-clipboard-list"></i> Danh sách sản phẩm

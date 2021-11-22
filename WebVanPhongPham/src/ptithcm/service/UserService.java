@@ -47,8 +47,39 @@ public class UserService {
 	}
 	
 	public User getUserByUsername(String username) {
-		
-		return userDAO.getUserByUsername(username);
+		User user;
+		try
+		{
+			return userDAO.getUserByUsername(username);
+		}
+		catch (Exception e) {
+			user = null;
+		}
+		return user;
+	}
+	
+	public User getUserByEmail(String email) {
+		User user;
+		try
+		{
+			return userDAO.getUserByEmail(email);
+		}
+		catch (Exception e) {
+			user = null;
+		}
+		return user;
+	}
+	
+	public User getUserByPhone(String phone) {
+		User user;
+		try
+		{
+			return userDAO.getUserByPhone(phone);
+		}
+		catch (Exception e) {
+			user = null;
+		}
+		return user;
 	}
 	
 	public User getUserByUsernameAndEmail(String username, String email) {

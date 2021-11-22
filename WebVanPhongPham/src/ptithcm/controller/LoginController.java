@@ -1,5 +1,6 @@
 package ptithcm.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import ptithcm.bean.MyItem;
 import ptithcm.entity.User;
 import ptithcm.service.CartService;
-import ptithcm.service.OrderService;
+import ptithcm.service.ReportService;
 import ptithcm.service.UserService;
 
 @Controller
@@ -32,12 +33,24 @@ public class LoginController {
 	CartService cartService;
 	
 	@Autowired
-	OrderService orderService;
+	ReportService reportService;
 	
 	@ModelAttribute("orderStatistics")
 	public List<MyItem> getOrderStatistics()
 	{
-		return orderService.reportOrder();
+		return reportService.reportOrder();
+	}
+	
+	@ModelAttribute("listOrder")
+	public List<MyItem> getListOrder()
+	{
+		return reportService.reportReceipt(new Date(), 7);
+	}
+	
+	@ModelAttribute("reportUser")
+	public List<MyItem> reportUser()
+	{
+		return reportService.reportUser(new Date(), 7);
 	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)

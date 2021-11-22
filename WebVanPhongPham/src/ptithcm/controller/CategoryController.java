@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,10 +43,24 @@ public class CategoryController {
 	}
 	
 	@RequestMapping(value = "newCategory", method = RequestMethod.POST)
-	public String addCategory(ModelMap model, @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file) {
+	public String addCategory(ModelMap model, @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file, BindingResult errors) {
+		if (categoryService.getCategoryByName(category.getName()) != null) {
+			errors.rejectValue("name", "category", "Tên loại đã được sử dụng!");
+		}
+		if (category.getName().length() > 100) {
+			errors.rejectValue("name", "category", "Tên loại không được dài quá 100 ký tự!");
+		}
+		if (category.getNote().length() > 300) {
+			errors.rejectValue("note", "category", "Ghi chú không được dài quá 300 ký tự!");
+		}
 		
-		int result = categoryService.addCategory(category, file);
-		model.addAttribute("message", result);
+		if(errors.hasErrors())
+			return "admin/category/newCategory";
+		else
+		{
+			int result = categoryService.addCategory(category, file);
+			model.addAttribute("message", result);
+		}	
 		
 		return "admin/category/newCategory";
 	}
@@ -57,10 +73,25 @@ public class CategoryController {
 	}
 	
 	@RequestMapping(value = "editCategory", method = RequestMethod.POST)
-	public String saveEdit(ModelMap model, @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file) {
+	public String saveEdit(ModelMap model, @ModelAttribute("category") Category category, @RequestParam("file") MultipartFile file, BindingResult errors) {
+		Category oldCategory = categoryService.getCategoryByID(category.getId());
+		if (categoryService.getCategoryByName(category.getName()) != null && !category.getName().equalsIgnoreCase(oldCategory.getName())) {
+			errors.rejectValue("name", "category", "Tên loại đã được sử dụng!");
+		}
+		if (category.getName().length() > 100) {
+			errors.rejectValue("name", "category", "Tên loại không được dài quá 100 ký tự!");
+		}
+		if (category.getNote().length() > 300) {
+			errors.rejectValue("note", "category", "Ghi chú không được dài quá 300 ký tự!");
+		}
 		
-		int result = categoryService.editCategory(category, file);
-		model.addAttribute("message", result);
+		if(errors.hasErrors())
+			return "admin/category/editCategory";
+		else
+		{
+			int result = categoryService.editCategory(category, file);
+			model.addAttribute("message", result);
+		}
 		
 		return "admin/category/editCategory";
 	}

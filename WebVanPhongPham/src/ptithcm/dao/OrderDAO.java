@@ -9,7 +9,6 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import ptithcm.bean.MyItem;
 import ptithcm.entity.Order;
 import ptithcm.entity.OrderDetail;
 import ptithcm.entity.OrderStatus;
@@ -28,23 +27,6 @@ public class OrderDAO {
 		query.setParameter("userId", userId);
 		List<Order> list = query.list();
 		return list;
-	}
-	
-	public long countOrderByStatus(int statusId)
-	{
-		Session session = factory.getCurrentSession();
-		String hql = "select count(*) FROM Order WHERE status.id = :statusId";
-		Query query = session.createQuery(hql);
-		query.setParameter("statusId", statusId);	
-		try
-		{
-			long list = (long) query.list().get(0);
-			return list;
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			return 0;
-		}		
 	}
 	
 	public List<Order> getOrderByStatus(int statusId)

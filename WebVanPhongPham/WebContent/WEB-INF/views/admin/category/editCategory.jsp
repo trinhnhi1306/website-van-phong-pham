@@ -47,6 +47,9 @@
 	    		<label class="col-sm-3 col-form-label text-end">Tên loại sản phẩm: </label>
 	    		<div class="col-sm-8">
 	      			<form:input path="name" type="text" class="form-control" required="true"/>
+	      			<label class="mb-1">
+						<form:errors path="name" cssClass="errors" />
+					</label>
 	    		</div>
   			</div>
   			
@@ -61,7 +64,10 @@
   			<div class="row mb-3">
 	    		<label class="col-sm-3 col-form-label text-end">Ghi chú: </label>
 	    		<div class="col-sm-8">
-	    			<form:input path="note" type="text" class="form-control"/>	    			
+	    			<form:input path="note" type="text" class="form-control"/>	
+	    			<label class="mb-1">
+						<form:errors path="note" cssClass="errors" />
+					</label>    			
 	    		</div>
   			</div>
   			<form:input path="image" type="hidden" class="form-control"/>	 

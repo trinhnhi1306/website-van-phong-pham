@@ -40,7 +40,6 @@ public class ForgotPasswordController {
 		}
 		String newPass = password.randomPassword();
 		mailer.sendPassword(newPass, findUser.getEmail());
-		
 		findUser.setPassword(BCrypt.hashpw(newPass, BCrypt.gensalt(12)));
 		userService.updateUser(findUser);
 		return "account/changePassSuccess";
