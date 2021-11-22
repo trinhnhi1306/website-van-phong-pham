@@ -274,4 +274,10 @@ public class UserProfileController {
 		int result = feedbackService.deleteFeedback(feedback);
 		return "redirect:" + request.getHeader("Referer");
 	}
+	
+	@RequestMapping("success")
+	public String orderSuccess() {
+		
+		return "user/success";
+	}
 }

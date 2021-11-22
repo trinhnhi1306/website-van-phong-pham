@@ -50,6 +50,7 @@ public class ProductDAO {
 			session.save(p);
 			t.commit();
 		} catch (Exception e) {
+			System.out.println(e);
 			t.rollback();
 			return 0;
 		} finally {

@@ -29,7 +29,25 @@
 				<div class="text-secondary">Số điện thoại: ${sessionScope.user.phone }</div>
 				<div class="text-secondary fst-italic">Địa chỉ: ${sessionScope.user.address.specificAddress }, ${sessionScope.user.address.ward.prefix} ${sessionScope.user.address.ward.name}, ${sessionScope.user.address.ward.district.prefix} ${sessionScope.user.address.ward.district.name}, ${sessionScope.user.address.ward.district.province.name}</div>
 			</div>
-			<div class="col-3"></div>
+			<div class="col-3">
+				<c:choose>
+					<c:when test="${order.status.id == 3 }">
+						<div class="alert-warning rounded m-1 p-2" role="alert">
+							Hãy chắc chắn rằng bạn đã nhận được hàng bạn nhé.
+						</div>
+					</c:when>
+					<c:when test="${order.status.id == 2 }">
+						<div class="alert-warning rounded m-1 p-2" role="alert">
+							Bạn có thực sự muốn bỏ qua đơn hàng này?
+						</div>
+					</c:when>
+					<c:when test="${order.status.id == 1 }">
+						<div class="alert-info rounded m-1 p-2" role="alert">
+							Đơn hàng của bạn vẫn đang được chờ xử lý.
+						</div>	
+					</c:when>
+				</c:choose>
+			</div>
 			<div class="col-4">
 				<div class="d-grid"> 
 					<!-- Tùy theo trạng thái mà dùng JSTL để show các nút -->

@@ -55,7 +55,7 @@ public class ImageService {
 			try {
 				String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyMMddHHmmss"));
 				fileName = date + file.getOriginalFilename();
-				String photoPath = baseUploadFile.getBasePath() + File.separator + fileName;
+				String photoPath = baseUploadFile.getBasePath() + "/products" + File.separator + fileName;
 				file.transferTo(new File(photoPath));
 				Thread.sleep(500);
 				System.out.println(photoPath);
