@@ -312,6 +312,9 @@ public class UserController {
 		if (!BCrypt.checkpw(password.getOldPass(), oldUser.getPassword())) {
 			errors.rejectValue("oldPass", "password", "Mật khẩu hiện tại không đúng!");
 		}
+		if (BCrypt.checkpw(password.getNewPass(), oldUser.getPassword())) {
+			errors.rejectValue("newPass", "password", "Mật khẩu mới trùng với mật khẩu cũ!");
+		}
 		if (!password.getConfirmPass().equalsIgnoreCase(password.getNewPass())) {
 			errors.rejectValue("confirmPass", "password", "Mật khẩu xác nhận không đúng!");
 		}

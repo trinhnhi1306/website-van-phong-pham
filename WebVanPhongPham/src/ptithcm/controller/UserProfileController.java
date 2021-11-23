@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import ptithcm.bean.ChangedPassword;
 import ptithcm.entity.Address;
 import ptithcm.entity.Cart;
 import ptithcm.entity.Category;
@@ -132,7 +134,33 @@ public class UserProfileController {
 	}
 	
 	@RequestMapping(value = "changePassword", method = RequestMethod.GET)
-	public String changePassword() {
+	public String changePassword(@ModelAttribute("password") ChangedPassword password) {
+		return "user/changePassword";
+	}
+	
+	@RequestMapping(value = "changePassword", method = RequestMethod.POST)
+	public String savePassword(ModelMap model, @ModelAttribute("password") ChangedPassword password, BindingResult errors, HttpSession session) {
+		User oldUser = (User) session.getAttribute("user");
+		if (!BCrypt.checkpw(password.getOldPass(), oldUser.getPassword())) {
+			errors.rejectValue("oldPass", "password", "Mật khẩu hiện tại không đúng!");
+		}
+		if (BCrypt.checkpw(password.getNewPass(), oldUser.getPassword())) {
+			errors.rejectValue("newPass", "password", "Mật khẩu mới trùng với mật khẩu cũ!");
+		}
+		if (!password.getConfirmPass().equalsIgnoreCase(password.getNewPass())) {
+			errors.rejectValue("confirmPass", "password", "Mật khẩu xác nhận không đúng!");
+		}
+		
+		if(errors.hasErrors())
+			return "user/changePassword";
+		else
+		{
+			oldUser.setPassword(BCrypt.hashpw(password.getNewPass(), BCrypt.gensalt(12)));
+			int result = userService.updateUser(oldUser);
+			if(result == 1)
+				session.setAttribute("admin", userService.getUserByID(oldUser.getId()));
+			model.addAttribute("message", result);
+		}
 		return "user/changePassword";
 	}
 	
