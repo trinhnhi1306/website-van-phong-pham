@@ -12,19 +12,47 @@
 		
 	<div class="col-9 mbg-azure pt-2">
 		<div class="h4 text-uppercase text-center">Thêm thương hiệu</div>
+		<c:if test="${not empty message}">			
+		  	<c:choose>
+				<c:when test="${message == 0}">
+					<div class="col-sm-8 alert alert-danger" role="alert">
+					Thêm thất bại!
+					<button type="button" class="rem" data-dismiss="alert" aria-label="Close">&times;</button>
+					</div>
+				</c:when>
+				<c:when test="${message == 1}">
+					<div class="col-sm-8 alert alert-success" role="alert">
+					Thêm thành công!
+					<button type="button" class="rem" data-dismiss="alert" aria-label="Close">&times;</button>
+					</div>
+				</c:when>
+				<c:when test="${message == 2}">
+					<div class="col-sm-8 alert alert-danger" role="alert">
+					Lưu hình ảnh thất bại!
+					<button type="button" class="rem" data-dismiss="alert" aria-label="Close">&times;</button>
+					</div>
+				</c:when>
+			</c:choose>		  	
+		</c:if>
 		
-		<form action="admin/newBrand.htm" method="post">
+		<form:form action="admin/newBrand.htm" method="post" modelAttribute="brand">
 			<div class="row my-3">
 	    		<label class="col-sm-3 col-form-label text-end">Tên thương hiệu: </label>
 	    		<div class="col-sm-8">
-	      			<input type="text" class="form-control">
+	      			<form:input path="name" type="text" class="form-control" required="true"/>
+	      			<label class="mb-1">
+						<form:errors path="name" cssClass="errors" />
+					</label>
 	    		</div>
   			</div>
 			
   			<div class="row mb-3">
 	    		<label class="col-sm-3 col-form-label text-end">Mô tả: </label>
 	    		<div class="col-sm-8">
-	    			<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+	    			<form:textarea path="description" type="text" class="form-control" rows="3"/>
+	    			<label class="mb-1">
+						<form:errors path="description" cssClass="errors" />
+					</label>
 	    		</div>
   			</div>
   			
@@ -32,7 +60,7 @@
 	    		<button type="submit" class="btn btn-primary bg-gradient text-white">Lưu</button>
   			</div>
 			
-		</form>
+		</form:form>
 		
 	</div>
 		

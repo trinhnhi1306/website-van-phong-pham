@@ -107,9 +107,9 @@
   			<div class="row mb-3">
 	    		<label class="col-sm-3 form-label text-end">Hình ảnh:</label>
 	    		<div class="col-sm-8">
-					<input type="file" name="file" placeholder="Upload image" class="form-control" accept=".jpg,.gif,.png,.pdf">
-					<img class="rounded" src="resources/images/products/${product.image}" style="width: 70px; height: 70px;">
-	    			<%-- <form:input path="image" type="hidden" class="form-control"/> --%>
+					<input type="file" name="file" placeholder="Upload image" class="form-control" accept=".jpg,.gif,.png,.pdf" onchange="preview()">
+					<img id="img" class="rounded" src="resources/images/products/${product.image}" >
+	    			<form:input path="image" type="hidden" class="form-control"/>
 	    		</div>
   			</div>
   			
