@@ -11,7 +11,7 @@
 			<h5 class="card-title text-success">Đặt hàng thành công!!!</h5>
 			<p class="card-text">Cám ơn bạn đã đặt hàng! Shop sẽ xử lý đơn hàng của bạn trong thời gian nhanh nhất có thể!</p>
 			<a class="btn btn-outline-primary card-link" href="#" role="button"><i class="fas fa-home"></i> Quay về trang chủ</a>
-			<a class="btn btn-outline-primary card-link" href="#" role="button"><i class="fas fa-list-alt"></i> Danh sách đơn hàng</a>
+			<a class="btn btn-outline-primary card-link" href="user/order.htm" role="button"><i class="fas fa-list-alt"></i> Danh sách đơn hàng</a>
 		</div>
 	</div>
 </div>

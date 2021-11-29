@@ -3,6 +3,7 @@
 >>>>>>>=fa3adb37c900c7bee4e6efb595aa0aef8573e78e
 eclipse.preferences.version=1
 encoding//src/ptithcm/bean/Mailer.java=UTF-8
+encoding//src/ptithcm/controller/BrandController.java=UTF-8
 encoding//src/ptithcm/controller/CategoryController.java=UTF-8
 encoding//src/ptithcm/controller/ForgotPasswordController.java=UTF-8
 encoding//src/ptithcm/controller/HomeController.java=UTF-8
@@ -12,6 +13,7 @@ encoding//src/ptithcm/controller/ProductController.java=UTF-8
 encoding//src/ptithcm/controller/UserController.java=UTF-8
 encoding//src/ptithcm/controller/UserProfileController.java=UTF-8
 encoding//src/ptithcm/entity/Category.java=UTF-8
+encoding//src/ptithcm/service/BrandService.java=UTF-8
 encoding//src/ptithcm/service/CartService.java=UTF-8
 encoding//src/ptithcm/service/CategoryService.java=UTF-8
 encoding//src/ptithcm/service/OrderService.java=UTF-8

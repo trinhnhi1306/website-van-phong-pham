@@ -1,5 +1,8 @@
 package ptithcm.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -83,7 +86,36 @@ public class OrderController {
 	}
 	
 	@RequestMapping("searchOrder")
-	public String searchOrder() {
+	public String searchOrder(HttpServletRequest request, ModelMap model) {
+		String dateStr = request.getParameter("searchInput");
+		Date date = null;
+		try {
+			date = new SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
+			System.out.println(date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		List<Order> listChoXuLy = orderService.getOrderByDateAnd(date, 1);
+		List<Order> listYeuCauHuy = orderService.getOrderByDateAnd(date, 2);
+		List<Order> listDangGiao = orderService.getOrderByDateAnd(date, 3);
+		List<Order> listDaGiao = orderService.getOrderByDateAnd(date, 4);
+		List<Order> listDaHuy = orderService.getOrderByDateAnd(date, 5);
+		
+		// bỏ dữ liệu vào pagedListHolder rồi sau đó trả về cho model
+		PagedListHolder pagedListHolder1 = orderService.pagingManage(listChoXuLy, request, "p1");
+		PagedListHolder pagedListHolder2 = orderService.pagingManage(listYeuCauHuy, request, "p2");
+		PagedListHolder pagedListHolder3 = orderService.pagingManage(listDangGiao, request, "p3");
+		PagedListHolder pagedListHolder4 = orderService.pagingManage(listDaGiao, request, "p4");
+		PagedListHolder pagedListHolder5 = orderService.pagingManage(listDaHuy, request, "p5");
+	
+		model.addAttribute("pagedListHolder1", pagedListHolder1);
+		model.addAttribute("pagedListHolder2", pagedListHolder2);
+		model.addAttribute("pagedListHolder3", pagedListHolder3);
+		model.addAttribute("pagedListHolder4", pagedListHolder4);
+		model.addAttribute("pagedListHolder5", pagedListHolder5);
+		
+		model.addAttribute("type", 1);
 		return "admin/order/listOrder";
 	}
 }

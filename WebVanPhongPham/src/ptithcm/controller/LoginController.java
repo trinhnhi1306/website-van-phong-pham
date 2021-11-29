@@ -10,6 +10,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import ptithcm.bean.MyItem;
+import ptithcm.entity.Address;
 import ptithcm.entity.User;
+import ptithcm.service.AddressService;
 import ptithcm.service.CartService;
 import ptithcm.service.ReportService;
 import ptithcm.service.UserService;
@@ -28,6 +31,9 @@ public class LoginController {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	AddressService addressService;
 
 	@Autowired
 	CartService cartService;
@@ -134,14 +140,61 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/register", method = RequestMethod.POST)
-	public String register(HttpSession session, ModelMap model, @ModelAttribute("user") User user, @RequestParam("file") MultipartFile file) {
-		
-		int result = userService.addUser(user, null, file);
-		
-		session.setAttribute("user", userService.getUserByID(user.getId()));
-		session.setAttribute("cart", cartService.getCartByUserId(user.getId()));
-		session.setAttribute("totalItem", cartService.getTotalItem(user.getId()));
-		session.setAttribute("totalMoney", cartService.getTotalMoney(user.getId()));
+	public String register(HttpSession session, ModelMap model, @ModelAttribute("user") User user, BindingResult errors, @RequestParam("file") MultipartFile file) {
+		if (userService.getUserByUsername(user.getUsername()) != null) {
+			errors.rejectValue("username", "user", "Tên người dùng đã được sử dụng!");
+		}
+		if (user.getUsername().length() > 50) {
+			errors.rejectValue("username", "user", "Tên người dùng không được dài quá 50 ký tự!");
+		}
+		if (user.getLastName().matches(".*\\d+.*")) {
+			errors.rejectValue("lastName", "user", "Họ không được chứa số!");
+		}
+		if (user.getLastName().matches(".*[:;/{}*<>=()!.#$@_+,?-]+.*")) {
+			errors.rejectValue("lastName", "user", "Họ không được chứa ký tự đặc biệt!");
+		}
+		if (user.getFirstName().matches(".*\\d+.*")) {
+			errors.rejectValue("firstName", "user", "Tên không được chứa số!");
+		}
+		if (user.getFirstName().matches(".*[:;/{}*<>=()!.#$@_+,?-]+.*")) {
+			errors.rejectValue("firstName", "user", "Tên không được chứa ký tự đặc biệt!");
+		}
+		if (user.getLastName().length() > 100) {
+			errors.rejectValue("lastName", "user", "Họ không được dài quá 100 ký tự!");
+		}
+		if (user.getFirstName().length() > 50) {
+			errors.rejectValue("firstName", "user", "Tên không được dài quá 100 ký tự!");
+		}
+		if (user.getEmail().length() > 100) {
+			errors.rejectValue("email", "user", "Email không được dài quá 100 ký tự!");
+		}
+		if (userService.getUserByEmail(user.getEmail()) != null) {
+			errors.rejectValue("email", "user", "Email đã được sử dụng!");
+		}
+		if (!user.getPhone().matches("\\d{10,}")) {
+			errors.rejectValue("phone", "user", "Số điện thoại không hợp lệ!");
+		}
+		if (userService.getUserByPhone(user.getPhone()) != null) {
+			errors.rejectValue("phone", "user", "Số điện thoại đã được sử dụng!");
+		}
+		if(errors.hasErrors())
+			return "account/register";
+		else
+		{
+			Address address = addressService.getAddressById(1);
+			address.setId(null);
+			int resultAddress = addressService.addAddress(address);
+			if(resultAddress == 0) {
+				model.addAttribute("message1", "Thêm địa chỉ thất bại");
+				return "account/register";
+			}
+			int result = userService.addUser(user, address, file);
+			
+			session.setAttribute("user", userService.getUserByID(user.getId()));
+			session.setAttribute("cart", cartService.getCartByUserId(user.getId()));
+			session.setAttribute("totalItem", cartService.getTotalItem(user.getId()));
+			session.setAttribute("totalMoney", cartService.getTotalMoney(user.getId()));
+		}
 		return "redirect:/home.htm";	
 	}
 }

@@ -18,9 +18,9 @@
 				<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
 						action="admin/searchOrder.htm">
 					<div class="input-group">
-						<input type="date" class="form-control bg-light border small" aria-label="Search" aria-describedby="basic-addon2">
+						<input name="searchInput" type="date" class="form-control bg-light border small" aria-label="Search" aria-describedby="basic-addon2">
 						<div class="input-group-append">
-							<button class="btn btn-outline-primary" type="button">
+							<button class="btn btn-outline-primary" type="submit">
 								<i class="fas fa-search fa-sm fs-5 py-1"></i>
 							</button>
 						</div>

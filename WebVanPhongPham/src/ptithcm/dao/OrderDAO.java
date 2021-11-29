@@ -1,5 +1,6 @@
 package ptithcm.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -34,6 +35,17 @@ public class OrderDAO {
 		Session session = factory.getCurrentSession();
 		String hql = "FROM Order WHERE status.id = :statusId";
 		Query query = session.createQuery(hql);
+		query.setParameter("statusId", statusId);
+		List<Order> list = query.list();
+		return list;
+	}
+	
+	public List<Order> getOrderByDateAndStatus(Date date, int statusId)
+	{
+		Session session = factory.getCurrentSession();
+		String hql = "FROM Order WHERE date = :date and status.id = :statusId";
+		Query query = session.createQuery(hql);
+		query.setParameter("date", date);
 		query.setParameter("statusId", statusId);
 		List<Order> list = query.list();
 		return list;

@@ -8,7 +8,7 @@
 	<div class="h4 text-uppercase">Thanh toán</div>
 	
 	<div class="mbg-azure py-2 px-4 mb-2">
-		<div class="row">
+		<div class="row">			
 			<div class="col">
 				<div class="fw-bold text-primary"><i class="fas fa-map-marker-alt"></i> Địa chỉ nhận hàng</div>
 			</div>
@@ -99,7 +99,7 @@
 				<form:input path="user.id" value="${user.id }" type="hidden" class="form-control"/> 
 				<form:input path="totalPrice" value="${totalMoney}" type="hidden" class="form-control"/> 
 				<div class="p-2 d-grid"> <!-- Button -->
-					<button type="submit" onclick="alert('Cám ơn bạn đã đặt hàng! Shop sẽ xử lý đơn hàng của bạn trong thời gian nhanh nhất có thể!')" class="btn btn-danger bg-gradient" >Đặt hàng</button>
+					<button type="submit" class="btn btn-danger bg-gradient" >Đặt hàng</button>
 				</div>
 			</div>
 		</div>

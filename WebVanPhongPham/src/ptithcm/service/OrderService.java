@@ -1,5 +1,6 @@
 package ptithcm.service;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -54,6 +55,20 @@ public class OrderService {
 		try
 		{
 			orders = orderDAO.getOrderByStatus(statusId);
+		}
+		catch (Exception e) {
+			orders = null;
+		}
+		
+		return orders;
+	}
+	
+	public List<Order> getOrderByDateAnd(Date date, int statusId)
+	{
+		List<Order> orders;
+		try
+		{
+			orders = orderDAO.getOrderByDateAndStatus(date, statusId);
 		}
 		catch (Exception e) {
 			orders = null;

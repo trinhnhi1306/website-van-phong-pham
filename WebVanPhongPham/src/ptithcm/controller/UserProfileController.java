@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import ptithcm.bean.ChangedPassword;
 import ptithcm.entity.Address;
 import ptithcm.entity.Cart;
 import ptithcm.entity.Category;
@@ -133,7 +135,33 @@ public class UserProfileController {
 	}
 	
 	@RequestMapping(value = "changePassword", method = RequestMethod.GET)
-	public String changePassword() {
+	public String changePassword(@ModelAttribute("password") ChangedPassword password) {
+		return "user/changePassword";
+	}
+	
+	@RequestMapping(value = "changePassword", method = RequestMethod.POST)
+	public String savePassword(ModelMap model, @ModelAttribute("password") ChangedPassword password, BindingResult errors, HttpSession session) {
+		User oldUser = (User) session.getAttribute("user");
+		if (!BCrypt.checkpw(password.getOldPass(), oldUser.getPassword())) {
+			errors.rejectValue("oldPass", "password", "Mật khẩu hiện tại không đúng!");
+		}
+		if (BCrypt.checkpw(password.getNewPass(), oldUser.getPassword())) {
+			errors.rejectValue("newPass", "password", "Mật khẩu mới trùng với mật khẩu cũ!");
+		}
+		if (!password.getConfirmPass().equalsIgnoreCase(password.getNewPass())) {
+			errors.rejectValue("confirmPass", "password", "Mật khẩu xác nhận không đúng!");
+		}
+		
+		if(errors.hasErrors())
+			return "user/changePassword";
+		else
+		{
+			oldUser.setPassword(BCrypt.hashpw(password.getNewPass(), BCrypt.gensalt(12)));
+			int result = userService.updateUser(oldUser);
+			if(result == 1)
+				session.setAttribute("admin", userService.getUserByID(oldUser.getId()));
+			model.addAttribute("message", result);
+		}
 		return "user/changePassword";
 	}
 	
@@ -218,7 +246,7 @@ public class UserProfileController {
 	}
 	
 	@RequestMapping(value = "checkout", method = RequestMethod.GET)
-	public String checkOut(@ModelAttribute("order") Order order, HttpSession session) {
+	public String checkOut(@ModelAttribute("order") Order order) {
 		return "user/checkout";
 	}	
 	
@@ -231,10 +259,11 @@ public class UserProfileController {
 			cartService.deleteAllCart(cart);
 		}
 		User user = (User) session.getAttribute("user");
+		
 		session.setAttribute("cart", cartService.getCartByUserId(user.getId()));
 		session.setAttribute("totalItem", 0);
 		session.setAttribute("totalMoney", 0.0);
-		return "redirect:/user/order.htm";
+		return "user/success";
 	}	
 	
 
@@ -248,13 +277,13 @@ public class UserProfileController {
 	}
 	
 	@RequestMapping(value = "shipping", method = RequestMethod.POST)
-	public String shipping(HttpSession session, ModelMap model, @ModelAttribute("address") Address address, @RequestParam("phone") String phone, @RequestParam("file") MultipartFile file) {
+	public String shipping(HttpSession session, ModelMap model, @ModelAttribute("address") Address address, @RequestParam("phone") String phone) {
 		int result1 = addressService.editAddress(address);
 		model.addAttribute("message1", result1);
 		
 		User user = (User) session.getAttribute("user");
 		user.setPhone(phone);
-		int result2 = userService.editUser(user, file);
+		int result2 = userService.updateUser(user);
 		model.addAttribute("message2", result2);
 		session.setAttribute("user", userService.getUserByID(user.getId()));
 		return "redirect:/user/checkout.htm";

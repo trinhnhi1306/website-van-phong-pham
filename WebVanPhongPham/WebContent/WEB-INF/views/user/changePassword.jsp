@@ -14,7 +14,7 @@
 		<div class="h4 text-uppercase">Đổi mật khẩu</div>
 		<hr>
 		<c:if test="${not empty message}">			
-			<c:choose>
+		  	<c:choose>
 				<c:when test="${message == 0}">
 					<div class="col-sm-8 alert alert-danger" role="alert">
 					Cập nhật thất bại!
@@ -27,20 +27,32 @@
 					<button type="button" class="rem" data-dismiss="alert" aria-label="Close">&times;</button>
 					</div>
 				</c:when>
+				<c:when test="${message == 2}">
+					<div class="col-sm-8 alert alert-danger alert-dismissible" role="alert">
+					Lưu hình ảnh thất bại!
+					<button type="button" class="rem" data-dismiss="alert" aria-label="Close">&times;</button>
+					</div>
+				</c:when>
 			</c:choose>		  	
 		</c:if>
-		<form action="user/changePassword.htm" method="post">
+		<form:form action="user/changePassword.htm" method="post" modelAttribute="password">
 			<div class="row my-3">
 	    		<label class="col-sm-4 col-form-label text-end">Mật khẩu hiện tại: </label>
 	    		<div class="col-sm-8 pe-5">
-	      			<input type="text" class="form-control" name="oldPassword">
+	      			<form:input path="oldPass" type="password" class="form-control" required="true"/>
+	      			<label class="mb-1">
+						<form:errors path="oldPass" cssClass="errors" />
+					</label>
 	    		</div>
   			</div>
 			
 			<div class="row mb-3">
 	    		<label class="col-sm-4 col-form-label text-end">Mật khẩu mới: </label>
 	    		<div class="col-sm-8 pe-5">
-	      			<input type="text" class="form-control" name="newPassword1">
+	      			<form:input path="newPass" type="password" class="form-control" required="true"/>
+	      			<label class="mb-1">
+						<form:errors path="newPass" cssClass="errors" />
+					</label>
 	    		</div>
   			</div>
   			
@@ -48,14 +60,17 @@
   			<div class="row mb-3">
 	    		<label class="col-sm-4 col-form-label text-end">Xác nhận mật khẩu: </label>
 	    		<div class="col-sm-8 pe-5">
-	      			<input type="text" class="form-control" name="newPassword2">
+	      			<form:input path="confirmPass" type="password" class="form-control" required="true"/>
+	      			<label class="mb-1">
+						<form:errors path="confirmPass" cssClass="errors" />
+					</label>
 	    		</div>
   			</div>
 			
 			<div class="text-center">
 				<button type="submit" class="btn btn-info text-white">Cập nhật</button>
 			</div>
-		</form>
+		</form:form>
 		
 	</div>
 		

@@ -57,7 +57,7 @@
   			<div class="row mb-3">
 	    		<label class="col-sm-3 col-form-label text-end">Ghi chú: </label>
 	    		<div class="col-sm-8">
-	    			<form:input path="note" type="text" class="form-control"/>
+	    			<form:textarea path="note" type="text" class="form-control" rows="3"/>
 	    			<label class="mb-1">
 						<form:errors path="note" cssClass="errors" />
 					</label>
