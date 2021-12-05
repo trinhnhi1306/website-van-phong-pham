@@ -18,23 +18,21 @@
 				</span>
 
 				<span class="login100-form-title py-4">Đăng nhập</span>
-				<c:if test="${not empty message}">
-					<div class="col-sm-10 alert-danger" role="alert">
-						${message }
-						<button type="button" class="rem" data-dismiss="alert"
-							aria-label="Close">&times;</button>
-					</div>
-				</c:if>
+				
 				<div class="wrap-input100 validate-input"
 					data-validate="Enter username">
-					<form:input class="input100" type="text" path="username"
-						placeholder="Tên đăng nhập" required="true" />
+					<form:input class="input100" type="text" path="username" placeholder="Tên đăng nhập" required="true" />
+					<label class="mb-1">
+						<form:errors path="username" cssClass="errorss" />
+					</label>
 				</div>
 
 				<div class="wrap-input100 validate-input"
 					data-validate="Enter password">
-					<form:input class="input100" type="password" path="password"
-						placeholder="Mật khẩu" required="true" />
+					<form:input class="input100" type="password" path="password" placeholder="Mật khẩu" required="true" />
+					<label class="mb-1">
+						<form:errors path="password" cssClass="errorss" />
+					</label>
 				</div>
 
 				<div class="container-login100-form-btn">

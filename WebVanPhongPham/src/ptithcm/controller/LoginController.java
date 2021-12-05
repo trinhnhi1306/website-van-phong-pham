@@ -71,7 +71,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public String login(ModelMap model, @ModelAttribute("user") User user, HttpSession session) {	
+	public String login(ModelMap model, @ModelAttribute("user") User user, BindingResult errors, HttpSession session) {	
 		
 		User userLogin;
 		
@@ -96,14 +96,14 @@ public class LoginController {
 			}
 			else {
 				System.out.println("Sai mat khau!");
-				model.addAttribute("message", "Sai mật khẩu!");
+				errors.rejectValue("password", "user", "Mật khẩu không đúng!");
 				return "account/login";
 			}
 		}
 		catch (Exception e) {
 			//e.printStackTrace();
 			System.out.println("Tai khoan khong ton tai!");
-			model.addAttribute("message", "Tài khoản không tồn tại!");
+			errors.rejectValue("username", "user", "Tài khoản không tồn tại!");
 			return "account/login";
 		}			
 	}
