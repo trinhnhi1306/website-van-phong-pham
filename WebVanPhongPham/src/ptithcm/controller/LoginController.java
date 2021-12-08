@@ -71,9 +71,16 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public String login(ModelMap model, @ModelAttribute("user") User user, BindingResult errors, HttpSession session) {	
+	public String login(ModelMap model, @ModelAttribute("user") User user, BindingResult errors, HttpServletRequest request, HttpSession session) {	
 		
 		User userLogin;
+		String capcha = session.getAttribute("captcha_security").toString();
+		String verifyCapcha = request.getParameter("capcha");
+		
+		if(!verifyCapcha.equals(capcha)) {
+			model.addAttribute("reCapcha", "Vui lòng nhập đúng Capcha");
+			return "account/login";
+		}
 		
 		try {
 			userLogin = userService.getUserByUsername(user.getUsername());

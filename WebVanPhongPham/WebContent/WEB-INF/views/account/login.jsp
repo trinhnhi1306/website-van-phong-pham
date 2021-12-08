@@ -34,6 +34,12 @@
 						<form:errors path="password" cssClass="errorss" />
 					</label>
 				</div>
+				<div class="wrap-input100 validate-input"
+					data-validate="Enter password">
+					<img style="margin: 0; width: 180px; height: 60px;" src="${pageContext.request.contextPath }/capcha/index.htm">
+					<input class="input100" type="text" name="capcha" placeholder="Nhập capcha" required>
+					<label class="mb-1 errorss" >${reCapcha }</label>
+				</div>
 
 				<div class="container-login100-form-btn">
 					<button type="submit" class="login100-form-btn">Đăng nhập</button>
