@@ -165,6 +165,7 @@ public class UserProfileController {
 		return "user/changePassword";
 	}
 	
+	/*
 	@RequestMapping(value = "changePassword", method = RequestMethod.POST)
 	public String changePassword(ModelMap model, HttpSession session, HttpServletRequest request, Principal principal) {
 		String oldPass = request.getParameter("oldPassword");
@@ -179,6 +180,7 @@ public class UserProfileController {
 		
 		return "user/changePassword";
 	}
+	*/
 	
 	@RequestMapping("address")
 	public String showAddress() {
