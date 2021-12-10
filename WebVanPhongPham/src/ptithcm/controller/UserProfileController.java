@@ -165,23 +165,6 @@ public class UserProfileController {
 		return "user/changePassword";
 	}
 	
-	/*
-	@RequestMapping(value = "changePassword", method = RequestMethod.POST)
-	public String changePassword(ModelMap model, HttpSession session, HttpServletRequest request, Principal principal) {
-		String oldPass = request.getParameter("oldPassword");
-		String newPass1 = request.getParameter("newPassword1");
-		String newPass2 = request.getParameter("newPassword2");
-		
-		if(oldPass.isEmpty() || oldPass == null) {
-			
-		}
-		
-		String userName = principal.getName();
-		
-		return "user/changePassword";
-	}
-	*/
-	
 	@RequestMapping("address")
 	public String showAddress() {
 		return "user/address";
