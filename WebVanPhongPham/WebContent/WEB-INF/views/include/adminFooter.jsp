@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!-- <script src="../assets/dist/js/bootstrap.bundle.min.js"></script> -->
 <!-- <script src="./assets/dist/js/bootstrap.bundle.min.js"></script> -->
+</div>
 <footer class="sticky-footer p-3 mb-2 mbg-navy mt-5">
 	<div class="container my-auto">
 		<div class="copyright text-center my-auto">

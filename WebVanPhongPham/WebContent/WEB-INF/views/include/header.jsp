@@ -34,6 +34,9 @@
 <link rel="stylesheet" href="<c:url value='resources/assets/dist/all.min.css'/>" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <style>
+.main {
+	min-height: 525px;
+}
 
 a.disabled {
   pointer-events: none;
@@ -94,3 +97,4 @@ form img {
 
 </head>
 <body>
+<div class="main">

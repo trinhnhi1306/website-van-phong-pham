@@ -37,7 +37,7 @@
 		</c:if>
 		<form:form action="admin/newUser.htm" method="post" modelAttribute="user" enctype="multipart/form-data">
 			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Tên đăng nhập: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Tên đăng nhập <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	      			<form:input path="username" type="text" class="form-control" required="true"/>
 	      			<label class="mb-1">
@@ -47,7 +47,7 @@
   			</div>
   			
   			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Mật khẩu: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Mật khẩu <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	      			<form:input path="password" type="password" class="form-control" required="true"/>
 	      			<label class="mb-1">
@@ -57,7 +57,7 @@
   			</div>
   			
   			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Họ: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Họ <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	      			<form:input path="lastName" type="text" class="form-control" required="true"/>
 	      			<label class="mb-1">
@@ -67,7 +67,7 @@
   			</div>
   			
   			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Tên: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Tên <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	      			<form:input path="firstName" type="text" class="form-control" required="true"/>
 	      			<label class="mb-1">
@@ -77,7 +77,7 @@
   			</div>
   			
   			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Số điện thoại: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Số điện thoại <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	      			<form:input path="phone" type="text" class="form-control" required="true"/>
 	      			<label class="mb-1">
@@ -87,7 +87,7 @@
   			</div>
   			
   			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Email: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Email <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	      			<form:input path="email" type="email" class="form-control" required="true"/>
 	      			<label class="mb-1">
@@ -97,7 +97,7 @@
   			</div>
   			
   			<div class="row mb-3">
-	    		<label class="col-sm-3 form-label text-end">Ảnh đại diện:</label>
+	    		<label class="col-sm-3 form-label text-end">Ảnh đại diện</label>
 	    		<div class="col-sm-8">
 	    			<input name="file" class="form-control" id="formFileSm" type="file" accept="image/*" onchange="preview()">
 	    			<img id="img" class="rounded" src="resources/images/users/userDefaul.png"/>
@@ -106,7 +106,7 @@
   			</div>
   			
   			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Quyền hạn: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Quyền hạn <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8 pt-2">
 	    			<div class="form-check form-check-inline">
 						<form:radiobutton path="permission.id" value="1"  class="form-check-input" required="true"/>
@@ -120,7 +120,7 @@
   			</div>
 			<form:form method="post" modelAttribute="address">
 				<div class="row mb-3">
-		    		<label class="col-sm-3 col-form-label text-end">Tỉnh/Thành phố: </label>
+		    		<label class="col-sm-3 col-form-label text-end">Tỉnh/Thành phố</label>
 		    		<div class="col-sm-8">
 		      			<form:select id="province" path="ward.district.province.id" class="form-select" aria-label="Default select example">
 							<%-- <form:option value="Open this select menu"/> --%>
@@ -130,7 +130,7 @@
 	  			</div>
 	  			
 				<div class="row mb-3">
-		    		<label class="col-sm-3 col-form-label text-end">Quận/Huyện: </label>
+		    		<label class="col-sm-3 col-form-label text-end">Quận/Huyện </label>
 		    		<div class="col-sm-8">
 		      			<form:select id="district" path="ward.district.id" class="form-select" aria-label="Default select example">
 							<%-- <form:option value="Open this select menu"/> --%>
@@ -140,7 +140,7 @@
 	  			</div>
 	  		
 	  			<div class="row mb-3">
-		    		<label class="col-sm-3 col-form-label text-end">Phường/Xã: </label>
+		    		<label class="col-sm-3 col-form-label text-end">Phường/Xã</label>
 		    		<div class="col-sm-8">
 		      			<form:select id="ward" path="ward.id" class="form-select" aria-label="Default select example">
 							<%-- <form:option value="Open this select menu"/> --%>
@@ -150,7 +150,7 @@
 	  			</div>
 	  			
 	  			<div class="row mb-3">
-		    		<label class="col-sm-3 col-form-label text-end">Địa chỉ: </label>
+		    		<label class="col-sm-3 col-form-label text-end">Địa chỉ</label>
 		    		<div class="col-sm-8">
 		    			<form:input path="specificAddress" type="text" class="form-control" />
 		    		</div>

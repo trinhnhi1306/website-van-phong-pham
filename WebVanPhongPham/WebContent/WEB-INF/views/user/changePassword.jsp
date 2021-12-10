@@ -37,7 +37,7 @@
 		</c:if>
 		<form:form action="user/changePassword.htm" method="post" modelAttribute="password">
 			<div class="row my-3">
-	    		<label class="col-sm-4 col-form-label text-end">Mật khẩu hiện tại: </label>
+	    		<label class="col-sm-4 col-form-label text-end">Mật khẩu hiện tại <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8 pe-5">
 	      			<form:input path="oldPass" type="password" class="form-control" required="true"/>
 	      			<label class="mb-1">
@@ -47,7 +47,7 @@
   			</div>
 			
 			<div class="row mb-3">
-	    		<label class="col-sm-4 col-form-label text-end">Mật khẩu mới: </label>
+	    		<label class="col-sm-4 col-form-label text-end">Mật khẩu mới <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8 pe-5">
 	      			<form:input path="newPass" type="password" class="form-control" required="true"/>
 	      			<label class="mb-1">
@@ -58,7 +58,7 @@
   			
   			<!-- Cái này bắt chước shopee, nhưng nếu phức tạp thì bỏ cũng được :v -->
   			<div class="row mb-3">
-	    		<label class="col-sm-4 col-form-label text-end">Xác nhận mật khẩu: </label>
+	    		<label class="col-sm-4 col-form-label text-end">Xác nhận mật khẩu <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8 pe-5">
 	      			<form:input path="confirmPass" type="password" class="form-control" required="true"/>
 	      			<label class="mb-1">
