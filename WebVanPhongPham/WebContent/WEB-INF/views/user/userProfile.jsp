@@ -110,7 +110,7 @@
 				            <label for="imageUpload" class="pt-2"><i class="fas fa-edit"></i></label>
         				</div>
 	        			<div class="avatar-preview">
-	        				<img id="img" src="resources/images/users/${user.image}" id="imagePreview" class="rounded-circle" style="margin: 0; width: 180px; height: 180px;">
+	        				<img id="img" src="${user.image}" id="imagePreview" class="rounded-circle" style="margin: 0; width: 180px; height: 180px;">
 	            			
 	        			</div>
    		 			</div>

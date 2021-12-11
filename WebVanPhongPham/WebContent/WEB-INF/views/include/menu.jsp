@@ -34,9 +34,15 @@
 					<a  class="nav-link dropdown-toggle text-white" href="#"
 						id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
 						aria-expanded="false"> 
-							<i class="fas fa-user-circle"></i>
-							<span class="mr-2 d-none d-lg-inline text-white small">${sessionScope.user.username }</span> 
-							
+						<c:choose>
+							<c:when test="${sessionScope.user != null}">
+								<img class="img-profile rounded-circle" src="${sessionScope.user.image }">
+							</c:when>
+							<c:otherwise>
+								<i class="fas fa-user-circle"></i>
+							</c:otherwise>
+						</c:choose>							
+						<span class="mr-2 d-none d-lg-inline text-white small">${sessionScope.user.username }</span> 							
 					</a> 
 					<!-- Dropdown - User Information -->
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

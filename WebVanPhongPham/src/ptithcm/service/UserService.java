@@ -120,12 +120,22 @@ public class UserService {
 	            System.out.println(filePath);
 	            file.transferTo(new File(filePath));
 	            
-				user.setImage(fileName);
+				user.setImage("resources/images/users/" + fileName);
+				Thread.sleep(2000);
 			} catch (Exception e) {
 				e.printStackTrace();
 				return 2;		
 			}
 		}
+		
+		return userDAO.insertUser(user);
+	}
+	
+	public int addUser1(User user, Address address) {
+		
+		user.setAddress(address);
+		user.setStatus(true);
+		user.setRegistrationDate(new java.util.Date());
 		
 		return userDAO.insertUser(user);
 	}
@@ -140,7 +150,8 @@ public class UserService {
 	            System.out.println(filePath);
 	            file.transferTo(new File(filePath));
 	            
-				user.setImage(fileName);
+				user.setImage("resources/images/users/" + fileName);
+				Thread.sleep(2000);
 			} catch (Exception e) {
 				e.printStackTrace();
 				return 2;		

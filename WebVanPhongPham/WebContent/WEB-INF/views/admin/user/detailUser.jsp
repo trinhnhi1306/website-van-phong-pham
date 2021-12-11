@@ -58,7 +58,7 @@
 			</div>
 			<div class="col-4 border-start text-center">
 				<div class="avatar-preview">
-	        		<img src="resources/images/users/${user.image }" id="imagePreview" class="rounded-circle" style="width: 180px; height: 180px;">
+	        		<img src="${user.image }" id="imagePreview" class="rounded-circle" style="width: 180px; height: 180px;">
 	            </div>
 			</div>
 		</div>

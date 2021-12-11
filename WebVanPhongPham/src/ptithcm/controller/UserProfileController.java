@@ -1,6 +1,5 @@
 package ptithcm.controller;
 
-import java.security.Principal;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,10 +20,8 @@ import org.springframework.web.multipart.MultipartFile;
 import ptithcm.bean.ChangedPassword;
 import ptithcm.entity.Address;
 import ptithcm.entity.Cart;
-import ptithcm.entity.Category;
 import ptithcm.entity.District;
 import ptithcm.entity.Order;
-import ptithcm.entity.Product;
 import ptithcm.entity.Province;
 import ptithcm.entity.User;
 import ptithcm.entity.Ward;

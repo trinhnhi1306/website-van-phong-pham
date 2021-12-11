@@ -111,7 +111,7 @@
 	    		<label class="col-sm-3 form-label text-end">Ảnh đại diện</label>
 	    		<div class="col-sm-8">
 	    			<input name="file" class="form-control" id="formFileSm" type="file" accept="image/*" onchange="preview()">
-	    			<img id="img" class="rounded" src="resources/images/users/${user.image }"/>
+	    			<img id="img" class="rounded" src="${user.image }"/>
 	    			<form:input path="image" type="hidden" class="form-control"/>	
 	    		</div>
   			</div>

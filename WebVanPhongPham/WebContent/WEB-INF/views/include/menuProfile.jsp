@@ -5,7 +5,7 @@
 <div class="d-flex flex-column flex-shrink-0 p-3 ">
 	<div class="row px-4">
 		<div class="col-3">
-			<img src="resources/images/users/${user.image }" class="rounded-circle" style="width: 50px; height: 50px;">
+			<img src="${user.image }" class="rounded-circle" style="width: 50px; height: 50px;">
 		</div>
 		<div class="col-9">
 			<div class="fs-5 fw-bold">${user.username }</div>

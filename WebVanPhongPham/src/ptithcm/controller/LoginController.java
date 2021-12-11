@@ -23,6 +23,7 @@ import ptithcm.entity.Address;
 import ptithcm.entity.User;
 import ptithcm.service.AddressService;
 import ptithcm.service.CartService;
+import ptithcm.service.PermissionService;
 import ptithcm.service.ReportService;
 import ptithcm.service.UserService;
 
@@ -31,6 +32,9 @@ public class LoginController {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	PermissionService permissionService;
 	
 	@Autowired
 	AddressService addressService;
@@ -190,6 +194,7 @@ public class LoginController {
 		{
 			Address address = addressService.getAddressById(1);
 			address.setId(null);
+			address.setSpecificAddress(null);
 			int resultAddress = addressService.addAddress(address);
 			if(resultAddress == 0) {
 				model.addAttribute("message1", "Thêm địa chỉ thất bại");
@@ -202,6 +207,40 @@ public class LoginController {
 			session.setAttribute("totalItem", cartService.getTotalItem(user.getId()));
 			session.setAttribute("totalMoney", cartService.getTotalMoney(user.getId()));
 		}
+		return "redirect:/home.htm";	
+	}
+	
+	@RequestMapping(value="/register1", method = RequestMethod.POST)
+	public String register1(ModelMap model, HttpSession session, HttpServletRequest request) {
+		
+			Address address = addressService.getAddressById(1);
+			address.setId(null);
+			address.setSpecificAddress(null);
+			int resultAddress = addressService.addAddress(address);
+			if(resultAddress == 0) {
+				model.addAttribute("message1", "Thêm địa chỉ thất bại");
+				return "account/register";
+			}
+			
+			String[] str = request.getParameter("email").split("@");
+			
+			String username = str[0];
+			System.out.println(username);
+			User user = userService.getUserByUsername(username);
+			
+			if(user == null) {
+				user = new User();
+				user.setEmail(request.getParameter("email"));
+				user.setImage(request.getParameter("picture"));
+				
+				user.setUsername(username);
+				user.setPermission(permissionService.getPermissionByID(1));
+				int result = userService.addUser1(user, address);
+			}
+			session.setAttribute("user", userService.getUserByID(user.getId()));
+			session.setAttribute("cart", cartService.getCartByUserId(user.getId()));
+			session.setAttribute("totalItem", cartService.getTotalItem(user.getId()));
+			session.setAttribute("totalMoney", cartService.getTotalMoney(user.getId()));
 		return "redirect:/home.htm";	
 	}
 }

@@ -37,7 +37,7 @@
 		
 		<form:form action="admin/newBrand.htm" method="post" modelAttribute="brand">
 			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Tên thương hiệu: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Tên thương hiệu: <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	      			<form:input path="name" type="text" class="form-control" required="true"/>
 	      			<label class="mb-1">

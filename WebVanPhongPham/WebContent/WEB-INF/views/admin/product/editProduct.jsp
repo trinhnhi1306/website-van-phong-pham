@@ -45,7 +45,7 @@
   			</div>
 		
 			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Tên sản phẩm: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Tên sản phẩm: <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	      			<form:input path="name" type="text" class="form-control"/>
 	      			<form:errors path="name" class="fst-italic text-danger"/>
@@ -53,21 +53,21 @@
   			</div>
 			
 			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Loại sản phẩm: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Loại sản phẩm: <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 					<form:select path="categories.id" items="${categorySel}" itemLabel="name" itemValue="id" class="form-select mb-6"></form:select>
 	    		</div>
   			</div>
   			
 			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Thương hiệu: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Thương hiệu: <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	      			<form:select path="brands.brand_id" items="${brandsSel}" itemValue="brand_id" itemLabel="name" class="form-select mb-6"></form:select>
 	    		</div>
   			</div>
   		
   			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Đơn giá: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Đơn giá: <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	    			<div class="input-group">
 	    				<form:input path="price" type="text" class="form-control"/>
@@ -78,7 +78,7 @@
   			</div>
   			
   			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Quy cách: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Quy cách: <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	      			<form:input path="specification" type="text" class="form-control"/>
 	      			<form:errors path="specification" class="fst-italic text-danger"/>
@@ -95,7 +95,7 @@
   			</div>
   			
   			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Giảm giá: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Giảm giá: <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	    			<div class="input-group">
 	    				<form:input path="discount" type="number" class="form-control"/>

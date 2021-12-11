@@ -1,8 +1,88 @@
+USE [master]
+GO
+/****** Object:  Database [WEBSITE_VANPHONGPHAM]    Script Date: 12/11/2021 7:10:36 PM ******/
 CREATE DATABASE [WEBSITE_VANPHONGPHAM]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'WEBSITE_VANPHONGPHAM', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\WEBSITE_VANPHONGPHAM.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'WEBSITE_VANPHONGPHAM_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\WEBSITE_VANPHONGPHAM_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [WEBSITE_VANPHONGPHAM].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET RECOVERY FULL 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET  MULTI_USER 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'WEBSITE_VANPHONGPHAM', N'ON'
+GO
+ALTER DATABASE [WEBSITE_VANPHONGPHAM] SET QUERY_STORE = OFF
 GO
 USE [WEBSITE_VANPHONGPHAM]
 GO
-/****** Object:  Table [dbo].[address]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[address]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -17,7 +97,7 @@ CREATE TABLE [dbo].[address](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[brand]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[brand]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -32,7 +112,7 @@ CREATE TABLE [dbo].[brand](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[cart]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[cart]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -48,7 +128,7 @@ CREATE TABLE [dbo].[cart](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[category]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[category]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -64,7 +144,7 @@ CREATE TABLE [dbo].[category](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[district]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[district]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -80,7 +160,7 @@ CREATE TABLE [dbo].[district](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[feedback]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[feedback]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -98,7 +178,7 @@ CREATE TABLE [dbo].[feedback](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[order]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[order]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -115,7 +195,7 @@ CREATE TABLE [dbo].[order](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[order_detail]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[order_detail]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -132,7 +212,7 @@ CREATE TABLE [dbo].[order_detail](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[order_status]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[order_status]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -146,7 +226,7 @@ CREATE TABLE [dbo].[order_status](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[permission]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[permission]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -160,7 +240,7 @@ CREATE TABLE [dbo].[permission](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[poster]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[poster]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -176,7 +256,7 @@ CREATE TABLE [dbo].[poster](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[product]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[product]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -201,7 +281,7 @@ CREATE TABLE [dbo].[product](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[province]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[province]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -216,7 +296,7 @@ CREATE TABLE [dbo].[province](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[users]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[users]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -224,13 +304,13 @@ GO
 CREATE TABLE [dbo].[users](
 	[user_id] [int] IDENTITY(1,1) NOT NULL,
 	[username] [nvarchar](50) NOT NULL,
-	[password] [nvarchar](100) NOT NULL,
-	[first_name] [nvarchar](50) NOT NULL,
-	[last_name] [nvarchar](100) NOT NULL,
+	[password] [nvarchar](100) NULL,
+	[first_name] [nvarchar](50) NULL,
+	[last_name] [nvarchar](100) NULL,
 	[image] [nvarchar](300) NULL,
 	[address_id] [int] NULL,
 	[email] [nvarchar](100) NOT NULL,
-	[phone] [nvarchar](20) NOT NULL,
+	[phone] [nvarchar](20) NULL,
 	[created_at] [date] NOT NULL,
 	[permission_id] [int] NOT NULL,
 	[status] [bit] NOT NULL,
@@ -240,7 +320,7 @@ CREATE TABLE [dbo].[users](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ward]    Script Date: 11/21/2021 9:35:14 PM ******/
+/****** Object:  Table [dbo].[ward]    Script Date: 12/11/2021 7:10:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -276,11 +356,53 @@ INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (8, 
 GO
 INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (9, 143, N'2/3C')
 GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (10, 1, N'')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (11, 1, N'')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (12, 1, N'')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (13, 66, N'')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (14, 84, N'12')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (15, 98, N'')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (16, 1, N'7/6H')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (17, 1, N'2/3C')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (18, 1, N'')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (19, 1, N'')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (20, 1, NULL)
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (21, 191, N'1/1YH')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (22, 195, N'45F')
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (23, 173, NULL)
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (24, 173, NULL)
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (25, 173, NULL)
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (26, 173, NULL)
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (27, 173, NULL)
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (28, 173, NULL)
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (29, 173, NULL)
+GO
+INSERT [dbo].[address] ([address_id], [ward_id], [specific_address]) VALUES (30, 173, NULL)
+GO
 SET IDENTITY_INSERT [dbo].[address] OFF
 GO
 SET IDENTITY_INSERT [dbo].[brand] ON 
 GO
-INSERT [dbo].[brand] ([brand_id], [name], [description]) VALUES (1, N'Thiên Long', NULL)
+INSERT [dbo].[brand] ([brand_id], [name], [description]) VALUES (1, N'Thiên Long', N'Thiên Long là công ty chuyên về văn phòng phẩm, dụng cụ mỹ thuật của Việt Nam. Công ty được thành lập vào năm 1981 tại thành phố Hồ Chí Minh, tiền thân là Cơ sở bút bi Thiên Long.')
 GO
 INSERT [dbo].[brand] ([brand_id], [name], [description]) VALUES (2, N'Bizner', NULL)
 GO
@@ -323,6 +445,18 @@ GO
 INSERT [dbo].[brand] ([brand_id], [name], [description]) VALUES (21, N'Logitech', NULL)
 GO
 SET IDENTITY_INSERT [dbo].[brand] OFF
+GO
+INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (3, 26, 5)
+GO
+INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (3, 37, 1)
+GO
+INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (4, 37, 1)
+GO
+INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (9, 26, 1)
+GO
+INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (30, 30, 1)
+GO
+INSERT [dbo].[cart] ([product_id], [user_id], [quantity]) VALUES (37, 22, 3)
 GO
 SET IDENTITY_INSERT [dbo].[category] ON 
 GO
@@ -375,6 +509,8 @@ GO
 INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (24, N'Gôm tẩy chất lượng tốt', N'defaul.png', N'Gôm tẩy chất lượng tốt, giá cả vừa phải')
 GO
 INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (33, N'Dụng cụ văn phòng phong cách cổ trang', N'agenda.png', N'Các sản phẩm mô phỏng theo phong cách cổ xưa')
+GO
+INSERT [dbo].[category] ([category_id], [name], [image], [note]) VALUES (44, N'Bút viết loại 3', N'defaul.png', N'')
 GO
 SET IDENTITY_INSERT [dbo].[category] OFF
 GO
@@ -786,6 +922,10 @@ INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VAL
 GO
 INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (13, 7, CAST(N'2021-11-18' AS Date), N'Giấy tốt', NULL)
 GO
+INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (13, 8, CAST(N'2021-11-24' AS Date), N'Giấy tốt, rẻ', NULL)
+GO
+INSERT [dbo].[feedback] ([user_id], [product_id], [date], [comment], [vote]) VALUES (30, 5, CAST(N'2021-11-24' AS Date), N'Bút rất tốt, rẻ', NULL)
+GO
 SET IDENTITY_INSERT [dbo].[order] ON 
 GO
 INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (2, CAST(N'2021-10-02' AS Date), CAST(6400.00 AS Numeric(18, 2)), 4, 14)
@@ -814,7 +954,25 @@ INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id])
 GO
 INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (18, CAST(N'2021-11-21' AS Date), CAST(742500.00 AS Numeric(18, 2)), 5, 14)
 GO
-INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (19, CAST(N'2021-11-21' AS Date), CAST(75500.00 AS Numeric(18, 2)), 1, 13)
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (19, CAST(N'2021-11-21' AS Date), CAST(75500.00 AS Numeric(18, 2)), 5, 13)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (20, CAST(N'2021-11-22' AS Date), CAST(392763.40 AS Numeric(18, 2)), 3, 14)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (21, CAST(N'2021-11-22' AS Date), CAST(4750.00 AS Numeric(18, 2)), 3, 13)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (22, CAST(N'2021-11-23' AS Date), CAST(221991.00 AS Numeric(18, 2)), 3, 27)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (23, CAST(N'2021-11-23' AS Date), CAST(81000.00 AS Numeric(18, 2)), 3, 27)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (24, CAST(N'2021-11-23' AS Date), CAST(7000.00 AS Numeric(18, 2)), 4, 30)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (25, CAST(N'2021-11-23' AS Date), CAST(1251000.00 AS Numeric(18, 2)), 1, 34)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (26, CAST(N'2021-11-24' AS Date), CAST(24900.00 AS Numeric(18, 2)), 2, 13)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (27, CAST(N'2021-12-08' AS Date), CAST(286200.00 AS Numeric(18, 2)), 1, 34)
+GO
+INSERT [dbo].[order] ([order_id], [date], [total_price], [status_id], [user_id]) VALUES (28, CAST(N'2021-12-11' AS Date), CAST(284482.00 AS Numeric(18, 2)), 1, 37)
 GO
 SET IDENTITY_INSERT [dbo].[order] OFF
 GO
@@ -870,6 +1028,38 @@ INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price])
 GO
 INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (19, 6, 1, CAST(40500.00 AS Numeric(18, 2)))
 GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (20, 35, 1, CAST(220763.40 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (20, 36, 2, CAST(86000.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (21, 37, 5, CAST(950.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (22, 7, 1, CAST(83391.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (22, 9, 1, CAST(138600.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (23, 6, 2, CAST(40500.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (24, 5, 1, CAST(7000.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (25, 26, 1, CAST(863000.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (25, 28, 1, CAST(6400.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (25, 32, 1, CAST(381600.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (26, 2, 3, CAST(8300.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (27, 9, 2, CAST(138600.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (27, 17, 1, CAST(4500.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (27, 19, 1, CAST(4500.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (28, 8, 2, CAST(72941.00 AS Numeric(18, 2)))
+GO
+INSERT [dbo].[order_detail] ([order_id], [product_id], [quantity], [item_price]) VALUES (28, 9, 1, CAST(138600.00 AS Numeric(18, 2)))
+GO
 SET IDENTITY_INSERT [dbo].[order_status] ON 
 GO
 INSERT [dbo].[order_status] ([status_id], [description]) VALUES (1, N'Chờ xử lý')
@@ -915,15 +1105,15 @@ INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (4, N'Bút gel xóa được Thiên Long Điểm 10 TP-GELE002', N'Dạng bút có nắp đậy. Bút dạng mực nước, viết trơn êm, mực ra đều, liên tục. Mực chất lượng cao không độc hại với người sử dụng. Bút có 2 gôm/tẩy trên cán và nắp bút thuận tiện sử dụng khi xóa mực.', N'220536693_2758032537653829_5778804089958025826_n_1__ac9f66a0e2ec4ff0a57d832ca9e12ff5_1024x1024.jpg                                                                                                                                                                                                          ', CAST(11800.00 AS Numeric(18, 2)), N'5 cây / 1 kiện', N'cây', 10, 1, 40, 1, 17, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (5, N'Bút Gel Thiên Long GEL-012 Đỏ (FS)', N'Bút có thiết kế đơn giản nhưng khoa học, thân tròn, nhỏ rất phù hợp với tay cầm của học sinh tiểu học. Thân và nắp bút bằng nhựa trắng đục, in nhũ kim loại. Mực màu đậm và tươi sáng, viết êm trơn, ra đều và liên tục.', N'but_gel_thien_long_gel-012__14__grande.jpg                                                                                                                                                                                                                                                                  ', CAST(7000.00 AS Numeric(18, 2)), N'1 bút/ kiện.', N'cây', 0, 2, 35, 1, 1, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (5, N'Bút Gel Thiên Long GEL-012 Đỏ (FS)', N'Bút có thiết kế đơn giản nhưng khoa học, thân tròn, nhỏ rất phù hợp với tay cầm của học sinh tiểu học. Thân và nắp bút bằng nhựa trắng đục, in nhũ kim loại. Mực màu đậm và tươi sáng, viết êm trơn, ra đều và liên tục.', N'but_gel_thien_long_gel-012__14__grande.jpg                                                                                                                                                                                                                                                                  ', CAST(7000.00 AS Numeric(18, 2)), N'1 bút/ kiện.', N'cây', 0, 3, 35, 1, 1, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (6, N'Bút Gel Papermate OS UPC Ink Joy 0.5 mm', NULL, N'ppmate_os_upc_0.5_2_5b8dbcaf15eb47dba2b5b6596fc146cd_1024x1024.jpg                                                                                                                                                                                                                                          ', CAST(45000.00 AS Numeric(18, 2)), N'5 cây / hộp', N'hộp', 10, 1, 40, 1, 8, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (6, N'Bút Gel Papermate OS UPC Ink Joy 0.5 mm', NULL, N'ppmate_os_upc_0.5_2_5b8dbcaf15eb47dba2b5b6596fc146cd_1024x1024.jpg                                                                                                                                                                                                                                          ', CAST(45000.00 AS Numeric(18, 2)), N'5 cây / hộp', N'hộp', 10, 3, 40, 1, 8, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (7, N'Ream giấy A4 80 gsm IK Copy (500 tờ) - Hàng nhập khẩu Indonesia', N'Giấy đều màu. Không gợn sóng, không xơ xước và không tách lớp. Giấy láng, không bị đốm khác màu hay tạp chất xơ cứng. Chữ in không bị nhòe, không lem kể cả in 2 mặt giấy.', N'ik_copy_a480_ton_kho2_dac0ed5096a9416fa0b5fb1cfb6b00ad_1024x1024.jpg                                                                                                                                                                                                                                        ', CAST(87780.00 AS Numeric(18, 2)), N'	500 tờ / ream', N'ream', 5, 2, 50, 2, 4, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (7, N'Ream giấy A4 80 gsm IK Copy (500 tờ) - Hàng nhập khẩu Indonesia', N'Giấy đều màu. Không gợn sóng, không xơ xước và không tách lớp. Giấy láng, không bị đốm khác màu hay tạp chất xơ cứng. Chữ in không bị nhòe, không lem kể cả in 2 mặt giấy.', N'ik_copy_a480_ton_kho2_dac0ed5096a9416fa0b5fb1cfb6b00ad_1024x1024.jpg                                                                                                                                                                                                                                        ', CAST(87780.00 AS Numeric(18, 2)), N'	500 tờ / ream', N'ream', 5, 3, 50, 2, 4, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (8, N'Ream giấy A4 70 gsm IK Copy (500 tờ) - Hàng nhập khẩu Indonesia', N'Giấy đều màu. Không gợn sóng, không xơ xước và không tách lớp. Giấy láng, không bị đốm khác màu hay tạp chất xơ cứng. Chữ in không bị nhòe, không lem kể cả in 2 mặt giấy.', N'ik_copy_a470_ton_kho2_5772a8166e324ee8b8eb76723a68e169_1024x1024.jpg                                                                                                                                                                                                                                        ', CAST(76780.00 AS Numeric(18, 2)), N'	500 tờ / ream', N'ream', 5, 1, 50, 2, 4, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (9, N'Giấy dán nhãn Tomy A4 đủ số', N'Dùng in tem, nhãn sản phẩm bằng máy laser thông thường. Có nhiều kích cỡ khác nhau, phù hợp mọi nhu cầu sử dụng. Chất giấy đẹp, mịn, láng.', N'giay_dan_nhan_tomy_a4_du_so_9635a65db4fd4e8e99b0b2ce25838e1d_1024x1024.jpg                                                                                                                                                                                                                                  ', CAST(154000.00 AS Numeric(18, 2)), N'	100 tờ/ hộp/ kiện', N'kiện', 10, 1, 40, 2, 18, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (9, N'Giấy dán nhãn Tomy A4 đủ số', N'Dùng in tem, nhãn sản phẩm bằng máy laser thông thường. Có nhiều kích cỡ khác nhau, phù hợp mọi nhu cầu sử dụng. Chất giấy đẹp, mịn, láng.', N'giay_dan_nhan_tomy_a4_du_so_9635a65db4fd4e8e99b0b2ce25838e1d_1024x1024.jpg                                                                                                                                                                                                                                  ', CAST(154000.00 AS Numeric(18, 2)), N'	100 tờ/ hộp/ kiện', N'kiện', 10, 2, 40, 2, 18, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (11, N'Giấy dán nhãn Tomy A5 đủ số', N'Dùng in tem, nhãn sản phẩm bằng máy laser thông thường. Có nhiều kích cỡ khác nhau, phù hợp mọi nhu cầu sử dụng. Chất giấy đẹp, mịn, láng.', N'giay_dan_nhan_tomy_a5_du_so_2_eee2b9a4d2024fa0970cf14b5177e781_1024x1024.jpg                                                                                                                                                                                                                                ', CAST(10000.00 AS Numeric(18, 2)), N'10 tờ/ xấp/ kiện', N'kiện', 10, 0, 60, 2, 18, 1)
 GO
@@ -941,7 +1131,7 @@ INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (19, N'Bìa nút trong suốt nhiều màu F4 Thiên Long Flexoffice FO-CBF08', N'Bìa bằng nhựa PP chịu lực cao. Đường hàn chắc chắn, nút bền hơn.', N'fo-cbf08_xk3_97ef69dd7dc84a91be7151a4a3991f5e_1024x1024.jpg                                                                                                                                                                                                                                                 ', CAST(5000.00 AS Numeric(18, 2)), N'1 bìa / kiện', N'cái', 10, 1, 30, 4, 16, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (21, N'Bìa đựng hồ sơ 60 lá sức chứa 300 tờ A4 80 gsm Thiên Long Flexoffice FO-DB009', N'Để lưu trữ và bảo quản các loại hồ sơ, tài liệu, tranh ảnh... Bìa 60 lá thích hợp cho gia đình, văn phòng: lưu trữ các loại giấy tờ nhà đất, giấy bảo hiểm, hóa đơn, giấy bảo hành… Sản phẩm được sản xuất từ nhựa PP chất lượng cao, an toàn với người sử dụng, sản phẩm có thể được tái chế hoàn toàn. Bề mặt trơn láng, hạn chế trầy xước và bám bẩn. Các lá được hàn trên công nghệ hàn siêu âm, có khả năng chịu ứng suất kéo cao.', N'fo-db009_2_af0b93f66f03446f98c05ef449beb913_1024x1024.jpg                                                                                                                                                                                                                                                   ', CAST(59200.00 AS Numeric(18, 2)), NULL, N'cái', 10, 0, 30, 4, 16, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (21, N'Bìa đựng hồ sơ 60 lá sức chứa 300 tờ A4 80 gsm Thiên Long Flexoffice FO-DB009', N'Để lưu trữ và bảo quản các loại hồ sơ, tài liệu, tranh ảnh... Bìa 60 lá thích hợp cho gia đình, văn phòng: lưu trữ các loại giấy tờ nhà đất, giấy bảo hiểm, hóa đơn, giấy bảo hành… Sản phẩm được sản xuất từ nhựa PP chất lượng cao, an toàn với người sử dụng, sản phẩm có thể được tái chế hoàn toàn. Bề mặt trơn láng, hạn chế trầy xước và bám bẩn. Các lá được hàn trên công nghệ hàn siêu âm, có khả năng chịu ứng suất kéo cao.', N'fo-db009_2_af0b93f66f03446f98c05ef449beb913_1024x1024.jpg                                                                                                                                                                                                                                                   ', CAST(7000.00 AS Numeric(18, 2)), N'bút/kiện', N'cái', 10, 0, 30, 4, 16, 1)
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (23, N'Máy tính Casio FX-570ES Plus', N'Không phải ngẫu nhiên mà máy tính CASIO FX 570ES PLUS được rất nhiều học sinh, sinh viên ưa thích đến vậy. Máy sở hữu kiểu dáng hiện đại, màu sắc trang nhã tinh tế cùng với danh sách các tính năng hữu ích, hỗ trợ tối đa trong quá trình học tập cũng như làm việc. Chiếc máy CASIO FX 570 ES PLUS là sản phẩm phù hợp với các bạn học sinh trung học.', N'casio.png                                                                                                                                                                                                                                                                                                   ', CAST(702000.00 AS Numeric(18, 2)), NULL, N'chiếc', 0, 10, 30, 8, 19, 1)
 GO
@@ -961,9 +1151,13 @@ INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [
 GO
 INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (34, N'Chổi vệ sinh bàn phím', N'Chổi quét máy tính', N'choi-quet-may-tinh.jpg                                                                                                                                                                                                                                                                                      ', CAST(96720.00 AS Numeric(18, 2)), NULL, N'cây', 11, 1, 40, 3, 9, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (35, N'Hộp bút vải có khóa mật mã 20x6x8cm', N'Hộp bút vải có khóa mật mã 20x6x8cm', N'hopbuttim.png', CAST(265980.00 AS Numeric(18, 2)), NULL, N'hộp', 17, 0, 30, 5, 17, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (35, N'Hộp bút vải có khóa mật mã 20x6x8cm', N'Hộp bút vải có khóa mật mã 20x6x8cm', N'hopbuttim.png', CAST(265980.00 AS Numeric(18, 2)), NULL, N'hộp', 17, 1, 30, 5, 17, 1)
 GO
-INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (36, N'Túi đựng bút vải đính huy hiệu Maimaibaby', N'Dừng ở đây một chút rùi mình ngắm TÚI BÚT!!! Ui chùi túi bút xinh nung ninh như này hông chỉ là ngắm thui đâu mà còn phải hốt lẹ lun nhé! Đi học hay đi làm đem túi bút là tiện nhất rùi. Đựng đồ dùng học tập hay đồ mỹ phẩm be bé xinh xinh vừa như in lun ạ!', N'5_800x800.jpg                                                                                                                                                                                                                                                                                               ', CAST(86000.00 AS Numeric(18, 2)), NULL, N'túi', 0, 10, 50, 5, 17, 1)
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (36, N'Túi đựng bút vải đính huy hiệu Maimaibaby', N'Dừng ở đây một chút rùi mình ngắm TÚI BÚT!!! Ui chùi túi bút xinh nung ninh như này hông chỉ là ngắm thui đâu mà còn phải hốt lẹ lun nhé! Đi học hay đi làm đem túi bút là tiện nhất rùi. Đựng đồ dùng học tập hay đồ mỹ phẩm be bé xinh xinh vừa như in lun ạ!', N'5_800x800.jpg                                                                                                                                                                                                                                                                                               ', CAST(86000.00 AS Numeric(18, 2)), NULL, N'túi', 0, 12, 50, 5, 17, 1)
+GO
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (37, N'test 1', N'Bút test', N'default.png', CAST(1000.00 AS Numeric(18, 2)), N'bút/kiện', N'cái', 5, 5, 15, 1, 1, 1)
+GO
+INSERT [dbo].[product] ([product_id], [name], [description], [image], [price], [specification], [calculation_unit], [discount], [sold_quantity], [quantity], [category_id], [brand_id], [status]) VALUES (38, N'Bút màu', N'Bút màu chất lượng cao', N'2111241445200000282-hop-but-mau.jpg', CAST(7000.00 AS Numeric(18, 2)), N'bút/kiện', N'hộp', 0, 0, 30, 3, 5, 0)
 GO
 SET IDENTITY_INSERT [dbo].[product] OFF
 GO
@@ -1095,19 +1289,49 @@ INSERT [dbo].[province] ([province_id], [province_name], [province_code]) VALUES
 GO
 SET IDENTITY_INSERT [dbo].[users] ON 
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (11, N'reintrinh1306', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Trinh', N'Nguyễn Ngọc Phương', N'211118221150avatar.jpg', 1, N'reintrinh@gmail.com', N'0396311734', CAST(N'2021-10-02' AS Date), 2, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (11, N'reintrinh1306', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Trinh', N'Nguyễn Ngọc Phương', N'resources/images/users/211211185414avatar.jpg', 1, N'reintrinh1306@gmail.com', N'0396311734', CAST(N'2021-10-02' AS Date), 2, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (12, N'hathimo', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Mơ', N'Hà', N'userDefaul.png', 2, N'hathimo@gmail.com', N'0123456789', CAST(N'2021-10-02' AS Date), 2, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (12, N'hathimo', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Mơ', N'Hà', N'resources/images/users/userDefaul.png', 2, N'hathimo@gmail.com', N'0123456789', CAST(N'2021-10-02' AS Date), 2, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (13, N'nhunguyen', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Như', N'Nguyễn Ngọc Lâm', N'aduio.png', 3, N'nhunguyen123@gmail.com', N'1234567890', CAST(N'2021-10-02' AS Date), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (13, N'nhunguyen', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Như', N'Nguyễn Ngọc Lâm', N'resources/images/users/211211190051avatar.jpg', 3, N'nhunguyen123@gmail.com', N'1234567890', CAST(N'2021-11-16' AS Date), 1, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (14, N'trinhnguyen', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Trinh', N'Nguyễn', N'star.png', 1, N'trinhnguyen@gmail.com', N'0123456789', CAST(N'2021-10-20' AS Date), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (14, N'trinhnguyen1306', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Trinh', N'Nguyễn', N'resources/images/users/star.png', 4, N'otakuvocaloid70@gmail.com', N'0123456789', CAST(N'2021-11-20' AS Date), 1, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (19, N'admin', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Admin', N'Nguyễn', N'userDefaul.png', 9, N'otakuvocaloid79@gmail.com', N'0000000000', CAST(N'2021-10-28' AS Date), 2, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (19, N'admin', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Admin', N'Nguyễn', N'resources/images/users/userDefaul.png', 9, N'otakuvocaloid79@gmail.com', N'0000000000', CAST(N'2021-10-28' AS Date), 2, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (20, N'abc', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'Harry', N'Potter', N'userDefaul.png', NULL, N'abc@gmail.com', N'1234567890', CAST(N'2021-11-15' AS Date), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (20, N'abc', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Harry', N'Potter', N'resources/images/users/userDefaul.png', 10, N'abc@gmail.com', N'1234567890', CAST(N'2021-11-16' AS Date), 1, 1)
 GO
-INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (21, N'test', N'$2a$12$oIDiHGmrnZU4ZsXFF39SVeWPLrpp4atUusQ//Abn5torTrZN7I6pu', N'test', N'test', N'userDefaul.png', NULL, N'test@gmail.com', N'0', CAST(N'2021-11-15' AS Date), 1, 1)
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (21, N'test', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'test', N'test', N'resources/images/users/userDefaul.png', 5, N'test@gmail.com', N'0', CAST(N'2021-11-16' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (22, N'phuongtrinh', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Naruto', N'Uzumaki', N'resources/images/users/userDefaul.png', 13, N'naruto@gmail.com', N'0000000001', CAST(N'2021-11-22' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (24, N'rein', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Sasuke', N'Uchiha', N'resources/images/users/userDefaul.png', 11, N'sasuke@gmail.com', N'1234567890', CAST(N'2021-11-22' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (25, N'rein1306', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Rein', N'Nguyễn', N'resources/images/users/userDefaul.png', 12, N'otakuvocaloid@gmail.com', N'0123456700', CAST(N'2021-11-22' AS Date), 1, 0)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (26, N'boruto', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Boruto', N'Uzumaki', N'resources/images/users/userDefaul.png', 14, N'boruto@gmail.com', N'0000000005', CAST(N'2021-11-22' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (27, N'hinata', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Hinata', N'Hyuga', N'resources/images/users/userDefaul.png', 15, N'hinata@gmail.com', N'0000000008', CAST(N'2021-11-23' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (28, N'sophiduong', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Dương', N'Sở Phi', N'resources/images/users/userDefaul.png', 16, N'sophiduong@gmail.com', N'0000000009', CAST(N'2021-11-23' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (29, N'thuanh', N'$2a$12$7nYAZyfQBi1UuFGHKnS0I.ddu4QBVhtgXWt4iLaPFs1xUPq92eddS', N'Ảnh', N'Quân Thư', N'resources/images/users/userDefaul.png', 17, N'reintrinh1306@gmail.com', N'0000000007', CAST(N'2021-11-23' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (30, N'quanngao', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Ngạo', N'Triển Quần', N'resources/images/users/userDefaul.png', 20, N'trienquanngao@gmail.com', N'0001230000', CAST(N'2021-11-23' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (31, N'thachdau', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Đầu', N'Thạch', N'resources/images/users/userDefaul.png', 18, N'thachdau@gmail.com', N'0034000000', CAST(N'2021-11-23' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (32, N'solan', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Lân', N'Sở', N'resources/images/users/userDefaul.png', 19, N'solan@gmail.com', N'0000000023', CAST(N'2021-11-23' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (33, N'lamthucnhan', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Nhân', N'Lâm Thục', N'resources/images/users/userDefaul.png', 21, N'lamthucnhan@gmail.com', N'0000000057', CAST(N'2021-11-23' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (34, N'namcungkiet', N'$2a$12$JX9hZOnV22MD3uZywWRE/.DP.zonmOVqTmLmrN9b0YQBwumGKziwK', N'Kiệt', N'Nam Cung', N'resources/images/users/userDefaul.png', 22, N'akiet@gmail.com', N'0123456722', CAST(N'2021-11-23' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (35, N'abc1', N'$2a$12$TyE8thl0q70c9RmyGizPR.tgvmbcPWRLmPWuitOX88s3aLLHn3PPW', N'Abc', N'Nguyễn', N'resources/images/users/userDefaul.png', 23, N'reintrinh2408@gmail.com', N'0123456000', CAST(N'2021-12-11' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (37, N'yayoi1306', NULL, NULL, NULL, N'https://lh3.googleusercontent.com/a-/AOh14Gi0lzlzcMvDnGT0Xmt6PHSEHJqeLs4fWcLVp8dm=s96-c', 25, N'yayoi1306@gmail.com', NULL, CAST(N'2021-12-11' AS Date), 1, 1)
+GO
+INSERT [dbo].[users] ([user_id], [username], [password], [first_name], [last_name], [image], [address_id], [email], [phone], [created_at], [permission_id], [status]) VALUES (38, N'yayoi', N'$2a$12$TyE8thl0q70c9RmyGizPR.tgvmbcPWRLmPWuitOX88s3aLLHn3PPW', N'Yayoi', N'Nguyễn', N'resources/images/users/userDefaul.png', 26, N'yayoi@gmail.com', N'0123456000', CAST(N'2021-12-11' AS Date), 1, 1)
 GO
 SET IDENTITY_INSERT [dbo].[users] OFF
 GO

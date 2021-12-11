@@ -53,9 +53,13 @@
 				</div>
 
 				<div class="text-center pt-5">
+
 					<a class="txt1 pe-1" href="home.htm"><s:message code="login.Home.title" /></a>
 					<a class="txt1 pe-1" href="forgotPassword.htm"><s:message code="login.ForgetPassword.title" /></a>
 					<a class="txt1 ps-1" href="register.htm"><s:message code="login.Register.title" /></a>
+					<a class="txt1 ps-1" href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/WebVanPhongPham/login-google&response_type=code
+    &client_id=1022987304961-746ict5qviu4ni684qumtgs154ivjcor.apps.googleusercontent.com&approval_prompt=force"><s:message code="login.Google.title" /></a>  
+
 				</div>
 			</form:form>
 		</div>
