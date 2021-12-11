@@ -11,7 +11,7 @@
 	</div>
 		
 	<div class="col-9 mbg-azure pt-2">
-		<div class="h4 text-uppercase text-center">Thêm áp phích</div>
+		<div class="h4 text-uppercase text-center">Đổi áp phích</div>
 		<c:if test="${not empty message}">			
 		  	<c:choose>
 				<c:when test="${message == 0}">
@@ -35,7 +35,7 @@
 			</c:choose>		  	
 		</c:if>
 		
-		<form:form action="admin/newLeftPoster.htm" method="post" modelAttribute="poster" enctype="multipart/form-data">
+		<form:form action="admin/changeRightPoster.htm" method="post" modelAttribute="poster" enctype="multipart/form-data">
   			<div class="row mb-3">
 	    		<label class="col-sm-3 form-label text-end">Hình ảnh:</label>
 	    		<div class="col-sm-8">

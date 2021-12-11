@@ -84,17 +84,7 @@
 		<!-- end -->		
 		</table>
 		<tg:paging pagedListHolder="${pagedListHolder}" pagedLink="${pagedLink}" />
-		<!-- <div class="text-end" aria-label="Page navigation example">
-			<ul class="pagination" style="display: -webkit-inline-box;">
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#"><i class="fas fa-angle-double-left fs-4"></i></a></li>
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#"><i class="fas fa-angle-left fs-4"></i></a></li>
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#">1</a></li>
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#">2</a></li>
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#">3</a></li>
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#"><i class="fas fa-angle-right fs-4"></i></a></li>
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#"><i class="fas fa-angle-double-right fs-4"></i></a></li>
-			</ul>
-		</div> -->
+		
 	</div>	
 </div>
 </div>

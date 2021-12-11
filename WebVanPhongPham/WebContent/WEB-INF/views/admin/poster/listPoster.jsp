@@ -20,48 +20,24 @@
 			<th class="col-2">Tên loại</th>
 			<th class="col-2">Đang hoạt động</th>
 		</tr>
-		<!-- add JSTL -->
-		<tr class="table-light text-center">
-			<td class="">1</td>
-			<td class=""><img src="resources/images/poster/poster2.jpg" style="height: 90px;"></td>
-			<td class="">Trái</td>
-			<td class="">Có</td>
-		</tr>
-		<!-- end -->
+		<c:forEach var="poster" items="${list}">
+			<tr class="table-light text-center">
+				<td class="">${poster.id}</td>
+				<td class=""><img src="resources/images/poster/${poster.name}" style="height: 90px;"></td>
+				<c:choose>
+					<c:when test="${poster.type == 2}"><td class="">Phải</td></c:when>
+					<c:when test="${poster.type == 1}"><td class="">Trái</td></c:when>
+				</c:choose>
+				<c:choose>
+					<c:when test="${poster.isActive == true}"><td class="">Có</td></c:when>
+					<c:when test="${poster.isActive == false}"><td class="">Không</td></c:when>
+				</c:choose>
+				
+			</tr>
+		</c:forEach>
 		
-		<!-- xóa từ đây -->
-		<tr class="table-light text-center">
-			<td class="">2</td>
-			<td class=""><img src="resources/images/poster/poster3.jpg" style="height: 90px;"></td>
-			<td class="">Trái</td>
-			<td class="">Có</td>
-		</tr>
-		<tr class="table-light text-center">
-			<td class="">3</td>
-			<td class=""><img src="resources/images/poster/poster4.jpg" style="height: 90px;"></td>
-			<td class="">Phải</td>
-			<td class="">Có</td>
-		</tr>
-		<tr class="table-light text-center">
-			<td class="">4</td>
-			<td class=""><img src="resources/images/poster/poster2.jpg" style="height: 90px;"></td>
-			<td class="">Trái</td>
-			<td class="">Không</td>
-		</tr>
-		<!-- tới đây :v -->
 		</table>
 	
-		<div class="text-end" aria-label="Page navigation example">
-			<ul class="pagination" style="display: -webkit-inline-box;">
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#"><i class="fas fa-angle-double-left fs-4"></i></a></li>
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#"><i class="fas fa-angle-left fs-4"></i></a></li>
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#">1</a></li>
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#">2</a></li>
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#">3</a></li>
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#"><i class="fas fa-angle-right fs-4"></i></a></li>
-				<li class="page-item"><a class="page-link text-primary border border-primary" href="#"><i class="fas fa-angle-double-right fs-4"></i></a></li>
-			</ul>
-		</div>
 	</div>	
 </div>
 </div>

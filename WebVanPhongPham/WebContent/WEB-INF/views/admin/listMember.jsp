@@ -9,10 +9,10 @@
 			<%@include file="/WEB-INF/views/include/adminTool.jsp"%>
 		</div>
 		
-		<div class="col-9 mbg-azure pt-2">
+		<div class="col-9 mbg-azure py-2">
 			<div class="card-group">
 				<div class="card">
-					<img class="card-img-top" src="resources/images/users/user1.png" width="250" height="260" alt="Card image cap">
+					<img class="card-img-top rounded" src="resources/images/users/126.jpg" width="250" height="260" alt="Card image cap">
 					<div class="card-body">
 						<h5 class="card-title">Thành viên 1</h5>
 						<p class="card-text">Hà Thị Mơ</p>
@@ -21,7 +21,7 @@
 					</div>
 				</div>
 				<div class="card">
-					<img class="card-img-top" src="resources/images/users/user1.png" width="250" height="260" alt="Card image cap">
+					<img class="card-img-top rounded" src="resources/images/users/231.jpg" width="250" height="260" alt="Card image cap">
 					<div class="card-body">
 						<h5 class="card-title">Thành viên 2</h5>
 						<p class="card-text">Nguyễn Ngọc Phương Trinh</p>
@@ -30,7 +30,7 @@
 					</div>
 				</div>
 				<div class="card">
-					<img class="card-img-top" src="resources/images/users/user1.png" width="250" height="260" alt="Card image cap">
+					<img class="card-img-top rounded" src="resources/images/users/144.jpg" width="250" height="260" alt="Card image cap">
 					<div class="card-body">
 						<h5 class="card-title">Thành viên 3</h5>
 						<p class="card-text">Nguyễn Ngọc Lâm Như</p>
