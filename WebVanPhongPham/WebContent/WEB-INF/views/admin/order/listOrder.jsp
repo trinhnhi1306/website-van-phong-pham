@@ -72,7 +72,8 @@
 					<tr class="table-primary text-center">
 						<th class="col-1">Chi tiết</th>
 						<th class="col-2 text-start">Ngày đặt</th>
-						<th class="col-3 text-start">Khách hàng</th>
+						<th class="col-2 text-start">Khách hàng</th>
+						<th class="col-2 text-start">Username</th>
 						<th class="col-2">Tổng tiền</th>
 						<th class="col-2">Xử lý</th>
 					</tr>
@@ -82,7 +83,8 @@
 							<td class=""><a href="admin/orderDetail.htm?orderId=${p1.id }"><i class="fas fa-info-circle"></i></a></td>
 							<td class="text-start">${p1.date }</td>
 							<td class="text-start">${p1.user.lastName } ${p1.user.firstName }</td>
-							<td class=""><f:formatNumber value="${p1.totalPrice }" type="currency" /></td>
+							<td class="text-start">${p1.user.username }</td>
+							<td class=""><f:formatNumber value="${p1.totalPrice }" type="currency" currencySymbol="đ" maxFractionDigits="0"/></td>
 							<td class="">
 								<a class="btn btn-outline-success mt-auto" href="admin/acceptOrder.htm?id=${p1.id }"><i class="fas fa-check-circle"></i></a>
 								<a class="btn btn-outline-danger mt-auto" href="admin/denyOrder.htm?id=${p1.id }"><i class="fas fa-times-circle"></i></a>
@@ -104,7 +106,8 @@
 					<tr class="table-primary text-center">
 						<th class="col-1">Chi tiết</th>
 						<th class="col-2 text-start">Ngày đặt</th>
-						<th class="col-3 text-start">Khách hàng</th>
+						<th class="col-2 text-start">Khách hàng</th>
+						<th class="col-2 text-start">Username</th>
 						<th class="col-2">Tổng tiền</th>
 						<th class="col-2">Xử lý</th>
 					</tr>
@@ -114,7 +117,8 @@
 							<td class=""><a href="admin/orderDetail.htm?orderId=${p2.id }"><i class="fas fa-info-circle"></i></a></td>
 							<td class="text-start">${p2.date }</td>
 							<td class="text-start">${p2.user.lastName } ${p2.user.firstName }</td>
-							<td class=""><f:formatNumber value="${p2.totalPrice }" type="currency" /></td>
+							<td class="text-start">${p2.user.username }</td>
+							<td class=""><f:formatNumber value="${p2.totalPrice }" type="currency" currencySymbol="đ" maxFractionDigits="0"/></td>
 							<td class="">
 								<a class="btn btn-outline-success mt-auto" href="admin/acceptCancel.htm?id=${p2.id }"><i class="fas fa-check-circle"></i></a>
 								<a class="btn btn-outline-danger mt-auto" href="admin/denyCancel.htm?id=${p2.id }"><i class="fas fa-times-circle"></i></a>
@@ -137,7 +141,8 @@
 					<tr class="table-primary text-center">
 						<th class="col-1">Chi tiết</th>
 						<th class="col-2 text-start">Ngày đặt</th>
-						<th class="col-3 text-start">Khách hàng</th>
+						<th class="col-2 text-start">Khách hàng</th>
+						<th class="col-2 text-start">Username</th>
 						<th class="col-2">Tổng tiền</th>
 						<th class="col-2">Trạng thái</th>
 					</tr>
@@ -147,7 +152,8 @@
 							<td class=""><a href="admin/orderDetail.htm?orderId=${p3.id }"><i class="fas fa-info-circle"></i></a></td>
 							<td class="text-start">${p3.date }</td>
 							<td class="text-start">${p3.user.lastName } ${p3.user.firstName }</td>
-							<td class=""><f:formatNumber value="${p3.totalPrice }" type="currency" /></td>
+							<td class="text-start">${p3.user.username }</td>
+							<td class=""><f:formatNumber value="${p3.totalPrice }" type="currency" currencySymbol="đ" maxFractionDigits="0"/></td>
 							<td class="">${p3.status.description }</td>
 						</tr>	
 					</c:forEach>						
@@ -166,7 +172,8 @@
 					<tr class="table-primary text-center">
 						<th class="col-1">Chi tiết</th>
 						<th class="col-2 text-start">Ngày đặt</th>
-						<th class="col-3 text-start">Khách hàng</th>
+						<th class="col-2 text-start">Khách hàng</th>
+						<th class="col-2 text-start">Username</th>
 						<th class="col-2">Tổng tiền</th>
 						<th class="col-2">Trạng thái</th>
 					</tr>
@@ -176,7 +183,8 @@
 							<td class=""><a href="admin/orderDetail.htm?orderId=${p4.id }"><i class="fas fa-info-circle"></i></a></td>
 							<td class="text-start">${p4.date }</td>
 							<td class="text-start">${p4.user.lastName } ${p4.user.firstName }</td>
-							<td class=""><f:formatNumber value="${p4.totalPrice }" type="currency" /></td>
+							<td class="text-start">${p4.user.username }</td>
+							<td class=""><f:formatNumber value="${p4.totalPrice }" type="currency" currencySymbol="đ" maxFractionDigits="0"/></td>
 							<td class="">${p4.status.description }</td>
 						</tr>	
 					</c:forEach>						
@@ -195,7 +203,8 @@
 					<tr class="table-primary text-center">
 						<th class="col-1">Chi tiết</th>
 						<th class="col-2 text-start">Ngày đặt</th>
-						<th class="col-3 text-start">Khách hàng</th>
+						<th class="col-2 text-start">Khách hàng</th>
+						<th class="col-2 text-start">Username</th>
 						<th class="col-2">Tổng tiền</th>
 						<th class="col-2">Trạng thái</th>
 					</tr>
@@ -205,7 +214,8 @@
 							<td class=""><a href="admin/orderDetail.htm?orderId=${p5.id }"><i class="fas fa-info-circle"></i></a></td>
 							<td class="text-start">${p5.date }</td>
 							<td class="text-start">${p5.user.lastName } ${p5.user.firstName }</td>
-							<td class=""><f:formatNumber value="${p5.totalPrice }" type="currency" /></td>
+							<td class="text-start">${p5.user.username }</td>
+							<td class=""><f:formatNumber value="${p5.totalPrice }" type="currency" currencySymbol="đ" maxFractionDigits="0"/></td>
 							<td class="">${p5.status.description }</td>
 						</tr>	
 					</c:forEach>						

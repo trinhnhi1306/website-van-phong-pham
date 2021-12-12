@@ -93,9 +93,9 @@
 							</div>
 						</div>
 					</td>
-					<td class="py-3"><f:formatNumber value="${o.item_price}" type="currency" /></td>
+					<td class="py-3"><f:formatNumber value="${o.item_price}" type="currency" currencySymbol="đ" maxFractionDigits="0"/></td>
 					<td class="py-3">${o.quantity}</td>
-					<td class="py-3"><f:formatNumber value="${o.item_price * o.quantity}" type="currency" /></td>
+					<td class="py-3"><f:formatNumber value="${o.item_price * o.quantity}" type="currency" currencySymbol="đ" maxFractionDigits="0"/></td>
 					<td class="py-3 text-center">
 					<!-- icon feedback -->
 						<c:choose>
@@ -114,17 +114,17 @@
 		
 		<div class="row text-end">
 			<div class="col-8 border py-2">Tổng tiền hàng</div>
-			<div class="col-4 border py-2"><f:formatNumber value="${order.totalPrice}" type="currency" /></div>
+			<div class="col-4 border py-2"><f:formatNumber value="${order.totalPrice}" type="currency" currencySymbol="đ" maxFractionDigits="0"/></div>
 		</div>
 		
 		<div class="row text-end">
 			<div class="col-8 border py-2">Phí vận chuyển</div>
-			<div class="col-4 border py-2"><f:formatNumber value="0" type="currency" /></div>
+			<div class="col-4 border py-2"><f:formatNumber value="0" type="currency" currencySymbol="đ" maxFractionDigits="0"/></div>
 		</div>
 		
 		<div class="row text-end">
 			<div class="col-8 border py-2">Tổng số tiền</div>
-			<div class="col-4 border py-2 fw-bold"><f:formatNumber value="${order.totalPrice}" type="currency" /></div>
+			<div class="col-4 border py-2 fw-bold"><f:formatNumber value="${order.totalPrice}" type="currency" currencySymbol="đ" maxFractionDigits="0"/></div>
 		</div>		
 	</div>
 		

@@ -80,7 +80,7 @@
 							<td class=""><a href="admin/detailProduct.htm?id=${s.id}"><i class="fas fa-info-circle"></i></a></td>
 							<td class=""><img src="resources/images/products/${s.image}" style="width: 70px; height: 90px;"></td>
 							<td class="text-start">${s.name}</td>
-							<td class=""> <f:setLocale value="vi_VN"/> <f:formatNumber value="${s.price}" type="currency"/></td>
+							<td class=""> <f:setLocale value="vi_VN"/> <f:formatNumber value="${s.price}" type="currency" currencySymbol="đ" maxFractionDigits="0"/></td>
 							<td class="">${s.quantity - s.sold_quantity}</td>
 							<td class=""><a href="admin/editProduct.htm?id=${s.id}"><i class="fas fa-edit"></i></a></td>
 							<td class=""><a href="admin/deleteProduct.htm?id=${s.id}" onclick="return confirm('Are you sure you want to Remove?');"><i class="far fa-trash-alt"> </i></a></td>

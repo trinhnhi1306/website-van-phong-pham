@@ -18,10 +18,10 @@
 	  	</div>
 	  	<form action="register1.htm" method="post">
 	  		<div class="col-sm-10 mx-4 p-2">
-	  			<input class="form-control" name="email" value="${emailGoogle }">
+	  			<input class="form-control" name="email" value="${emailGoogle }" readonly="readonly">
 	  		</div>
 	  		<div class="col-sm-10 mx-4 p-2">
-	  			<input class="form-control" name="picture" value="${pictureGoogle }">
+	  			<input class="form-control" name="picture" value="${pictureGoogle }" readonly="readonly">
 	  		</div>
 	  		<div class="col-sm-10 mx-4 p-2">
 	  			<button class="btn btn-primary bg-gradient text-white" type="submit">Đăng nhập</button>

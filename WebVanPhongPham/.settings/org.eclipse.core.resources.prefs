@@ -2,7 +2,6 @@
 <<<<<<<=HEAD
 >>>>>>>=fa3adb37c900c7bee4e6efb595aa0aef8573e78e
 eclipse.preferences.version=1
-encoding//WebContent/WEB-INF/i18n-res/login_vi.properties=UTF-8
 encoding//src/ptithcm/accessgoogle/LoginGoogleServlet.java=UTF-8
 encoding//src/ptithcm/bean/Mailer.java=UTF-8
 encoding//src/ptithcm/controller/BrandController.java=UTF-8

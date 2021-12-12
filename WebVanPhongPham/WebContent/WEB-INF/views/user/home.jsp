@@ -65,7 +65,7 @@
 						<div class="card-body p-4">
 							<div class="text-center">
 								<h5 class="fw-bolder">${s.name }</h5>
-								<div> <f:setLocale value="vi_VN"/><f:formatNumber value="${s.price }" type="currency" /></div>
+								<div><f:formatNumber value="${s.price }" type="currency" currencySymbol="đ" maxFractionDigits="0"/></div>
 							</div>
 						</div>
 						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">

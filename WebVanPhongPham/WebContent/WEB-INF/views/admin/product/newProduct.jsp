@@ -101,7 +101,7 @@
   			</div>
   			
   			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Giảm giá: <label style="color: red;">*</label></label>
+	    		<label class="col-sm-3 col-form-label text-end">Giảm giá: </label>
 	    		<div class="col-sm-8">
 	    			<div class="input-group">
 	    				<form:input path="discount" type="number" class="form-control"/>
@@ -119,7 +119,7 @@
   			</div>
   			
   			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Mô tả: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Mô tả: <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	    			<form:textarea path="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></form:textarea>
 	    			<form:errors path="description" class="fst-italic text-danger"/>

@@ -36,7 +36,7 @@
 			
 				<div class="row my-3">
 					<label class="col-sm-3 fw-bold">Đơn giá: </label>
-					<div class="col-sm-9"><f:setLocale value="vi_VN"/> <f:formatNumber value="${product.price}" type="currency"/></div>
+					<div class="col-sm-9"><f:setLocale value="vi_VN"/> <f:formatNumber value="${product.price}" type="currency" currencySymbol="đ" maxFractionDigits="0"/></div>
 				</div>
 			
 				<div class="row my-3">

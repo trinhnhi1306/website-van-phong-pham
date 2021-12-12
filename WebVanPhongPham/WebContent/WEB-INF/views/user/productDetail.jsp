@@ -18,8 +18,8 @@
 	  			<div class="text-muted my-2">Đã bán: ${product.sold_quantity } </div>
 	  			
 	  			<div class="fs-5 mb-4 mt-4 p-2 mbg-price">
-	            	<span class="text-decoration-line-through fs-6 text-muted"><f:formatNumber value="${product.price }" type="currency" /></span>
-	            	<span class="fs-3"><f:formatNumber value="${product.price - (product.price * product.discount / 100) }" type="currency" /></span>
+	            	<span class="text-decoration-line-through fs-6 text-muted"><f:formatNumber value="${product.price }" type="currency" currencySymbol="đ" maxFractionDigits="0"/></span>
+	            	<span class="fs-3"><f:formatNumber value="${product.price - (product.price * product.discount / 100) }" type="currency" currencySymbol="đ" maxFractionDigits="0"/></span>
 	            </div>
             
 				<hr>            
@@ -93,7 +93,7 @@ Sticker dán tường được dùng để trang trí, làm đẹp nhà cửa, p
 			<div class="mx-5 my-2 p-2 border-bottom">
 				<div class="row">
 					<div class="col-auto">
-						<img src="resources/images/users/${s.user.image }" class="rounded-circle" style="width: 50px; height: 50px;">
+						<img src="${s.user.image }" class="rounded-circle" style="width: 50px; height: 50px;">
 					</div>
 					
 					<div class="col">

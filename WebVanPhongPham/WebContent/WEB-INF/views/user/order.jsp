@@ -43,7 +43,7 @@
 								</c:forEach>
 							</ul>
 						</td>
-						<td><f:formatNumber value="${order.totalPrice }" type="currency" /></td>
+						<td><f:formatNumber value="${order.totalPrice }" type="currency" currencySymbol="đ" maxFractionDigits="0"/></td>
 						<td>${order.status.description }</td>
 					</tr>					
 				</c:forEach>

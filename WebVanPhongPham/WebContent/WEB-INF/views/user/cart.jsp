@@ -52,11 +52,11 @@
 							</div>
 						</div>
 					</td>
-				    <td class="py-3"><f:formatNumber value="${c.products.price - (c.products.price * c.products.discount / 100) }" type="currency" /></td>
+				    <td class="py-3"><f:formatNumber value="${c.products.price - (c.products.price * c.products.discount / 100) }" type="currency" currencySymbol="đ" maxFractionDigits="0"/></td>
 				    <td class="py-3">				    	
 	  					<input type="number" value="${c.quantity }" min="1" max="100" class="form-control" id="quantity-cart-${c.products.id }"/>
 					</td>
-				    <td class="py-3"><f:formatNumber value="${(c.products.price - (c.products.price * c.products.discount / 100)) * c.quantity}" type="currency" /></td>
+				    <td class="py-3"><f:formatNumber value="${(c.products.price - (c.products.price * c.products.discount / 100)) * c.quantity}" type="currency" currencySymbol="đ" maxFractionDigits="0"/></td>
 				    <td class="text-center py-3 edit-product">
 				    	<button id="${c.products.id}" class="edit-cart link-dark" role="button"><i class="fas fa-edit"></i></button>
 				    </td>
@@ -85,7 +85,7 @@
 			<div class="mbg-azure p-2 mb-2"> <!-- Bảng giá -->
 				<div class="row">
 					<div class="col">Tạm tính:</div>
-					<div class="col text-end"><f:formatNumber value="${totalMoney }" type="currency" /></div>
+					<div class="col text-end"><f:formatNumber value="${totalMoney }" type="currency" currencySymbol="đ" maxFractionDigits="0"/></div>
 				</div>
 				<div class="row">
 					<div class="col">Giảm giá:</div>
@@ -94,7 +94,7 @@
 				<hr>
 				<div class="row fw-bolder">
 					<div class="col">Tổng cộng:</div>
-					<div class="col text-end"><f:formatNumber value="${totalMoney }" type="currency" /></div>
+					<div class="col text-end"><f:formatNumber value="${totalMoney }" type="currency" currencySymbol="đ" maxFractionDigits="0"/></div>
 				</div>
 			</div>
 			<div class="p-2 d-grid"> <!-- Button -->

@@ -78,6 +78,7 @@ public class CategoryService {
 	            file.transferTo(new File(filePath));
 	            
 				category.setImage(fileName);
+				Thread.sleep(2000);
 			} catch (Exception e) {
 				e.printStackTrace();
 				return 2;		
@@ -98,6 +99,7 @@ public class CategoryService {
 	            file.transferTo(new File(filePath));
 	            
 				category.setImage(fileName);
+				Thread.sleep(2000);
 			} catch (Exception e) {
 				e.printStackTrace();
 				return 2;		

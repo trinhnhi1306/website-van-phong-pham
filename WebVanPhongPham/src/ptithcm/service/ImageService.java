@@ -57,7 +57,7 @@ public class ImageService {
 				fileName = date + file.getOriginalFilename();
 				String photoPath = baseUploadFile.getBasePath() + "/products" + File.separator + fileName;
 				file.transferTo(new File(photoPath));
-				Thread.sleep(500);
+				Thread.sleep(2000);
 				System.out.println(photoPath);
 			} catch (IllegalStateException | IOException | InterruptedException e) {
 				e.printStackTrace();
