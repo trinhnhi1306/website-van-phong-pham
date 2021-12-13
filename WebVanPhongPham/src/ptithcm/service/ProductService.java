@@ -51,6 +51,8 @@ public class ProductService {
 	}
 
 	public int newProduct(Product product, MultipartFile file) {
+		if(product.getDiscount() == null)
+			product.setDiscount(0);
 		String fileName = imageService.uploadFile1(file);
 		if (fileName != "0" && fileName != "") {
 			product.setImage(fileName);
@@ -64,6 +66,8 @@ public class ProductService {
 
 	public int editProduct(Product product, MultipartFile file) {
 		String fileName = imageService.uploadFile1(file);
+		if(product.getDiscount() == null)
+			product.setDiscount(0);
 		if (fileName != "0" && fileName != "") {
 			product.setImage(fileName);
 		} else if (fileName == "0") {

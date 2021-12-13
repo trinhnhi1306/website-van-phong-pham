@@ -111,7 +111,7 @@ public class UserService {
 		user.setRegistrationDate(new java.util.Date());
 		
 		if(file.isEmpty())
-			user.setImage("userDefaul.png");
+			user.setImage("resources/images/users/userDefaul.png");
 		else {			
 			try {	
 				String fileName = uploadFile.setFileName(file);

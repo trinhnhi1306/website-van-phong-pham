@@ -131,8 +131,9 @@ public class ProductController {
 		if(product.getSpecification().trim().length() == 0) {
 			errors.rejectValue("specification", "product", "Vui lòng nhập quy cách !");
 		}
-//		if(add < 0) {
-//			errors.rejectValue("add", "Số lượng thêm phải nhiều hơn 0 !");
+//		if(add == 0) {
+//			model.addAttribute("addError", "Số lượng thêm vào không được bỏ trống");
+//			return "admin/product/editProduct";
 //		}
 		if(product.getDescription().trim().length() == 0) {
 			errors.rejectValue("description", "product", "Vui lòng nhập mô tả !");

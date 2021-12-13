@@ -91,11 +91,12 @@
 	    			<%-- <form:input path="quantity" type="hidden" class="form-control"/> --%>
 	      			<input name="add" type="number" class="form-control" value="0" min="0"
 	      				   oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+   				   	
 	    		</div>
   			</div>
   			
   			<div class="row my-3">
-	    		<label class="col-sm-3 col-form-label text-end">Giảm giá: <label style="color: red;">*</label></label>
+	    		<label class="col-sm-3 col-form-label text-end">Giảm giá: </label>
 	    		<div class="col-sm-8">
 	    			<div class="input-group">
 	    				<form:input path="discount" type="number" class="form-control"/>
@@ -114,7 +115,7 @@
   			</div>
   			
   			<div class="row mb-3">
-	    		<label class="col-sm-3 col-form-label text-end">Mô tả: </label>
+	    		<label class="col-sm-3 col-form-label text-end">Mô tả: <label style="color: red;">*</label></label>
 	    		<div class="col-sm-8">
 	    			<form:textarea path="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></form:textarea>
 	    			<form:errors path="description" class="fst-italic text-danger"/>
